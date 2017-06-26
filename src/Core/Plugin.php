@@ -9,7 +9,7 @@ use Dhii\Modular\Loader\ModuleLoaderInterface;
 use Dhii\Modular\Locator\ModuleLocatorInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Psr\Container\ContainerInterface;
-use RebelCode\EddBookings\Core\Modular\ModuleSystemServiceProvider;
+use RebelCode\EddBookings\Core\Di\ModuleSystemServiceProvider;
 
 /**
  * Plugin hub class for EDD Bookings.

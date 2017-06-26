@@ -1,6 +1,6 @@
 <?php
 
-namespace RebelCode\EddBookings\Core\Modular;
+namespace RebelCode\EddBookings\Core\Di;
 
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\AbstractBaseServiceProvider;

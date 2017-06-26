@@ -2,7 +2,7 @@
 
 use RebelCode\EddBookings\Core\Di\Container;
 use RebelCode\EddBookings\Core\Di\MainServiceProvider;
-use RebelCode\EddBookings\Core\Modular\ModuleSystemServiceProvider;
+use RebelCode\EddBookings\Core\Di\ModuleSystemServiceProvider;
 use RebelCode\EddBookings\Core\Plugin;
 use RebelCode\EddBookings\Core\PluginInterface;
 
