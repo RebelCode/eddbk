@@ -14,7 +14,7 @@
         "php": "^5.3 | ^7.0",
         "dhii/di": "^0.1",
         "rebelcode/modular": "dev-task/initial-classes",
-        "dhii/i18n-interface": "dev-master"
+        "dhii/i18n-helper-base": "dev-develop"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",

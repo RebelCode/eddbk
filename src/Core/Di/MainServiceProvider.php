@@ -4,6 +4,7 @@ namespace RebelCode\EddBookings\Core\Di;
 
 use Dhii\Machine\LoopMachine;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
+use Dhii\Wp\I18n\FormatTranslator;
 use Interop\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\I18n\WpTranslator;
 use RebelCode\EddBookings\Core\Modular\Loader\PluginLoader;
@@ -46,13 +47,6 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     const SID_LOOP_MACHINE = 'loop_machine';
 
     /**
-     * The service ID of the I18n component.
-     *
-     * @since [*next-version*]
-     */
-    const SID_I18N = 'i18n';
-
-    /**
      * {@inheritdoc}
      *
      * @since [*next-version*]
@@ -63,8 +57,7 @@ class MainServiceProvider extends AbstractBaseServiceProvider
             static::SID_PLUGIN        => 'getPlugin',
             static::SID_PLUGIN_LOADER => 'getPluginLoader',
             static::SID_FACTORY       => 'getFactory',
-            static::SID_LOOP_MACHINE  => 'getLoopMachine',
-            static::SID_I18N          => 'getI18n',
+            static::SID_LOOP_MACHINE  => 'getLoopMachine'
         ));
     }
 
@@ -130,21 +123,5 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     public function getLoopMachine(ContainerInterface $c, $previous = null, array $config = array())
     {
         return new LoopMachine();
-    }
-
-    /**
-     * Service definition for an internationalization translator.
-     *
-     * @since [*next-version*]
-     *
-     * @param ContainerInterface $c        The container instance.
-     * @param mixed              $previous The previous instance, if any. Default: null
-     * @param array              $config   Any configuration data. Default: array()
-     *
-     * @return WpTranslator
-     */
-    public function getI18n(ContainerInterface $c, $previous = null, array $config = array())
-    {
-        return new WpTranslator(EDDBK_TEXT_DOMAIN);
     }
 }

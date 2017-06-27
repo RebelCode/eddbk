@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0136579b8c76eeaf1ec94ea739fccea6",
+    "content-hash": "8af25c135db782185c564a82af4704df",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -476,50 +476,6 @@
             ],
             "description": "A base for internationalization consumers",
             "time": "2017-06-16 14:40:54"
-        },
-        {
-            "name": "dhii/i18n-interface",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/i18n-interface.git",
-                "reference": "7eaf0731ba80eea37a5deea6d894a0326e10be67"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/i18n-interface/zipball/7eaf0731ba80eea37a5deea6d894a0326e10be67",
-                "reference": "7eaf0731ba80eea37a5deea6d894a0326e10be67",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/data-key-value-aware-interface": "^0.1",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "dhii/stringable-interface": "^0.1",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\I18n\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for internationalization.",
-            "time": "2017-03-15 16:01:39"
         },
         {
             "name": "dhii/loop-machine",
@@ -3328,7 +3284,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "rebelcode/modular": 20,
-        "dhii/i18n-interface": 20,
+        "dhii/i18n-helper-base": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
