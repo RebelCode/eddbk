@@ -47,4 +47,4 @@ require EDDBK_VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php';
 require EDDBK_SRC_DIR . DIRECTORY_SEPARATOR . 'functions.php';
 
 // Run the plugin
-eddbk()->run();
+eddbk()->load();
