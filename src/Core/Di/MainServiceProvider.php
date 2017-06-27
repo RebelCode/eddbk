@@ -70,7 +70,7 @@ class MainServiceProvider extends AbstractBaseServiceProvider
      */
     public function getPlugin(ContainerInterface $c, $previous = null, array $config = array())
     {
-        return new Plugin($c, $c->get(static::SID_FACTORY));
+        return new Plugin(EDDBK_SLUG, array(), array(), $c, $c->get(static::SID_FACTORY));
     }
 
     /**

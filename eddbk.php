@@ -30,6 +30,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+define('EDDBK_SLUG', 'eddbk');
+
 // Paths
 define('EDDBK_DIR', __DIR__);
 define('EDDBK_SRC_DIR', EDDBK_DIR . DIRECTORY_SEPARATOR . 'src');

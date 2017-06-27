@@ -4,10 +4,6 @@
 namespace RebelCode\EddBookings\Core;
 
 use Dhii\Factory\FactoryInterface;
-use Dhii\Modular\Factory\ModuleFactoryInterface;
-use Dhii\Modular\Loader\ModuleLoaderInterface;
-use Dhii\Modular\Locator\ModuleLocatorInterface;
-use Dhii\Modular\Module\ModuleInterface;
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\ModuleSystemServiceProvider;
 
@@ -16,46 +12,23 @@ use RebelCode\EddBookings\Core\Di\ModuleSystemServiceProvider;
  *
  * @since[*next-version*]
  */
-class Plugin implements PluginInterface
+class Plugin extends AbstractModularPlugin implements PluginInterface
 {
-    /**
-     * The container instance.
-     *
-     * @since[*next-version*]
-     *
-     * @var ContainerInterface
-     */
-    protected $container;
-
-    /**
-     * The factory instance.
-     *
-     * @since[*next-version*]
-     *
-     * @var FactoryInterface
-     */
-    protected $factory;
-
-    /**
-     * The loaded modules.
-     *
-     * @since[*next-version*]
-     *
-     * @var ModuleInterface[]
-     */
-    protected $loadedModules;
-
     /**
      * Constructor.
      *
      * @since [*next-version*]
      *
+     * @param string             $key       The plugin key.
      * @param ContainerInterface $container The container instance.
      * @param FactoryInterface   $factory   The factory instance.
      */
-    public function __construct(ContainerInterface $container, FactoryInterface $factory)
+    public function __construct($key, array $dependencies, array $config, ContainerInterface $container, FactoryInterface $factory)
     {
-        $this->_setContainer($container)
+        $this->_setKey($key)
+            ->_setDependencies($dependencies)
+            ->_setConfig($config)
+            ->_setContainer($container)
             ->_setFactory($factory);
     }
 
@@ -64,23 +37,9 @@ class Plugin implements PluginInterface
      *
      * @since [*next-version*]
      */
-    public function getContainer()
+    public function getKey()
     {
-        return $this->container;
-    }
-
-    /**
-     * Sets the container instance.
-     *
-     * @param ContainerInterface $container
-     *
-     * @return $this
-     */
-    protected function _setContainer(ContainerInterface $container)
-    {
-        $this->container = $container;
-
-        return $this;
+        return $this->_getKey();
     }
 
     /**
@@ -88,59 +47,25 @@ class Plugin implements PluginInterface
      *
      * @since [*next-version*]
      */
-    public function getFactory()
+    public function getDependencies()
     {
-        return $this->factory;
+        return $this->_getDependencies();
     }
 
     /**
-     * Sets the factory instance.
+     * {@inheritdoc}
      *
-     * @param FactoryInterface $factory
-     *
-     * @return $this
+     * @since [*next-version*]
      */
-    protected function _setFactory(FactoryInterface $factory)
+    public function _getConfig()
     {
-        $this->factory = $factory;
-
-        return $this;
+        return $this->_getConfig();
     }
 
     /**
-     * Retrieves the loaded modules.
+     * {@inheritdoc}
      *
-     * @since[*next-version*]
-     *
-     * @return ModuleInterface[]|\Traversable
-     */
-    protected function _getLoadedModules()
-    {
-        return $this->loadedModules;
-    }
-
-    /**
-     * Sets the loaded modules.
-     *
-     * @since[*next-version*]
-     *
-     * @param ModuleInterface[]|\Traversable $modules
-     *
-     * @return $this
-     */
-    protected function _setLoadedModules($modules)
-    {
-        $this->loadedModules = $modules;
-
-        return $this;
-    }
-
-    /**
-     * Retrieves the module locator.
-     *
-     * @since[*next-version*]
-     *
-     * @return ModuleLocatorInterface
+     * @since [*next-version*]
      */
     protected function _getModuleLocator()
     {
@@ -148,12 +73,9 @@ class Plugin implements PluginInterface
     }
 
     /**
-     * Description
+     * {@inheritdoc}
      *
-     * @since[*next-version*]
-     *
-     *
-     * @return ModuleFactoryInterface
+     * @since [*next-version*]
      */
     protected function _getModuleFactory()
     {
@@ -161,11 +83,9 @@ class Plugin implements PluginInterface
     }
 
     /**
-     * Retrieves the module loader.
+     * {@inheritdoc}
      *
-     * @since[*next-version*]
-     *
-     * @return ModuleLoaderInterface
+     * @since [*next-version*]
      */
     protected function _getModuleLoader()
     {
@@ -177,15 +97,11 @@ class Plugin implements PluginInterface
      *
      * @since [*next-version*]
      */
-    public function run()
+    public function load()
     {
         do_action('before_eddbk_run');
 
-        $configs = $this->_getModuleLocator()->locate();
-        $modules = array_map([$this->_getModuleFactory(), 'makeModule'], $configs);
-
-        $this->_getModuleLoader()->load($modules);
-        $this->_setLoadedModules($modules);
+        $this->_load();
 
         do_action('after_eddbk_run');
     }
