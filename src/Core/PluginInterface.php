@@ -4,13 +4,14 @@ namespace RebelCode\EddBookings\Core;
 
 use Dhii\Factory\FactoryInterface;
 use Psr\Container\ContainerInterface;
+use RebelCode\Modular\Module\ModuleInterface;
 
 /**
  * Something that represents a WordPress plugin.
  *
  * @since[*next-version*]
  */
-interface PluginInterface
+interface PluginInterface extends ModuleInterface
 {
     /**
      * Retrieves the plugin container instance.
@@ -35,5 +36,5 @@ interface PluginInterface
      *
      * @since[*next-version*]
      */
-    public function run();
+    public function load();
 }
