@@ -2,12 +2,14 @@
 
 namespace RebelCode\EddBookings\Core\Di;
 
+use Dhii\Di\AbstractServiceProvider as BaseAbstractServiceProvider;
+
 /**
  * Basic and common functionality for a service provider.
  *
  * @since [*next-version*]
  */
-abstract class AbstractServiceProvider
+abstract class AbstractServiceProvider extends BaseAbstractServiceProvider
 {
     /**
      * The prefix for all service IDs provided by this service provider.
@@ -19,13 +21,25 @@ abstract class AbstractServiceProvider
     const SERVICE_PREFIX = '';
 
     /**
-     * Retrieves the service definitions.
+     * Parameter-less constructor.
+     *
+     * Call this in the real constructor.
+     *
+     * @since[*next-version*]
+     */
+    protected function _construct()
+    {
+        $this->_addMany($this->_defaultServices());
+    }
+
+    /**
+     * Retrieves the default service definitions.
      *
      * @since[*next-version*]
      *
-     * @return array An array of service definitions.
+     * @return callable[]|\Traversable A list of service definitions.
      */
-    abstract protected function _getServices();
+    abstract protected function _defaultServices();
 
     /**
      * Retrieves the prefix for service IDs.

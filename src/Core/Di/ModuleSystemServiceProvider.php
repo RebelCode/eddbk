@@ -94,7 +94,7 @@ class ModuleSystemServiceProvider extends AbstractBaseServiceProvider
      *
      * @since [*next-version*]
      */
-    protected function _getServices()
+    protected function _defaultServices()
     {
         return $this->_prepare(array(
             static::SID_MODULE                  => 'getModule',
