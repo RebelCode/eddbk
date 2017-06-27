@@ -2,6 +2,7 @@
 
 namespace RebelCode\EddBookings\Core\Modular\Loader;
 
+use Dhii\I18n\StringTranslatingTrait;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
 use InvalidArgumentException;
 use RebelCode\EddBookings\Core\Modular\Config\PluginConfigInterface;
@@ -9,6 +10,8 @@ use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 
 class PluginLoader implements ModuleLoaderInterface
 {
+    use StringTranslatingTrait;
+
     /**
      * The path to the WordPress plugin functions file.
      *
@@ -137,12 +140,11 @@ class PluginLoader implements ModuleLoaderInterface
      */
     protected function _createMissingDependencyError(PluginInterface $plugin, $depName, $depVersion)
     {
-        return sprintf(
-            '%1$s requires %2$s at version %2$s or later.',
+        return $this->__('%1$s requires %2$s at version %3$s or later.', [
             $plugin->getName(),
             $depName,
             $depVersion
-        );
+        ]);
     }
 
     /**
