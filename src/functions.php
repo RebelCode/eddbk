@@ -3,8 +3,8 @@
 use RebelCode\EddBookings\Core\Di\Container;
 use RebelCode\EddBookings\Core\Di\MainServiceProvider;
 use RebelCode\EddBookings\Core\Di\ModuleSystemServiceProvider;
-use RebelCode\EddBookings\Core\Plugin;
-use RebelCode\EddBookings\Core\PluginInterface;
+use RebelCode\EddBookings\Core\Modular\Module\Plugin;
+use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 
 /**
  * Retrieves the EDD Bookings plugin hub instance.
@@ -29,7 +29,7 @@ function eddbk()
         $container->register($mainSp);
         $container->register($moduleSp);
 
-        $instance  = $container->get(MainServiceProvider::SID_PLUGIN);
+        $instance = $container->get(MainServiceProvider::SID_PLUGIN);
     }
 
     return $instance;

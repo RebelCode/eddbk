@@ -141,10 +141,10 @@ abstract class AbstractPlugin extends AbstractModule
      */
     protected function _createDependency($slug, $name, $version)
     {
-        return [
+        return array(
             PluginConfigInterface::K_DEPENDENCY_SLUG    => $slug,
             PluginConfigInterface::K_DEPENDENCY_NAME    => $name,
-            PluginConfigInterface::K_DEPENDENCY_VERSION => $version
-        ];
+            PluginConfigInterface::K_DEPENDENCY_VERSION => $version,
+        );
     }
 }

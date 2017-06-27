@@ -3,7 +3,6 @@
 namespace RebelCode\EddBookings\Core\Di;
 
 use Psr\Container\ContainerInterface;
-use RebelCode\EddBookings\Core\Di\AbstractBaseServiceProvider;
 use RebelCode\Modular\Config\ConfigInterface;
 use RebelCode\Modular\Config\Validator;
 use RebelCode\Modular\Factory\ModuleFactory;
@@ -188,13 +187,13 @@ class ModuleSystemServiceProvider extends AbstractBaseServiceProvider
      *
      * @since[*next-version*]
      *
-     * @param ContainerInterface $c The container instance.
-     * @param mixed $previous The previous instance, if any. Default: null
-     * @param array $config Any configuration data. Default: array()
+     * @param ContainerInterface $c        The container instance.
+     * @param mixed              $previous The previous instance, if any. Default: null
+     * @param array              $config   Any configuration data. Default: array()
      *
      * @return ModuleFileFinder
      */
-    public function getModuleFileFinder(ContainerInterface $c, $previous = null, array $config = [])
+    public function getModuleFileFinder(ContainerInterface $c, $previous = null, array $config = array())
     {
         return new ModuleFileFinder(EDDBK_VENDOR_DIR, EDDBK_MODULE_FILE_FINDER_MAX_DEPTH);
     }

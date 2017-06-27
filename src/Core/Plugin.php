@@ -1,6 +1,5 @@
 <?php
 
-
 namespace RebelCode\EddBookings\Core;
 
 use Dhii\Factory\FactoryInterface;
@@ -108,13 +107,13 @@ class Plugin extends AbstractBaseModularPlugin
      */
     protected function _getDefaultDependencies()
     {
-        return [
+        return array(
             $this->_createDependency(
                 'easy-digital-downloads/easy-digital-downloads.php',
                 'Easy Digital Downloads',
                 '2.3.0'
-            )
-        ];
+            ),
+        );
     }
 
     /**
@@ -126,7 +125,7 @@ class Plugin extends AbstractBaseModularPlugin
      */
     protected function _getDefaultConfig()
     {
-        return [];
+        return array();
     }
 
     /**

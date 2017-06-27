@@ -6,7 +6,6 @@ use Dhii\Modular\Factory\ModuleFactoryInterface;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
 use Dhii\Modular\Locator\ModuleLocatorInterface;
 use Dhii\Modular\Module\ModuleInterface;
-use RebelCode\EddBookings\Core\Modular\Module\AbstractPlugin;
 
 /**
  * Common functionality for plugins that can load other modules.
@@ -74,7 +73,7 @@ abstract class AbstractModularPlugin extends AbstractPlugin
     protected function _loadModules()
     {
         $configs = $this->_getModuleLocator()->locate();
-        $modules = array_map([$this->_getModuleFactory(), 'makeModule'], $configs);
+        $modules = array_map(array($this->_getModuleFactory(), 'makeModule'), $configs);
 
         $this->_getModuleLoader()->load($modules);
         $this->_setLoadedModules($modules);

@@ -12,5 +12,4 @@ use Dhii\Factory\FactoryInterface;
  */
 class Container extends BaseContainer implements FactoryInterface
 {
-
 }

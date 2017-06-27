@@ -1,9 +1,6 @@
 <?php
 
-
 namespace RebelCode\EddBookings\Core\Modular\Module;
-use RebelCode\EddBookings\Core\Modular\Module\AbstractModularPlugin;
-use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 
 /**
  * Base functionality for a modular plugin.
