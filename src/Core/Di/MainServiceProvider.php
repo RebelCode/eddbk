@@ -5,6 +5,7 @@ namespace RebelCode\EddBookings\Core\Di;
 use Dhii\Machine\LoopMachine;
 use Interop\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\I18n\WpTranslator;
+use RebelCode\EddBookings\Core\Plugin;
 
 /**
  * The main service provider.
@@ -13,6 +14,13 @@ use RebelCode\EddBookings\Core\I18n\WpTranslator;
  */
 class MainServiceProvider extends AbstractBaseServiceProvider
 {
+    /**
+     * The service ID of the plugin.
+     *
+     * @since [*next-version*]
+     */
+    const SID_PLUGIN = 'plugin';
+
     /**
      * The service ID of the factory.
      *
@@ -42,10 +50,27 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     protected function _getServices()
     {
         return $this->_prepare(array(
+            static::SID_PLUGIN       => 'getPlugin',
             static::SID_FACTORY      => 'getFactory',
             static::SID_LOOP_MACHINE => 'getLoopMachine',
             static::SID_I18N         => 'getI18n',
         ));
+    }
+
+    /**
+     * Service definition for the plugin hub instance.
+     *
+     * @since[*next-version*]
+     *
+     * @param ContainerInterface $c        The container instance.
+     * @param mixed              $previous The previous instance, if any. Default: null
+     * @param array              $config   Any configuration data. Default: array()
+     *
+     * @return ContainerInterface
+     */
+    public function getPlugin(ContainerInterface $c, $previous = null, array $config = array())
+    {
+        return new Plugin($c, $c->get(static::SID_FACTORY));
     }
 
     /**
