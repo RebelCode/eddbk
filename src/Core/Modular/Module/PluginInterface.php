@@ -1,6 +1,6 @@
 <?php
 
-namespace RebelCode\EddBookings\Core;
+namespace RebelCode\EddBookings\Core\Modular\Module;
 
 use Dhii\Factory\FactoryInterface;
 use Psr\Container\ContainerInterface;
@@ -13,6 +13,15 @@ use RebelCode\Modular\Module\ModuleInterface;
  */
 interface PluginInterface extends ModuleInterface
 {
+    /**
+     * Retrieves the user-friendly name of the plugin.
+     *
+     * @since[*next-version*]
+     *
+     * @return string
+     */
+    public function getName();
+
     /**
      * Retrieves the plugin container instance.
      *
@@ -30,11 +39,4 @@ interface PluginInterface extends ModuleInterface
      * @return FactoryInterface
      */
     public function getFactory();
-
-    /**
-     * Begins execution of the plugin.
-     *
-     * @since[*next-version*]
-     */
-    public function load();
 }

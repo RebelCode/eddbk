@@ -3,8 +3,10 @@
 namespace RebelCode\EddBookings\Core\Di;
 
 use Dhii\Machine\LoopMachine;
+use Dhii\Modular\Loader\ModuleLoaderInterface;
 use Interop\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\I18n\WpTranslator;
+use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 use RebelCode\EddBookings\Core\Plugin;
 
 /**
@@ -60,23 +62,25 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     /**
      * Service definition for the plugin hub instance.
      *
-     * @since[*next-version*]
+     * @since [*next-version*]
      *
      * @param ContainerInterface $c        The container instance.
      * @param mixed              $previous The previous instance, if any. Default: null
      * @param array              $config   Any configuration data. Default: array()
      *
-     * @return ContainerInterface
+     * @return PluginInterface
      */
     public function getPlugin(ContainerInterface $c, $previous = null, array $config = array())
     {
-        return new Plugin(EDDBK_SLUG, array(), array(), $c, $c->get(static::SID_FACTORY));
+        return new Plugin($c, $c->get(static::SID_FACTORY));
+    }
+
     }
 
     /**
      * Service definition for a generic factory.
      *
-     * @since[*next-version*]
+     * @since [*next-version*]
      *
      * @param ContainerInterface $c        The container instance.
      * @param mixed              $previous The previous instance, if any. Default: null
@@ -92,7 +96,7 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     /**
      * Service definition for a loop machine.
      *
-     * @since[*next-version*]
+     * @since [*next-version*]
      *
      * @param ContainerInterface $c        The container instance.
      * @param mixed              $previous The previous instance, if any. Default: null
@@ -108,7 +112,7 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     /**
      * Service definition for an internationalization translator.
      *
-     * @since[*next-version*]
+     * @since [*next-version*]
      *
      * @param ContainerInterface $c        The container instance.
      * @param mixed              $previous The previous instance, if any. Default: null

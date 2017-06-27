@@ -1,11 +1,12 @@
 <?php
 
-namespace RebelCode\EddBookings\Core;
+namespace RebelCode\EddBookings\Core\Modular\Module;
 
 use Dhii\Modular\Factory\ModuleFactoryInterface;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
 use Dhii\Modular\Locator\ModuleLocatorInterface;
 use Dhii\Modular\Module\ModuleInterface;
+use RebelCode\EddBookings\Core\Modular\Module\AbstractPlugin;
 
 /**
  * Common functionality for plugins that can load other modules.
@@ -22,6 +23,18 @@ abstract class AbstractModularPlugin extends AbstractPlugin
      * @var ModuleInterface[]
      */
     protected $loadedModules;
+
+    /**
+     * Parameter-less constructor.
+     *
+     * Call this in the real constructor.
+     *
+     * @since[*next-version*]
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+    }
 
     /**
      * Retrieves the loaded modules.
