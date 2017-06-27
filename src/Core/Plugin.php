@@ -43,7 +43,7 @@ class Plugin implements PluginInterface
      *
      * @var ModuleInterface[]
      */
-    protected $loadModules;
+    protected $loadedModules;
 
     /**
      * Constructor.
@@ -116,7 +116,7 @@ class Plugin implements PluginInterface
      */
     protected function _getLoadedModules()
     {
-        return $this->loadModules;
+        return $this->loadedModules;
     }
 
     /**
@@ -130,7 +130,7 @@ class Plugin implements PluginInterface
      */
     protected function _setLoadedModules($modules)
     {
-        $this->loadModules = $modules;
+        $this->loadedModules = $modules;
 
         return $this;
     }
