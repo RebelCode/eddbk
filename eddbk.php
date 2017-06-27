@@ -30,6 +30,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use RebelCode\EddBookings\Core\Di\MainServiceProvider;
+
 define('EDDBK_SLUG', 'eddbk');
 
 // Paths
@@ -49,4 +51,4 @@ require EDDBK_VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php';
 require EDDBK_SRC_DIR . DIRECTORY_SEPARATOR . 'functions.php';
 
 // Run the plugin
-eddbk()->load();
+eddbk()->getContainer()->get(MainServiceProvider::SID_PLUGIN_LOADER)->load(eddbk());

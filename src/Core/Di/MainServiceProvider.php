@@ -6,6 +6,7 @@ use Dhii\Machine\LoopMachine;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
 use Interop\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\I18n\WpTranslator;
+use RebelCode\EddBookings\Core\Modular\Loader\PluginLoader;
 use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 use RebelCode\EddBookings\Core\Plugin;
 
@@ -22,6 +23,13 @@ class MainServiceProvider extends AbstractBaseServiceProvider
      * @since [*next-version*]
      */
     const SID_PLUGIN = 'plugin';
+
+    /**
+     * The service ID of the plugin loader.
+     *
+     * @since [*next-version*]
+     */
+    const SID_PLUGIN_LOADER = 'plugin_loader';
 
     /**
      * The service ID of the factory.
@@ -52,10 +60,11 @@ class MainServiceProvider extends AbstractBaseServiceProvider
     protected function _getServices()
     {
         return $this->_prepare(array(
-            static::SID_PLUGIN       => 'getPlugin',
-            static::SID_FACTORY      => 'getFactory',
-            static::SID_LOOP_MACHINE => 'getLoopMachine',
-            static::SID_I18N         => 'getI18n',
+            static::SID_PLUGIN        => 'getPlugin',
+            static::SID_PLUGIN_LOADER => 'getPluginLoader',
+            static::SID_FACTORY       => 'getFactory',
+            static::SID_LOOP_MACHINE  => 'getLoopMachine',
+            static::SID_I18N          => 'getI18n',
         ));
     }
 
@@ -75,6 +84,20 @@ class MainServiceProvider extends AbstractBaseServiceProvider
         return new Plugin($c, $c->get(static::SID_FACTORY));
     }
 
+    /**
+     * Service definition for the plugin loader.
+     *
+     * @since [*next-version*]
+     *
+     * @param ContainerInterface $c        The container instance.
+     * @param mixed              $previous The previous instance, if any. Default: null
+     * @param array              $config   Any configuration data. Default: array()
+     *
+     * @return ModuleLoaderInterface
+     */
+    public function getPluginLoader(ContainerInterface $c, $previous = null, array $config = array())
+    {
+        return new PluginLoader();
     }
 
     /**
