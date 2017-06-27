@@ -14,7 +14,7 @@ class PluginLoader implements ModuleLoaderInterface
      *
      * @since [*next-version*]
      */
-    const WP_PLUGIN_FUNCTION_FILE = 'wp-admin/includes/plugin.php';
+    const WP_PLUGIN_FUNCTIONS_FILE = 'wp-admin/includes/plugin.php';
 
     /**
      * Any errors that occured during loading.
