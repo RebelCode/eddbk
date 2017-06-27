@@ -4,9 +4,7 @@ namespace RebelCode\EddBookings\Core\Di;
 
 use Dhii\Machine\LoopMachine;
 use Dhii\Modular\Loader\ModuleLoaderInterface;
-use Dhii\Wp\I18n\FormatTranslator;
 use Interop\Container\ContainerInterface;
-use RebelCode\EddBookings\Core\I18n\WpTranslator;
 use RebelCode\EddBookings\Core\Modular\Loader\PluginLoader;
 use RebelCode\EddBookings\Core\Modular\Module\PluginInterface;
 use RebelCode\EddBookings\Core\Plugin;
