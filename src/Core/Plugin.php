@@ -99,10 +99,10 @@ class Plugin extends AbstractModularPlugin implements PluginInterface
      */
     public function load()
     {
-        do_action('before_eddbk_run');
+        do_action('before_eddbk_load');
 
         $this->_load();
 
-        do_action('after_eddbk_run');
+        do_action('after_eddbk_load');
     }
 }
