@@ -18,18 +18,18 @@ function eddbk()
     static $instance = null;
 
     if ($instance === null) {
+        // Create container and service providers
         $container = new Container();
-        $instance  = new Plugin($container, $container);
-
-        // Service providers
         $mainSp    = new MainServiceProvider();
         $moduleSp  = new ModuleSystemServiceProvider(
             MainServiceProvider::SID_FACTORY,
             MainServiceProvider::SID_LOOP_MACHINE
         );
-
+        // Register service providers
         $container->register($mainSp);
         $container->register($moduleSp);
+
+        $instance  = $container->get(MainServiceProvider::SID_PLUGIN);
     }
 
     return $instance;
