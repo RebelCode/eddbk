@@ -9,6 +9,7 @@
             "email": "dev@rebelcode.com"
         }
     ],
+    "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
         "php": "^5.3 | ^7.0",
