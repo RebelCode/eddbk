@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8af25c135db782185c564a82af4704df",
+    "content-hash": "5461ec48ed57452387b3437c82754ee4",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -344,6 +344,60 @@
             ],
             "description": "Interfaces for DI container implementations",
             "time": "2017-02-02T13:12:09+00:00"
+        },
+        {
+            "name": "dhii/di-service-provider-abstract",
+            "version": "dev-task/initial-classes",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/service-provider-abstract.git",
+                "reference": "ace0dbd4ff29f3f45ec3f87c91cff223fa71267a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/service-provider-abstract/zipball/ace0dbd4ff29f3f45ec3f87c91cff223fa71267a",
+                "reference": "ace0dbd4ff29f3f45ec3f87c91cff223fa71267a",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/i18n-helper-base": "dev-develop",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Di\\": "src"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Common functionality for service providers",
+            "support": {
+                "source": "https://github.com/Dhii/service-provider-abstract/tree/task/initial-classes",
+                "issues": "https://github.com/Dhii/service-provider-abstract/issues"
+            },
+            "time": "2017-06-28 12:19:25"
         },
         {
             "name": "dhii/factory-interface",
@@ -790,12 +844,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+                "reference": "2cc4a01788191489dc7459446ba832fa79a216a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/2cc4a01788191489dc7459446ba832fa79a216a7",
+                "reference": "2cc4a01788191489dc7459446ba832fa79a216a7",
                 "shasum": ""
             },
             "require": {
@@ -831,7 +885,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-06-28 15:35:32"
         },
         {
             "name": "rebelcode/modular",
@@ -3285,6 +3339,7 @@
     "stability-flags": {
         "rebelcode/modular": 20,
         "dhii/i18n-helper-base": 20,
+        "dhii/di-service-provider-abstract": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
