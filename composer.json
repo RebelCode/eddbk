@@ -12,11 +12,9 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3 | ^7.0",
-        "dhii/di": "^0.1",
-        "rebelcode/modular": "dev-task/initial-classes",
-        "dhii/i18n-helper-base": "dev-develop",
-        "dhii/di-service-provider-abstract": "dev-task/initial-classes"
+        "php": "^5.4 | ^7.0",
+        "psr/container": "^1.0",
+        "rebelcode/modular": "dev-task/initial-classes"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -32,59 +30,5 @@
     "scripts": {
         "test": "phpunit",
         "csfix": "php-cs-fixer fix -vvv"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/modular"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-config-validator"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-config-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-loader"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-iterator-abstract"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-locator"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/RebelCode/module-factory-abstract"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/machine-loop-machine"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/data-key-value-aware-trait"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/callback-aware-trait"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/config-aware-trait"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/service-provider-abstract"
-        }
-    ]
+    }
 }
