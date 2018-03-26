@@ -13,8 +13,17 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
+        "oomphinc/composer-installers-extender": "^1.0",
+        "rebelcode/modular": "dev-task/initial-classes",
         "psr/container": "^1.0",
-        "rebelcode/modular": "dev-task/initial-classes"
+        "dhii/di-interface": "^0.1",
+        "dhii/data-object-abstract": "^0.1-alpha1",
+        "dhii/data-container-interface": "0.2.x-dev",
+        "dhii/data-container-base": "^0.1-alpha1",
+        "dhii/simple-cache-interface": "0.1.x-dev",
+        "dhii/memoize-memory": "0.1.x-dev",
+        "dhii/callback-abstract": "^0.1-alpha1",
+        "dhii/invocable-base": "^0.1-alpha1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
