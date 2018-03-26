@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RebelCode\\EddBookings\\": "src"
+            "RebelCode\\EddBookings\\Core\\": "src"
         }
     },
     "scripts": {
