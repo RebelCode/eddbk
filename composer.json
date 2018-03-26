@@ -39,5 +39,11 @@
     "scripts": {
         "test": "phpunit",
         "csfix": "php-cs-fixer fix -vvv"
+    },
+    "extra": {
+        "installer-types": ["rc-module"],
+        "installer-paths": {
+            "modules/{$name}/": ["type:rc-module"]
+        }
     }
 }
