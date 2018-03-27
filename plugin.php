@@ -32,6 +32,7 @@
 
 use Dhii\Modular\Module\ModuleInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
+use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\EddBookings\Core\PluginModule;
 use RebelCode\Modular\Finder\ModuleFileFinder;
 
@@ -87,10 +88,13 @@ function getEddBkCore()
         $fileFinder = new ModuleFileFinder(EDDBK_MODULES_DIR);
         $fileFinder = apply_filters('eddbk_core_module_file_finder', $fileFinder);
 
-        $containerFactory = new CompositeContainerFactory();
+        $containerFactory = new ContainerFactory();
         $containerFactory = apply_filters('eddbk_core_module_container_factory', $containerFactory);
 
-        $coreModule = new PluginModule($containerFactory, $fileFinder);
+        $compContainerFactory = new CompositeContainerFactory();
+        $compContainerFactory = apply_filters('eddbk_core_module_composite_container_factory', $compContainerFactory);
+
+        $coreModule = new PluginModule($containerFactory, $compContainerFactory, $fileFinder);
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 
         if (!$coreModule instanceof ModuleInterface) {
