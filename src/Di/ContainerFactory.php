@@ -51,7 +51,9 @@ class ContainerFactory implements ContainerFactoryInterface
     public function make($config = null)
     {
         $definitions = $this->_containerGet($config, ContainerFactoryInterface::K_CFG_DEFINITIONS);
-        $container = $this->_containerHas($config, static::K_CFG_PARENT_CONTAINER);
+        $container = $this->_containerHas($config, static::K_CFG_PARENT_CONTAINER)
+            ? $this->_containerGet($config, static::K_CFG_PARENT_CONTAINER)
+            : null;
 
         return new Container(new MemoryMemoizer(), $definitions, $container);
     }

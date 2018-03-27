@@ -49,7 +49,7 @@ class CompositeContainerFactory implements ContainerFactoryInterface
      */
     public function make($config = null)
     {
-        $containers = $this->_containerHas($config, static::K_CFG_CHILD_CONTAINERS);
+        $containers = $this->_containerGet($config, static::K_CFG_CHILD_CONTAINERS);
 
         return new CompositeContainer($containers);
     }
