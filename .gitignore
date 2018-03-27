@@ -4,6 +4,7 @@
 /test/log/
 /build/
 /modules/
+/dev-modules/
 /.idea/dictionaries/
 /.idea/codeStyles/
 /.idea/codeStyleSettings.xml
