@@ -93,7 +93,11 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      */
     public function setup()
     {
-        return $this->_setup();
+        $container =  $this->_setup();
+
+        $this->_setConfig(['modules' => $this->modules]);
+
+        return $container;
     }
 
     /**
