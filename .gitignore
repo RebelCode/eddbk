@@ -3,6 +3,7 @@
 /test/coverage/
 /test/log/
 /build/
+/modules/
 /.idea/dictionaries/
 /.idea/codeStyles/
 /.idea/codeStyleSettings.xml
