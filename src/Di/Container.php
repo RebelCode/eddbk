@@ -77,13 +77,13 @@ class Container implements ContainerInterface
     protected $cache;
 
     /**
-     * The container to pass to service definitions.
+     * The parent container.
      *
      * @since [*next-version*]
      *
      * @var ContainerInterface
      */
-    protected $container;
+    protected $parent;
 
     /**
      * Constructor.
@@ -92,13 +92,12 @@ class Container implements ContainerInterface
      *
      * @param CacheContainerInterface                            $cache       The service cache to use.
      * @param callable[]|ArrayAccess|stdClass|ContainerInterface $definitions The service definitions.
-     * @param ContainerInterface|null                            $container   The container to pass to service
-     *                                                                        definitions.
+     * @param ContainerInterface|null                            $parent      The parent container.
      */
-    public function __construct(CacheContainerInterface $cache, $definitions = [], ContainerInterface $container = null)
+    public function __construct(CacheContainerInterface $cache, $definitions = [], ContainerInterface $parent = null)
     {
         $this->cache = $cache;
-        $this->container = ($container === null) ? $this : $container;
+        $this->parent = $parent;
 
         $this->_setDataStore($definitions);
     }
@@ -146,7 +145,8 @@ class Container implements ContainerInterface
     protected function _createService($key)
     {
         $definition = $this->_getData($key);
-        $arguments = [$this->container];
+        $container = $this->parent === null? $this : $this->parent;
+        $arguments = [$container];
 
         return $this->_invokeCallable($definition, $arguments);
     }
