@@ -2,7 +2,6 @@
 
 namespace RebelCode\EddBookings\Core;
 
-use Dhii\Cache\MemoryMemoizer;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
 use Dhii\Invocation\InvokeCallableCapableTrait;
@@ -10,11 +9,8 @@ use Dhii\Modular\Config\ModuleConfigAwareInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
 use Psr\Container\ContainerInterface;
-use RebelCode\EddBookings\Core\Di\CompositeContainer;
-use RebelCode\EddBookings\Core\Di\Container;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
-use RebelCode\Modular\Module\AbstractBaseModule;
-use RebelCode\Modular\Module\ModularModuleTrait;
+use RebelCode\Modular\Module\AbstractBaseModularModule;
 use Traversable;
 
 /**
@@ -31,15 +27,8 @@ use Traversable;
  *
  * @since [*next-version*]
  */
-class PluginModule extends AbstractBaseModule implements ModuleConfigAwareInterface
+class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwareInterface
 {
-    /*
-     * Provides functionality for modules that load other modules.
-     *
-     * @since [*next-version*]
-     */
-    use ModularModuleTrait;
-
     /*
      * Provides functionality for invoking callable variables.
      *
@@ -84,12 +73,16 @@ class PluginModule extends AbstractBaseModule implements ModuleConfigAwareInterf
      *
      * @since [*next-version*]
      *
-     * @param ContainerFactoryInterface $containerFactory
-     * @param array|Traversable         $moduleFiles The module file paths of the modules to be loaded, if any.
+     * @param ContainerFactoryInterface $containerFactory     The factory for creating containers.
+     * @param ContainerFactoryInterface $compContainerFactory The factory for creating composite containers.
+     * @param array|Traversable         $moduleFiles          The module file paths of the modules to be loaded, if any.
      */
-    public function __construct(ContainerFactoryInterface $containerFactory, $moduleFiles = [])
-    {
-        $this->_initModule($containerFactory, EDDBK_SLUG, [], []);
+    public function __construct(
+        ContainerFactoryInterface $containerFactory,
+        ContainerFactoryInterface $compContainerFactory,
+        $moduleFiles = []
+    ) {
+        $this->_initModularModule($compContainerFactory, $containerFactory, EDDBK_SLUG, [], []);
         $this->moduleFiles = $moduleFiles;
     }
 
@@ -100,15 +93,7 @@ class PluginModule extends AbstractBaseModule implements ModuleConfigAwareInterf
      */
     public function setup()
     {
-        $container = $this->_setup();
-
-        $this->_setConfig(
-            [
-                'modules' => $this->modules,
-            ]
-        );
-
-        return $container;
+        return $this->_setup();
     }
 
     /**
@@ -139,16 +124,8 @@ class PluginModule extends AbstractBaseModule implements ModuleConfigAwareInterf
      *
      * @since [*next-version*]
      */
-    protected function _getModules()
+    protected function _getModules(ContainerInterface $container = null)
     {
-        $container = $this->_createContainer(
-            [
-                'container-factory' => function() {
-                    return $this->_getContainerFactory();
-                }
-            ]
-        );
-
         $modules = [];
         foreach ($this->moduleFiles as $_idx => $_file) {
             if (!file_exists($_file) || !is_readable($_file)) {
@@ -175,18 +152,14 @@ class PluginModule extends AbstractBaseModule implements ModuleConfigAwareInterf
      *
      * @since [*next-version*]
      */
-    protected function _createContainer($definitions = [])
+    protected function _getModuleInitContainer()
     {
-        return new Container(new MemoryMemoizer(), $definitions);
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    protected function _createCompositeContainer($containers)
-    {
-        return new CompositeContainer($containers);
+        return $this->_createContainer(
+            [
+                'container-factory' => function() {
+                    return $this->_getContainerFactory();
+                },
+            ]
+        );
     }
 }
