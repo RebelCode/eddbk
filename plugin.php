@@ -141,7 +141,9 @@ function runEddBkCore()
 function eddBkUnhandledException(Exception $exception)
 {
     if (EDDBK_SAFE_EXCEPTION_HANDLING) {
-        deactivate_plugins(plugin_basename(EDDBK_FILE));
+        add_action('admin_init', function () {
+            deactivate_plugins(plugin_basename(EDDBK_FILE));
+        });
     }
 
     eddBkDie($exception);
