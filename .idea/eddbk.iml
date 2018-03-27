@@ -38,8 +38,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/normalization-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/php-cs-fixer-config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/psr-14" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/simple-cache-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/wp-events" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/php-cs-fixer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />

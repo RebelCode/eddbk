@@ -77,6 +77,9 @@
       <path value="$PROJECT_DIR$/vendor/dhii/data-hierarchy-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/iterator-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-path-aware-interface" />
+      <path value="C:/xampp/htdocs/eddbk3" />
+      <path value="$PROJECT_DIR$/vendor/dhii/wp-events" />
+      <path value="$PROJECT_DIR$/vendor/dhii/psr-14" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

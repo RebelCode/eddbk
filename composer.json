@@ -41,9 +41,16 @@
         "csfix": "php-cs-fixer fix -vvv"
     },
     "extra": {
-        "installer-types": ["rc-module"],
+        "installer-types": [
+            "rc-module"
+        ],
         "installer-paths": {
-            "modules/{$name}/": ["type:rc-module"]
+            "modules/{$name}/": [
+                "type:rc-module"
+            ]
+        },
+        "comments": {
+            "oomphinc/composer-installers-extender": "Allows installation of module-type packages into the custom directory"
         }
     }
 }
