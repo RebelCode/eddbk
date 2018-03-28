@@ -188,8 +188,7 @@ function eddBkErrorPage(Exception $exception)
             ob_get_clean(),
             __('EDD Bookings Error', 'eddbk'),
             [
-                'response'  => 500,
-                'back_link' => true,
+                'response'  => 500
             ]
         );
     }
