@@ -74,7 +74,7 @@ class CompositeContainer implements ContainerInterface, WritableCompositeContain
             }
         }
 
-        throw $this->_createNotFoundException($this->__('Service "%1$s" not found', $id), null, null, $this, $id);
+        throw $this->_createNotFoundException($this->__('Service "%1$s" not found', [$id]), null, null, $this, $id);
     }
 
     /**
