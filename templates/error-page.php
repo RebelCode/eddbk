@@ -27,26 +27,41 @@ use RebelCode\EddBookings\Core\Util\ExceptionStackTrace;
     }
 </style>
 
-<h1><?= __('EDD Bookings Unhandled Exception') ?></h1>
+<h1><?= __('EDD Bookings Error') ?></h1>
 <p><code><?= $exception->getMessage() ?></code></p>
 
 <details class="exception-trace-details">
     <summary>
-        <strong><?= __('Exception stack trace:', 'eddbk'); ?></strong>
+        <strong><?= __('Click to view error details:', 'eddbk'); ?></strong>
     </summary>
     <pre class="exception-trace"><?= new ExceptionStackTrace($exception); ?></pre>
 </details>
 
+<?php if (EDDBK_SAFE_EXCEPTION_HANDLING) : ?>
 <p>
-    <?php if (EDDBK_SAFE_EXCEPTION_HANDLING) {
-        echo __('EDD Bookings has been deactivated.', 'eddbk');
-        if (current_user_can('edit_plugins')) {
-            ?>
-            <a href="<?= admin_url('plugins.php') ?>">
-                <?= __('Go to plugins page', 'eddbk') ?> &raquo;
-            </a>
-            <?php
-        }
-    }
+    <?= __('EDD Bookings experienced an error that could have broken your site.', 'eddbk') ?>
+    <?= __('The plugin has been automatically deactivated for you to prevent that.', 'eddbk'); ?>
+</p>
+<p>
+    <?=
+    sprintf(
+        _x(
+            'Please %s, copy/paste the above error details into your message and explain what page you were visiting when this error occurred.',
+            '%s = "contact EDD Bookings support"',
+            'eddbk'
+        ),
+        sprintf(
+            '<a href="http://eddbookings.com/contact" target="eddbk-support">%s</a>',
+            __('contact EDD Bookings support', 'eddbk')
+        )
+    );
     ?>
 </p>
+<hr/>
+<p>
+
+</p>
+<p>
+    <a href="<?= admin_url() ?>"><?= __('Go to Dashboard', 'eddbk') ?> &raquo;</a>
+</p>
+<?php endif; ?>
