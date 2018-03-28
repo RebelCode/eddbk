@@ -1859,12 +1859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "9a1f4a19d2941449c656e160ea529478f329981f"
+                "reference": "e04d26201401232aa9dfb2e9a8289222f608e6b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/9a1f4a19d2941449c656e160ea529478f329981f",
-                "reference": "9a1f4a19d2941449c656e160ea529478f329981f",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/e04d26201401232aa9dfb2e9a8289222f608e6b7",
+                "reference": "e04d26201401232aa9dfb2e9a8289222f608e6b7",
                 "shasum": ""
             },
             "require": {
@@ -1907,7 +1907,7 @@
                 }
             ],
             "description": "A module system.",
-            "time": "2018-03-27T13:27:38+00:00"
+            "time": "2018-03-28T15:42:00+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
