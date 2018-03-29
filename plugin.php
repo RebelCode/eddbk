@@ -95,7 +95,7 @@ function getEddBkCore()
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 
         if (!$coreModule instanceof ModuleInterface) {
-            wp_die('Core module is not a module instance.');
+            wp_die(__('Core module is not a module instance.', EDDBK_TEXT_DOMAIN));
         }
 
         $instance = $coreModule;
@@ -183,7 +183,7 @@ function eddBkErrorPage(Exception $exception)
         include EDDBK_DIR . '/templates/error-page.php';
         wp_die(
             ob_get_clean(),
-            __('EDD Bookings Error', 'eddbk'),
+            __('EDD Bookings Error', EDDBK_TEXT_DOMAIN),
             [
                 'response'  => 500
             ]
