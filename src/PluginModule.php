@@ -160,7 +160,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     {
         return $this->_createContainer(
             [
-                'container-factory' => function() {
+                'container_factory' => function() {
                     return $this->_getContainerFactory();
                 },
             ]
