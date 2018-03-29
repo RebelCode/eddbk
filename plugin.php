@@ -49,6 +49,8 @@ define('EDDBK_MODULES_DIR', EDDBK_DIR . DIRECTORY_SEPARATOR . 'modules');
 define('EDDBK_AUTOLOAD_FILE', EDDBK_VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php');
 // I18n
 define('EDDBK_TEXT_DOMAIN', 'eddbk');
+// Misc
+define('EDDBK_CONTACT_PAGE_URL', 'http://eddbookings.com/contact');
 
 // Deactivate plugin on unhandled exception? Can be defined in `wp-config.php`
 if (!defined('EDDBK_SAFE_EXCEPTION_HANDLING')) {

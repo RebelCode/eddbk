@@ -51,7 +51,8 @@ use RebelCode\EddBookings\Core\Util\ExceptionStackTrace;
             'eddbk'
         ),
         sprintf(
-            '<a href="http://eddbookings.com/contact" target="eddbk-support">%s</a>',
+            '<a href="%1$s" target="eddbk-support">%2$s</a>',
+            EDDBK_CONTACT_PAGE_URL,
             __('contact EDD Bookings support', 'eddbk')
         )
     );
