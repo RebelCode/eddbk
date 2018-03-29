@@ -48,9 +48,6 @@
             "modules/{$name}/": [
                 "type:rc-module"
             ]
-        },
-        "comments": {
-            "oomphinc/composer-installers-extender": "Allows installation of module-type packages into the custom directory"
         }
     }
 }
