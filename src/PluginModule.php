@@ -8,9 +8,13 @@ use Dhii\Invocation\InvokeCallableCapableTrait;
 use Dhii\Modular\Config\ModuleConfigAwareInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
+use Exception;
 use Psr\Container\ContainerInterface;
+use RebelCode\EddBookings\Core\Di\CompositeContainer;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
+use ReflectionClass;
+use ReflectionProperty;
 use Traversable;
 
 /**
@@ -94,6 +98,18 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     public function setup()
     {
         $container =  $this->_setup();
+
+        try {
+            if ($container instanceof CompositeContainer) {
+                // Quick fix for container composition
+                foreach ($container->getContainers() as $_child) {
+                    $_pParent = new ReflectionProperty($_child, 'parent');
+                    $_pParent->setAccessible(true);
+                    $_pParent->setValue($_child, $container);
+                }
+            }
+        } catch (Exception $exception) {
+        }
 
         $this->_setConfig(['modules' => $this->modules]);
 
