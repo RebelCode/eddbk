@@ -62,13 +62,8 @@ if (!file_exists(EDDBK_MODULES_DIR)) {
     mkdir(EDDBK_MODULES_DIR);
 }
 
-// Load composer autoloader if not already loaded
-if (!class_exists('Composer\Autoload\ClassLoader')) {
-    // If autoloader file does not exist, show error
-    if (!file_exists(EDDBK_AUTOLOAD_FILE)) {
-        eddBkDie(new RuntimeException(__('Composer autoload file does not exist', 'eddbk')));
-    }
-
+// If autoloader file does not exist, show error
+if (file_exists(EDDBK_AUTOLOAD_FILE)) {
     require EDDBK_AUTOLOAD_FILE;
 }
 
