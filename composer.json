@@ -1,7 +1,7 @@
 {
     "name": "rebelcode/edd-bookings",
     "description": "The new EDD Bookings.",
-    "type": "library",
+    "type": "wordpress-plugin",
     "license": "GPL-3.0",
     "authors": [
         {
