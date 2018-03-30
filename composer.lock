@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "621fe35e21dad0eb00d85b79d71d820b",
+    "content-hash": "ce21c00a8d83d3916b0f5f1766ab470e",
     "packages": [
         {
             "name": "composer/installers",
@@ -1859,12 +1859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "e04d26201401232aa9dfb2e9a8289222f608e6b7"
+                "reference": "7e334d1834b7b769933fe19aa737c3479e021ead"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/e04d26201401232aa9dfb2e9a8289222f608e6b7",
-                "reference": "e04d26201401232aa9dfb2e9a8289222f608e6b7",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/7e334d1834b7b769933fe19aa737c3479e021ead",
+                "reference": "7e334d1834b7b769933fe19aa737c3479e021ead",
                 "shasum": ""
             },
             "require": {
@@ -1872,7 +1872,7 @@
                 "dhii/container-helper-base": "0.1-alpha5",
                 "dhii/data-container-interface": "0.2.x-dev",
                 "dhii/data-key-value-aware-abstract": "0.1-alpha4",
-                "dhii/exception-helper-base": "0.1-alpha2",
+                "dhii/exception": "^0.1-alpha4",
                 "dhii/factory-interface": "0.1-alpha2",
                 "dhii/file-finder-abstract": "dev-task/create-finder",
                 "dhii/i18n-helper-base": "^0.1",
@@ -1907,7 +1907,7 @@
                 }
             ],
             "description": "A module system.",
-            "time": "2018-03-28T15:42:00+00:00"
+            "time": "2018-03-30T06:59:19+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
