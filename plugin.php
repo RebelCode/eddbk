@@ -91,7 +91,7 @@ function getEddBkCore()
         $compContainerFactory = new CompositeContainerFactory();
         $compContainerFactory = apply_filters('eddbk_core_module_composite_container_factory', $compContainerFactory);
 
-        $coreModule = new PluginModule($containerFactory, $compContainerFactory, $fileFinder);
+        $coreModule = new PluginModule(EDDBK_SLUG, $containerFactory, $compContainerFactory, $fileFinder);
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 
         if (!$coreModule instanceof ModuleInterface) {

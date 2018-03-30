@@ -8,12 +8,12 @@ use Dhii\Invocation\InvokeCallableCapableTrait;
 use Dhii\Modular\Config\ModuleConfigAwareInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
+use Dhii\Util\String\StringableInterface as Stringable;
 use Exception;
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainer;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
-use ReflectionClass;
 use ReflectionProperty;
 use Traversable;
 
@@ -77,16 +77,18 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      *
      * @since [*next-version*]
      *
+     * @param string|Stringable         $moduleKey            The key of the module.
      * @param ContainerFactoryInterface $containerFactory     The factory for creating containers.
      * @param ContainerFactoryInterface $compContainerFactory The factory for creating composite containers.
      * @param array|Traversable         $moduleFiles          The module file paths of the modules to be loaded, if any.
      */
     public function __construct(
+        $moduleKey,
         ContainerFactoryInterface $containerFactory,
         ContainerFactoryInterface $compContainerFactory,
         $moduleFiles = []
     ) {
-        $this->_initModularModule($compContainerFactory, $containerFactory, EDDBK_SLUG, [], []);
+        $this->_initModularModule($compContainerFactory, $containerFactory, $moduleKey, [], []);
         $this->moduleFiles = $moduleFiles;
     }
 
