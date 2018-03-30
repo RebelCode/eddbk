@@ -180,7 +180,7 @@ function eddBkErrorPage(Exception $exception)
 {
     if (is_admin()) {
         ob_start();
-        include EDDBK_DIR . '/templates/error-page.php';
+        include EDDBK_DIR . '/templates/error-page.phtml';
         wp_die(
             ob_get_clean(),
             __('EDD Bookings Error', EDDBK_TEXT_DOMAIN),
