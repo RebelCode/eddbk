@@ -3,6 +3,7 @@
 namespace RebelCode\EddBookings\Core;
 
 use Dhii\Data\Container\ContainerFactoryInterface;
+use Dhii\EventManager\WordPress\WpEventManager;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
 use Dhii\Invocation\InvokeCallableCapableTrait;
 use Dhii\Modular\Config\ModuleConfigAwareInterface;
@@ -12,6 +13,7 @@ use Dhii\Util\String\StringableInterface as Stringable;
 use Exception;
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainer;
+use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
 use ReflectionProperty;
@@ -181,6 +183,12 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
                 'container_factory' => function() {
                     return $this->_getContainerFactory();
                 },
+                'event_manager' => function () {
+                    return new WpEventManager(true);
+                },
+                'event_factory' => function() {
+                    return new EventFactory();
+                }
             ]
         );
     }
