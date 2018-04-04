@@ -11,19 +11,38 @@ use RebelCode\EddBookings\Core\Util\ExceptionStackTrace;
     }
 
     details.exception-trace-details {
-        padding: 10px 0;
+        padding: 0;
         border-top: 1px solid #dadada;
         border-bottom: 1px solid #dadada;
     }
 
     details.exception-trace-details summary {
         font-size: 14px;
+        padding: 10px 7px;
+        outline: 0;
+        cursor: pointer;
+        color: #8e485b;
+        background: #f2f2f2;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    details.exception-trace-details[open] summary {
+        color: #fafafa;
+        background: #b94b54;
     }
 
     pre.exception-trace {
         padding: 10px;
+        margin: 0;
         overflow-x: auto;
         background: #f2f2f2;
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
     }
 </style>
 
