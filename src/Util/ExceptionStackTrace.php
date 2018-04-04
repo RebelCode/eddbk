@@ -4,6 +4,7 @@ namespace RebelCode\EddBookings\Core\Util;
 
 use Dhii\Util\String\StringableInterface;
 use Exception;
+use Throwable;
 
 /**
  * Represents an exception's stack trace and provides functionality for outputting the stack trace with more detail than
@@ -29,9 +30,9 @@ class ExceptionStackTrace implements StringableInterface
      *
      * @since [*next-version*]
      *
-     * @param Exception $exception The exception instance.
+     * @param Exception|Throwable $exception The exception instance.
      */
-    public function __construct(Exception $exception)
+    public function __construct($exception)
     {
         $this->exception = $exception;
     }
@@ -39,13 +40,13 @@ class ExceptionStackTrace implements StringableInterface
     /**
      * Provides a more detailed exception trace than PHP.
      *
-     * @param Exception  $exception The exception whose trace to print.
+     * @param Exception|Throwable  $exception The exception whose trace to print.
      * @param array|null $seen      Array passed to recursive calls to accumulate trace lines already seen
      *                              leave as NULL when calling this function
      *
      * @return string The exception trace.
      */
-    protected function _stackTrace(Exception $exception, $seen = null)
+    protected function _stackTrace($exception, $seen = null)
     {
         $starter = $seen ? "Caused by:\n" : '';
 

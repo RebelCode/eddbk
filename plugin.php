@@ -33,6 +33,7 @@
 use Dhii\Modular\Module\ModuleInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
+use RebelCode\EddBookings\Core\ExceptionHandler;
 use RebelCode\EddBookings\Core\PluginModule;
 use RebelCode\Modular\Finder\ModuleFileFinder;
 
@@ -119,6 +120,7 @@ function runEddBkCore()
         add_filter(
             'plugins_loaded',
             function() use ($container) {
+                getEddBkErrorHandler()->register();
                 getEddBkCore()->run($container);
             },
             0
@@ -129,44 +131,41 @@ function runEddBkCore()
 }
 
 /**
- * Handles an unhandled exception.
+ * Retrieves the error handler for this plugin.
  *
  * @since [*next-version*]
  *
- * @param Exception $exception The exception that was unhandled.
+ * @return ExceptionHandler The error handler.
  */
-function eddBkUnhandledException(Exception $exception)
+function getEddBkErrorHandler()
 {
-    if (EDDBK_SAFE_EXCEPTION_HANDLING) {
-        add_action('admin_init', function () {
-            deactivate_plugins(plugin_basename(EDDBK_FILE));
+    static $instance = null;
+
+    if ($instance === null) {
+        $instance = new ExceptionHandler(function ($exception) {
+            if (EDDBK_SAFE_EXCEPTION_HANDLING) {
+                eddBkDeactivateSelf();
+            }
+
+            eddBkErrorPage($exception);
         });
     }
 
-    eddBkDie($exception);
+    return $instance;
 }
 
 /**
- * Shows the EDD Bookings exception error page.
+ * Deactivates this plugin.
  *
  * @since [*next-version*]
- *
- * @param Exception $exception The exception.
  */
-function eddBkDie(Exception $exception)
+function eddBkDeactivateSelf()
 {
-    if (did_action('admin_init')) {
-        eddBkErrorPage($exception);
-
-        return;
+    if (!function_exists('deactivate_plugin')) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
     }
 
-    add_action(
-        'admin_init',
-        function() use ($exception) {
-            eddBkErrorPage($exception);
-        }
-    );
+    deactivate_plugins(plugin_basename(EDDBK_FILE));
 }
 
 /**
@@ -174,9 +173,9 @@ function eddBkDie(Exception $exception)
  *
  * @since [*next-version*]
  *
- * @param Exception $exception The exception.
+ * @param Exception|Throwable $exception The exception.
  */
-function eddBkErrorPage(Exception $exception)
+function eddBkErrorPage($exception)
 {
     if (is_admin()) {
         ob_start();
