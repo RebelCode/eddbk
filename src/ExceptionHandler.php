@@ -134,7 +134,7 @@ class ExceptionHandler implements InvocableInterface
             $this->_invokeCallable($this->previous, func_get_args());
         }
 
-        $this->_invokeCallback(func_get_arg(0));
+        $this->_invokeCallback([func_get_arg(0)]);
         call_user_func_array($this->callback, [func_get_arg(0)]);
     }
 }
