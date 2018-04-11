@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "057a9d46de801825736b972a61a76121",
+    "content-hash": "1d631e6ef04c08649eeb04ae55bbf19c",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,66 +127,52 @@
             "time": "2017-12-29T09:13:20+00:00"
         },
         {
-            "name": "container-interop/container-interop",
-            "version": "1.2.0",
+            "name": "dhii/args-list-validation",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+                "url": "https://github.com/Dhii/args-list-validation.git",
+                "reference": "e9a07ee079bf38efd385e6dd3330642b64424792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "url": "https://api.github.com/repos/Dhii/args-list-validation/zipball/e9a07ee079bf38efd385e6dd3330642b64424792",
+                "reference": "e9a07ee079bf38efd385e6dd3330642b64424792",
                 "shasum": ""
             },
             "require": {
-                "psr/container": "^1.0"
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Interop\\Container\\": "src/Interop/Container/"
+                    "Dhii\\Validation\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14T19:40:03+00:00"
-        },
-        {
-            "name": "container-interop/service-provider",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/container-interop/service-provider.git",
-                "reference": "5cb38893b836edb00d3e1ace26c20ee1d29957cf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/service-provider/zipball/5cb38893b836edb00d3e1ace26c20ee1d29957cf",
-                "reference": "5cb38893b836edb00d3e1ace26c20ee1d29957cf",
-                "shasum": ""
-            },
-            "require": {
-                "container-interop/container-interop": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Container\\": "src/"
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
                 }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
             ],
-            "description": "Promoting container interoperability through standard service providers",
-            "homepage": "https://github.com/container-interop/service-provider",
-            "time": "2016-05-16T07:42:22+00:00"
+            "description": "Validation of an arguments list",
+            "time": "2018-03-12T04:34:54+00:00"
         },
         {
             "name": "dhii/cache-abstract",
@@ -246,16 +232,16 @@
         },
         {
             "name": "dhii/callback-abstract",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/callback-abstract.git",
-                "reference": "42924b3294200a4f98593734123bb4519637ca43"
+                "reference": "43ed4e99fc6ccdaf46a25d06da482a2fba8d9b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/callback-abstract/zipball/42924b3294200a4f98593734123bb4519637ca43",
-                "reference": "42924b3294200a4f98593734123bb4519637ca43",
+                "url": "https://api.github.com/repos/Dhii/callback-abstract/zipball/43ed4e99fc6ccdaf46a25d06da482a2fba8d9b19",
+                "reference": "43ed4e99fc6ccdaf46a25d06da482a2fba8d9b19",
                 "shasum": ""
             },
             "require": {
@@ -266,11 +252,14 @@
                 "dhii/invocable-interface": "^0.1",
                 "dhii/php-cs-fixer-config": "dev-php-5.3",
                 "dhii/stringable-interface": "^0.1",
+                "dhii/validation-interface": "0.2-alpha1|0.2-alpha2",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
             "suggest": {
-                "dhii/normalization-helper-base": "To normalize lists and other types"
+                "dhii/args-list-validation": "For args list validation logic",
+                "dhii/normalization-helper-base": "To normalize lists and other types",
+                "dhii/validation-base": "For validation exceptions and their factories"
             },
             "type": "library",
             "extra": {
@@ -294,20 +283,20 @@
                 }
             ],
             "description": "Abstract functionality for working with callbacks.",
-            "time": "2018-02-12T16:47:00+00:00"
+            "time": "2018-04-04T14:57:27+00:00"
         },
         {
             "name": "dhii/collections-interface",
-            "version": "dev-develop",
+            "version": "v0.2-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/collections-interface.git",
-                "reference": "60e64e215cf3ef1ab2dc52c517ef4af866828a9b"
+                "reference": "82ee5552d6ccf300ef85d57866c88b2a7a74fbd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/collections-interface/zipball/60e64e215cf3ef1ab2dc52c517ef4af866828a9b",
-                "reference": "60e64e215cf3ef1ab2dc52c517ef4af866828a9b",
+                "url": "https://api.github.com/repos/Dhii/collections-interface/zipball/82ee5552d6ccf300ef85d57866c88b2a7a74fbd5",
+                "reference": "82ee5552d6ccf300ef85d57866c88b2a7a74fbd5",
                 "shasum": ""
             },
             "require": {
@@ -343,20 +332,74 @@
                 }
             ],
             "description": "A highly ISP-compliant collection of interfaces that represent maps and lists.",
-            "time": "2018-01-28T12:18:57+00:00"
+            "time": "2018-04-09T10:46:45+00:00"
         },
         {
-            "name": "dhii/container-helper-base",
-            "version": "v0.1-alpha5",
+            "name": "dhii/composite-container",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dhii/container-helper-base.git",
-                "reference": "701dc8e6c5cbf5ab998fae8a7c178da86d69c4f1"
+                "url": "https://github.com/Dhii/composite-container.git",
+                "reference": "e04113b2113cf055750908b56d8fbc6ec252e2fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/container-helper-base/zipball/701dc8e6c5cbf5ab998fae8a7c178da86d69c4f1",
-                "reference": "701dc8e6c5cbf5ab998fae8a7c178da86d69c4f1",
+                "url": "https://api.github.com/repos/Dhii/composite-container/zipball/e04113b2113cf055750908b56d8fbc6ec252e2fc",
+                "reference": "e04113b2113cf055750908b56d8fbc6ec252e2fc",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/container-helper-base": "^0.1-alpha7",
+                "dhii/data-container-base": "^0.1-alpha2",
+                "dhii/data-container-interface": "^0.1 | ^0.2",
+                "dhii/exception": "^0.1-alpha5",
+                "dhii/i18n-helper-base": "^0.1",
+                "dhii/normalization-helper-base": "^0.1",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Data\\Container\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A composite container implementation",
+            "time": "2018-04-11T11:00:55+00:00"
+        },
+        {
+            "name": "dhii/container-helper-base",
+            "version": "v0.1-alpha7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/container-helper-base.git",
+                "reference": "622671534124d95c1478a744e4d903b4d071f674"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/container-helper-base/zipball/622671534124d95c1478a744e4d903b4d071f674",
+                "reference": "622671534124d95c1478a744e4d903b4d071f674",
                 "shasum": ""
             },
             "require": {
@@ -392,7 +435,7 @@
                 }
             ],
             "description": "Helper functionality for working with container.",
-            "time": "2018-02-16T13:22:06+00:00"
+            "time": "2018-04-10T15:03:55+00:00"
         },
         {
             "name": "dhii/data-container-abstract",
@@ -782,31 +825,56 @@
             "time": "2017-07-25T12:20:22+00:00"
         },
         {
-            "name": "dhii/di-interface",
-            "version": "v0.1",
+            "name": "dhii/di",
+            "version": "v0.2-alpha1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Dhii/di-interface.git",
-                "reference": "0320846a577d68b761e29acd5d4db40d88cc4f98"
+                "url": "https://github.com/Dhii/di.git",
+                "reference": "293bd78c665c88464137dea467ea3b05de962fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/di-interface/zipball/0320846a577d68b761e29acd5d4db40d88cc4f98",
-                "reference": "0320846a577d68b761e29acd5d4db40d88cc4f98",
+                "url": "https://api.github.com/repos/Dhii/di/zipball/293bd78c665c88464137dea467ea3b05de962fcc",
+                "reference": "293bd78c665c88464137dea467ea3b05de962fcc",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "^1.1",
-                "container-interop/service-provider": "^0.3",
-                "php": "^5.3 | ^7.0"
+                "dhii/args-list-validation": "^0.1",
+                "dhii/callback-abstract": "^0.1-alpha5",
+                "dhii/container-helper-base": "^0.1-alpha5",
+                "dhii/data-container-abstract": "^0.1-alpha1",
+                "dhii/data-container-base": "^0.1-alpha2",
+                "dhii/data-container-interface": "^0.1 | ^0.2",
+                "dhii/data-object-abstract": "^0.1-alpha1",
+                "dhii/di-abstract": "^0.2-alpha1",
+                "dhii/exception": "^0.1-alpha5",
+                "dhii/i18n-helper-base": "^0.1",
+                "dhii/invocable-base": "^0.1",
+                "dhii/normalization-helper-base": "^0.1",
+                "dhii/validation-base": "^0.2-alpha2",
+                "php": "^5.4 | ^7.0"
+            },
+            "provide": {
+                "container-interop/container-interop-implementation": "^1.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/exception-interface": "^0.2-alpha3",
+                "dhii/invocable-interface": "^0.1",
+                "dhii/memoize-memory": "^0.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/simple-cache-interface": "^0.1",
+                "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Dhii\\Di\\": "src/"
@@ -822,8 +890,66 @@
                     "email": "development@dhii.co"
                 }
             ],
-            "description": "Interfaces for DI container implementations",
-            "time": "2017-02-02T13:12:09+00:00"
+            "description": "A DI container implementation",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "di"
+            ],
+            "time": "2018-04-11T12:44:04+00:00"
+        },
+        {
+            "name": "dhii/di-abstract",
+            "version": "v0.2-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/di-abstract.git",
+                "reference": "badfa20def27e5c6883f1c1078c98603b7bee319"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/di-abstract/zipball/badfa20def27e5c6883f1c1078c98603b7bee319",
+                "reference": "badfa20def27e5c6883f1c1078c98603b7bee319",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/data-container-interface": "^0.2",
+                "dhii/exception-interface": "^0.2-alpha3",
+                "dhii/invocable-interface": "^0.1",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/simple-cache-interface": "^0.1",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Di\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Base abstract classes for DI container implementations",
+            "time": "2018-04-01T15:17:25+00:00"
         },
         {
             "name": "dhii/event-interface",
@@ -876,16 +1002,16 @@
         },
         {
             "name": "dhii/exception",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/exception.git",
-                "reference": "848b8e2b7fe3a38456707bd6292baf1e7caaf9e0"
+                "reference": "f7afb934c970a4e167b2c7ba24fa3df50714e0fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/exception/zipball/848b8e2b7fe3a38456707bd6292baf1e7caaf9e0",
-                "reference": "848b8e2b7fe3a38456707bd6292baf1e7caaf9e0",
+                "url": "https://api.github.com/repos/Dhii/exception/zipball/f7afb934c970a4e167b2c7ba24fa3df50714e0fe",
+                "reference": "f7afb934c970a4e167b2c7ba24fa3df50714e0fe",
                 "shasum": ""
             },
             "require": {
@@ -926,7 +1052,7 @@
                 }
             ],
             "description": "Standards-compliant exception classes",
-            "time": "2018-03-16T13:46:13+00:00"
+            "time": "2018-04-02T15:18:58+00:00"
         },
         {
             "name": "dhii/exception-interface",
@@ -978,28 +1104,31 @@
         },
         {
             "name": "dhii/factory-base",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/factory-base.git",
-                "reference": "4afe3cb4db0a94252cc5b339522c28e7a4212165"
+                "reference": "eb6694178068ec58e0f2de9243f0eb98844511de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/factory-base/zipball/4afe3cb4db0a94252cc5b339522c28e7a4212165",
-                "reference": "4afe3cb4db0a94252cc5b339522c28e7a4212165",
+                "url": "https://api.github.com/repos/Dhii/factory-base/zipball/eb6694178068ec58e0f2de9243f0eb98844511de",
+                "reference": "eb6694178068ec58e0f2de9243f0eb98844511de",
                 "shasum": ""
             },
             "require": {
-                "dhii/callback-abstract": "0.1-alpha2",
-                "dhii/container-helper-base": "0.1-alpha5",
-                "dhii/data-container-base": "0.1-alpha2",
-                "dhii/exception": "0.1-alpha4",
-                "dhii/factory-interface": "0.1-alpha1 | 0.1-alpha2",
-                "dhii/i18n-helper-base": "0.1-alpha1",
+                "dhii/args-list-validation": "^0.1-alpha1",
+                "dhii/callback-abstract": "^0.1-alpha2",
+                "dhii/container-helper-base": "^0.1-alpha5",
+                "dhii/data-container-base": "^0.1-alpha2",
+                "dhii/exception": "^0.1-alpha4",
+                "dhii/factory-interface": "^0.1-alpha1",
+                "dhii/i18n-helper-base": "^0.1-alpha1",
                 "dhii/invocable-base": "^0.1-alpha1",
-                "dhii/invocable-interface": "0.1-alpha1",
-                "dhii/normalization-helper-base": "0.1-alpha1 | 0.1-alpha2",
+                "dhii/invocable-interface": "^0.1-alpha1",
+                "dhii/iterator-helper-base": "^0.1-alpha2",
+                "dhii/normalization-helper-base": "^0.1-alpha1",
+                "dhii/validation-base": "^0.2-alpha1",
                 "php": "^5.4 | ^7.0"
             },
             "require-dev": {
@@ -1010,12 +1139,24 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Dhii\\Factory\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1026,7 +1167,11 @@
                 }
             ],
             "description": "Base functionality for factories.",
-            "time": "2018-03-22T14:24:17+00:00"
+            "support": {
+                "source": "https://github.com/Dhii/factory-base/tree/v0.1-alpha3",
+                "issues": "https://github.com/Dhii/factory-base/issues"
+            },
+            "time": "2018-04-09T16:03:15+00:00"
         },
         {
             "name": "dhii/factory-interface",
@@ -1518,20 +1663,20 @@
         },
         {
             "name": "dhii/map",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/map.git",
-                "reference": "32cab23c0884c61d66bf02ee6344dbfc301a3174"
+                "reference": "271cf27ac64e1c18d0889ff17cacb319ffa23543"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/map/zipball/32cab23c0884c61d66bf02ee6344dbfc301a3174",
-                "reference": "32cab23c0884c61d66bf02ee6344dbfc301a3174",
+                "url": "https://api.github.com/repos/Dhii/map/zipball/271cf27ac64e1c18d0889ff17cacb319ffa23543",
+                "reference": "271cf27ac64e1c18d0889ff17cacb319ffa23543",
                 "shasum": ""
             },
             "require": {
-                "dhii/collections-interface": "^0.2",
+                "dhii/collections-interface": "^0.2-alpha3",
                 "dhii/container-helper-base": "^0.1-alpha5",
                 "dhii/data-container-base": "^0.1-alpha2",
                 "dhii/data-container-interface": "^0.1 | ^0.2",
@@ -1569,31 +1714,33 @@
                 }
             ],
             "description": "An iterable container implementation.",
-            "time": "2018-03-21T16:47:36+00:00"
+            "time": "2018-04-06T12:46:26+00:00"
         },
         {
             "name": "dhii/memoize-memory",
-            "version": "dev-develop",
+            "version": "v0.2-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/memoize-memory.git",
-                "reference": "85448e2f586c78d9086988b25b08611a24b6e6e4"
+                "reference": "4e93d600dfb464ab5b6d51bffe772adbfd9b94fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/memoize-memory/zipball/85448e2f586c78d9086988b25b08611a24b6e6e4",
-                "reference": "85448e2f586c78d9086988b25b08611a24b6e6e4",
+                "url": "https://api.github.com/repos/Dhii/memoize-memory/zipball/4e93d600dfb464ab5b6d51bffe772adbfd9b94fa",
+                "reference": "4e93d600dfb464ab5b6d51bffe772adbfd9b94fa",
                 "shasum": ""
             },
             "require": {
+                "dhii/args-list-validation": "^0.1-alpha1",
                 "dhii/cache-abstract": "^0.1",
-                "dhii/callback-abstract": "^0.1-alpha2",
+                "dhii/callback-abstract": "^0.1-alpha4",
                 "dhii/container-helper-base": "^0.1-alpha5",
                 "dhii/data-container-base": "^0.1-alpha2",
                 "dhii/data-object-abstract": "^0.1",
                 "dhii/invocable-base": "^0.1",
                 "dhii/map": "^0.1",
                 "dhii/simple-cache-interface": "^0.1",
+                "dhii/validation-base": "^0.2-alpha2",
                 "php": "^5.4 | ^7.0"
             },
             "require-dev": {
@@ -1608,7 +1755,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
+                    "dev-develop": "0.2.x-dev"
                 }
             },
             "autoload": {
@@ -1627,7 +1774,7 @@
                 }
             ],
             "description": "An in-memory memoizer implementation.",
-            "time": "2018-03-23T06:24:33+00:00"
+            "time": "2018-04-03T13:41:36+00:00"
         },
         {
             "name": "dhii/modular-interface",
@@ -1806,6 +1953,58 @@
             "time": "2016-07-06T18:43:19+00:00"
         },
         {
+            "name": "dhii/set",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/set.git",
+                "reference": "84a9ebe4466c1f53fa5d2764eaf0d5fdbd0c99b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/set/zipball/84a9ebe4466c1f53fa5d2764eaf0d5fdbd0c99b3",
+                "reference": "84a9ebe4466c1f53fa5d2764eaf0d5fdbd0c99b3",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "^0.2-alpha4",
+                "dhii/exception": "^0.1-alpha4",
+                "dhii/i18n-helper-base": "^0.1",
+                "dhii/normalization-helper-base": "^0.1-alpha2",
+                "dhii/stringable-interface": "^0.1",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Collection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A set implementation",
+            "time": "2018-04-11T12:53:23+00:00"
+        },
+        {
             "name": "dhii/simple-cache-interface",
             "version": "dev-develop",
             "source": {
@@ -1898,21 +2097,180 @@
             "time": "2017-01-23T15:08:20+00:00"
         },
         {
+            "name": "dhii/validation-abstract",
+            "version": "v0.2-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/validation-abstract.git",
+                "reference": "dff998ba3476927a0fc6d10bb022425de8f1c844"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/validation-abstract/zipball/dff998ba3476927a0fc6d10bb022425de8f1c844",
+                "reference": "dff998ba3476927a0fc6d10bb022425de8f1c844",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/validation-interface": "^0.2",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/i18n-helper-base": "For string internationalization",
+                "dhii/iterator-helper-base": "For implementations of iterable-related helper functionality",
+                "dhii/normalization-helper-base": "For simple types normalization",
+                "dhii/stringable-interface": "To be able to pass stringable objects instead of strings",
+                "dhii/validation-interface": "Needed to be able to create exceptions that are expected to be thrown"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Common abstract functionality for validation.",
+            "time": "2018-03-07T21:05:39+00:00"
+        },
+        {
+            "name": "dhii/validation-base",
+            "version": "v0.2-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/validation-base.git",
+                "reference": "9e75c5f886a2403c6989c36c2d4ffcfae158172e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/validation-base/zipball/9e75c5f886a2403c6989c36c2d4ffcfae158172e",
+                "reference": "9e75c5f886a2403c6989c36c2d4ffcfae158172e",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception": "^0.1-alpha4",
+                "dhii/i18n-helper-base": "^0.1",
+                "dhii/iterator-helper-base": "^0.1",
+                "dhii/normalization-helper-base": "^0.1",
+                "dhii/validation-abstract": "^0.2",
+                "dhii/validation-interface": "^0.2-alpha2",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Base concrete functionality for validation.",
+            "time": "2018-04-02T13:31:36+00:00"
+        },
+        {
+            "name": "dhii/validation-interface",
+            "version": "v0.2-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/validation-interface.git",
+                "reference": "520a35f21f4dd0db30a193421b5ca75c684efe96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/validation-interface/zipball/520a35f21f4dd0db30a193421b5ca75c684efe96",
+                "reference": "520a35f21f4dd0db30a193421b5ca75c684efe96",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception-interface": "^0.1|^0.2",
+                "dhii/factory-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A base interface for validators",
+            "time": "2018-03-07T12:54:40+00:00"
+        },
+        {
             "name": "dhii/wp-events",
             "version": "dev-task/wip-refactoring",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/wp-events.git",
-                "reference": "f4f49fccffd8f215ce3fc1f8d592d824a86b6d55"
+                "reference": "38e27d021df5914ad04c2ca2849eb709ca179fdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/f4f49fccffd8f215ce3fc1f8d592d824a86b6d55",
-                "reference": "f4f49fccffd8f215ce3fc1f8d592d824a86b6d55",
+                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/38e27d021df5914ad04c2ca2849eb709ca179fdd",
+                "reference": "38e27d021df5914ad04c2ca2849eb709ca179fdd",
                 "shasum": ""
             },
             "require": {
-                "dhii/exception": "0.1-alpha4",
+                "dhii/exception": "^0.1-alpha4",
                 "dhii/i18n-helper-base": "^0.1",
                 "dhii/normalization-helper-base": "^0.1-alpha2",
                 "dhii/psr-14": "^0.1",
@@ -1948,7 +2306,7 @@
                 }
             ],
             "description": "A PSR-14 compliant event wrapper for WordPress.",
-            "time": "2018-03-30T16:03:51+00:00"
+            "time": "2018-04-06T12:06:41+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -2047,28 +2405,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "c36c475eb329b3a27078f5f3c4b2d218054491c5"
+                "reference": "795595dd087bfa7d2400ea055a1cae007a936546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/c36c475eb329b3a27078f5f3c4b2d218054491c5",
-                "reference": "c36c475eb329b3a27078f5f3c4b2d218054491c5",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/795595dd087bfa7d2400ea055a1cae007a936546",
+                "reference": "795595dd087bfa7d2400ea055a1cae007a936546",
                 "shasum": ""
             },
             "require": {
                 "dhii/callback-abstract": "^0.1-alpha1",
-                "dhii/container-helper-base": "0.1-alpha5",
+                "dhii/collections-interface": "^0.2-alpha4",
+                "dhii/container-helper-base": "^0.1-alpha5",
                 "dhii/data-container-interface": "0.2.x-dev",
-                "dhii/data-key-value-aware-abstract": "0.1-alpha4",
+                "dhii/data-key-value-aware-abstract": "^0.1-alpha4",
                 "dhii/event-interface": "^0.2-alpha1",
                 "dhii/exception": "^0.1-alpha4",
-                "dhii/factory-base": "^0.1-alpha1",
+                "dhii/factory-base": "^0.1-alpha3",
                 "dhii/factory-interface": "^0.1-alpha2",
                 "dhii/file-finder-abstract": "dev-task/create-finder",
                 "dhii/i18n-helper-base": "^0.1",
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/module-interface": "^0.1",
-                "dhii/normalization-helper-base": "0.1-alpha2",
+                "dhii/normalization-helper-base": "^0.1-alpha2",
                 "dhii/wp-events": "dev-task/wip-refactoring",
                 "php": "^5.4 | ^7.0",
                 "psr/container": "^1.0",
@@ -2087,7 +2446,14 @@
                     "RebelCode\\Modular\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
             "license": [
                 "GPL-3.0"
             ],
@@ -2098,7 +2464,11 @@
                 }
             ],
             "description": "A module system.",
-            "time": "2018-04-02T11:50:00+00:00"
+            "support": {
+                "source": "https://github.com/RebelCode/modular/tree/task/initial-classes",
+                "issues": "https://github.com/RebelCode/modular/issues"
+            },
+            "time": "2018-04-11T14:49:46+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
@@ -3459,7 +3829,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -3515,16 +3885,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "390fa4899dbcc47bd41935d87c4572ea4305d3ce"
+                "reference": "7f78892d900c72a40acd1fe793c856ef0c110f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/390fa4899dbcc47bd41935d87c4572ea4305d3ce",
-                "reference": "390fa4899dbcc47bd41935d87c4572ea4305d3ce",
+                "url": "https://api.github.com/repos/symfony/console/zipball/7f78892d900c72a40acd1fe793c856ef0c110f26",
+                "reference": "7f78892d900c72a40acd1fe793c856ef0c110f26",
                 "shasum": ""
             },
             "require": {
@@ -3572,20 +3942,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-19T21:13:58+00:00"
+            "time": "2018-04-03T05:20:27+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "ce92aa63881b80f79042962a3fbea217f5ac9b4e"
+                "reference": "4486d2be5e068b51fece4c8551c14e709f573c8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/ce92aa63881b80f79042962a3fbea217f5ac9b4e",
-                "reference": "ce92aa63881b80f79042962a3fbea217f5ac9b4e",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/4486d2be5e068b51fece4c8551c14e709f573c8d",
+                "reference": "4486d2be5e068b51fece4c8551c14e709f573c8d",
                 "shasum": ""
             },
             "require": {
@@ -3629,20 +3999,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-28T18:22:50+00:00"
+            "time": "2018-04-03T05:20:27+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "f5d2d7dcc33b89e20c2696ea9afcbddf6540081c"
+                "reference": "9b69aad7d4c086dc94ebade2d5eb9145da5dac8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/f5d2d7dcc33b89e20c2696ea9afcbddf6540081c",
-                "reference": "f5d2d7dcc33b89e20c2696ea9afcbddf6540081c",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/9b69aad7d4c086dc94ebade2d5eb9145da5dac8c",
+                "reference": "9b69aad7d4c086dc94ebade2d5eb9145da5dac8c",
                 "shasum": ""
             },
             "require": {
@@ -3689,11 +4059,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-02-11T16:53:59+00:00"
+            "time": "2018-04-06T07:35:03+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -3742,16 +4112,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "3cf7b50fa4cd6c2c4aa504b85196b12e386659d4"
+                "reference": "423746fc18ccf31f9abec43e4f078bb6e024b2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/3cf7b50fa4cd6c2c4aa504b85196b12e386659d4",
-                "reference": "3cf7b50fa4cd6c2c4aa504b85196b12e386659d4",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/423746fc18ccf31f9abec43e4f078bb6e024b2d5",
+                "reference": "423746fc18ccf31f9abec43e4f078bb6e024b2d5",
                 "shasum": ""
             },
             "require": {
@@ -3787,7 +4157,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-28T18:22:50+00:00"
+            "time": "2018-04-04T13:38:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3850,16 +4220,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "c2fc900ee54e1e44aa956eae8ba041a5347ba93c"
+                "reference": "ee2c91470ff262b1a00aec27875d38594aa87629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/c2fc900ee54e1e44aa956eae8ba041a5347ba93c",
-                "reference": "c2fc900ee54e1e44aa956eae8ba041a5347ba93c",
+                "url": "https://api.github.com/repos/symfony/process/zipball/ee2c91470ff262b1a00aec27875d38594aa87629",
+                "reference": "ee2c91470ff262b1a00aec27875d38594aa87629",
                 "shasum": ""
             },
             "require": {
@@ -3895,11 +4265,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-03-19T21:11:56+00:00"
+            "time": "2018-04-03T05:20:27+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -3948,7 +4318,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.37",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -4000,9 +4370,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "rebelcode/modular": 20,
-        "dhii/data-container-interface": 20,
-        "dhii/simple-cache-interface": 20,
-        "dhii/memoize-memory": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": true,

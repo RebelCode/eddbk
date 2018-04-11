@@ -2,6 +2,7 @@
 
 namespace RebelCode\EddBookings\Core\Di;
 
+use Dhii\Data\Container\CompositeContainer;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\Data\Container\ContainerGetCapableTrait;
 use Dhii\Data\Container\ContainerHasCapableTrait;

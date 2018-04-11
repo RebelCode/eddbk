@@ -3,15 +3,18 @@
 namespace RebelCode\EddBookings\Core\Di;
 
 use Dhii\Cache\MemoryMemoizer;
+use Dhii\Data\Container\ContainerAwareTrait;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\Data\Container\ContainerGetCapableTrait;
 use Dhii\Data\Container\ContainerHasCapableTrait;
 use Dhii\Data\Container\CreateContainerExceptionCapableTrait;
 use Dhii\Data\Container\CreateNotFoundExceptionCapableTrait;
 use Dhii\Data\Object\NormalizeKeyCapableTrait;
+use Dhii\Di\ContainerAwareCachingContainer;
 use Dhii\Exception\CreateInvalidArgumentExceptionCapableTrait;
 use Dhii\I18n\StringTranslatingTrait;
 use Dhii\Util\Normalization\NormalizeStringCapableTrait;
+use Psr\Container\ContainerInterface;
 
 /**
  * A factory for creating containers for EDD Bookings.
@@ -73,6 +76,18 @@ class ContainerFactory implements ContainerFactoryInterface
     const K_CFG_PARENT_CONTAINER = 'parent';
 
     /**
+     * Constructor.
+     *
+     * @since [*next-version*]
+     *4
+     * @param ContainerInterface|null $parentContainer The default parent container to assign to created containers.
+     */
+    public function __construct(ContainerInterface $parentContainer = null)
+    {
+        $this->_setContainer($parentContainer);
+    }
+
+    /**
      * {@inheritdoc}
      *
      * @since [*next-version*]
@@ -82,8 +97,8 @@ class ContainerFactory implements ContainerFactoryInterface
         $definitions = $this->_containerGet($config, ContainerFactoryInterface::K_CFG_DEFINITIONS);
         $container = $this->_containerHas($config, static::K_CFG_PARENT_CONTAINER)
             ? $this->_containerGet($config, static::K_CFG_PARENT_CONTAINER)
-            : null;
+            : $this->_getContainer();
 
-        return new Container(new MemoryMemoizer(), $definitions, $container);
+        return new ContainerAwareCachingContainer($definitions, new MemoryMemoizer(), $container);
     }
 }

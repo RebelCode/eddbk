@@ -2,20 +2,36 @@
 
 namespace RebelCode\EddBookings\Core;
 
+use Dhii\Collection\AddCapableOrderedList;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\EventManager\WordPress\WpEventManager;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
+use Dhii\Invocation\CreateReflectionForCallableCapableTrait;
 use Dhii\Invocation\InvokeCallableCapableTrait;
+use Dhii\Invocation\NormalizeCallableCapableTrait;
+use Dhii\Invocation\NormalizeMethodCallableCapableTrait;
+use Dhii\Invocation\ValidateParamsCapableTrait;
+use Dhii\Iterator\CountIterableCapableTrait;
+use Dhii\Iterator\ResolveIteratorCapableTrait;
 use Dhii\Modular\Config\ModuleConfigAwareInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
+use Dhii\Util\Normalization\NormalizeIntCapableTrait;
+use Dhii\Util\Normalization\NormalizeIterableCapableTrait;
 use Dhii\Util\String\StringableInterface as Stringable;
+use Dhii\Validation\CreateValidationFailedExceptionCapableTrait;
+use Dhii\Validation\GetArgsListErrorsCapableTrait;
+use Dhii\Validation\GetValueTypeErrorCapableTrait;
 use Exception;
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainer;
+use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
+use ReflectionException;
+use ReflectionFunction;
+use ReflectionMethod;
 use ReflectionProperty;
 use Traversable;
 
@@ -35,13 +51,6 @@ use Traversable;
  */
 class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwareInterface
 {
-    /*
-     * Provides functionality for invoking callable variables.
-     *
-     * @since [*next-version*]
-     */
-    use InvokeCallableCapableTrait;
-
     /*
      * Provides array normalization functionality.
      *
@@ -103,18 +112,6 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     {
         $container =  $this->_setup();
 
-        try {
-            if ($container instanceof CompositeContainer) {
-                // Quick fix for container composition
-                foreach ($container->getContainers() as $_child) {
-                    $_pParent = new ReflectionProperty($_child, 'parent');
-                    $_pParent->setAccessible(true);
-                    $_pParent->setValue($_child, $container);
-                }
-            }
-        } catch (Exception $exception) {
-        }
-
         $this->_setConfig(['modules' => $this->modules]);
 
         return $container;
@@ -161,7 +158,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
             }
 
             $_callback = require_once($_file);
-            $_module = $this->_invokeCallable($_callback, [$container]);
+            $_module = call_user_func_array($_callback, [$container]);
 
             if ($_module instanceof ModuleInterface) {
                 $modules[] = $_module;
@@ -176,20 +173,33 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      *
      * @since [*next-version*]
      */
-    protected function _getModuleInitContainer()
+    protected function _getInitialContainer(ContainerInterface $parent = null)
     {
         return $this->_createContainer(
             [
-                'container_factory' => function() {
-                    return $this->_getContainerFactory();
+                'composite_container_factory' => function() {
+                    return $this->_getCompositeContainerFactory();
+                },
+                'container_factory' => function() use ($parent) {
+                    return new ContainerFactory($parent);
                 },
                 'event_manager' => function () {
                     return new WpEventManager(true);
                 },
                 'event_factory' => function() {
                     return new EventFactory();
-                }
+                },
             ]
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @since [*next-version*]
+     */
+    protected function _createAddCapableList()
+    {
+        return new AddCapableOrderedList();
     }
 }
