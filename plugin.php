@@ -112,22 +112,20 @@ function getEddBkCore()
  */
 function runEddBkCore()
 {
-    try {
-        // Set up core module
-        $container = getEddBkCore()->setup();
+    getEddBkErrorHandler()->register();
 
-        // Run core module when all plugins have been loaded
-        add_filter(
-            'plugins_loaded',
-            function() use ($container) {
-                getEddBkErrorHandler()->register();
-                getEddBkCore()->run($container);
-            },
-            0
-        );
-    } catch (Exception $exception) {
-        eddBkUnhandledException($exception);
-    }
+    // Set up core module
+    $container = getEddBkCore()->setup();
+
+    // Run core module when all plugins have been loaded
+    add_filter(
+        'plugins_loaded',
+        function() use ($container) {
+
+            getEddBkCore()->run($container);
+        },
+        0
+    );
 }
 
 /**
@@ -142,7 +140,7 @@ function getEddBkErrorHandler()
     static $instance = null;
 
     if ($instance === null) {
-        $instance = new ExceptionHandler(function ($exception) {
+        $instance = new ExceptionHandler(EDDBK_DIR, function ($exception) {
             if (EDDBK_SAFE_EXCEPTION_HANDLING) {
                 eddBkDeactivateSelf();
             }
