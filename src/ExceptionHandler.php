@@ -2,16 +2,11 @@
 
 namespace RebelCode\EddBookings\Core;
 
-use Dhii\Exception\CreateInvalidArgumentExceptionCapableTrait;
-use Dhii\Exception\CreateOutOfRangeExceptionCapableTrait;
 use Dhii\I18n\StringTranslatingTrait;
 use Dhii\Invocation\CallbackAwareTrait;
-use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
 use Dhii\Invocation\InvocableInterface;
-use Dhii\Invocation\InvokeCallableCapableTrait;
-use Dhii\Invocation\InvokeCallbackCapableTrait;
-use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
-use Dhii\Util\Normalization\NormalizeIterableCapableTrait;
+use Exception;
+use Throwable;
 
 /**
  * Handles exceptions.
@@ -28,55 +23,6 @@ class ExceptionHandler implements InvocableInterface
     use CallbackAwareTrait;
 
     /*
-     * Provides callback invoking functionality.
-     *
-     * @since [*next-version*]
-     */
-    use InvokeCallbackCapableTrait;
-
-    /*
-     * Provides callable invoking functionality.
-     *
-     * @since [*next-version*]
-     */
-    use InvokeCallableCapableTrait;
-
-    /*
-     * Provides array normalization functionality.
-     *
-     * @since [*next-version*]
-     */
-    use NormalizeArrayCapableTrait;
-
-    /*
-     * Provides iterable normalization functionality.
-     *
-     * @since [*next-version*]
-     */
-    use NormalizeIterableCapableTrait;
-
-    /*
-     * Provides functionality for creating invocation exceptions.
-     *
-     * @since [*next-version*]
-     */
-    use CreateInvocationExceptionCapableTrait;
-
-    /*
-     * Provides functionality for creating invalid-argument exceptions.
-     *
-     * @since [*next-version*]
-     */
-    use CreateInvalidArgumentExceptionCapableTrait;
-
-    /*
-     * Provides functionality for creating out-of-range exceptions.
-     *
-     * @since [*next-version*]
-     */
-    use CreateOutOfRangeExceptionCapableTrait;
-
-    /*
      * Provides string translating functionality.
      *
      * @since [*next-version*]
@@ -91,15 +37,26 @@ class ExceptionHandler implements InvocableInterface
     protected $previous;
 
     /**
+     * The root directory for which to limit exception handling.
+     *
+     * @since [*next-version*]
+     *
+     * @var string
+     */
+    protected $rootDir;
+
+    /**
      * Constructor.
      *
      * @since [*next-version*]
      *
+     * @param string   $rootDir  The root directory for which to limit exception handling.
      * @param callable $callback The callback to invoke when an exception is handled. The callback will receive the
      *                           exception or PHP7 {@see \Throwable} as argument.
      */
-    public function __construct($callback)
+    public function __construct($rootDir, $callback)
     {
+        $this->rootDir = $rootDir;
         $this->_setCallback($callback);
     }
 
@@ -131,10 +88,22 @@ class ExceptionHandler implements InvocableInterface
     public function __invoke()
     {
         if ($this->previous) {
-            $this->_invokeCallable($this->previous, func_get_args());
+            call_user_func_array($this->previous, func_get_args());
         }
 
-        $this->_invokeCallback([func_get_arg(0)]);
-        call_user_func_array($this->callback, [func_get_arg(0)]);
+        $throwable = func_get_arg(0);
+
+        if (!($throwable instanceof Exception) && !($throwable instanceof Throwable)) {
+            return;
+        }
+
+        // Detect an exception thrown from within the root directory
+        foreach ($throwable->getTrace() as $_trace) {
+            if (stripos($_trace['file'], $this->rootDir) === 0) {
+                 call_user_func_array($this->_getCallback(), [$throwable]);
+
+                 return;
+            }
+        }
     }
 }
