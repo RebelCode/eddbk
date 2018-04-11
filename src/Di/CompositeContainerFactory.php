@@ -19,20 +19,44 @@ use Dhii\Util\Normalization\NormalizeStringCapableTrait;
  */
 class CompositeContainerFactory implements ContainerFactoryInterface
 {
+    /*
+     * @since [*next-version*]
+     */
     use ContainerGetCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use ContainerHasCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use NormalizeKeyCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use NormalizeStringCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use CreateNotFoundExceptionCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use CreateContainerExceptionCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use CreateInvalidArgumentExceptionCapableTrait;
 
+    /*
+     * @since [*next-version*]
+     */
     use StringTranslatingTrait;
 
     /**
