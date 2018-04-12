@@ -72,7 +72,7 @@ if (!file_exists(EDDBK_MODULES_DIR)) {
     mkdir(EDDBK_MODULES_DIR);
 }
 
-// If autoloader file does not exist, show error
+// Load autoload file if it exists
 if (file_exists(EDDBK_AUTOLOAD_FILE)) {
     require EDDBK_AUTOLOAD_FILE;
 }
@@ -92,18 +92,36 @@ function getEddBkCore()
     static $instance = null;
 
     if ($instance === null) {
+        /*
+         * Initialize module file finder
+         * This is just a special traversable, and as such has no effect until the instance is iterated over.
+         * Filter handlers can append to this using {@see AppendIterator}, for example.
+         */
         $fileFinder = new ModuleFileFinder(EDDBK_MODULES_DIR);
         $fileFinder = apply_filters('eddbk_core_module_file_finder', $fileFinder);
 
+        /*
+         * The factory for creating containers.
+         * Used by the plugin's modular system, as well as by modules.
+         */
         $containerFactory = new ContainerFactory();
         $containerFactory = apply_filters('eddbk_core_module_container_factory', $containerFactory);
 
+        /*
+         * The factory for creating the plugin's composite container.
+         * This container will hold other containers as children - for instance the containers given by child modules.
+         */
         $compContainerFactory = new CompositeContainerFactory();
         $compContainerFactory = apply_filters('eddbk_core_module_composite_container_factory', $compContainerFactory);
 
+        /*
+         * The core plugin module.
+         * This is a special module that loads other modules.
+         */
         $coreModule = new PluginModule(EDDBK_SLUG, $containerFactory, $compContainerFactory, $fileFinder);
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 
+        // Safety check - in case a filter did something wonky
         if (!$coreModule instanceof ModuleInterface) {
             wp_die(__('Core module is not a module instance.', EDDBK_TEXT_DOMAIN));
         }
