@@ -80,6 +80,7 @@ class ContainerFactory implements ContainerFactoryInterface
      *
      * @since [*next-version*]
      *4
+     *
      * @param ContainerInterface|null $parentContainer The default parent container to assign to created containers.
      */
     public function __construct(ContainerInterface $parentContainer = null)
@@ -95,7 +96,7 @@ class ContainerFactory implements ContainerFactoryInterface
     public function make($config = null)
     {
         $definitions = $this->_containerGet($config, ContainerFactoryInterface::K_CFG_DEFINITIONS);
-        $container = $this->_containerHas($config, static::K_CFG_PARENT_CONTAINER)
+        $container   = $this->_containerHas($config, static::K_CFG_PARENT_CONTAINER)
             ? $this->_containerGet($config, static::K_CFG_PARENT_CONTAINER)
             : $this->_getContainer();
 

@@ -17,11 +17,11 @@ use Throwable;
 class ExceptionStackTrace implements StringableInterface
 {
     /**
-     * Description
+     * The exception instance.
      *
      * @since [*next-version*]
      *
-     * @var Exception The exception instance.
+     * @var Exception
      */
     protected $exception;
 
@@ -40,9 +40,9 @@ class ExceptionStackTrace implements StringableInterface
     /**
      * Provides a more detailed exception trace than PHP.
      *
-     * @param Exception|Throwable  $exception The exception whose trace to print.
-     * @param array|null $seen      Array passed to recursive calls to accumulate trace lines already seen
-     *                              leave as NULL when calling this function
+     * @param Exception|Throwable $exception The exception whose trace to print.
+     * @param array|null          $seen      Array passed to recursive calls to accumulate trace lines already seen
+     *                                       leave as NULL when calling this function
      *
      * @return string The exception trace.
      */
@@ -51,20 +51,20 @@ class ExceptionStackTrace implements StringableInterface
         $starter = $seen ? "Caused by:\n" : '';
 
         if ($seen === null) {
-            $seen = [];
+            $seen = array();
         }
 
         $trace = $exception->getTrace();
-        $prev = $exception->getPrevious();
-        $file = $exception->getFile();
-        $line = $exception->getLine();
+        $prev  = $exception->getPrevious();
+        $file  = $exception->getFile();
+        $line  = $exception->getLine();
 
-        $result = [];
+        $result   = array();
         $result[] = sprintf('%s%s: "%s"', $starter, get_class($exception), $exception->getMessage());
 
         while (count($trace)) {
             $currTrace = array_shift($trace);
-            $current = "$file:$line";
+            $current   = "$file:$line";
 
             if (count($seen) && in_array($current, $seen)) {
                 $result[] = sprintf("\t" . '... %d more', count($trace) + 1);
@@ -81,12 +81,12 @@ class ExceptionStackTrace implements StringableInterface
                 ? '::'
                 : '';
             $routine = $class . $classFuncSep . $function;
-            $source = ($line === null)
+            $source  = ($line === null)
                 ? $file
                 : basename($file) . ':' . $line;
 
             $result[] = sprintf("\t" . 'at %1$s [%2$s]', $routine, $source);
-            $seen[] = "$file:$line";
+            $seen[]   = "$file:$line";
 
             $file = array_key_exists('file', $currTrace)
                 ? $currTrace['file']
@@ -96,7 +96,7 @@ class ExceptionStackTrace implements StringableInterface
                 : null;
         }
 
-        $result = join("\n", $result);
+        $result = implode("\n", $result);
 
         if ($prev) {
             $result .= "\n\n" . $this->_stackTrace($prev, $seen);
@@ -104,7 +104,6 @@ class ExceptionStackTrace implements StringableInterface
 
         return $result;
     }
-
 
     /**
      * {@inheritdoc}
