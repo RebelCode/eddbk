@@ -140,16 +140,26 @@ function getEddBkErrorHandler()
     static $instance = null;
 
     if ($instance === null) {
-        $instance = new ExceptionHandler(EDDBK_DIR, function ($exception) {
-            if (EDDBK_SAFE_EXCEPTION_HANDLING) {
-                eddBkDeactivateSelf();
-            }
-
-            eddBkErrorPage($exception);
-        });
+        $instance = new ExceptionHandler(EDDBK_DIR, 'eddBkHandleException');
     }
 
     return $instance;
+}
+
+/**
+ * Handles an exception.
+ *
+ * @since [*next-version*]
+ *
+ * @param Exception|Throwable $exception The exception.
+ */
+function eddBkHandleException($exception)
+{
+    if (EDDBK_SAFE_EXCEPTION_HANDLING) {
+        eddBkDeactivateSelf();
+    }
+
+    eddBkErrorPage($exception);
 }
 
 /**
