@@ -142,7 +142,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
             }
 
             $_callback = require_once($_file);
-            $_module = call_user_func_array($_callback, [$container]);
+            $_module = $this->_invokeModuleCallback($_callback, $container);
 
             if ($_module instanceof ModuleInterface) {
                 $modules[] = $_module;
@@ -150,6 +150,21 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
         }
 
         return new DependencyModuleIterator($modules);
+    }
+
+    /**
+     * Invokes a module callback.
+     *
+     * @since [*next-version*]
+     *
+     * @param callable                $callback  The callback.
+     * @param ContainerInterface|null $container The container to give to the callback.
+     *
+     * @return ModuleInterface|mixed The return value of the callback.
+     */
+    protected function _invokeModuleCallback($callback, ContainerInterface $container = null)
+    {
+        return call_user_func_array($callback, [$container]);
     }
 
     /**
