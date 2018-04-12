@@ -218,9 +218,7 @@ function eddBkErrorPage($exception)
         wp_die(
             ob_get_clean(),
             __('EDD Bookings Error', EDDBK_TEXT_DOMAIN),
-            [
-                'response'  => 500
-            ]
+            array('response' => 500)
         );
     }
 }
