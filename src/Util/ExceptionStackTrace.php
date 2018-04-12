@@ -51,7 +51,7 @@ class ExceptionStackTrace implements StringableInterface
         $starter = $seen ? "Caused by:\n" : '';
 
         if ($seen === null) {
-            $seen = array();
+            $seen = [];
         }
 
         $trace = $exception->getTrace();
@@ -59,7 +59,7 @@ class ExceptionStackTrace implements StringableInterface
         $file  = $exception->getFile();
         $line  = $exception->getLine();
 
-        $result   = array();
+        $result   = [];
         $result[] = sprintf('%s%s: "%s"', $starter, get_class($exception), $exception->getMessage());
 
         while (count($trace)) {

@@ -79,9 +79,9 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
         $moduleKey,
         ContainerFactoryInterface $containerFactory,
         ContainerFactoryInterface $compContainerFactory,
-        $moduleFiles = array()
+        $moduleFiles = []
     ) {
-        $this->_initModularModule($compContainerFactory, $containerFactory, $moduleKey, array(), array());
+        $this->_initModularModule($compContainerFactory, $containerFactory, $moduleKey, [], []);
         $this->moduleFiles = $moduleFiles;
     }
 
@@ -94,7 +94,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     {
         $container = $this->_setup();
 
-        $this->_setConfig(array('modules' => $this->modules));
+        $this->_setConfig(['modules' => $this->modules]);
 
         return $container;
     }
@@ -131,11 +131,11 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      */
     protected function _getModules(ContainerInterface $container = null)
     {
-        $modules = array();
+        $modules = [];
         foreach ($this->moduleFiles as $_idx => $_file) {
             if (!file_exists($_file) || !is_readable($_file)) {
                 throw $this->_createRuntimeException(
-                    $this->__('Module file "%1$s" does not exist or is not readable', array($_file)),
+                    $this->__('Module file "%1$s" does not exist or is not readable', [$_file]),
                     null,
                     null
                 );
@@ -164,7 +164,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      */
     protected function _invokeModuleCallback($callback, ContainerInterface $container = null)
     {
-        return call_user_func_array($callback, array($container));
+        return call_user_func_array($callback, [$container]);
     }
 
     /**
@@ -175,7 +175,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     protected function _getInitialContainer(ContainerInterface $parent = null)
     {
         return $this->_createContainer(
-            array(
+            [
                 'composite_container_factory' => function () {
                     return $this->_getCompositeContainerFactory();
                 },
@@ -188,7 +188,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
                 'event_factory' => function () {
                     return new EventFactory();
                 },
-            )
+            ]
         );
     }
 

@@ -100,7 +100,7 @@ class ExceptionHandler implements InvocableInterface
         // Detect an exception thrown from within the root directory
         foreach ($throwable->getTrace() as $_trace) {
             if (stripos($_trace['file'], $this->rootDir) === 0) {
-                call_user_func_array($this->_getCallback(), array($throwable));
+                call_user_func_array($this->_getCallback(), [$throwable]);
 
                 return;
             }
