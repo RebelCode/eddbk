@@ -123,7 +123,7 @@ function getEddBkCore()
 
         // Safety check - in case a filter did something wonky
         if (!$coreModule instanceof ModuleInterface) {
-            wp_die(__('Core module is not a module instance.', EDDBK_TEXT_DOMAIN));
+            throw new OutOfRangeException(__('Core module is not a module instance.', EDDBK_TEXT_DOMAIN));
         }
 
         $instance = $coreModule;
