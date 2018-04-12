@@ -26,7 +26,7 @@
     "require-dev": {
         "phpunit/phpunit": "^4.8",
         "ptrofimov/xpmock": "^1.1",
-        "dhii/php-cs-fixer-config": "dev-php-5.3",
+        "dhii/php-cs-fixer-config": "^0.1",
         "codeclimate/php-test-reporter": "<=0.3.2"
     },
     "autoload": {
@@ -46,11 +46,6 @@
             "modules/{$name}/": [
                 "type:rc-module"
             ]
-        }
-    },
-    "config": {
-        "platform": {
-            "php": "5.4.0"
         }
     }
 }
