@@ -123,7 +123,9 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      * {@inheritdoc}
      *
      * This implementation loads modules by requiring their main file, expecting a callable to be returned.
-     * The callable is expected to accept a container and return a module instance.
+     * The callable is given a DI container as argument. This container provides the services `container_factory`,
+     * `event_manager` and `event_factory`. The callable may perform any action that is required. If it returns a
+     * {@see ModuleInterface} instance, that instance is registered as a module of the plugin.
      *
      * @since [*next-version*]
      */
