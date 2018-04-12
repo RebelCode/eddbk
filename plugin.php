@@ -58,6 +58,15 @@ if (!defined('EDDBK_SAFE_EXCEPTION_HANDLING')) {
     define('EDDBK_SAFE_EXCEPTION_HANDLING', true);
 }
 
+// Check PHP version before continuing
+if (version_compare(PHP_VERSION, EDDBK_MIN_PHP_VERSION) < 0) {
+    $message = __('EDD Bookings requires PHP %s', EDDBK_TEXT_DOMAIN);
+    $message = sprintf($message, EDDBK_MIN_PHP_VERSION);
+    $exception = new RuntimeException($message);
+
+    eddBkHandleException($exception);
+}
+
 // Ensure modules directory exists
 if (!file_exists(EDDBK_MODULES_DIR)) {
     mkdir(EDDBK_MODULES_DIR);
