@@ -1,7 +1,7 @@
 {
     "name": "rebelcode/edd-bookings",
     "description": "The new EDD Bookings.",
-    "type": "library",
+    "type": "wordpress-plugin",
     "license": "GPL-3.0",
     "authors": [
         {
@@ -9,19 +9,43 @@
             "email": "dev@rebelcode.com"
         }
     ],
+    "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.3 | ^7.0"
+        "php": "^5.4 | ^7.0",
+        "oomphinc/composer-installers-extender": "^1.0",
+        "rebelcode/modular": "dev-task/initial-classes",
+        "psr/container": "^1.0",
+        "dhii/di": "^0.2-alpha1",
+        "dhii/composite-container": "^0.1-alpha1",
+        "dhii/memoize-memory": "^0.2-alpha1",
+        "dhii/set": "^0.1-alpha1",
+        "dhii/callback-abstract": "^0.1-alpha1",
+        "dhii/invocable-base": "^0.1-alpha2"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
         "ptrofimov/xpmock": "^1.1",
-        "dhii/php-cs-fixer-config": "dev-php-5.3",
+        "dhii/php-cs-fixer-config": "^0.1",
         "codeclimate/php-test-reporter": "<=0.3.2"
     },
     "autoload": {
         "psr-4": {
-            "RebelCode\\EddBookings\\": "src"
+            "RebelCode\\EddBookings\\Core\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
+    },
+    "extra": {
+        "installer-types": [
+            "rc-module"
+        ],
+        "installer-paths": {
+            "modules/{$name}/": [
+                "type:rc-module"
+            ]
         }
     }
 }
