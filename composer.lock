@@ -1149,7 +1149,14 @@
                     "Dhii\\Factory\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "csfix": [
+                    "php-cs-fixer fix -vvv"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1160,6 +1167,10 @@
                 }
             ],
             "description": "Base functionality for factories.",
+            "support": {
+                "source": "https://github.com/Dhii/factory-base/tree/v0.1-alpha3",
+                "issues": "https://github.com/Dhii/factory-base/issues"
+            },
             "time": "2018-04-09T16:03:15+00:00"
         },
         {
@@ -1814,17 +1825,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/module-interface.git",
-                "reference": "eb2fd0003aaed3daddd3b141bc27e56ea692228e"
+                "reference": "8aa782dc55d763109c0db54762ab997602730984"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/eb2fd0003aaed3daddd3b141bc27e56ea692228e",
-                "reference": "eb2fd0003aaed3daddd3b141bc27e56ea692228e",
+                "url": "https://api.github.com/repos/Dhii/module-interface/zipball/8aa782dc55d763109c0db54762ab997602730984",
+                "reference": "8aa782dc55d763109c0db54762ab997602730984",
                 "shasum": ""
             },
             "require": {
                 "dhii/data-key-value-aware-interface": "^0.1",
                 "dhii/exception-interface": "^0.1 | ^0.2",
+                "dhii/factory-interface": "^0.1-alpha1",
                 "php": "^5.3 | ^7.0",
                 "psr/container": "^1.0"
             },
@@ -1857,7 +1869,7 @@
                 }
             ],
             "description": "Interfaces for modules",
-            "time": "2018-03-14T10:52:04+00:00"
+            "time": "2018-04-16T12:08:26+00:00"
         },
         {
             "name": "dhii/normalization-helper-base",
@@ -2394,12 +2406,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "795595dd087bfa7d2400ea055a1cae007a936546"
+                "reference": "d019ed4c21442ba77582cd9708691edea66883de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/795595dd087bfa7d2400ea055a1cae007a936546",
-                "reference": "795595dd087bfa7d2400ea055a1cae007a936546",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/d019ed4c21442ba77582cd9708691edea66883de",
+                "reference": "d019ed4c21442ba77582cd9708691edea66883de",
                 "shasum": ""
             },
             "require": {
@@ -2435,14 +2447,7 @@
                     "RebelCode\\Modular\\": "src"
                 }
             },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ],
-                "csfix": [
-                    "php-cs-fixer fix -vvv"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0"
             ],
@@ -2453,11 +2458,7 @@
                 }
             ],
             "description": "A module system.",
-            "support": {
-                "source": "https://github.com/RebelCode/modular/tree/task/initial-classes",
-                "issues": "https://github.com/RebelCode/modular/issues"
-            },
-            "time": "2018-04-11T14:49:46+00:00"
+            "time": "2018-04-16T14:42:13+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
