@@ -31,7 +31,7 @@ use Traversable;
  *
  * @since [*next-version*]
  */
-class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwareInterface
+class PluginModule extends AbstractBaseModularModule
 {
     /*
      * Provides array normalization functionality.
@@ -81,7 +81,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
         ContainerFactoryInterface $compContainerFactory,
         $moduleFiles = []
     ) {
-        $this->_initModularModule($compContainerFactory, $containerFactory, $moduleKey, [], []);
+        $this->_initModule($moduleKey, [], $containerFactory, $containerFactory, $compContainerFactory);
         $this->moduleFiles = $moduleFiles;
     }
 
@@ -92,11 +92,7 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
      */
     public function setup()
     {
-        $container = $this->_setup();
-
-        $this->_setConfig(['modules' => $this->modules]);
-
-        return $container;
+        return $this->_setup();
     }
 
     /**
@@ -112,20 +108,11 @@ class PluginModule extends AbstractBaseModularModule implements ModuleConfigAwar
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
-     */
-    public function getModuleConfig()
-    {
-        return $this->_getConfig();
-    }
-
-    /**
-     * {@inheritdoc}
-     *
      * This implementation loads modules by requiring their main file, expecting a callable to be returned.
-     * The callable is given a DI container as argument. This container provides the services `container_factory`,
-     * `event_manager` and `event_factory`. The callable may perform any action that is required. If it returns a
-     * {@see ModuleInterface} instance, that instance is registered as a module of the plugin.
+     * The callable is given a DI container as argument. This container provides two container factories (one for
+     * regular DI containers, the other for composite containers), a config factory, an event manager and an event
+     * factory. The callable may perform any action that is required. If it returns a {@see ModuleInterface}
+     * instance, that instance is registered as a module of the plugin.
      *
      * @since [*next-version*]
      */
