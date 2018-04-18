@@ -12,6 +12,7 @@ use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Psr\Container\ContainerInterface;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
+use RebelCode\EddBookings\Core\Util\ConfigFactory;
 use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
@@ -168,6 +169,9 @@ class PluginModule extends AbstractBaseModularModule
                 },
                 'container_factory' => function () use ($parent) {
                     return new ContainerFactory($parent);
+                },
+                'config_factory' => function () use ($parent) {
+                    return new ConfigFactory($parent);
                 },
                 'event_manager' => function () {
                     return new WpEventManager(true);
