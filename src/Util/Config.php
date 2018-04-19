@@ -18,7 +18,6 @@ use Dhii\I18n\StringTranslatingTrait;
 use Dhii\Util\Normalization\NormalizeStringCapableTrait;
 use Dhii\Util\String\StringableInterface as Stringable;
 use InvalidArgumentException;
-use IteratorAggregate;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use stdClass;
@@ -31,9 +30,7 @@ use Traversable;
  */
 class Config implements
     /* @since [*next-version*] */
-    ContainerInterface,
-    /* @since [*next-version*] */
-    IteratorAggregate
+    ContainerInterface
 {
     /*
      * @since [*next-version*]
@@ -113,16 +110,6 @@ class Config implements
     {
         $this->_setDataStore($data);
         $this->_setContainer($parent ? $parent : $this);
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    public function getIterator()
-    {
-        return $this->_getDataStore();
     }
 
     /**
