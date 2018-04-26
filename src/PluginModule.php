@@ -6,7 +6,6 @@ use Dhii\Collection\AddCapableOrderedList;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\EventManager\WordPress\WpEventManager;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
-use Dhii\Modular\Config\ModuleConfigAwareInterface;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
 use Dhii\Util\String\StringableInterface as Stringable;
