@@ -15,13 +15,11 @@
         "php": "^5.4 | ^7.0",
         "oomphinc/composer-installers-extender": "^1.0",
         "rebelcode/modular": "dev-task/initial-classes",
-        "psr/container": "^1.0",
         "dhii/di": "^0.2-alpha1",
         "dhii/composite-container": "^0.1-alpha1",
         "dhii/memoize-memory": "^0.2-alpha1",
         "dhii/set": "^0.1-alpha1",
-        "dhii/callback-abstract": "^0.1-alpha1",
-        "dhii/invocable-base": "^0.1-alpha2"
+        "dhii/config": "^0.1-alpha1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",

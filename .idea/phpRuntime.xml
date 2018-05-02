@@ -85,7 +85,6 @@
       <extension name="xhprof" enabled="false" />
       <extension name="xmlrpc" enabled="false" />
       <extension name="xsl" enabled="false" />
-      <extension name="yaf" enabled="false" />
       <extension name="yaml" enabled="false" />
       <extension name="zend" enabled="false" />
       <extension name="zmq" enabled="false" />

@@ -3,13 +3,17 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="RebelCode\EddBookings\Core\" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-modules" />
+      <excludeFolder url="file://$MODULE_DIR$/devrepo" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeclimate/php-test-reporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/container-interop" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/service-provider" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/args-list-validation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/cache-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/callback-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/collections-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/composite-container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/config-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/container-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-container-base" />
@@ -19,7 +23,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-key-value-aware-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-object-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-path-aware-interface" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/di-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/di" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/di-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/event-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/exception-interface" />
@@ -41,14 +46,21 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/normalization-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/php-cs-fixer-config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/psr-14" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/set" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/simple-cache-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-abstract" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-base" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/wp-events" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/php-cs-fixer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/oomphinc/composer-installers-extender" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
@@ -80,6 +92,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
