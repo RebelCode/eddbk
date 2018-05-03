@@ -30,6 +30,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Modular\Module\ModuleInterface;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
@@ -104,6 +105,13 @@ function getEddBkCore()
          * The factory for creating containers.
          * Used by the plugin's modular system, as well as by modules.
          */
+        $configFactory = new DereferencingConfigMapFactory();
+        $configFactory = apply_filters('eddbk_core_module_config_factory', $configFactory);
+
+        /*
+         * The factory for creating containers.
+         * Used by the plugin's modular system, as well as by modules.
+         */
         $containerFactory = new ContainerFactory();
         $containerFactory = apply_filters('eddbk_core_module_container_factory', $containerFactory);
 
@@ -118,7 +126,13 @@ function getEddBkCore()
          * The core plugin module.
          * This is a special module that loads other modules.
          */
-        $coreModule = new PluginModule(EDDBK_SLUG, $containerFactory, $compContainerFactory, $fileFinder);
+        $coreModule = new PluginModule(
+            EDDBK_SLUG,
+            $configFactory,
+            $containerFactory,
+            $compContainerFactory,
+            $fileFinder
+        );
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 
         // Safety check - in case a filter did something wonky

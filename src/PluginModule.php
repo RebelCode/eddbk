@@ -3,6 +3,7 @@
 namespace RebelCode\EddBookings\Core;
 
 use Dhii\Collection\AddCapableOrderedList;
+use Dhii\Config\ConfigFactoryInterface;
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Data\Container\ContainerFactoryInterface;
 use Dhii\EventManager\WordPress\WpEventManager;
@@ -71,17 +72,19 @@ class PluginModule extends AbstractBaseModularModule
      * @since [*next-version*]
      *
      * @param string|Stringable         $moduleKey            The key of the module.
+     * @param ConfigFactoryInterface    $configFactory        The factory for creating config containers.
      * @param ContainerFactoryInterface $containerFactory     The factory for creating containers.
      * @param ContainerFactoryInterface $compContainerFactory The factory for creating composite containers.
      * @param array|Traversable         $moduleFiles          The module file paths of the modules to be loaded, if any.
      */
     public function __construct(
         $moduleKey,
+        ConfigFactoryInterface $configFactory,
         ContainerFactoryInterface $containerFactory,
         ContainerFactoryInterface $compContainerFactory,
         $moduleFiles = []
     ) {
-        $this->_initModule($moduleKey, [], $containerFactory, $containerFactory, $compContainerFactory);
+        $this->_initModule($moduleKey, [], $configFactory, $containerFactory, $compContainerFactory);
         $this->moduleFiles = $moduleFiles;
     }
 
