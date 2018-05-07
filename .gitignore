@@ -14,3 +14,5 @@
 /.idea/deployment.xml
 /.idea/vagrant.xml
 /.idea/misc.xml
+/.vagrant/
+/debug_log
