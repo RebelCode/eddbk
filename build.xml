@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="eddbk" default="build">
+    <property name="module_base_dir" value="${phing.dir.eddbk}" />
+    <property name="module_build_dir" value="dist" />
+    <property name="node_modules_dir" value="node_modules" />
+    <property name="module_build_path" value="${module_base_dir}/${module_build_dir}" />
+    <property name="node_modules_path" value="${module_base_dir}/${node_modules_dir}" />
+    <property name="node_modules_list" value="" />
+    <property name="rcmodules_dir" value="modules" />
+    <property name="rcmodules_path" value="${module_base_dir}/${rcmodules_dir}" />
+
+    <available property="js_installed" value="true" type="dir" file="${node_modules_path}" />
+    <available property="has_js_deps" value="true" type="file" file="${module_base_dir}/package.json" />
+
+    <target name="clean">
+        <echo msg="Cleaning build files" />
+        <delete dir="${module_build_path}" />
+    </target>
+
+    <target name="prepare">
+        <echo msg="Preparing for build" />
+        <mkdir dir="${module_build_path}" />
+    </target>
+
+    <target name="install_js">
+        <echo msg="Installing JS dependencies" />
+        <exec command="npm install --no-bin-links" dir="${module_base_dir}" checkreturn="true" />
+    </target>
+
+    <target name="maybe_install_js" if="has_js_deps">
+        <phingcall target="install_js" />
+    </target>
+
+    <target name="build_js_module">
+        <echo msg="Building JS module '${node_module_name}'" />
+        <exec command="npm run build -- --output-path='${module_build_path}/${node_module_name}'" dir="${node_modules_path}/${node_module_name}" />
+    </target>
+
+    <target name="build_js_modules" depends="clean,prepare,maybe_install_js">
+        <echo msg="Building JS modules in ${module_base_dir}" />
+        <foreach list="${node_modules_list}" param="node_module_name" target="build_js_module" />
+    </target>
+
+    <target name="install_php">
+        <echo msg="Installing PHP dependencies in ${module_base_dir}" />
+        <exec command="composer install" passthru="true" />
+    </target>
+
+    <target name="build_rc_modules" depends="clean,prepare,install_php">
+        <echo msg="Building RebelCode modules in ${module_base_dir}" />
+        <phing inheritAll="false">
+            <fileset dir="${rcmodules_path}">
+                <include name="*/build.xml" />
+            </fileset>
+        </phing>
+    </target>
+
+    <target name="build" depends="build_rc_modules">
+    </target>
+</project>
