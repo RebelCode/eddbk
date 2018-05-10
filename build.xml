@@ -38,7 +38,7 @@
     -->
     <target name="clean">
         <echo msg="Cleaning build files" />
-        <delete dir="${module_build_path}" />
+        <delete dir="${module_build_path}" includeemptydirs="true" />
     </target>
 
     <!--
