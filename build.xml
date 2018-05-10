@@ -6,6 +6,7 @@
 
     <!-- The base path of the module, derived from the eddbk Phing project build file -->
     <property name="module_base_dir" value="${phing.dir.eddbk}" />
+
     <!-- The name of the directory where build output files are placed -->
     <property name="module_build_dir" value="dist" />
     <!-- The name of the directory where Node modules are installed  -->
@@ -21,9 +22,6 @@
     <!-- The name of the directory where installed PHP dependencies can be found -->
     <property name="vendor_dir" value="vendor" />
 
-    <!-- List of node modules -->
-    <property name="node_modules_list" value="" />
-
     <!-- The path to the output build directory -->
     <property name="module_build_path" value="${module_base_dir}/${module_build_dir}" />
     <!-- The path to the Node modules directory -->
@@ -38,6 +36,9 @@
     <property name="templates_path" value="${module_base_dir}/${templates_dir}" />
     <!-- The path to the vendor directory -->
     <property name="vendor_path" value="${module_base_dir}/${vendor_dir}" />
+
+    <!-- List of node modules -->
+    <property name="node_modules_list" value="" />
 
     <!-- Sets the `js_installed` property to true if the node modules directory exists -->
     <available property="js_installed" value="true" type="dir" file="${node_modules_path}" />
