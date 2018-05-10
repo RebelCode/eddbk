@@ -1,61 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="eddbk" default="build">
+    <!-- Verbosity flag - false for normal Phing output, true for command execution passthru output -->
+    <property name="verbose" value="false" />
+
+    <!-- The base path of the module, derived from the eddbk Phing project build file -->
     <property name="module_base_dir" value="${phing.dir.eddbk}" />
+    <!-- The name of the directory where build output files are placed -->
     <property name="module_build_dir" value="dist" />
+    <!-- The name of the directory where Node modules are installed  -->
     <property name="node_modules_dir" value="node_modules" />
-    <property name="module_build_path" value="${module_base_dir}/${module_build_dir}" />
-    <property name="node_modules_path" value="${module_base_dir}/${node_modules_dir}" />
-    <property name="node_modules_list" value="" />
+    <!-- The name of the directory where RebelCode modules can be found -->
     <property name="rcmodules_dir" value="modules" />
+
+    <!-- List of node modules -->
+    <property name="node_modules_list" value="" />
+
+    <!-- The path to the output build directory -->
+    <property name="module_build_path" value="${module_base_dir}/${module_build_dir}" />
+    <!-- The path to the Node modules directory -->
+    <property name="node_modules_path" value="${module_base_dir}/${node_modules_dir}" />
+    <!-- The path to the RebelCode modules directory -->
     <property name="rcmodules_path" value="${module_base_dir}/${rcmodules_dir}" />
 
+    <!-- Sets the `js_installed` property to true if the node modules directory exists -->
     <available property="js_installed" value="true" type="dir" file="${node_modules_path}" />
+    <!-- Sets the `has_js_deps` property to true if the package declares any JS dependencies -->
     <available property="has_js_deps" value="true" type="file" file="${module_base_dir}/package.json" />
 
+    <!-- The buildable RebelCode modules -->
+    <fileset dir="${rcmodules_path}" id="rcmodules_buildable">
+        <include name="*/build.xml" />
+    </fileset>
+
+    <!--
+    Cleans the project of any previous builds.
+    -->
     <target name="clean">
         <echo msg="Cleaning build files" />
         <delete dir="${module_build_path}" />
     </target>
 
+    <!--
+    Prepares the project for building.
+    -->
     <target name="prepare">
         <echo msg="Preparing for build" />
         <mkdir dir="${module_build_path}" />
     </target>
 
+    <!--
+    Installs JS dependencies
+    -->
     <target name="install_js">
         <echo msg="Installing JS dependencies" />
         <exec command="npm install --no-bin-links" dir="${module_base_dir}" checkreturn="true" />
     </target>
 
+    <!--
+    Installs JS dependencies, only if the package has any.
+    -->
     <target name="maybe_install_js" if="has_js_deps">
         <phingcall target="install_js" />
     </target>
 
+    <!--
+    Builds a single JS module, by name.
+
+    Param: node_module_name The name of the JS Node module to build.
+    -->
     <target name="build_js_module">
         <echo msg="Building JS module '${node_module_name}'" />
-        <exec command="npm run build -- --output-path='${module_build_path}/${node_module_name}'" dir="${node_modules_path}/${node_module_name}" />
+        <exec command="npm run build -- --output-path='${module_build_path}/${node_module_name}'" dir="${node_modules_path}/${node_module_name}" passthru="${verbose}" />
     </target>
 
+    <!--
+    Builds all JS modules for this package.
+
+    Performs cleaning, preparation and installation of JS dependencies (if needed).
+    -->
     <target name="build_js_modules" depends="clean,prepare,maybe_install_js">
         <echo msg="Building JS modules in ${module_base_dir}" />
         <foreach list="${node_modules_list}" param="node_module_name" target="build_js_module" />
     </target>
 
+    <!--
+    Installs PHP dependencies using Composer.
+    -->
     <target name="install_php">
         <echo msg="Installing PHP dependencies in ${module_base_dir}" />
-        <exec command="composer install" passthru="true" />
+        <exec command="composer install" passthru="${verbose}" />
     </target>
 
+    <!--
+    Builds the RebelCode modules for this package.
+
+    Performs cleaning, preparation and installs PHP dependencies.
+    -->
     <target name="build_rc_modules" depends="clean,prepare,install_php">
         <echo msg="Building RebelCode modules in ${module_base_dir}" />
         <phing inheritAll="false">
-            <fileset dir="${rcmodules_path}">
-                <include name="*/build.xml" />
-            </fileset>
+            <fileset refid="rcmodules_buildable" />
         </phing>
     </target>
 
+    <!--
+    Main build target.
+    -->
     <target name="build" depends="build_rc_modules">
     </target>
 </project>
