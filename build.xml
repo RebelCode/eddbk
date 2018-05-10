@@ -50,6 +50,16 @@
         <include name="*/build.xml" />
     </fileset>
 
+    <!-- Build files and directories -->
+    <fileset dir="${module_base_dir}" id="build_files">
+        <include name="${source_dir}/**" />
+        <include name="${templates_dir}/**" />
+        <include name="${languages_dir}/**" />
+        <include name="composer.json" />
+        <include name="composer.lock" />
+        <include name="plugin.php" />
+    </fileset>
+
     <!--
     Cleans the project of any previous builds.
     -->
@@ -64,6 +74,9 @@
     <target name="prepare">
         <echo msg="Preparing for build" />
         <mkdir dir="${module_build_path}" />
+        <copy todir="${module_build_path}" overwrite="true" verbose="${verbose}" haltonerror="true">
+            <fileset refid="build_files" />
+        </copy>
     </target>
 
     <!--
