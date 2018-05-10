@@ -5,7 +5,7 @@
     <property name="verbose" value="false" />
 
     <!-- The base path of the module, derived from the eddbk Phing project build file -->
-    <property name="module_base_dir" value="${phing.dir.eddbk}" />
+    <property name="module_base_path" value="${phing.dir.eddbk}" />
 
     <!-- The name of the directory where build output files are placed -->
     <property name="module_build_dir" value="dist" />
@@ -23,19 +23,19 @@
     <property name="vendor_dir" value="vendor" />
 
     <!-- The path to the output build directory -->
-    <property name="module_build_path" value="${module_base_dir}/${module_build_dir}" />
+    <property name="module_build_path" value="${module_base_path}/${module_build_dir}" />
     <!-- The path to the Node modules directory -->
-    <property name="node_modules_path" value="${module_base_dir}/${node_modules_dir}" />
+    <property name="node_modules_path" value="${module_base_path}/${node_modules_dir}" />
     <!-- The path to the RebelCode modules directory -->
-    <property name="rcmodules_path" value="${module_base_dir}/${rcmodules_dir}" />
+    <property name="rcmodules_path" value="${module_base_path}/${rcmodules_dir}" />
     <!-- The path to the languages directory -->
-    <property name="languages_path" value="${module_base_dir}/${languages_dir}" />
+    <property name="languages_path" value="${module_base_path}/${languages_dir}" />
     <!-- The path to the source directory -->
-    <property name="source_path" value="${module_base_dir}/${source_dir}" />
+    <property name="source_path" value="${module_base_path}/${source_dir}" />
     <!-- The path to the templates directory -->
-    <property name="templates_path" value="${module_base_dir}/${templates_dir}" />
+    <property name="templates_path" value="${module_base_path}/${templates_dir}" />
     <!-- The path to the vendor directory -->
-    <property name="vendor_path" value="${module_base_dir}/${vendor_dir}" />
+    <property name="vendor_path" value="${module_base_path}/${vendor_dir}" />
 
     <!-- List of node modules -->
     <property name="node_modules_list" value="" />
@@ -43,7 +43,7 @@
     <!-- Sets the `js_installed` property to true if the node modules directory exists -->
     <available property="js_installed" value="true" type="dir" file="${node_modules_path}" />
     <!-- Sets the `has_js_deps` property to true if the package declares any JS dependencies -->
-    <available property="has_js_deps" value="true" type="file" file="${module_base_dir}/package.json" />
+    <available property="has_js_deps" value="true" type="file" file="${module_base_path}/package.json" />
 
     <!-- The buildable RebelCode modules -->
     <fileset dir="${rcmodules_path}" id="rcmodules_buildable">
@@ -51,7 +51,7 @@
     </fileset>
 
     <!-- Build files and directories -->
-    <fileset dir="${module_base_dir}" id="build_files">
+    <fileset dir="${module_base_path}" id="build_files">
         <include name="${source_dir}/**" />
         <include name="${templates_dir}/**" />
         <include name="${languages_dir}/**" />
@@ -84,7 +84,7 @@
     -->
     <target name="install_js">
         <echo msg="Installing JS dependencies" />
-        <exec command="npm install --no-bin-links" dir="${module_base_dir}" checkreturn="true" />
+        <exec command="npm install --no-bin-links" dir="${module_base_path}" checkreturn="true" />
     </target>
 
     <!--
@@ -110,7 +110,7 @@
     Performs cleaning, preparation and installation of JS dependencies (if needed).
     -->
     <target name="build_js_modules" depends="clean,prepare,maybe_install_js">
-        <echo msg="Building JS modules in ${module_base_dir}" />
+        <echo msg="Building JS modules in ${module_base_path}" />
         <foreach list="${node_modules_list}" param="node_module_name" target="build_js_module" />
     </target>
 
@@ -118,7 +118,7 @@
     Installs PHP dependencies using Composer.
     -->
     <target name="install_php">
-        <echo msg="Installing PHP dependencies in ${module_base_dir}" />
+        <echo msg="Installing PHP dependencies in ${module_base_path}" />
         <exec command="composer install" passthru="${verbose}" />
     </target>
 
@@ -128,7 +128,7 @@
     Performs cleaning, preparation and installs PHP dependencies.
     -->
     <target name="build_rc_modules" depends="clean,prepare,install_php">
-        <echo msg="Building RebelCode modules in ${module_base_dir}" />
+        <echo msg="Building RebelCode modules in ${module_base_path}" />
         <phing inheritAll="false">
             <fileset refid="rcmodules_buildable" />
         </phing>
