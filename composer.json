@@ -24,6 +24,8 @@
         "rebelcode/rcmod-wp-bookings-shortcode": "dev-task/initial-implementation",
         "rebelcode/rcmod-wp-bookings-front-ui": "dev-task/initial-implementation",
         "rebelcode/rcmod-wp-bookings-ui": "dev-task/initial-implementation",
+        "rebelcode/rcmod-eddbk-services": "dev-task/initial-module-code",
+        "rebelcode/rcmod-eddbk-session-generator": "dev-task/initial-module-code",
         "dhii/di": "^0.2-alpha1",
         "dhii/composite-container": "^0.1-alpha1",
         "dhii/memoize-memory": "^0.2-alpha1",
