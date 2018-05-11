@@ -223,9 +223,9 @@
     <!--
     Installs PHP dependencies using Composer.
     -->
-    <target name="install_php">
-        <exec command="composer install" passthru="${verbose}" />
+    <target name="install_php_deps">
         <echo msg="Installing PHP dependencies in ${base_path}"/>
+        <exec command="composer install --no-dev --prefer-dist --optimize-autoloader" passthru="${verbose}"/>
     </target>
 
     <!--
@@ -233,7 +233,7 @@
 
     Performs cleaning, preparation and installs PHP dependencies.
     -->
-    <target name="build_rc_modules" depends="clean,prepare,install_php">
+    <target name="build_rc_modules" depends="clean, prepare, install_php_deps">
         <echo msg="Building RebelCode modules in ${base_path}"/>
         <phing inheritAll="false">
             <fileset refid="rcmodules_buildable"/>
