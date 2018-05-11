@@ -9,13 +9,14 @@
         <format property="build_timecode" pattern="%Y.%m.%d-%H.%M"/>
     </tstamp>
 
+    <!-- The name of the build -->
+    <property name="build_name" value="eddbk" />
+
     <!-- The build version number -->
     <property name="release_version" value="0.0.0-dev" />
 
     <!-- The base name for release archives, without prefixes and suffixes -->
-    <property name="release_archive_name" value="eddbk" />
-    <!-- The name of the root directory in the release archive -->
-    <property name="release_archive_root" value="eddbk" />
+    <property name="release_archive_name" value="${build_name}" />
     <!-- The fill name for the release archive -->
     <property name="release_archive" value="${release_archive_name}-${release_version}-${build_timecode}.zip" />
 
@@ -143,6 +144,7 @@
         <copy todir="${dist_path}" overwrite="true" verbose="${verbose}" haltonerror="true">
             <fileset refid="dist_files"/>
         </copy>
+        <move file="${dist_path}/${base_dir}" tofile="${dist_path}/${build_name}" includeemptydirs="true" overwrite="true" />
     </target>
 
     <!--
