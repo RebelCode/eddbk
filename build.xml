@@ -17,7 +17,7 @@
 
     <!-- The base name for release archives, without prefixes and suffixes -->
     <property name="release_archive_name" value="${build_name}" />
-    <!-- The fill name for the release archive -->
+    <!-- The full name for the release archive -->
     <property name="release_archive" value="${release_archive_name}-${release_version}-${build_timecode}.zip" />
 
     <!-- The base path, derived from the eddbk Phing project build file -->
