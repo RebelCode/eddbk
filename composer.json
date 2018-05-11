@@ -14,7 +14,7 @@
     "require": {
         "php": "^5.4 | ^7.0",
         "oomphinc/composer-installers-extender": "^1.0",
-        "rebelcode/modular": "dev-task/initial-classes",
+        "rebelcode/modular": "^0.1-alpha1",
         "rebelcode/rcmod-wp-cqrs": "dev-task/initial-module-code",
         "rebelcode/rcmod-wp-bookings-cqrs": "dev-task/initial-module-code",
         "rebelcode/rcmod-eddbk-cqrs": "dev-task/initial-module-code",
