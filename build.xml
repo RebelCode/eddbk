@@ -144,7 +144,13 @@
         <copy todir="${dist_path}" overwrite="true" verbose="${verbose}" haltonerror="true">
             <fileset refid="dist_files"/>
         </copy>
-        <move file="${dist_path}/${base_dir}" tofile="${dist_path}/${build_name}" includeemptydirs="true" overwrite="true" />
+        <!-- Only rename if needed, otherwise the directory is cleared of any files -->
+        <if>
+            <not><equals arg1="${base_dir}" arg2="${build_name}"/></not>
+            <then>
+                <move file="${dist_path}/${base_dir}" tofile="${dist_path}/${build_name}" includeemptydirs="true" overwrite="true" />
+            </then>
+        </if>
     </target>
 
     <!--
