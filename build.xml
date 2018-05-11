@@ -54,14 +54,108 @@
         <include name="*/build.xml" />
     </fileset>
 
-    <!-- Build files and directories -->
-    <fileset dir="${module_base_path}" id="build_files">
-        <include name="${source_dir}/**" />
-        <include name="${templates_dir}/**" />
-        <include name="${languages_dir}/**" />
-        <include name="composer.json" />
-        <include name="composer.lock" />
-        <include name="plugin.php" />
+    <!-- Build dist files and directories -->
+    <fileset id="dist_files" dir="${base_path}">
+        <!-- Exclude immediate build directory -->
+        <exclude name="${build_dir}/**"/>
+        <!-- Exclude IDE files -->
+        <patternset>
+            <exclude name=".idea/**"/>
+            <exclude name="**/.idea/**"/>
+        </patternset>
+        <patternset>
+            <exclude name="nbproject/**"/>
+            <exclude name="**/nbproject/**"/>
+        </patternset>
+        <!-- Exclude Git files -->
+        <patternset>
+            <exclude name=".git/**"/>
+            <exclude name="**/.git/**"/>
+        </patternset>
+        <patternset>
+            <exclude name=".gitignore"/>
+            <exclude name="**/.gitignore"/>
+        </patternset>
+        <patternset>
+            <exclude name=".gitattributes"/>
+            <exclude name="**/.gitattributes"/>
+        </patternset>
+        <!-- Exclude unbuilt JS dependencies -->
+        <patternset>
+            <exclude name="node_modules/**"/>
+            <exclude name="**/node_modules/**"/>
+        </patternset>
+        <!-- Exclude tests -->
+        <patternset>
+            <exclude name="test/**"/>
+            <exclude name="**/test/**"/>
+        </patternset>
+        <!-- Exclude dev tools config files -->
+        <patternset>
+            <exclude name=".phan/**"/>
+            <exclude name="**/.phan/**"/>
+        </patternset>
+        <patternset>
+            <exclude name="**/.php_cs"/>
+        </patternset>
+        <patternset>
+            <exclude name=".codeclimate.yml"/>
+            <exclude name="**/.codeclimate.yml"/>
+        </patternset>
+        <patternset>
+            <exclude name=".travis.yml"/>
+            <exclude name="**/.travis.yml"/>
+        </patternset>
+        <patternset>
+            <exclude name="build.xml"/>
+            <exclude name="**/build.xml"/>
+        </patternset>
+        <patternset>
+            <exclude name="phpmd.xml"/>
+            <exclude name="**/phpmd.xml"/>
+        </patternset>
+        <patternset>
+            <exclude name="phpunit.xml"/>
+            <exclude name="**/phpunit.xml"/>
+        </patternset>
+        <patternset>
+            <exclude name="webpack.config.js"/>
+            <exclude name="**/webpack.config.js"/>
+        </patternset>
+        <patternset>
+            <exclude name="Vagrantfile"/>
+            <exclude name="**/Vagrantfile"/>
+        </patternset>
+        <!-- Exclude package meta files -->
+        <patternset>
+            <exclude name="LICENSE"/>
+            <exclude name="**/LICENSE"/>
+        </patternset>
+        <patternset>
+            <exclude name="CHANGELOG.md"/>
+            <exclude name="**/CHANGELOG.md"/>
+        </patternset>
+        <patternset>
+            <exclude name="README.md"/>
+            <exclude name="**/README.md"/>
+        </patternset>
+        <!-- Exclude package manager files -->
+        <patternset>
+            <exclude name="composer.json"/>
+            <exclude name="**/composer.json"/>
+        </patternset>
+        <patternset>
+            <exclude name="composer.lock"/>
+            <exclude name="**/composer.lock"/>
+        </patternset>
+        <patternset>
+            <exclude name="package.json"/>
+            <exclude name="**/package.json"/>
+        </patternset>
+        <patternset>
+            <exclude name="package-lock.json"/>
+            <exclude name="**/package-lock.json"/>
+        </patternset>
     </fileset>
 
     <!--
@@ -78,6 +172,15 @@
     <target name="prepare">
         <echo msg="Preparing for build"/>
         <mkdir dir="${dist_path}"/>
+    </target>
+
+    <!--
+    Deploys the build files into the build directory.
+    -->
+    <target name="copy_dist">
+        <echo msg="Copying distribution files into: ${dist_path}"/>
+        <copy todir="${dist_path}" overwrite="true" verbose="${verbose}" haltonerror="true">
+            <fileset refid="dist_files"/>
         </copy>
     </target>
 
@@ -138,7 +241,9 @@
 
     <!--
     Main build target.
+
+    Builds RebelCode and JS modules and deploys the files to the build directory.
     -->
-    <target name="build" depends="build_rc_modules">
+    <target name="build" depends="build_rc_modules, copy_dist">
     </target>
 </project>
