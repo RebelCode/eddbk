@@ -206,7 +206,8 @@
     -->
     <target name="build_js_module">
         <echo msg="Building JS module '${node_module_name}'"/>
-        <exec command="npm run build -- --output-path='${module_build_path}/${node_module_name}'" dir="${node_modules_path}/${node_module_name}" passthru="${verbose}" />
+        <exec command="npm run build -- --output-path='${dist_path}/${node_module_name}'"
+              dir="${node_modules_path}/${node_module_name}" passthru="${verbose}"/>
     </target>
 
     <!--
