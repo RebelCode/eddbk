@@ -2,7 +2,7 @@
 
 <project name="eddbk" default="build">
     <!-- Verbosity flag - false for normal Phing output, true for command execution passthru output -->
-    <property name="verbose" value="false" />
+    <property name="verbose" value="false"/>
 
 
     <!-- The base path, derived from the eddbk Phing project build file -->
@@ -12,17 +12,17 @@
     <!-- The name of the directory where built dist files are placed -->
     <property name="dist_dir" value="dist"/>
     <!-- The name of the directory where Node modules are installed  -->
-    <property name="node_modules_dir" value="node_modules" />
+    <property name="node_modules_dir" value="node_modules"/>
     <!-- The name of the directory where RebelCode modules can be found -->
-    <property name="rcmodules_dir" value="modules" />
+    <property name="rcmodules_dir" value="modules"/>
     <!-- The name of the directory where language catalog and translation files can be found -->
-    <property name="languages_dir" value="languages" />
+    <property name="languages_dir" value="languages"/>
     <!-- The name of the directory where the package source code can be found -->
-    <property name="source_dir" value="src" />
+    <property name="source_dir" value="src"/>
     <!-- The name of the directory where the package template files can be found -->
-    <property name="templates_dir" value="templates" />
+    <property name="templates_dir" value="templates"/>
     <!-- The name of the directory where installed PHP dependencies can be found -->
-    <property name="vendor_dir" value="vendor" />
+    <property name="vendor_dir" value="vendor"/>
 
     <!-- The path to the root output build directory -->
     <property name="build_path" value="${base_path}/${build_dir}"/>
@@ -42,16 +42,16 @@
     <property name="vendor_path" value="${base_path}/${vendor_dir}"/>
 
     <!-- List of node modules -->
-    <property name="node_modules_list" value="" />
+    <property name="node_modules_list" value=""/>
 
     <!-- Sets the `js_installed` property to true if the node modules directory exists -->
-    <available property="js_installed" value="true" type="dir" file="${node_modules_path}" />
+    <available property="js_installed" value="true" type="dir" file="${node_modules_path}"/>
     <!-- Sets the `has_js_deps` property to true if the package declares any JS dependencies -->
     <available property="has_js_deps" value="true" type="file" file="${base_path}/package.json"/>
 
     <!-- The buildable RebelCode modules -->
     <fileset dir="${rcmodules_path}" id="rcmodules_buildable">
-        <include name="*/build.xml" />
+        <include name="*/build.xml"/>
     </fileset>
 
     <!-- Build dist files and directories -->
@@ -188,7 +188,7 @@
     Installs JS dependencies
     -->
     <target name="install_js">
-        <echo msg="Installing JS dependencies" />
+        <echo msg="Installing JS dependencies"/>
         <exec command="npm install --no-bin-links" dir="${base_path}" checkreturn="true"/>
     </target>
 
@@ -196,7 +196,7 @@
     Installs JS dependencies, only if the package has any.
     -->
     <target name="maybe_install_js" if="has_js_deps">
-        <phingcall target="install_js" />
+        <phingcall target="install_js"/>
     </target>
 
     <!--
@@ -205,7 +205,7 @@
     Param: node_module_name The name of the JS Node module to build.
     -->
     <target name="build_js_module">
-        <echo msg="Building JS module '${node_module_name}'" />
+        <echo msg="Building JS module '${node_module_name}'"/>
         <exec command="npm run build -- --output-path='${module_build_path}/${node_module_name}'" dir="${node_modules_path}/${node_module_name}" passthru="${verbose}" />
     </target>
 
@@ -214,9 +214,9 @@
 
     Performs cleaning, preparation and installation of JS dependencies (if needed).
     -->
-    <target name="build_js_modules" depends="clean,prepare,maybe_install_js">
-        <foreach list="${node_modules_list}" param="node_module_name" target="build_js_module" />
+    <target name="build_js_modules" depends="clean, prepare, maybe_install_js">
         <echo msg="Building JS modules in ${base_path}"/>
+        <foreach list="${node_modules_list}" param="node_module_name" target="build_js_module"/>
     </target>
 
     <!--
@@ -235,7 +235,7 @@
     <target name="build_rc_modules" depends="clean,prepare,install_php">
         <echo msg="Building RebelCode modules in ${base_path}"/>
         <phing inheritAll="false">
-            <fileset refid="rcmodules_buildable" />
+            <fileset refid="rcmodules_buildable"/>
         </phing>
     </target>
 
