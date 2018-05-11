@@ -50,7 +50,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/machine-state-machine-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/map" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/memoize-memory" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/modular-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/normalization-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/output-renderer-base" />
@@ -73,7 +72,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/php-cs-fixer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress-core" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/oomphinc/composer-installers-extender" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
@@ -85,6 +85,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit-mock-objects" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ptrofimov/xpmock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking" />
@@ -100,6 +101,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/session-generator-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/sql-cqrs-resource-models-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/sql-expression-renderer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/time-abstract" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/transformers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/satooshi/php-coveralls" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
@@ -118,6 +121,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludePattern pattern="node_modules" />
     </content>
