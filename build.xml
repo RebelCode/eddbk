@@ -124,7 +124,7 @@
     -->
     <target name="clean">
         <echo msg="Cleaning build files"/>
-        <delete dir="${build_path}" includeemptydirs="true"/>
+        <delete dir="${dist_path}" includeemptydirs="true"/>
     </target>
 
     <!--
