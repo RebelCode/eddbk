@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e0c7a68d7aff1037ef1f5ff9bbbb331",
+    "content-hash": "753306b59fcf30a52e1de8bc4f76df35",
     "packages": [
         {
             "name": "composer/installers",
@@ -3823,16 +3823,16 @@
         },
         {
             "name": "rebelcode/modular",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "6d47517b712caf934291fcc8ab20a6bebe32b76d"
+                "reference": "3e66d4158fd8b26acb4ad2f169b964682b73e8d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/6d47517b712caf934291fcc8ab20a6bebe32b76d",
-                "reference": "6d47517b712caf934291fcc8ab20a6bebe32b76d",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/3e66d4158fd8b26acb4ad2f169b964682b73e8d0",
+                "reference": "3e66d4158fd8b26acb4ad2f169b964682b73e8d0",
                 "shasum": ""
             },
             "require": {
@@ -3880,7 +3880,7 @@
                 }
             ],
             "description": "A module system.",
-            "time": "2018-05-11T11:08:36+00:00"
+            "time": "2018-05-11T11:17:08+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
@@ -3937,12 +3937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-booking-logic.git",
-                "reference": "be2465e2b94b1eb720d7f6e433f1b1036cdef717"
+                "reference": "0d4bd4195da61fbaf90d9b501cf27723cb6472d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-booking-logic/zipball/be2465e2b94b1eb720d7f6e433f1b1036cdef717",
-                "reference": "be2465e2b94b1eb720d7f6e433f1b1036cdef717",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-booking-logic/zipball/0d4bd4195da61fbaf90d9b501cf27723cb6472d0",
+                "reference": "0d4bd4195da61fbaf90d9b501cf27723cb6472d0",
                 "shasum": ""
             },
             "require": {
@@ -3952,7 +3952,7 @@
                 "rebelcode/booking": "dev-task/initial-classes",
                 "rebelcode/booking-transitioner": "dev-task/initial-classes",
                 "rebelcode/event-state-machine": "dev-task/2_make-possible-transitions-aware",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/session-generator": "dev-task/initial-classes"
             },
             "require-dev": {
@@ -3978,7 +3978,7 @@
                 }
             ],
             "description": "A RebelCode module for booking logic.",
-            "time": "2018-04-18T15:46:27+00:00"
+            "time": "2018-05-11T15:18:28+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
@@ -3986,18 +3986,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-booking-logic.git",
-                "reference": "a1323ec890f1237143bb527cb9223aaf538ca81e"
+                "reference": "908ac2c2f4a5ec712eaed973387f46844562a19b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/a1323ec890f1237143bb527cb9223aaf538ca81e",
-                "reference": "a1323ec890f1237143bb527cb9223aaf538ca81e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/908ac2c2f4a5ec712eaed973387f46844562a19b",
+                "reference": "908ac2c2f4a5ec712eaed973387f46844562a19b",
                 "shasum": ""
             },
             "require": {
                 "dhii/validation-base": "^0.2-alpha2",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes"
+                "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4024,7 +4024,7 @@
                 }
             ],
             "description": "A RebelCode module for the booking logic in EDD Bookings.",
-            "time": "2018-05-02T10:18:51+00:00"
+            "time": "2018-05-11T15:08:03+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
@@ -4032,17 +4032,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cqrs.git",
-                "reference": "12856683325757237b8831d69aac2c6750ac49fc"
+                "reference": "2337cb00ffe5ea44eb75594eea5b629625786f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/12856683325757237b8831d69aac2c6750ac49fc",
-                "reference": "12856683325757237b8831d69aac2c6750ac49fc",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/2337cb00ffe5ea44eb75594eea5b629625786f8e",
+                "reference": "2337cb00ffe5ea44eb75594eea5b629625786f8e",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes"
+                "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4067,7 +4067,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the CQRS resource models for EDD Bookings.",
-            "time": "2018-05-02T10:04:47+00:00"
+            "time": "2018-05-11T15:06:52+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
@@ -4075,12 +4075,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "85caaa6faa974bc627f47f5566a98d966fab306f"
+                "reference": "218bc301de03770bacc3f5af2982be3bfe184a08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/85caaa6faa974bc627f47f5566a98d966fab306f",
-                "reference": "85caaa6faa974bc627f47f5566a98d966fab306f",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/218bc301de03770bacc3f5af2982be3bfe184a08",
+                "reference": "218bc301de03770bacc3f5af2982be3bfe184a08",
                 "shasum": ""
             },
             "require": {
@@ -4092,7 +4092,7 @@
                 "dhii/normalization-helper-base": "^0.1-alpha2",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-transitioner": "dev-task/initial-classes",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/transformers": "dev-task/initial-classes"
             },
             "require-dev": {
@@ -4119,7 +4119,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-05-10T09:33:50+00:00"
+            "time": "2018-05-11T15:07:21+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
@@ -4127,12 +4127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "383f36b12ab94baa793b0639a792c259adffcfe8"
+                "reference": "caacf46a1041a90045be8f217124eb44d8a90093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/383f36b12ab94baa793b0639a792c259adffcfe8",
-                "reference": "383f36b12ab94baa793b0639a792c259adffcfe8",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/caacf46a1041a90045be8f217124eb44d8a90093",
+                "reference": "caacf46a1041a90045be8f217124eb44d8a90093",
                 "shasum": ""
             },
             "require": {
@@ -4142,7 +4142,7 @@
                 "guzzlehttp/psr7": "^1.4",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/expression-wp-query-builder": "dev-task/initial-classes",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/transformers": "dev-task/initial-classes"
             },
             "require-dev": {
@@ -4168,7 +4168,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-05-10T11:46:34+00:00"
+            "time": "2018-05-11T15:04:21+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4176,12 +4176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-session-generator.git",
-                "reference": "cbfb426b3520eaae7acaf57b94e6f92c7fec49fe"
+                "reference": "48c4c36b6e191ed64309407533560a17dcbd5c93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/cbfb426b3520eaae7acaf57b94e6f92c7fec49fe",
-                "reference": "cbfb426b3520eaae7acaf57b94e6f92c7fec49fe",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/48c4c36b6e191ed64309407533560a17dcbd5c93",
+                "reference": "48c4c36b6e191ed64309407533560a17dcbd5c93",
                 "shasum": ""
             },
             "require": {
@@ -4190,7 +4190,7 @@
                 "dhii/time-interface": "dev-develop",
                 "nesbot/carbon": "^1.26.0",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/session-generator": "dev-task/initial-classes",
                 "rebelcode/time-abstract": "dev-task/normalize-time-instances"
             },
@@ -4218,7 +4218,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the session generator for EDD Bookings.",
-            "time": "2018-05-10T10:59:18+00:00"
+            "time": "2018-05-11T14:22:52+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
@@ -4226,18 +4226,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "2ab53e817da46d446dfe3efa232a3927568d43b1"
+                "reference": "338eeedad5529e2489e5639686bb30729fa35336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/2ab53e817da46d446dfe3efa232a3927568d43b1",
-                "reference": "2ab53e817da46d446dfe3efa232a3927568d43b1",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/338eeedad5529e2489e5639686bb30729fa35336",
+                "reference": "338eeedad5529e2489e5639686bb30729fa35336",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-interface": "dev-develop",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/wp-cqrs-resource-models": "dev-task/initial-classes"
             },
             "require-dev": {
@@ -4264,7 +4264,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-05-10T10:03:51+00:00"
+            "time": "2018-05-11T15:07:41+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
@@ -4272,17 +4272,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "8d15cacd19f900bc34520aec9954dff437f463d8"
+                "reference": "e48d08728ba6b268327f6330284ad54377fef866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/8d15cacd19f900bc34520aec9954dff437f463d8",
-                "reference": "8d15cacd19f900bc34520aec9954dff437f463d8",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/e48d08728ba6b268327f6330284ad54377fef866",
+                "reference": "e48d08728ba6b268327f6330284ad54377fef866",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes"
+                "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4312,7 +4312,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-05-07T17:21:40+00:00"
+            "time": "2018-05-11T14:49:27+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
@@ -4320,17 +4320,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-shortcode.git",
-                "reference": "508d8e3dc3cf79f68ad5438d1e0ec2bba3de9577"
+                "reference": "d49a5063c37e769d4e1014954f7ed26f44864361"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/508d8e3dc3cf79f68ad5438d1e0ec2bba3de9577",
-                "reference": "508d8e3dc3cf79f68ad5438d1e0ec2bba3de9577",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/d49a5063c37e769d4e1014954f7ed26f44864361",
+                "reference": "d49a5063c37e769d4e1014954f7ed26f44864361",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes"
+                "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4360,7 +4360,7 @@
                 }
             ],
             "description": "Shortcode for booking widget output",
-            "time": "2018-04-19T13:21:26+00:00"
+            "time": "2018-05-11T14:48:49+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
@@ -4368,17 +4368,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "4e127280c0fd8713190d487353a447bc3af4bc5b"
+                "reference": "ebf6933686e9fc246d46beebfe3403cbc6de541e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/4e127280c0fd8713190d487353a447bc3af4bc5b",
-                "reference": "4e127280c0fd8713190d487353a447bc3af4bc5b",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/ebf6933686e9fc246d46beebfe3403cbc6de541e",
+                "reference": "ebf6933686e9fc246d46beebfe3403cbc6de541e",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes"
+                "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4412,7 +4412,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-05-11T12:46:49+00:00"
+            "time": "2018-05-11T15:16:29+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -4420,19 +4420,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-cqrs.git",
-                "reference": "1a6927ade0a937353086a0660189efbeb8e2cd5b"
+                "reference": "3cab2a34476c0cca94e3213e419e111e3e25e1ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/1a6927ade0a937353086a0660189efbeb8e2cd5b",
-                "reference": "1a6927ade0a937353086a0660189efbeb8e2cd5b",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/3cab2a34476c0cca94e3213e419e111e3e25e1ba",
+                "reference": "3cab2a34476c0cca94e3213e419e111e3e25e1ba",
                 "shasum": ""
             },
             "require": {
                 "dhii/data-object-abstract": "^0.1-alpha1",
                 "dhii/factory-base": "^0.1-alpha1",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "dev-task/initial-classes",
+                "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/sql-expression-renderer": "dev-task/initial-classes",
                 "rebelcode/wp-cqrs-resource-models": "dev-task/initial-classes"
             },
@@ -4463,7 +4463,7 @@
                 }
             ],
             "description": "A RebelCode module that provides services for WordPress CQRS resource models.",
-            "time": "2018-05-11T12:58:01+00:00"
+            "time": "2018-05-11T15:15:04+00:00"
         },
         {
             "name": "rebelcode/session-generator",
@@ -6735,7 +6735,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "rebelcode/modular": 20,
         "rebelcode/rcmod-wp-cqrs": 20,
         "rebelcode/rcmod-wp-bookings-cqrs": 20,
         "rebelcode/rcmod-eddbk-cqrs": 20,
