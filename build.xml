@@ -4,6 +4,20 @@
     <!-- Verbosity flag - false for normal Phing output, true for command execution passthru output -->
     <property name="verbose" value="false"/>
 
+    <!-- The current time code for the build -->
+    <tstamp>
+        <format property="build_timecode" pattern="%Y.%m.%d-%H.%M"/>
+    </tstamp>
+
+    <!-- The build version number -->
+    <property name="release_version" value="0.0.0-dev" />
+
+    <!-- The base name for release archives, without prefixes and suffixes -->
+    <property name="release_archive_name" value="eddbk" />
+    <!-- The name of the root directory in the release archive -->
+    <property name="release_archive_root" value="eddbk" />
+    <!-- The fill name for the release archive -->
+    <property name="release_archive" value="${release_archive_name}-${release_version}-${build_timecode}.zip" />
 
     <!-- The base path, derived from the eddbk Phing project build file -->
     <property name="base_path" value="${phing.dir.eddbk}"/>
@@ -11,6 +25,10 @@
     <property name="build_dir" value="build"/>
     <!-- The name of the directory where built dist files are placed -->
     <property name="dist_dir" value="dist"/>
+    <!-- The name of the directory where temporary release files are placed -->
+    <property name="release_tmp_dir" value="tmp"/>
+    <!-- The name of the directory where release archives are placed -->
+    <property name="release_dir" value="release"/>
     <!-- The name of the directory where Node modules are installed  -->
     <property name="node_modules_dir" value="node_modules"/>
     <!-- The name of the directory where RebelCode modules can be found -->
@@ -28,6 +46,10 @@
     <property name="build_path" value="${base_path}/${build_dir}"/>
     <!-- The path to the dist build directory -->
     <property name="dist_path" value="${build_path}/${dist_dir}"/>
+    <!-- The path to the release archives build directory -->
+    <property name="release_path" value="${build_path}/${release_dir}"/>
+    <!-- The path to the release archives build directory -->
+    <property name="release_tmp_path" value="${build_path}/${release_tmp_dir}"/>
     <!-- The path to the Node modules directory -->
     <property name="node_modules_path" value="${base_path}/${node_modules_dir}"/>
     <!-- The path to the RebelCode modules directory -->
@@ -172,6 +194,7 @@
     <target name="prepare">
         <echo msg="Preparing for build"/>
         <mkdir dir="${dist_path}"/>
+        <mkdir dir="${release_path}"/>
     </target>
 
     <!--
@@ -246,5 +269,25 @@
     Builds RebelCode and JS modules and deploys the files to the build directory.
     -->
     <target name="build" depends="build_rc_modules, copy_dist">
+    </target>
+
+    <!--
+    Creates a release build.
+
+    Creates a temporary directory (necessary to have the dist files under a directory within the archive), copies the
+    dist files to this directory, and creates an archive that contains the files in this directory.
+    -->
+    <target name="release" depends="build">
+        <echo message="Deleting previous temp directory: ${release_tmp_path}" />
+        <delete dir="${release_tmp_path}"/>
+
+        <echo message="Copying dist files to temp directory: ${release_tmp_path}" />
+        <copy todir="${release_tmp_path}/${release_archive_root}" haltonerror="true">
+            <fileset dir="${dist_path}" />
+        </copy>
+
+        <echo message="Creating release archive: ${release_archive}" />
+        <zip basedir="${release_tmp_path}" destfile="${release_archive}" />
+        <move file="${release_archive}" todir="${release_path}" overwrite="true" />
     </target>
 </project>
