@@ -1668,16 +1668,16 @@
         },
         {
             "name": "dhii/file-finder-abstract",
-            "version": "dev-task/create-finder",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/file-finder-abstract.git",
-                "reference": "27c9161e0d4b268ec2b8d6f03fd76179988549ea"
+                "reference": "3f5ad2a6a9e6ae68bad4870548061428734b231c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/file-finder-abstract/zipball/27c9161e0d4b268ec2b8d6f03fd76179988549ea",
-                "reference": "27c9161e0d4b268ec2b8d6f03fd76179988549ea",
+                "url": "https://api.github.com/repos/Dhii/file-finder-abstract/zipball/3f5ad2a6a9e6ae68bad4870548061428734b231c",
+                "reference": "3f5ad2a6a9e6ae68bad4870548061428734b231c",
                 "shasum": ""
             },
             "require": {
@@ -1708,7 +1708,7 @@
                 }
             ],
             "description": "Common functionality for finding files",
-            "time": "2018-05-11T09:18:22+00:00"
+            "time": "2018-05-11T09:25:34+00:00"
         },
         {
             "name": "dhii/i18n-helper-base",
@@ -2280,54 +2280,6 @@
             ],
             "description": "An in-memory memoizer implementation.",
             "time": "2018-04-03T13:41:36+00:00"
-        },
-        {
-            "name": "dhii/modular-interface",
-            "version": "dev-develop",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/modular-interface.git",
-                "reference": "d26249690ce4a00d84ef78b327312308fa89b6e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/modular-interface/zipball/d26249690ce4a00d84ef78b327312308fa89b6e0",
-                "reference": "d26249690ce4a00d84ef78b327312308fa89b6e0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 | ^7.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/module-interface": "^0.1-alpha1",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Modular\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for modular systems.",
-            "time": "2018-05-10T17:31:09+00:00"
         },
         {
             "name": "dhii/module-interface",
@@ -3213,16 +3165,16 @@
         },
         {
             "name": "dhii/wp-events",
-            "version": "dev-task/wip-refactoring",
+            "version": "v0.3-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/wp-events.git",
-                "reference": "38e27d021df5914ad04c2ca2849eb709ca179fdd"
+                "reference": "265f8dd9a79b97d23e1c7abaae56c27694138f3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/38e27d021df5914ad04c2ca2849eb709ca179fdd",
-                "reference": "38e27d021df5914ad04c2ca2849eb709ca179fdd",
+                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/265f8dd9a79b97d23e1c7abaae56c27694138f3b",
+                "reference": "265f8dd9a79b97d23e1c7abaae56c27694138f3b",
                 "shasum": ""
             },
             "require": {
@@ -3234,7 +3186,7 @@
             },
             "require-dev": {
                 "10up/wp_mock": "^0.1.1",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/php-cs-fixer-config": "^0.1",
                 "dhii/stringable-interface": "^0.1",
                 "doctrine/instantiator": ">=1.0.5 <1.1.0",
                 "phpunit/phpunit": "^4.8",
@@ -3243,7 +3195,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
+                    "dev-develop": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -3262,7 +3214,7 @@
                 }
             ],
             "description": "A PSR-14 compliant event wrapper for WordPress.",
-            "time": "2018-04-06T12:06:41+00:00"
+            "time": "2018-05-11T10:15:34+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3328,46 +3280,6 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
-        },
-        {
-            "name": "johnpbloch/wordpress-core",
-            "version": "4.9.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "442ae6c761e3b20cc6a000bee8fefcde5dbab3fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/442ae6c761e3b20cc6a000bee8fefcde5dbab3fa",
-                "reference": "442ae6c761e3b20cc6a000bee8fefcde5dbab3fa",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "provide": {
-                "wordpress/core-implementation": "4.9.5"
-            },
-            "type": "wordpress-core",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "WordPress Community",
-                    "homepage": "http://wordpress.org/about/"
-                }
-            ],
-            "description": "WordPress is web software you can use to create a beautiful website or blog.",
-            "homepage": "http://wordpress.org/",
-            "keywords": [
-                "blog",
-                "cms",
-                "wordpress"
-            ],
-            "time": "2018-04-03T22:47:40+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3915,12 +3827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/modular.git",
-                "reference": "1c0c74e014c4db7d48b9350cb25610954d38b35b"
+                "reference": "6d47517b712caf934291fcc8ab20a6bebe32b76d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/modular/zipball/1c0c74e014c4db7d48b9350cb25610954d38b35b",
-                "reference": "1c0c74e014c4db7d48b9350cb25610954d38b35b",
+                "url": "https://api.github.com/repos/RebelCode/modular/zipball/6d47517b712caf934291fcc8ab20a6bebe32b76d",
+                "reference": "6d47517b712caf934291fcc8ab20a6bebe32b76d",
                 "shasum": ""
             },
             "require": {
@@ -3934,19 +3846,19 @@
                 "dhii/exception": "^0.1-alpha4",
                 "dhii/factory-base": "^0.1-alpha3",
                 "dhii/factory-interface": "^0.1-alpha2",
-                "dhii/file-finder-abstract": "dev-task/create-finder",
+                "dhii/file-finder-abstract": "^0.1-alpha1",
                 "dhii/i18n-helper-base": "^0.1",
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/module-interface": "^0.1",
                 "dhii/normalization-helper-base": "^0.1-alpha2",
-                "dhii/wp-events": "dev-task/wip-refactoring",
+                "dhii/wp-events": "^0.3-alpha1",
                 "php": "^5.4 | ^7.0",
                 "psr/container": "^1.0",
-                "rebelcode/module-iterator-abstract": "dev-task/5_update-latest-improvements"
+                "rebelcode/module-iterator-abstract": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/php-cs-fixer-config": "^0.1",
                 "mikey179/vfsstream": "^1.6@dev",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
@@ -3968,30 +3880,31 @@
                 }
             ],
             "description": "A module system.",
-            "time": "2018-05-03T15:14:45+00:00"
+            "time": "2018-05-11T11:08:36+00:00"
         },
         {
             "name": "rebelcode/module-iterator-abstract",
-            "version": "dev-task/5_update-latest-improvements",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/module-iterator-abstract.git",
-                "reference": "80fd1614d545365d4bdb9d3c1d930ccab8c74ac1"
+                "reference": "991a0dc0d826fe7db3c8276e1e358ef9276d5e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/module-iterator-abstract/zipball/80fd1614d545365d4bdb9d3c1d930ccab8c74ac1",
-                "reference": "80fd1614d545365d4bdb9d3c1d930ccab8c74ac1",
+                "url": "https://api.github.com/repos/RebelCode/module-iterator-abstract/zipball/991a0dc0d826fe7db3c8276e1e358ef9276d5e8e",
+                "reference": "991a0dc0d826fe7db3c8276e1e358ef9276d5e8e",
                 "shasum": ""
             },
             "require": {
-                "dhii/modular-interface": "dev-develop",
-                "php": "^5.3 | ^7.0"
+                "php": "^5.4 | ^7.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/module-interface": "^0.1-alpha1",
                 "dhii/php-cs-fixer-config": "dev-php-5.3",
                 "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
@@ -4016,7 +3929,7 @@
                 }
             ],
             "description": "Basic and abstract functionality for module iterators.",
-            "time": "2018-03-14T13:01:50+00:00"
+            "time": "2018-05-11T08:25:59+00:00"
         },
         {
             "name": "rebelcode/rcmod-booking-logic",
@@ -4455,12 +4368,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "681d1d029bc0e88c5816fe714e49f31d78726ccf"
+                "reference": "4e127280c0fd8713190d487353a447bc3af4bc5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/681d1d029bc0e88c5816fe714e49f31d78726ccf",
-                "reference": "681d1d029bc0e88c5816fe714e49f31d78726ccf",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/4e127280c0fd8713190d487353a447bc3af4bc5b",
+                "reference": "4e127280c0fd8713190d487353a447bc3af4bc5b",
                 "shasum": ""
             },
             "require": {
@@ -4499,7 +4412,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-05-10T11:29:02+00:00"
+            "time": "2018-05-11T12:46:49+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -4507,18 +4420,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-cqrs.git",
-                "reference": "e2bb26ab33f88a34410252b64bb0c45adea7110b"
+                "reference": "1a6927ade0a937353086a0660189efbeb8e2cd5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/e2bb26ab33f88a34410252b64bb0c45adea7110b",
-                "reference": "e2bb26ab33f88a34410252b64bb0c45adea7110b",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/1a6927ade0a937353086a0660189efbeb8e2cd5b",
+                "reference": "1a6927ade0a937353086a0660189efbeb8e2cd5b",
                 "shasum": ""
             },
             "require": {
                 "dhii/data-object-abstract": "^0.1-alpha1",
                 "dhii/factory-base": "^0.1-alpha1",
-                "johnpbloch/wordpress-core": "^4.0",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "dev-task/initial-classes",
                 "rebelcode/sql-expression-renderer": "dev-task/initial-classes",
@@ -4528,6 +4440,7 @@
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/data-container-interface": "dev-develop",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
@@ -4550,7 +4463,7 @@
                 }
             ],
             "description": "A RebelCode module that provides services for WordPress CQRS resource models.",
-            "time": "2018-04-27T13:42:51+00:00"
+            "time": "2018-05-11T12:58:01+00:00"
         },
         {
             "name": "rebelcode/session-generator",
