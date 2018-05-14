@@ -197,7 +197,7 @@
     -->
     <target name="install_php_deps">
         <echo msg="Installing PHP dependencies in ${base_path}"/>
-        <exec command="composer install --no-dev --prefer-dist --optimize-autoloader" passthru="${verbose}"/>
+        <exec command="composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction" passthru="${verbose}"/>
     </target>
 
     <!--
