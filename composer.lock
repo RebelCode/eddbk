@@ -4127,12 +4127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "caacf46a1041a90045be8f217124eb44d8a90093"
+                "reference": "c0171e3041d0879d9d6a651f516b8cd6fb7b9f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/caacf46a1041a90045be8f217124eb44d8a90093",
-                "reference": "caacf46a1041a90045be8f217124eb44d8a90093",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/c0171e3041d0879d9d6a651f516b8cd6fb7b9f63",
+                "reference": "c0171e3041d0879d9d6a651f516b8cd6fb7b9f63",
                 "shasum": ""
             },
             "require": {
@@ -4168,7 +4168,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-05-11T15:04:21+00:00"
+            "time": "2018-05-14T07:42:33+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4368,12 +4368,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "ebf6933686e9fc246d46beebfe3403cbc6de541e"
+                "reference": "bee1c92677af734f7cc3b79d8b8d603be7809891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/ebf6933686e9fc246d46beebfe3403cbc6de541e",
-                "reference": "ebf6933686e9fc246d46beebfe3403cbc6de541e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/bee1c92677af734f7cc3b79d8b8d603be7809891",
+                "reference": "bee1c92677af734f7cc3b79d8b8d603be7809891",
                 "shasum": ""
             },
             "require": {
@@ -4412,7 +4412,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-05-11T15:16:29+00:00"
+            "time": "2018-05-12T12:17:28+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
