@@ -13,12 +13,12 @@
     <property name="build_name" value="eddbk" />
 
     <!-- The build version number -->
-    <property name="release_version" value="0.0.0-dev" />
+    <property name="version" value="0.0.0-dev" />
 
     <!-- The base name for release archives, without prefixes and suffixes -->
     <property name="release_archive_name" value="${build_name}" />
     <!-- The full name for the release archive -->
-    <property name="release_archive" value="${release_archive_name}-${release_version}-${build_timecode}.zip" />
+    <property name="release_archive" value="${release_archive_name}-${version}-${build_timecode}.zip" />
 
     <!-- The base path, derived from the eddbk Phing project build file -->
     <property name="base_path" value="${phing.dir.eddbk}"/>
