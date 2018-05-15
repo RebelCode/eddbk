@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 22, host: 1113, host_ip: "127.0.0.1", id: 'ssh'
 
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "1536", "--cpus", "2"]
+    vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2"]
   end
 
   config.vm.synced_folder ".", "/var/www/project", owner: "vagrant", group: "www-data", mount_options: ["dmode=777,fmode=777"]
