@@ -94,6 +94,10 @@
         <exclude name="**/.git/**"/>
         <exclude name="**/.gitignore"/>
         <exclude name="**/.gitattributes"/>
+        <exclude name="githubKey"/>
+        <!-- Exclude Vagrant files -->
+        <exclude name="**/.vagrant/**"/>
+        <exclude name="**/Vagrantfile"/>
         <!-- Exclude unbuilt JS dependencies -->
         <exclude name="**/node_modules/**"/>
         <!-- Exclude tests -->
@@ -107,7 +111,6 @@
         <exclude name="**/phpmd.xml"/>
         <exclude name="**/phpunit.xml"/>
         <exclude name="**/webpack.config.js"/>
-        <exclude name="**/Vagrantfile"/>
         <!-- Exclude package meta files -->
         <exclude name="**/LICENSE"/>
         <exclude name="**/CHANGELOG.md"/>
@@ -194,7 +197,7 @@
     -->
     <target name="install_php_deps">
         <echo msg="Installing PHP dependencies in ${base_path}"/>
-        <exec command="composer install --no-dev --prefer-dist --optimize-autoloader" passthru="${verbose}"/>
+        <exec command="composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction" passthru="${verbose}"/>
     </target>
 
     <!--

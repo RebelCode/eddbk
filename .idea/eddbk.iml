@@ -63,6 +63,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/stringable-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/time-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/transformer-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/transition-event-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/type-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/validation-abstract" />
