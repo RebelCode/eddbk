@@ -13,6 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
+        "barryvdh/composer-cleanup-plugin": "^0.1.0",
         "oomphinc/composer-installers-extender": "^1.0",
         "rebelcode/modular": "^0.1-alpha1",
         "rebelcode/rcmod-wp-cqrs": "dev-task/initial-module-code",

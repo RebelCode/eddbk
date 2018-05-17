@@ -1,11 +1,53 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "753306b59fcf30a52e1de8bc4f76df35",
+    "content-hash": "cc33584e147cefeef9803162021ba8a5",
     "packages": [
+        {
+            "name": "barryvdh/composer-cleanup-plugin",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/composer-cleanup-plugin.git",
+                "reference": "0cd554a71e8e1516dbf389ec95357f4e0d57fb72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/composer-cleanup-plugin/zipball/0cd554a71e8e1516dbf389ec95357f4e0d57fb72",
+                "reference": "0cd554a71e8e1516dbf389ec95357f4e0d57fb72",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                },
+                "class": "Barryvdh\\Composer\\CleanupPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A composer cleanup plugin, to remove tests and documentation to save space",
+            "time": "2015-06-18T08:00:53+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v1.5.0",
@@ -1406,16 +1448,16 @@
         },
         {
             "name": "dhii/expression-renderer-abstract",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/expression-renderer-abstract.git",
-                "reference": "e8bf4aaa55f4294c5a1242cd69ccb58c11bff974"
+                "reference": "8c315e1d034b4198a89e0157f045e4a0d6cc8de8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/expression-renderer-abstract/zipball/e8bf4aaa55f4294c5a1242cd69ccb58c11bff974",
-                "reference": "e8bf4aaa55f4294c5a1242cd69ccb58c11bff974",
+                "url": "https://api.github.com/repos/Dhii/expression-renderer-abstract/zipball/8c315e1d034b4198a89e0157f045e4a0d6cc8de8",
+                "reference": "8c315e1d034b4198a89e0157f045e4a0d6cc8de8",
                 "shasum": ""
             },
             "require": {
@@ -1454,20 +1496,20 @@
                 }
             ],
             "description": "Abstract functionality for objects that can render expressions.",
-            "time": "2018-02-05T16:09:57+00:00"
+            "time": "2018-05-16T13:32:18+00:00"
         },
         {
             "name": "dhii/expression-renderer-base",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/expression-renderer-base.git",
-                "reference": "344733af8b01d32a967d6f1555b8243fd8a01e18"
+                "reference": "0e9c76d6a20c7aa9aa87ff1287dbfdade847279d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/expression-renderer-base/zipball/344733af8b01d32a967d6f1555b8243fd8a01e18",
-                "reference": "344733af8b01d32a967d6f1555b8243fd8a01e18",
+                "url": "https://api.github.com/repos/Dhii/expression-renderer-base/zipball/0e9c76d6a20c7aa9aa87ff1287dbfdade847279d",
+                "reference": "0e9c76d6a20c7aa9aa87ff1287dbfdade847279d",
                 "shasum": ""
             },
             "require": {
@@ -1475,7 +1517,7 @@
                 "dhii/data-container-abstract": "^0.1-alpha1",
                 "dhii/data-container-base": "^0.1-alpha1",
                 "dhii/data-container-interface": "^0.2-alpha1",
-                "dhii/expression-renderer-abstract": "dev-task/initial-classes",
+                "dhii/expression-renderer-abstract": "^0.1-alpha1",
                 "dhii/i18n-helper-base": "^0.1-alpha1",
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/normalization-helper-base": "^0.1-alpha2",
@@ -1506,7 +1548,7 @@
                 }
             ],
             "description": "Base functionality for expression renderers.",
-            "time": "2018-04-09T18:56:18+00:00"
+            "time": "2018-05-16T14:04:50+00:00"
         },
         {
             "name": "dhii/expression-renderer-interface",
@@ -2118,18 +2160,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/machine-state-machine-interface.git",
-                "reference": "5c9cb17bb28c49b91c7e7db93ea1eac9fe0ec614"
+                "reference": "9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/machine-state-machine-interface/zipball/5c9cb17bb28c49b91c7e7db93ea1eac9fe0ec614",
-                "reference": "5c9cb17bb28c49b91c7e7db93ea1eac9fe0ec614",
+                "url": "https://api.github.com/repos/Dhii/machine-state-machine-interface/zipball/9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9",
+                "reference": "9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9",
                 "shasum": ""
             },
             "require": {
                 "dhii/data-key-value-aware-interface": "^0.1",
                 "dhii/exception-interface": "^0.1|^0.2",
-                "dhii/factory-interface": "0.1-alpha1 | 0.1-alpha2",
+                "dhii/factory-interface": "^0.1-alpha1",
                 "dhii/stringable-interface": "^0.1",
                 "php": "^5.3 | ^7.0"
             },
@@ -2140,6 +2182,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Dhii\\State\\": "src"
@@ -2156,7 +2203,7 @@
                 }
             ],
             "description": "Interfaces for state machines.",
-            "time": "2018-03-28T13:31:01+00:00"
+            "time": "2018-05-15T08:46:12+00:00"
         },
         {
             "name": "dhii/map",
@@ -2731,16 +2778,16 @@
         },
         {
             "name": "dhii/state-machine-abstract",
-            "version": "dev-develop",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/state-machine-abstract.git",
-                "reference": "351d58cef38eb63f7e9ccd1986197b834625e02c"
+                "reference": "cb5f706edd74d1c747f09f505b859255b13a5b27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/state-machine-abstract/zipball/351d58cef38eb63f7e9ccd1986197b834625e02c",
-                "reference": "351d58cef38eb63f7e9ccd1986197b834625e02c",
+                "url": "https://api.github.com/repos/Dhii/state-machine-abstract/zipball/cb5f706edd74d1c747f09f505b859255b13a5b27",
+                "reference": "cb5f706edd74d1c747f09f505b859255b13a5b27",
                 "shasum": ""
             },
             "require": {
@@ -2748,13 +2795,18 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/machine-state-machine-interface": "dev-develop",
+                "dhii/machine-state-machine-interface": "^0.1-alpha1",
                 "dhii/php-cs-fixer-config": "^0.1",
                 "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Dhii\\State\\": "src"
@@ -2771,7 +2823,7 @@
                 }
             ],
             "description": "Abstract functionality for state machines.",
-            "time": "2018-03-08T15:44:42+00:00"
+            "time": "2018-05-15T09:04:58+00:00"
         },
         {
             "name": "dhii/stringable-helper-base",
@@ -2904,6 +2956,55 @@
             ],
             "description": "Interfaces for dealing with time.",
             "time": "2018-05-14T13:42:07+00:00"
+        },
+        {
+            "name": "dhii/transformer-interface",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/transformer-interface.git",
+                "reference": "e774efef46413eb34bdafc19a6bd74fbf656235d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/transformer-interface/zipball/e774efef46413eb34bdafc19a6bd74fbf656235d",
+                "reference": "e774efef46413eb34bdafc19a6bd74fbf656235d",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/exception-interface": "^0.1 | ^0.2-alpha1",
+                "dhii/factory-interface": "^0.1-alpha1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Transformer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for data transformation",
+            "time": "2018-05-15T16:59:05+00:00"
         },
         {
             "name": "dhii/transition-event-interface",
@@ -3625,29 +3726,29 @@
         },
         {
             "name": "rebelcode/booking-transitioner",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/booking-transitioner.git",
-                "reference": "b1a547c625030ba390ca91fddc7e7b946d2f2974"
+                "reference": "b039c072eedf7074ee435da5289a582f634ae581"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/booking-transitioner/zipball/b1a547c625030ba390ca91fddc7e7b946d2f2974",
-                "reference": "b1a547c625030ba390ca91fddc7e7b946d2f2974",
+                "url": "https://api.github.com/repos/RebelCode/booking-transitioner/zipball/b039c072eedf7074ee435da5289a582f634ae581",
+                "reference": "b039c072eedf7074ee435da5289a582f634ae581",
                 "shasum": ""
             },
             "require": {
                 "dhii/exception-helper-base": "0.1-alpha1",
                 "dhii/factory-base": "^0.1-alpha3",
                 "dhii/i18n-helper-base": "^0.1",
-                "dhii/machine-state-machine-interface": "dev-develop",
-                "dhii/state-machine-abstract": "dev-develop",
+                "dhii/machine-state-machine-interface": "^0.1-alpha1",
+                "dhii/state-machine-abstract": "^0.1-alpha1",
                 "dhii/stringable-interface": "^0.1",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-abstract": "^0.1-alpha1",
                 "rebelcode/booking-interface": "^0.1-alpha1",
-                "rebelcode/booking-transitioner-interface": "dev-task/add-factory-interface"
+                "rebelcode/booking-transitioner-interface": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -3659,6 +3760,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\Bookings\\": "src"
@@ -3675,34 +3781,34 @@
                 }
             ],
             "description": "Booking transitioner implementations.",
-            "time": "2018-05-14T16:24:50+00:00"
+            "time": "2018-05-15T09:38:49+00:00"
         },
         {
             "name": "rebelcode/booking-transitioner-interface",
-            "version": "dev-task/add-factory-interface",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/booking-transitioner-interface.git",
-                "reference": "d6e78f62710bb112f323c4854d6fe1cae2562b66"
+                "reference": "a1a6eaf0ec9fac22b78d082468f513b827d958ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/booking-transitioner-interface/zipball/d6e78f62710bb112f323c4854d6fe1cae2562b66",
-                "reference": "d6e78f62710bb112f323c4854d6fe1cae2562b66",
+                "url": "https://api.github.com/repos/RebelCode/booking-transitioner-interface/zipball/a1a6eaf0ec9fac22b78d082468f513b827d958ca",
+                "reference": "a1a6eaf0ec9fac22b78d082468f513b827d958ca",
                 "shasum": ""
             },
             "require": {
-                "dhii/factory-interface": "0.1-alpha1 | 0.1-alpha2",
+                "dhii/factory-interface": "^0.1-alpha1",
                 "php": "^5.3 | ^7.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/exception-interface": "^0.1",
+                "dhii/exception-interface": "^0.1 | ^0.2-alpha1",
                 "dhii/php-cs-fixer-config": "dev-php-5.3",
                 "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
-                "rebelcode/booking-interface": "dev-task/initial-interfaces"
+                "rebelcode/booking-interface": "^0.1-alpha1"
             },
             "type": "library",
             "autoload": {
@@ -3721,20 +3827,20 @@
                 }
             ],
             "description": "Interfaces for objects that can transition bookings.",
-            "time": "2018-03-21T10:56:10+00:00"
+            "time": "2018-05-15T08:01:55+00:00"
         },
         {
             "name": "rebelcode/event-state-machine",
-            "version": "dev-task/2_make-possible-transitions-aware",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/event-state-machine.git",
-                "reference": "0d93362754405ae8f0d878b01798a237d0d50b0a"
+                "reference": "58044434b73b1286f6ab24a851d70b6c86b1538f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/event-state-machine/zipball/0d93362754405ae8f0d878b01798a237d0d50b0a",
-                "reference": "0d93362754405ae8f0d878b01798a237d0d50b0a",
+                "url": "https://api.github.com/repos/RebelCode/event-state-machine/zipball/58044434b73b1286f6ab24a851d70b6c86b1538f",
+                "reference": "58044434b73b1286f6ab24a851d70b6c86b1538f",
                 "shasum": ""
             },
             "require": {
@@ -3743,8 +3849,8 @@
                 "dhii/exception": "^0.1-alpha4",
                 "dhii/factory-base": "^0.1-alpha1",
                 "dhii/i18n-helper-base": "^0.1",
-                "dhii/machine-state-machine-interface": "dev-develop",
-                "dhii/state-machine-abstract": "dev-develop",
+                "dhii/machine-state-machine-interface": "^0.1-alpha1",
+                "dhii/state-machine-abstract": "^0.1-alpha1",
                 "dhii/transition-event-interface": "^0.1",
                 "php": "^5.4 | ^7.0"
             },
@@ -3758,6 +3864,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\State\\": "src"
@@ -3774,20 +3885,20 @@
                 }
             ],
             "description": "An event-based state machine implementation.",
-            "time": "2018-04-04T14:15:54+00:00"
+            "time": "2018-05-15T10:07:20+00:00"
         },
         {
             "name": "rebelcode/expression-wp-query-builder",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/expression-wp-query-builder-abstract.git",
-                "reference": "7710fecf02e8b8c90133281e1b43184010043703"
+                "reference": "1f72a94ad22cd56aa50cc88bfb6ac068e732bf0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/expression-wp-query-builder-abstract/zipball/7710fecf02e8b8c90133281e1b43184010043703",
-                "reference": "7710fecf02e8b8c90133281e1b43184010043703",
+                "url": "https://api.github.com/repos/RebelCode/expression-wp-query-builder-abstract/zipball/1f72a94ad22cd56aa50cc88bfb6ac068e732bf0c",
+                "reference": "1f72a94ad22cd56aa50cc88bfb6ac068e732bf0c",
                 "shasum": ""
             },
             "require": {
@@ -3803,6 +3914,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\WordPress\\Query\\Builder\\": "src"
@@ -3819,7 +3935,7 @@
                 }
             ],
             "description": "Abstract functionality for building WP_Query args using expressions.",
-            "time": "2018-05-09T11:41:52+00:00"
+            "time": "2018-05-16T10:53:34+00:00"
         },
         {
             "name": "rebelcode/modular",
@@ -3937,12 +4053,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-booking-logic.git",
-                "reference": "0001c1958b028f997eee569f2cad4ccdeee8690f"
+                "reference": "74a32c694100ec53bc21259ed509eaf9d9220550"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-booking-logic/zipball/0001c1958b028f997eee569f2cad4ccdeee8690f",
-                "reference": "0001c1958b028f997eee569f2cad4ccdeee8690f",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-booking-logic/zipball/74a32c694100ec53bc21259ed509eaf9d9220550",
+                "reference": "74a32c694100ec53bc21259ed509eaf9d9220550",
                 "shasum": ""
             },
             "require": {
@@ -3950,10 +4066,10 @@
                 "dhii/psr-14": "^0.1",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking": "^0.1-alpha1",
-                "rebelcode/booking-transitioner": "dev-task/initial-classes",
-                "rebelcode/event-state-machine": "dev-task/2_make-possible-transitions-aware",
+                "rebelcode/booking-transitioner": "^0.1-alpha1",
+                "rebelcode/event-state-machine": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/session-generator": "dev-task/initial-classes"
+                "rebelcode/session-generator": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -3978,7 +4094,7 @@
                 }
             ],
             "description": "A RebelCode module for booking logic.",
-            "time": "2018-05-14T16:27:42+00:00"
+            "time": "2018-05-16T08:41:50+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
@@ -4032,12 +4148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cqrs.git",
-                "reference": "2337cb00ffe5ea44eb75594eea5b629625786f8e"
+                "reference": "3df8f1b15a5771d63797a105022915decb5a0678"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/2337cb00ffe5ea44eb75594eea5b629625786f8e",
-                "reference": "2337cb00ffe5ea44eb75594eea5b629625786f8e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/3df8f1b15a5771d63797a105022915decb5a0678",
+                "reference": "3df8f1b15a5771d63797a105022915decb5a0678",
                 "shasum": ""
             },
             "require": {
@@ -4067,7 +4183,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the CQRS resource models for EDD Bookings.",
-            "time": "2018-05-11T15:06:52+00:00"
+            "time": "2018-05-15T10:43:04+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
@@ -4075,12 +4191,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "1fac1cd6be59fe68ed21dfaa23b940c1b30d6c7a"
+                "reference": "102f1c35602a7401a1695df39c5b7ab5b4bf22d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/1fac1cd6be59fe68ed21dfaa23b940c1b30d6c7a",
-                "reference": "1fac1cd6be59fe68ed21dfaa23b940c1b30d6c7a",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/102f1c35602a7401a1695df39c5b7ab5b4bf22d2",
+                "reference": "102f1c35602a7401a1695df39c5b7ab5b4bf22d2",
                 "shasum": ""
             },
             "require": {
@@ -4091,9 +4207,9 @@
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/normalization-helper-base": "^0.1-alpha2",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/booking-transitioner": "dev-task/initial-classes",
+                "rebelcode/booking-transitioner": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/transformers": "dev-task/initial-classes"
+                "rebelcode/transformers": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4119,7 +4235,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-05-14T12:58:46+00:00"
+            "time": "2018-05-17T16:18:22+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
@@ -4127,12 +4243,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "c0171e3041d0879d9d6a651f516b8cd6fb7b9f63"
+                "reference": "6a52e4c019c5fa31e6e2ddb1efb00d8a3c146acb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/c0171e3041d0879d9d6a651f516b8cd6fb7b9f63",
-                "reference": "c0171e3041d0879d9d6a651f516b8cd6fb7b9f63",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/6a52e4c019c5fa31e6e2ddb1efb00d8a3c146acb",
+                "reference": "6a52e4c019c5fa31e6e2ddb1efb00d8a3c146acb",
                 "shasum": ""
             },
             "require": {
@@ -4141,9 +4257,10 @@
                 "dhii/memoize-memory": "^0.2-alpha1",
                 "guzzlehttp/psr7": "^1.4",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/expression-wp-query-builder": "dev-task/initial-classes",
+                "rebelcode/expression-wp-query-builder": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/transformers": "dev-task/initial-classes"
+                "rebelcode/transformers": "^0.1-alpha1",
+                "rebelcode/wp-cqrs-resource-models": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4168,7 +4285,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-05-14T07:42:33+00:00"
+            "time": "2018-05-17T17:45:35+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4176,12 +4293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-session-generator.git",
-                "reference": "ae3dae22ce858d10b3f8ca7b789a5dead13a261e"
+                "reference": "56d6a5dce32b1aa7e0900c8ca444737016902dfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/ae3dae22ce858d10b3f8ca7b789a5dead13a261e",
-                "reference": "ae3dae22ce858d10b3f8ca7b789a5dead13a261e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/56d6a5dce32b1aa7e0900c8ca444737016902dfc",
+                "reference": "56d6a5dce32b1aa7e0900c8ca444737016902dfc",
                 "shasum": ""
             },
             "require": {
@@ -4191,8 +4308,8 @@
                 "nesbot/carbon": "^1.26.0",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/session-generator": "dev-task/initial-classes",
-                "rebelcode/time-abstract": "dev-task/normalize-time-instances"
+                "rebelcode/session-generator": "^0.1-alpha1",
+                "rebelcode/time-abstract": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4218,7 +4335,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the session generator for EDD Bookings.",
-            "time": "2018-05-14T16:18:59+00:00"
+            "time": "2018-05-17T15:08:48+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
@@ -4226,19 +4343,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "2b82a3f339a67f7a402da1f41d3dfed52c125366"
+                "reference": "ffdc0f03482a6f08459188e8aa54c945c7384a45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/2b82a3f339a67f7a402da1f41d3dfed52c125366",
-                "reference": "2b82a3f339a67f7a402da1f41d3dfed52c125366",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/ffdc0f03482a6f08459188e8aa54c945c7384a45",
+                "reference": "ffdc0f03482a6f08459188e8aa54c945c7384a45",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-interface": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/wp-cqrs-resource-models": "dev-task/initial-classes"
+                "rebelcode/wp-cqrs-resource-models": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4264,7 +4381,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-05-14T17:19:33+00:00"
+            "time": "2018-05-16T16:32:02+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
@@ -4272,12 +4389,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "e48d08728ba6b268327f6330284ad54377fef866"
+                "reference": "a5f9f66e7d0c2ee8e8a76a85b4ee02cffc949eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/e48d08728ba6b268327f6330284ad54377fef866",
-                "reference": "e48d08728ba6b268327f6330284ad54377fef866",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/a5f9f66e7d0c2ee8e8a76a85b4ee02cffc949eac",
+                "reference": "a5f9f66e7d0c2ee8e8a76a85b4ee02cffc949eac",
                 "shasum": ""
             },
             "require": {
@@ -4312,7 +4429,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-05-11T14:49:27+00:00"
+            "time": "2018-05-17T18:14:03+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
@@ -4368,15 +4485,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "410d7d8202498dbe89cba097e5a6cb6af70db1b8"
+                "reference": "420c53bacb2948a7dcb24eed4bec294488697fa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/410d7d8202498dbe89cba097e5a6cb6af70db1b8",
-                "reference": "410d7d8202498dbe89cba097e5a6cb6af70db1b8",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/420c53bacb2948a7dcb24eed4bec294488697fa8",
+                "reference": "420c53bacb2948a7dcb24eed4bec294488697fa8",
                 "shasum": ""
             },
             "require": {
+                "dhii/normalization-helper-base": "^0.1-alpha2",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "^0.1-alpha1"
             },
@@ -4412,7 +4530,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-05-14T13:27:00+00:00"
+            "time": "2018-05-17T18:06:39+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -4420,12 +4538,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-cqrs.git",
-                "reference": "3cab2a34476c0cca94e3213e419e111e3e25e1ba"
+                "reference": "2f990c172b56c6a3a30bdd5a230d7ecc16002bb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/3cab2a34476c0cca94e3213e419e111e3e25e1ba",
-                "reference": "3cab2a34476c0cca94e3213e419e111e3e25e1ba",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/2f990c172b56c6a3a30bdd5a230d7ecc16002bb4",
+                "reference": "2f990c172b56c6a3a30bdd5a230d7ecc16002bb4",
                 "shasum": ""
             },
             "require": {
@@ -4433,8 +4551,8 @@
                 "dhii/factory-base": "^0.1-alpha1",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/sql-expression-renderer": "dev-task/initial-classes",
-                "rebelcode/wp-cqrs-resource-models": "dev-task/initial-classes"
+                "rebelcode/sql-expression-renderer": "^0.1-alpha1",
+                "rebelcode/wp-cqrs-resource-models": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4463,29 +4581,33 @@
                 }
             ],
             "description": "A RebelCode module that provides services for WordPress CQRS resource models.",
-            "time": "2018-05-11T15:15:04+00:00"
+            "time": "2018-05-16T16:16:25+00:00"
         },
         {
             "name": "rebelcode/session-generator",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/session-generator.git",
-                "reference": "fbda06d0e6ddd616a5db80bd1c3a897b43506f25"
+                "reference": "65328cb70e62d4b3659d60a4f7149255fe04be6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/session-generator/zipball/fbda06d0e6ddd616a5db80bd1c3a897b43506f25",
-                "reference": "fbda06d0e6ddd616a5db80bd1c3a897b43506f25",
+                "url": "https://api.github.com/repos/RebelCode/session-generator/zipball/65328cb70e62d4b3659d60a4f7149255fe04be6d",
+                "reference": "65328cb70e62d4b3659d60a4f7149255fe04be6d",
                 "shasum": ""
             },
             "require": {
+                "dhii/args-list-validation": "^0.1-alpha1",
+                "dhii/callback-abstract": "^0.1-alpha5",
                 "dhii/exception": "^0.1-alpha4",
                 "dhii/factory-base": "^0.1-alpha1",
                 "dhii/i18n-helper-base": "^0.1-alpha1",
+                "dhii/iterator-helper-base": "^0.1-alpha2",
+                "dhii/validation-base": "^0.2-alpha1",
                 "dhii/validation-interface": "^0.1 | ^0.2-alpha1",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/session-generator-interface": "dev-develop"
+                "rebelcode/session-generator-interface": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4495,6 +4617,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\Sessions\\": "src"
@@ -4511,20 +4638,20 @@
                 }
             ],
             "description": "A session generator implementation.",
-            "time": "2018-04-18T15:35:24+00:00"
+            "time": "2018-05-15T15:49:20+00:00"
         },
         {
             "name": "rebelcode/session-generator-interface",
-            "version": "dev-develop",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/session-generator-interface.git",
-                "reference": "ea22a525db67bf5bcb1e0ae75b1786d39361717e"
+                "reference": "8a7adc1930594d39554d9cc06869f54ac3c4ca14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/session-generator-interface/zipball/ea22a525db67bf5bcb1e0ae75b1786d39361717e",
-                "reference": "ea22a525db67bf5bcb1e0ae75b1786d39361717e",
+                "url": "https://api.github.com/repos/RebelCode/session-generator-interface/zipball/8a7adc1930594d39554d9cc06869f54ac3c4ca14",
+                "reference": "8a7adc1930594d39554d9cc06869f54ac3c4ca14",
                 "shasum": ""
             },
             "require": {
@@ -4538,6 +4665,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\Sessions\\": "src"
@@ -4554,20 +4686,20 @@
                 }
             ],
             "description": "Interfaces for objects that are capable of generating sessions.",
-            "time": "2018-03-28T11:50:02+00:00"
+            "time": "2018-05-15T13:50:02+00:00"
         },
         {
             "name": "rebelcode/sql-cqrs-resource-models-abstract",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/sql-cqrs-resource-models-abstract.git",
-                "reference": "33b8fb98497b43ec187b1653d58c0c3abd346674"
+                "reference": "af88e1c69df6b5c2be84391a6df1d27022a9e52b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/33b8fb98497b43ec187b1653d58c0c3abd346674",
-                "reference": "33b8fb98497b43ec187b1653d58c0c3abd346674",
+                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/af88e1c69df6b5c2be84391a6df1d27022a9e52b",
+                "reference": "af88e1c69df6b5c2be84391a6df1d27022a9e52b",
                 "shasum": ""
             },
             "require": {
@@ -4607,24 +4739,24 @@
                 }
             ],
             "description": "Abstract functionality for SQL CQRS resource models.",
-            "time": "2018-04-30T16:25:09+00:00"
+            "time": "2018-05-16T10:12:48+00:00"
         },
         {
             "name": "rebelcode/sql-expression-renderer",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/sql-expression-renderer.git",
-                "reference": "3a6c7f28e83ff1445a24eac2f117b7db8b25cd9d"
+                "reference": "051af010279b3376a854e0e3c5b66a6d68a2a3ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/sql-expression-renderer/zipball/3a6c7f28e83ff1445a24eac2f117b7db8b25cd9d",
-                "reference": "3a6c7f28e83ff1445a24eac2f117b7db8b25cd9d",
+                "url": "https://api.github.com/repos/RebelCode/sql-expression-renderer/zipball/051af010279b3376a854e0e3c5b66a6d68a2a3ab",
+                "reference": "051af010279b3376a854e0e3c5b66a6d68a2a3ab",
                 "shasum": ""
             },
             "require": {
-                "dhii/expression-renderer-base": "dev-task/initial-classes",
+                "dhii/expression-renderer-base": "^0.1-alpha1",
                 "dhii/sql-interface": "^0.1",
                 "php": "^5.4 | ^7.0"
             },
@@ -4637,6 +4769,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\Expression\\Renderer\\Sql\\": "src"
@@ -4653,20 +4790,20 @@
                 }
             ],
             "description": "A library for rendering SQL conditions using expressions.",
-            "time": "2018-04-27T14:36:11+00:00"
+            "time": "2018-05-16T15:55:24+00:00"
         },
         {
             "name": "rebelcode/time-abstract",
-            "version": "dev-task/normalize-time-instances",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/time-abstract.git",
-                "reference": "45a11407e4aef18bb96033b153580d5184c885c3"
+                "reference": "6e3283b6abf2c79a70fc4e21854c2150d5d0d095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/time-abstract/zipball/45a11407e4aef18bb96033b153580d5184c885c3",
-                "reference": "45a11407e4aef18bb96033b153580d5184c885c3",
+                "url": "https://api.github.com/repos/RebelCode/time-abstract/zipball/6e3283b6abf2c79a70fc4e21854c2150d5d0d095",
+                "reference": "6e3283b6abf2c79a70fc4e21854c2150d5d0d095",
                 "shasum": ""
             },
             "require": {
@@ -4703,20 +4840,20 @@
                 }
             ],
             "description": "Abstract functionality for dealing with time.",
-            "time": "2018-05-09T14:42:40+00:00"
+            "time": "2018-05-16T16:10:43+00:00"
         },
         {
             "name": "rebelcode/transformers",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/transformers.git",
-                "reference": "0d2dbae084d77b020771ff608e143173960301e5"
+                "reference": "35b4ad21ac2fc8789218aba9e6d64245da0b90da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/transformers/zipball/0d2dbae084d77b020771ff608e143173960301e5",
-                "reference": "0d2dbae084d77b020771ff608e143173960301e5",
+                "url": "https://api.github.com/repos/RebelCode/transformers/zipball/35b4ad21ac2fc8789218aba9e6d64245da0b90da",
+                "reference": "35b4ad21ac2fc8789218aba9e6d64245da0b90da",
                 "shasum": ""
             },
             "require": {
@@ -4727,6 +4864,7 @@
                 "dhii/iterator-base": "^0.1-alpha3",
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/normalization-helper-base": "^0.1-alpha2",
+                "dhii/transformer-interface": "^0.1-alpha1",
                 "dhii/validation-base": "^0.2-alpha2",
                 "php": "^5.4 | ^7.0"
             },
@@ -4737,6 +4875,11 @@
                 "ptrofimov/xpmock": "^1.1"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "RebelCode\\Transformers\\": "src"
@@ -4753,20 +4896,20 @@
                 }
             ],
             "description": "A library for transforming input values.",
-            "time": "2018-05-04T16:52:38+00:00"
+            "time": "2018-05-15T17:48:29+00:00"
         },
         {
             "name": "rebelcode/wp-cqrs-resource-models",
-            "version": "dev-task/initial-classes",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/wp-cqrs-resource-models.git",
-                "reference": "75400cab8a4d365afb390827d1c275dfe09bc91e"
+                "reference": "fa6ed0436ab14c1fe737c8d5a6aa5b2987bf23a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/wp-cqrs-resource-models/zipball/75400cab8a4d365afb390827d1c275dfe09bc91e",
-                "reference": "75400cab8a4d365afb390827d1c275dfe09bc91e",
+                "url": "https://api.github.com/repos/RebelCode/wp-cqrs-resource-models/zipball/fa6ed0436ab14c1fe737c8d5a6aa5b2987bf23a6",
+                "reference": "fa6ed0436ab14c1fe737c8d5a6aa5b2987bf23a6",
                 "shasum": ""
             },
             "require": {
@@ -4779,8 +4922,8 @@
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/normalization-helper-base": "^0.1",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/expression-wp-query-builder": "dev-task/initial-classes",
-                "rebelcode/sql-cqrs-resource-models-abstract": "dev-task/initial-classes"
+                "rebelcode/expression-wp-query-builder": "^0.1-alpha1",
+                "rebelcode/sql-cqrs-resource-models-abstract": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4817,7 +4960,7 @@
                 }
             ],
             "description": "Functionality for WordPress CQRS resource models.",
-            "time": "2018-04-30T16:30:37+00:00"
+            "time": "2018-05-16T14:30:00+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -5878,6 +6021,7 @@
                 "github",
                 "test"
             ],
+            "abandoned": "php-coveralls/php-coveralls",
             "time": "2017-10-14T23:15:34+00:00"
         },
         {
