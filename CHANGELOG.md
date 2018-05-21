@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-alpha3] - YYYY-MM-DD
+### Changed
+- Now requiring modules at specific tags, instead of branches.
+
+### Fixed
+- Multiple bugs; see changed modules.
+
 ## [0.1-alpha2] - 2018-05-18
 ### Changed
 - Improved build process; can now build release archive.
