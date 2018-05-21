@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec3ea469573a676425c71fcea350dc42",
+    "content-hash": "a3527fcc0eaa2d9b20e45d529be96308",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -2678,16 +2678,16 @@
         },
         {
             "name": "dhii/simple-cache-interface",
-            "version": "dev-develop",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/simple-cache-interface.git",
-                "reference": "86db06c0e241e7da3aceba68ae349338a92a039a"
+                "reference": "62659e4d9526e1b9854017e5d2f1e24db12f6b92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/simple-cache-interface/zipball/86db06c0e241e7da3aceba68ae349338a92a039a",
-                "reference": "86db06c0e241e7da3aceba68ae349338a92a039a",
+                "url": "https://api.github.com/repos/Dhii/simple-cache-interface/zipball/62659e4d9526e1b9854017e5d2f1e24db12f6b92",
+                "reference": "62659e4d9526e1b9854017e5d2f1e24db12f6b92",
                 "shasum": ""
             },
             "require": {
@@ -2724,7 +2724,7 @@
                 }
             ],
             "description": "A simple cache standard inspired by PSR-16.",
-            "time": "2018-03-22T11:28:54+00:00"
+            "time": "2018-05-21T16:19:27+00:00"
         },
         {
             "name": "dhii/sql-interface",
@@ -4385,16 +4385,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "868ac12040bf9197295d719f859f29900f23eaee"
+                "reference": "55e8a27487dad2720cf3e71d2c9c700b0a064f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/868ac12040bf9197295d719f859f29900f23eaee",
-                "reference": "868ac12040bf9197295d719f859f29900f23eaee",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/55e8a27487dad2720cf3e71d2c9c700b0a064f53",
+                "reference": "55e8a27487dad2720cf3e71d2c9c700b0a064f53",
                 "shasum": ""
             },
             "require": {
@@ -4429,7 +4429,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-05-21T14:56:12+00:00"
+            "time": "2018-05-21T16:08:21+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
