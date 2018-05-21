@@ -2,12 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../dhii/codegen" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../dhii/di-abstract" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../dhii/di-interface" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../module-locator" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../wp-admin-helper" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../wp-admin-page" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../wp-list-table" vcs="Git" />
   </component>
 </project>
