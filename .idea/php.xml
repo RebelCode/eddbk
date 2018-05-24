@@ -123,9 +123,9 @@
       <path value="$PROJECT_DIR$/vendor/dhii/stringable-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/config" />
       <path value="$PROJECT_DIR$/vendor/dhii/php-cs-fixer-config" />
-      <path value="$PROJECT_DIR$/vendor/codeclimate/php-test-reporter" />
       <path value="$PROJECT_DIR$/vendor/guzzle/guzzle" />
       <path value="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
+      <path value="$PROJECT_DIR$/vendor/codeclimate/php-test-reporter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
