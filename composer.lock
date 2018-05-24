@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf7f3e1f918e80b1c9aa6f1aaac64731",
+    "content-hash": "fd5010f59de4ae1fb596e2a144753a9a",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -3384,16 +3384,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.28.0",
+            "version": "1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "00149d95fc91ef10f19d3a66889bc3bb7500fa7b"
+                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/00149d95fc91ef10f19d3a66889bc3bb7500fa7b",
-                "reference": "00149d95fc91ef10f19d3a66889bc3bb7500fa7b",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b1cc4493fafb1b1402d50474fe6305e0558c6829",
+                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829",
                 "shasum": ""
             },
             "require": {
@@ -3428,7 +3428,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-05-18T15:26:18+00:00"
+            "time": "2018-05-24T13:09:20+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -4098,16 +4098,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-booking-logic.git",
-                "reference": "55630fd5925363995128079aaa98fc73a463bf5d"
+                "reference": "1382fff39d99b666d3c2ab192bd6483fdb331b1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/55630fd5925363995128079aaa98fc73a463bf5d",
-                "reference": "55630fd5925363995128079aaa98fc73a463bf5d",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/1382fff39d99b666d3c2ab192bd6483fdb331b1e",
+                "reference": "1382fff39d99b666d3c2ab192bd6483fdb331b1e",
                 "shasum": ""
             },
             "require": {
@@ -4145,7 +4145,7 @@
                 }
             ],
             "description": "A RebelCode module for the booking logic in EDD Bookings.",
-            "time": "2018-05-24T15:08:58+00:00"
+            "time": "2018-05-24T18:11:23+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
@@ -4487,16 +4487,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "56ae03a37515738ad911103590efbc7528e02338"
+                "reference": "1809f69cb0c7c27b6e14516867f1ad87f1957a62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/56ae03a37515738ad911103590efbc7528e02338",
-                "reference": "56ae03a37515738ad911103590efbc7528e02338",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/1809f69cb0c7c27b6e14516867f1ad87f1957a62",
+                "reference": "1809f69cb0c7c27b6e14516867f1ad87f1957a62",
                 "shasum": ""
             },
             "require": {
@@ -4536,7 +4536,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-05-24T14:57:48+00:00"
+            "time": "2018-05-24T17:48:48+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
