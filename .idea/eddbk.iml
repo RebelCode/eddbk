@@ -56,7 +56,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/output-renderer-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/output-renderer-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/php-cs-fixer-config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/placeholder-template" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/placeholder-template-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/psr-14" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/regex-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/set" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/simple-cache-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/sql-interface" />

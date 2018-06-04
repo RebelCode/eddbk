@@ -33,7 +33,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/iterator-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-key-value-aware-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/validation-abstract" />
-      <path value="$PROJECT_DIR$/vendor/dhii/normalization-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/expression-renderer-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/machine-state-machine-interface" />
@@ -120,12 +119,16 @@
       <path value="$PROJECT_DIR$/vendor/dhii/composite-container" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/dhii/di-abstract" />
-      <path value="$PROJECT_DIR$/vendor/dhii/stringable-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/config" />
       <path value="$PROJECT_DIR$/vendor/dhii/php-cs-fixer-config" />
-      <path value="$PROJECT_DIR$/vendor/guzzle/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
+      <path value="$PROJECT_DIR$/vendor/dhii/normalization-helper-base" />
       <path value="$PROJECT_DIR$/vendor/codeclimate/php-test-reporter" />
+      <path value="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
+      <path value="$PROJECT_DIR$/vendor/guzzle/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/dhii/stringable-helper-base" />
+      <path value="$PROJECT_DIR$/vendor/dhii/regex-abstract" />
+      <path value="$PROJECT_DIR$/vendor/dhii/placeholder-template-abstract" />
+      <path value="$PROJECT_DIR$/vendor/dhii/placeholder-template" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

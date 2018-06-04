@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd5010f59de4ae1fb596e2a144753a9a",
+    "content-hash": "4baa10c8555cc68d0d76a64bc2a7cd42",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -2156,16 +2156,16 @@
         },
         {
             "name": "dhii/machine-state-machine-interface",
-            "version": "dev-develop",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/machine-state-machine-interface.git",
-                "reference": "9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9"
+                "reference": "55adc44cb930d1c57d0996d61725884e9c8008b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/machine-state-machine-interface/zipball/9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9",
-                "reference": "9f06947a245a875b9b4f40c6e4ae6e7ba7b0f8f9",
+                "url": "https://api.github.com/repos/Dhii/machine-state-machine-interface/zipball/55adc44cb930d1c57d0996d61725884e9c8008b8",
+                "reference": "55adc44cb930d1c57d0996d61725884e9c8008b8",
                 "shasum": ""
             },
             "require": {
@@ -2203,7 +2203,7 @@
                 }
             ],
             "description": "Interfaces for state machines.",
-            "time": "2018-05-15T08:46:12+00:00"
+            "time": "2018-05-15T08:27:56+00:00"
         },
         {
             "name": "dhii/map",
@@ -2382,16 +2382,16 @@
         },
         {
             "name": "dhii/normalization-helper-base",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/normalization-helper-base.git",
-                "reference": "ecbd44dc80533ec93a8cac1fb8f36ba3697f9798"
+                "reference": "1b64f0ea6b3e32f9478f854f6049500795b51da7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/normalization-helper-base/zipball/ecbd44dc80533ec93a8cac1fb8f36ba3697f9798",
-                "reference": "ecbd44dc80533ec93a8cac1fb8f36ba3697f9798",
+                "url": "https://api.github.com/repos/Dhii/normalization-helper-base/zipball/1b64f0ea6b3e32f9478f854f6049500795b51da7",
+                "reference": "1b64f0ea6b3e32f9478f854f6049500795b51da7",
                 "shasum": ""
             },
             "require": {
@@ -2426,7 +2426,7 @@
                 }
             ],
             "description": "Functionality for normalizing values.",
-            "time": "2018-02-12T09:41:29+00:00"
+            "time": "2018-06-04T08:55:31+00:00"
         },
         {
             "name": "dhii/output-renderer-abstract",
@@ -2539,20 +2539,21 @@
         },
         {
             "name": "dhii/output-renderer-interface",
-            "version": "v0.3-alpha1",
+            "version": "v0.3-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/output-renderer-interface.git",
-                "reference": "2786204ad6b9b79e5f4485aedd700016c13f6668"
+                "reference": "de48ea589e5e1caa1191f588a3aea7623ccbaf44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/output-renderer-interface/zipball/2786204ad6b9b79e5f4485aedd700016c13f6668",
-                "reference": "2786204ad6b9b79e5f4485aedd700016c13f6668",
+                "url": "https://api.github.com/repos/Dhii/output-renderer-interface/zipball/de48ea589e5e1caa1191f588a3aea7623ccbaf44",
+                "reference": "de48ea589e5e1caa1191f588a3aea7623ccbaf44",
                 "shasum": ""
             },
             "require": {
                 "dhii/exception-interface": "^0.1 | ^0.2",
+                "dhii/factory-interface": "^0.1-alpha2",
                 "dhii/stringable-interface": "^0.1",
                 "php": "^5.3 | ^7.0"
             },
@@ -2588,7 +2589,122 @@
                 }
             ],
             "description": "An interface for objects that can perform rendering.",
-            "time": "2018-04-05T09:39:21+00:00"
+            "time": "2018-06-02T18:49:35+00:00"
+        },
+        {
+            "name": "dhii/placeholder-template",
+            "version": "v0.1-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/placeholder-template.git",
+                "reference": "ab6eb2f98b085dfdf22cf86fd243cd7e6ee68525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/placeholder-template/zipball/ab6eb2f98b085dfdf22cf86fd243cd7e6ee68525",
+                "reference": "ab6eb2f98b085dfdf22cf86fd243cd7e6ee68525",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/container-helper-base": "^0.1-alpha5",
+                "dhii/data-container-base": "^0.1-alpha1",
+                "dhii/exception": "^0.1-alpha4",
+                "dhii/factory-base": "^0.1-alpha2",
+                "dhii/i18n-helper-base": "^0.1-alpha1",
+                "dhii/normalization-helper-base": "^0.1-alpha3",
+                "dhii/output-renderer-base": "^0.1-alpha1",
+                "dhii/placeholder-template-abstract": "^0.1-alpha5",
+                "dhii/regex-abstract": "^0.1-alpha1",
+                "dhii/stringable-helper-base": "^0.1-alpha2",
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/output-renderer-interface": "^0.3-alpha2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Output\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A template implementation that replaces placeholders in text",
+            "time": "2018-06-04T15:39:18+00:00"
+        },
+        {
+            "name": "dhii/placeholder-template-abstract",
+            "version": "v0.1-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/placeholder-template-abstract.git",
+                "reference": "bfa7cea3b1e078b19bcf59d9a3da63b8c12ed03b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/placeholder-template-abstract/zipball/bfa7cea3b1e078b19bcf59d9a3da63b8c12ed03b",
+                "reference": "bfa7cea3b1e078b19bcf59d9a3da63b8c12ed03b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "psr/container": "^1.0",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/container-helper-base": "For standardized container retrieval",
+                "dhii/exception": "For exceptions and exception factories",
+                "dhii/i18n-helper-base": "For internationalization functionality",
+                "dhii/normalization-helper-base": "For normalization of strings and other simple types",
+                "dhii/regex-abstract": "For RegEx functionality, such as quoting and matching",
+                "dhii/stringable-helper-base": "For string replacement functionality"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Output\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Abstract functionality for working with templates that use placeholders.",
+            "time": "2018-06-04T15:21:46+00:00"
         },
         {
             "name": "dhii/psr-14",
@@ -2623,6 +2739,54 @@
             ],
             "description": "A temporary PSR-14 repository.",
             "time": "2016-07-06T18:43:19+00:00"
+        },
+        {
+            "name": "dhii/regex-abstract",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/regex-abstract.git",
+                "reference": "0751f9c91a6f86d5f901b6b7f3613dc80bb69a8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/regex-abstract/zipball/0751f9c91a6f86d5f901b6b7f3613dc80bb69a8a",
+                "reference": "0751f9c91a6f86d5f901b6b7f3613dc80bb69a8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Regex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Abstract functionality for working with regular expressions",
+            "time": "2018-06-02T16:08:45+00:00"
         },
         {
             "name": "dhii/set",
@@ -2827,16 +2991,16 @@
         },
         {
             "name": "dhii/stringable-helper-base",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/stringable-helper-base.git",
-                "reference": "de4b1e3387a2de0bbcb2bc8da86245f964100725"
+                "reference": "904254409800710665135a751659b59d140a2b40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/stringable-helper-base/zipball/de4b1e3387a2de0bbcb2bc8da86245f964100725",
-                "reference": "de4b1e3387a2de0bbcb2bc8da86245f964100725",
+                "url": "https://api.github.com/repos/Dhii/stringable-helper-base/zipball/904254409800710665135a751659b59d140a2b40",
+                "reference": "904254409800710665135a751659b59d140a2b40",
                 "shasum": ""
             },
             "require": {
@@ -2848,6 +3012,9 @@
                 "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/normalization-helper-base": "For using iterables instead of arrays, and stringables instead of strings"
             },
             "type": "library",
             "extra": {
@@ -2871,7 +3038,7 @@
                 }
             ],
             "description": "Helper functionality for working with stringables.",
-            "time": "2018-04-20T18:49:29+00:00"
+            "time": "2018-06-02T15:52:14+00:00"
         },
         {
             "name": "dhii/stringable-interface",
@@ -3008,20 +3175,20 @@
         },
         {
             "name": "dhii/transition-event-interface",
-            "version": "dev-develop",
+            "version": "v0.1-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/transition-event-interface.git",
-                "reference": "151486ea399edbfa678b8fa46134139c0e834cfc"
+                "reference": "966aba89255b91b2a0ccabcee675d9239ddb20dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/transition-event-interface/zipball/151486ea399edbfa678b8fa46134139c0e834cfc",
-                "reference": "151486ea399edbfa678b8fa46134139c0e834cfc",
+                "url": "https://api.github.com/repos/Dhii/transition-event-interface/zipball/966aba89255b91b2a0ccabcee675d9239ddb20dd",
+                "reference": "966aba89255b91b2a0ccabcee675d9239ddb20dd",
                 "shasum": ""
             },
             "require": {
-                "dhii/machine-state-machine-interface": "dev-develop",
+                "dhii/machine-state-machine-interface": "^0.1-alpha1",
                 "dhii/psr-14": "^0.1",
                 "php": "^5.3 | ^7.0"
             },
@@ -3054,7 +3221,7 @@
                 }
             ],
             "description": "Interfaces for PSR-14 events related to state machine transitions.",
-            "time": "2018-03-13T08:39:20+00:00"
+            "time": "2018-05-25T08:57:45+00:00"
         },
         {
             "name": "dhii/type-interface",
@@ -3266,16 +3433,16 @@
         },
         {
             "name": "dhii/wp-events",
-            "version": "v0.3-alpha1",
+            "version": "v0.3-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/wp-events.git",
-                "reference": "265f8dd9a79b97d23e1c7abaae56c27694138f3b"
+                "reference": "feee39e602709ae0e5d557d3ae48694d3c7310da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/265f8dd9a79b97d23e1c7abaae56c27694138f3b",
-                "reference": "265f8dd9a79b97d23e1c7abaae56c27694138f3b",
+                "url": "https://api.github.com/repos/Dhii/wp-events/zipball/feee39e602709ae0e5d557d3ae48694d3c7310da",
+                "reference": "feee39e602709ae0e5d557d3ae48694d3c7310da",
                 "shasum": ""
             },
             "require": {
@@ -3315,7 +3482,7 @@
                 }
             ],
             "description": "A PSR-14 compliant event wrapper for WordPress.",
-            "time": "2018-05-11T10:15:34+00:00"
+            "time": "2018-05-29T10:55:27+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3384,16 +3551,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.29.0",
+            "version": "1.29.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829"
+                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b1cc4493fafb1b1402d50474fe6305e0558c6829",
-                "reference": "b1cc4493fafb1b1402d50474fe6305e0558c6829",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ed6aa898982f441ccc9b2acdec51490f2bc5d337",
+                "reference": "ed6aa898982f441ccc9b2acdec51490f2bc5d337",
                 "shasum": ""
             },
             "require": {
@@ -3428,7 +3595,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-05-24T13:09:20+00:00"
+            "time": "2018-05-29T15:23:46+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -4345,19 +4512,21 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "acdbf5891d4d34a4141e363f4b226ab4930bff3e"
+                "reference": "0318b248c6ffea9d17598958f641d75a030666cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/acdbf5891d4d34a4141e363f4b226ab4930bff3e",
-                "reference": "acdbf5891d4d34a4141e363f4b226ab4930bff3e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/0318b248c6ffea9d17598958f641d75a030666cb",
+                "reference": "0318b248c6ffea9d17598958f641d75a030666cb",
                 "shasum": ""
             },
             "require": {
+                "dhii/data-object-abstract": "^0.1-alpha1",
+                "dhii/placeholder-template": "^0.1-alpha2",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-interface": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
@@ -4365,8 +4534,9 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/output-renderer-interface": "^0.3",
+                "dhii/output-renderer-interface": "^0.3-alpha2",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
@@ -4387,7 +4557,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-05-21T14:59:35+00:00"
+            "time": "2018-06-04T16:21:25+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
@@ -4696,16 +4866,16 @@
         },
         {
             "name": "rebelcode/sql-cqrs-resource-models-abstract",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/sql-cqrs-resource-models-abstract.git",
-                "reference": "af88e1c69df6b5c2be84391a6df1d27022a9e52b"
+                "reference": "d1cc6eff127f62b5253e47b91578eadf762eceef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/af88e1c69df6b5c2be84391a6df1d27022a9e52b",
-                "reference": "af88e1c69df6b5c2be84391a6df1d27022a9e52b",
+                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/d1cc6eff127f62b5253e47b91578eadf762eceef",
+                "reference": "d1cc6eff127f62b5253e47b91578eadf762eceef",
                 "shasum": ""
             },
             "require": {
@@ -4745,7 +4915,7 @@
                 }
             ],
             "description": "Abstract functionality for SQL CQRS resource models.",
-            "time": "2018-05-16T10:12:48+00:00"
+            "time": "2018-05-25T12:37:02+00:00"
         },
         {
             "name": "rebelcode/sql-expression-renderer",
@@ -5029,7 +5199,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -6404,7 +6574,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -6461,7 +6631,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -6522,7 +6692,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -6579,7 +6749,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -6639,7 +6809,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -6689,7 +6859,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -6793,7 +6963,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -6842,7 +7012,7 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -6891,7 +7061,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.40",
+            "version": "v2.8.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
