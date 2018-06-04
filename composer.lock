@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fad8605720d3f8574cd5c656c38051e",
+    "content-hash": "20183d0db5bf36f91c69ff10e4e93304",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4314,6 +4314,54 @@
             ],
             "description": "A RebelCode module for the booking logic in EDD Bookings.",
             "time": "2018-06-04T16:47:38+00:00"
+        },
+        {
+            "name": "rebelcode/rcmod-eddbk-cart",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
+                "reference": "16e7b66b53570302660c4f5d57f1f088fafbe874"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/16e7b66b53570302660c4f5d57f1f088fafbe874",
+                "reference": "16e7b66b53570302660c4f5d57f1f088fafbe874",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 | ^7.0",
+                "rebelcode/modular": "^0.1-alpha1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/cqrs-resource-model-interface": "^0.1-alpha2",
+                "dhii/evaluable-interface": "^0.1-alpha1",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/booking-interface": "^0.1-alpha1",
+                "rebelcode/booking-transitioner-interface": "^0.1-alpha1",
+                "rebelcode/rcmod-eddbk-booking-logic": "^0.1-alpha1"
+            },
+            "type": "rc-module",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\EddBookings\\Cart\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
+            "time": "2018-06-04T17:33:30+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
