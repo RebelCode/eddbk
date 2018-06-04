@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "66e15ff2ebf9a9aa69c16f927a4bd1b2",
+    "content-hash": "5fad8605720d3f8574cd5c656c38051e",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4265,35 +4265,36 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
-            "version": "v0.1-alpha3",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-booking-logic.git",
-                "reference": "1382fff39d99b666d3c2ab192bd6483fdb331b1e"
+                "reference": "edb095b2c1af22255e72184ce0daa940153f36f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/1382fff39d99b666d3c2ab192bd6483fdb331b1e",
-                "reference": "1382fff39d99b666d3c2ab192bd6483fdb331b1e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/edb095b2c1af22255e72184ce0daa940153f36f4",
+                "reference": "edb095b2c1af22255e72184ce0daa940153f36f4",
                 "shasum": ""
             },
             "require": {
-                "dhii/cqrs-resource-model-interface": "^0.1-alpha2",
-                "dhii/expression-interface": "^0.2-alpha1",
                 "dhii/factory-base": "^0.1-alpha3",
                 "dhii/validation-base": "^0.2-alpha2",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/booking-interface": "^0.1-alpha1",
                 "rebelcode/booking-transitioner": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/cqrs-resource-model-interface": "^0.1-alpha2",
+                "dhii/expression-interface": "^0.2-alpha1",
                 "dhii/output-renderer-interface": "^0.3",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/transition-event-interface": "^0.1-alpha",
                 "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/booking-interface": "^0.1-alpha1"
             },
             "type": "rc-module",
             "autoload": {
@@ -4312,7 +4313,7 @@
                 }
             ],
             "description": "A RebelCode module for the booking logic in EDD Bookings.",
-            "time": "2018-05-24T18:11:23+00:00"
+            "time": "2018-06-04T16:47:38+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
