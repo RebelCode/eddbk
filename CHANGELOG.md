@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
-## [0.1-alpha5] - 2018-05-24
+## [0.1-alpha5] - 2018-06-04
 ### Changed
 - Using newer versions of some modules - check their respective changelogs!
 
