@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "209f22b0b49c3986cf7f8d617b40c082",
+    "content-hash": "c6ac7665ba5c52842d0b5b6d9919fe79",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4365,25 +4365,27 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cqrs.git",
-                "reference": "fdb27845c107ed04f3715c737fff6e16a903d3bf"
+                "reference": "383c5785c462fd7a250ff2eeba2f9a3087d31448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/fdb27845c107ed04f3715c737fff6e16a903d3bf",
-                "reference": "fdb27845c107ed04f3715c737fff6e16a903d3bf",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cqrs/zipball/383c5785c462fd7a250ff2eeba2f9a3087d31448",
+                "reference": "383c5785c462fd7a250ff2eeba2f9a3087d31448",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "^0.1-alpha1"
+                "rebelcode/modular": "^0.1-alpha1",
+                "rebelcode/wp-cqrs-resource-models": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
@@ -4404,7 +4406,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the CQRS resource models for EDD Bookings.",
-            "time": "2018-05-21T15:04:43+00:00"
+            "time": "2018-06-05T08:43:59+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
