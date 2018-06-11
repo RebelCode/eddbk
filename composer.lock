@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "564a6feed767eb4303caf3dfdf93e021",
+    "content-hash": "434f0c4829106826e5f30b272c1c0997",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4564,16 +4564,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "0318b248c6ffea9d17598958f641d75a030666cb"
+                "reference": "45cc27ff345797093b87a123d6bc3dca20d21bdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/0318b248c6ffea9d17598958f641d75a030666cb",
-                "reference": "0318b248c6ffea9d17598958f641d75a030666cb",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/45cc27ff345797093b87a123d6bc3dca20d21bdf",
+                "reference": "45cc27ff345797093b87a123d6bc3dca20d21bdf",
                 "shasum": ""
             },
             "require": {
@@ -4582,6 +4582,7 @@
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-interface": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
+                "rebelcode/sql-cqrs-resource-models-abstract": "^0.1-alpha3",
                 "rebelcode/wp-cqrs-resource-models": "^0.1-alpha1"
             },
             "require-dev": {
@@ -4609,7 +4610,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-06-04T16:21:25+00:00"
+            "time": "2018-06-11T10:50:49+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
