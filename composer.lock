@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0513b49f58910ad98fb67cea3f5107de",
+    "content-hash": "ed099756a100dbf23794d3dc95a1f700",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4313,16 +4313,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-booking-logic.git",
-                "reference": "edb095b2c1af22255e72184ce0daa940153f36f4"
+                "reference": "4e47f76448a610e1ebbe55e01fa1cca728ada14f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/edb095b2c1af22255e72184ce0daa940153f36f4",
-                "reference": "edb095b2c1af22255e72184ce0daa940153f36f4",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-booking-logic/zipball/4e47f76448a610e1ebbe55e01fa1cca728ada14f",
+                "reference": "4e47f76448a610e1ebbe55e01fa1cca728ada14f",
                 "shasum": ""
             },
             "require": {
@@ -4361,7 +4361,7 @@
                 }
             ],
             "description": "A RebelCode module for the booking logic in EDD Bookings.",
-            "time": "2018-06-04T16:47:38+00:00"
+            "time": "2018-06-11T16:23:44+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
