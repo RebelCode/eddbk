@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fcdbd65896a0a9971e556c67c9bc2df",
+    "content-hash": "564a6feed767eb4303caf3dfdf93e021",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4762,16 +4762,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-cqrs.git",
-                "reference": "837a4e2cd468f6516096b6a72e2def54b623ea98"
+                "reference": "6dddb8b99d9b55bc638f73ff0388b1bb83910886"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/837a4e2cd468f6516096b6a72e2def54b623ea98",
-                "reference": "837a4e2cd468f6516096b6a72e2def54b623ea98",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-cqrs/zipball/6dddb8b99d9b55bc638f73ff0388b1bb83910886",
+                "reference": "6dddb8b99d9b55bc638f73ff0388b1bb83910886",
                 "shasum": ""
             },
             "require": {
@@ -4809,7 +4809,7 @@
                 }
             ],
             "description": "A RebelCode module that provides services for WordPress CQRS resource models.",
-            "time": "2018-05-21T15:10:30+00:00"
+            "time": "2018-06-11T10:37:52+00:00"
         },
         {
             "name": "rebelcode/session-generator",
@@ -4918,16 +4918,16 @@
         },
         {
             "name": "rebelcode/sql-cqrs-resource-models-abstract",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/sql-cqrs-resource-models-abstract.git",
-                "reference": "d1cc6eff127f62b5253e47b91578eadf762eceef"
+                "reference": "8e0c226b7d0811ac3edb8a3611ccfa631f2fa0e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/d1cc6eff127f62b5253e47b91578eadf762eceef",
-                "reference": "d1cc6eff127f62b5253e47b91578eadf762eceef",
+                "url": "https://api.github.com/repos/RebelCode/sql-cqrs-resource-models-abstract/zipball/8e0c226b7d0811ac3edb8a3611ccfa631f2fa0e1",
+                "reference": "8e0c226b7d0811ac3edb8a3611ccfa631f2fa0e1",
                 "shasum": ""
             },
             "require": {
@@ -4967,7 +4967,7 @@
                 }
             ],
             "description": "Abstract functionality for SQL CQRS resource models.",
-            "time": "2018-05-25T12:37:02+00:00"
+            "time": "2018-06-11T10:17:24+00:00"
         },
         {
             "name": "rebelcode/sql-expression-renderer",
