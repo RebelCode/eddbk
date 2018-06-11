@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "043feda52ca7723f8f951de68974159d",
+    "content-hash": "65ace9747df33550760350dbf4f24ec4",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4262,6 +4262,54 @@
             ],
             "description": "A RebelCode module for booking logic.",
             "time": "2018-05-21T14:50:33+00:00"
+        },
+        {
+            "name": "rebelcode/rcmod-eddbk-admin-emails",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/rcmod-eddbk-admin-emails.git",
+                "reference": "b3811b2cf0d4da4760b83397b5521f8574950ff3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-admin-emails/zipball/b3811b2cf0d4da4760b83397b5521f8574950ff3",
+                "reference": "b3811b2cf0d4da4760b83397b5521f8574950ff3",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/cqrs-resource-model-interface": "^0.1-alpha1",
+                "dhii/output-renderer-base": "^0.1-alpha1",
+                "dhii/placeholder-template": "^0.1-alpha1",
+                "php": "^5.4 | ^7.0",
+                "rebelcode/booking": "^0.1-alpha1",
+                "rebelcode/modular": "^0.1-alpha1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.9",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "rc-module",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\EddBookings\\Emails\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "A RebelCode module that adds admin email functionality to EDD Bookings.",
+            "time": "2018-06-11T11:06:53+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
