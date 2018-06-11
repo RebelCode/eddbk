@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fae0b19d4b8d610ad9b6c0b1265e4a7",
+    "content-hash": "eaba41ef6bdc28370e83c97a4f37b401",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4662,16 +4662,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "be7df119c622eba8537f77f72b0de0c7d91a555b"
+                "reference": "a87c9400adda6a2f970db7f7c3ad558819f59313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/be7df119c622eba8537f77f72b0de0c7d91a555b",
-                "reference": "be7df119c622eba8537f77f72b0de0c7d91a555b",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/a87c9400adda6a2f970db7f7c3ad558819f59313",
+                "reference": "a87c9400adda6a2f970db7f7c3ad558819f59313",
                 "shasum": ""
             },
             "require": {
@@ -4706,7 +4706,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-06-07T15:56:40+00:00"
+            "time": "2018-06-11T11:48:23+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
