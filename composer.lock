@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3d7df131dc43f8fc4caa53767b27547",
+    "content-hash": "74939a829959ef51f5270d86b22ffef7",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4459,16 +4459,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "a8fde1a46c3782afc669da08523b9fa5f1660dc6"
+                "reference": "f33b68750824a5efd8be90e0156f4d3d79a8d1d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/a8fde1a46c3782afc669da08523b9fa5f1660dc6",
-                "reference": "a8fde1a46c3782afc669da08523b9fa5f1660dc6",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/f33b68750824a5efd8be90e0156f4d3d79a8d1d4",
+                "reference": "f33b68750824a5efd8be90e0156f4d3d79a8d1d4",
                 "shasum": ""
             },
             "require": {
@@ -4508,7 +4508,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-06-11T10:57:22+00:00"
+            "time": "2018-06-12T15:55:08+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",

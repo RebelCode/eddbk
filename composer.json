@@ -21,7 +21,7 @@
         "rebelcode/rcmod-eddbk-cqrs": "0.1-alpha2",
         "rebelcode/rcmod-booking-logic": "0.1-alpha1",
         "rebelcode/rcmod-eddbk-booking-logic": "0.1-alpha5",
-        "rebelcode/rcmod-eddbk-rest-api": "0.1-alpha4",
+        "rebelcode/rcmod-eddbk-rest-api": "0.1-alpha5",
         "rebelcode/rcmod-wp-bookings-shortcode": "0.1-alpha1",
         "rebelcode/rcmod-wp-bookings-front-ui": "0.1-alpha5",
         "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha8",
