@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "74939a829959ef51f5270d86b22ffef7",
+    "content-hash": "af5698e0f5c5e9e52fde2b8a430adf96",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4512,16 +4512,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "v0.1-alpha3",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "e04f8d04d6633622f0b9e5cdd782849d727803df"
+                "reference": "b10f44c434af88ce891c39cd98200001a02d788f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/e04f8d04d6633622f0b9e5cdd782849d727803df",
-                "reference": "e04f8d04d6633622f0b9e5cdd782849d727803df",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/b10f44c434af88ce891c39cd98200001a02d788f",
+                "reference": "b10f44c434af88ce891c39cd98200001a02d788f",
                 "shasum": ""
             },
             "require": {
@@ -4529,6 +4529,7 @@
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/memoize-memory": "^0.2-alpha1",
                 "guzzlehttp/psr7": "^1.4",
+                "nesbot/carbon": "^1.29.0",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/expression-wp-query-builder": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
@@ -4558,7 +4559,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-06-06T17:30:32+00:00"
+            "time": "2018-06-12T16:07:59+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
