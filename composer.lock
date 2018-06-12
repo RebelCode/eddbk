@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "af5698e0f5c5e9e52fde2b8a430adf96",
+    "content-hash": "c700b4d86acd44254615e52829628f17",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4365,21 +4365,22 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
-            "version": "v0.1-alpha3",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
-                "reference": "a3ca4323daeee36597373a3ba15953a982219e54"
+                "reference": "cb302c9338d61332965d38b92718810642d770fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/a3ca4323daeee36597373a3ba15953a982219e54",
-                "reference": "a3ca4323daeee36597373a3ba15953a982219e54",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/cb302c9338d61332965d38b92718810642d770fc",
+                "reference": "cb302c9338d61332965d38b92718810642d770fc",
                 "shasum": ""
             },
             "require": {
                 "dhii/evaluable-interface": "^0.1-alpha1",
                 "dhii/placeholder-template": "^0.1-alpha2",
+                "nesbot/carbon": "^1.29.0",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "^0.1-alpha1"
             },
@@ -4387,6 +4388,7 @@
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/cqrs-resource-model-interface": "^0.1-alpha2",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
                 "rebelcode/booking-interface": "^0.1-alpha1",
@@ -4410,7 +4412,7 @@
                 }
             ],
             "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
-            "time": "2018-06-11T11:14:40+00:00"
+            "time": "2018-06-12T16:27:50+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
