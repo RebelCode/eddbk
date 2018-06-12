@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c700b4d86acd44254615e52829628f17",
+    "content-hash": "61d70f4a9f47a10b93d53442f09413b9",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4761,16 +4761,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha8",
+            "version": "v0.1-alpha9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "062ed0b3383af7decde6f9f164416f1ba6eff21c"
+                "reference": "c84c7c3e8213dbda2cb2a4c06e6fc15c0bcb6584"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/062ed0b3383af7decde6f9f164416f1ba6eff21c",
-                "reference": "062ed0b3383af7decde6f9f164416f1ba6eff21c",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/c84c7c3e8213dbda2cb2a4c06e6fc15c0bcb6584",
+                "reference": "c84c7c3e8213dbda2cb2a4c06e6fc15c0bcb6584",
                 "shasum": ""
             },
             "require": {
@@ -4811,7 +4811,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-06-11T16:06:53+00:00"
+            "time": "2018-06-12T16:38:44+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
