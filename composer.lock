@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7a37d9838be00e1a1d0600da7e7789f",
+    "content-hash": "f9dff5c2c1e48f52f8544d381a1c555e",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4365,20 +4365,21 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
-                "reference": "cb302c9338d61332965d38b92718810642d770fc"
+                "reference": "bb999b895da279ca78ae14f2d1d0faaa9a332d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/cb302c9338d61332965d38b92718810642d770fc",
-                "reference": "cb302c9338d61332965d38b92718810642d770fc",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/bb999b895da279ca78ae14f2d1d0faaa9a332d15",
+                "reference": "bb999b895da279ca78ae14f2d1d0faaa9a332d15",
                 "shasum": ""
             },
             "require": {
                 "dhii/evaluable-interface": "^0.1-alpha1",
+                "dhii/memoize-memory": "^0.2-alpha1",
                 "dhii/placeholder-template": "^0.1-alpha2",
                 "nesbot/carbon": "^1.29.0",
                 "php": "^5.4 | ^7.0",
@@ -4412,7 +4413,7 @@
                 }
             ],
             "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
-            "time": "2018-06-12T16:27:50+00:00"
+            "time": "2018-06-13T14:30:48+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
