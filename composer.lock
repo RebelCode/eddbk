@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "025d77acc5b60739dc0708e7a966551c",
+    "content-hash": "e7a37d9838be00e1a1d0600da7e7789f",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4615,16 +4615,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
-            "version": "v0.1-alpha3",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "45cc27ff345797093b87a123d6bc3dca20d21bdf"
+                "reference": "0ec4ddfc6a3dc84ad97a1d19d2814ddf1472e00c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/45cc27ff345797093b87a123d6bc3dca20d21bdf",
-                "reference": "45cc27ff345797093b87a123d6bc3dca20d21bdf",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/0ec4ddfc6a3dc84ad97a1d19d2814ddf1472e00c",
+                "reference": "0ec4ddfc6a3dc84ad97a1d19d2814ddf1472e00c",
                 "shasum": ""
             },
             "require": {
@@ -4661,7 +4661,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-06-11T10:50:49+00:00"
+            "time": "2018-06-13T14:12:14+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
