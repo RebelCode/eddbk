@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-alpha13] - 2018-06-13
+### Changed
+- Using newer version of `session-generator`, which fixes a bug related to duplicate session generation when using same start times with multiple lengths.
+
 ## [0.1-alpha12] - 2018-06-13
 ### Changed
 - Using newer versions of some modules - check their respective changelogs!
