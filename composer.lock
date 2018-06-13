@@ -4866,16 +4866,16 @@
         },
         {
             "name": "rebelcode/session-generator",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/session-generator.git",
-                "reference": "65328cb70e62d4b3659d60a4f7149255fe04be6d"
+                "reference": "0f16447b869f0e6d2dc076c6c69104cfc5a077a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/session-generator/zipball/65328cb70e62d4b3659d60a4f7149255fe04be6d",
-                "reference": "65328cb70e62d4b3659d60a4f7149255fe04be6d",
+                "url": "https://api.github.com/repos/RebelCode/session-generator/zipball/0f16447b869f0e6d2dc076c6c69104cfc5a077a0",
+                "reference": "0f16447b869f0e6d2dc076c6c69104cfc5a077a0",
                 "shasum": ""
             },
             "require": {
@@ -4919,7 +4919,7 @@
                 }
             ],
             "description": "A session generator implementation.",
-            "time": "2018-05-15T15:49:20+00:00"
+            "time": "2018-06-13T13:41:35+00:00"
         },
         {
             "name": "rebelcode/session-generator-interface",
