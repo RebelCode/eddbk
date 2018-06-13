@@ -5024,16 +5024,16 @@
         },
         {
             "name": "rebelcode/sql-expression-renderer",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/sql-expression-renderer.git",
-                "reference": "051af010279b3376a854e0e3c5b66a6d68a2a3ab"
+                "reference": "d04a2a39ab010271b25582ff335dae9fc28367e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/sql-expression-renderer/zipball/051af010279b3376a854e0e3c5b66a6d68a2a3ab",
-                "reference": "051af010279b3376a854e0e3c5b66a6d68a2a3ab",
+                "url": "https://api.github.com/repos/RebelCode/sql-expression-renderer/zipball/d04a2a39ab010271b25582ff335dae9fc28367e1",
+                "reference": "d04a2a39ab010271b25582ff335dae9fc28367e1",
                 "shasum": ""
             },
             "require": {
@@ -5071,7 +5071,7 @@
                 }
             ],
             "description": "A library for rendering SQL conditions using expressions.",
-            "time": "2018-05-16T15:55:24+00:00"
+            "time": "2018-06-13T13:58:30+00:00"
         },
         {
             "name": "rebelcode/time-abstract",

@@ -34,7 +34,6 @@
       <path value="$PROJECT_DIR$/vendor/rebelcode/booking-interface" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/time-abstract" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/session-generator-interface" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/session-generator" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/booking-transitioner-interface" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/booking" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
@@ -129,6 +128,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/vendor/guzzle/guzzle" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/session-generator" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
