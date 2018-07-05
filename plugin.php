@@ -164,7 +164,8 @@ function runEddBkCore()
     // Run core module when all plugins have been loaded
     add_filter(
         'plugins_loaded',
-        function() use ($container) {
+        function () use ($container) {
+            eddBkCheckDependencies();
 
             getEddBkCore()->run($container);
         },
