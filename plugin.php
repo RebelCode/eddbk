@@ -32,6 +32,7 @@
 
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Modular\Module\ModuleInterface;
+use Dhii\Util\String\StringableInterface as Stringable;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\EddBookings\Core\ExceptionHandler;
@@ -207,14 +208,31 @@ function eddBkHandleException($exception)
  * Deactivates this plugin.
  *
  * @since [*next-version*]
+ *
+ * @param string|Stringable|null $reason A string containing the reason for deactivation. If not given, the
+ *                                       plugin will be deactivated silently. Default: null
  */
-function eddBkDeactivateSelf()
+function eddBkDeactivateSelf($reason = null)
 {
     if (!function_exists('deactivate_plugin')) {
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
     }
 
     deactivate_plugins(plugin_basename(EDDBK_FILE));
+
+    if (is_null($reason)) {
+        return;
+    }
+
+    $title   = __('EDD Bookings has been deactivated!', EDDBK_TEXT_DOMAIN);
+    $message = sprintf('<h1>%s</h1><p>%s</p>', $title, strval($reason));
+
+    // Show wp_die screen with back link
+    wp_die(
+        $message,
+        $title,
+        array('back_link' => true)
+    );
 }
 
 /**
