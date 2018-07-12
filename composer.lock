@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "75119b0e62b947fcabcd8304df7cda4b",
+    "content-hash": "79ee741e6433b8dd6d09c2eb32d48b05",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4573,16 +4573,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
-            "version": "v0.1-alpha3",
+            "version": "v0.1-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-session-generator.git",
-                "reference": "2c04d41f6384c39b28706e645d5451becb13f859"
+                "reference": "7841fef9b7f3e57e6ab536c6efc4654e15156fea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/2c04d41f6384c39b28706e645d5451becb13f859",
-                "reference": "2c04d41f6384c39b28706e645d5451becb13f859",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/7841fef9b7f3e57e6ab536c6efc4654e15156fea",
+                "reference": "7841fef9b7f3e57e6ab536c6efc4654e15156fea",
                 "shasum": ""
             },
             "require": {
@@ -4619,7 +4619,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the session generator for EDD Bookings.",
-            "time": "2018-06-11T16:43:27+00:00"
+            "time": "2018-07-12T13:42:07+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
