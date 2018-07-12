@@ -32,6 +32,7 @@
 
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Modular\Module\ModuleInterface;
+use Dhii\Util\String\StringableInterface as Stringable;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\EddBookings\Core\ExceptionHandler;
@@ -42,6 +43,8 @@ use RebelCode\Modular\Finder\ModuleFileFinder;
 define('EDDBK_SLUG', 'eddbk');
 define('EDDBK_VERSION', '0.1-beta1');
 define('EDDBK_MIN_PHP_VERSION', '5.4.0');
+define('EDDBK_MIN_WP_VERSION', '4.4');
+define('EDDBK_MIN_EDD_VERSION', '2.6.0');
 // Paths
 define('EDDBK_FILE', __FILE__);
 define('EDDBK_DIR', __DIR__);
@@ -161,12 +164,42 @@ function runEddBkCore()
     // Run core module when all plugins have been loaded
     add_filter(
         'plugins_loaded',
-        function() use ($container) {
+        function () use ($container) {
+            eddBkCheckDependencies();
 
             getEddBkCore()->run($container);
         },
         0
     );
+}
+
+/**
+ * Checks the required dependencies for EDD Bookings, deactivating with a message if not satisfied.
+ *
+ * @since [*next-version*]
+ */
+function eddBkCheckDependencies()
+{
+    // Check WordPress version
+    if (version_compare(get_bloginfo('version'), EDDBK_MIN_WP_VERSION) < 0) {
+        $reason = __(
+            'EDD Bookings requires WordPress at version %1$s or later',
+            EDDBK_TEXT_DOMAIN
+        );
+        eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_WP_VERSION));
+
+        return;
+    }
+
+    if (!defined('EDD_VERSION') || version_compare(EDD_VERSION, EDDBK_MIN_EDD_VERSION) < 0) {
+        $reason = __(
+            'EDD Bookings requires the Easy Digital Downloads plugin to be installed and activated at version %1$s or later',
+            EDDBK_TEXT_DOMAIN
+        );
+        eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_EDD_VERSION));
+
+        return;
+    }
 }
 
 /**
@@ -207,14 +240,31 @@ function eddBkHandleException($exception)
  * Deactivates this plugin.
  *
  * @since [*next-version*]
+ *
+ * @param string|Stringable|null $reason A string containing the reason for deactivation. If not given, the
+ *                                       plugin will be deactivated silently. Default: null
  */
-function eddBkDeactivateSelf()
+function eddBkDeactivateSelf($reason = null)
 {
     if (!function_exists('deactivate_plugin')) {
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
     }
 
     deactivate_plugins(plugin_basename(EDDBK_FILE));
+
+    if (is_null($reason)) {
+        return;
+    }
+
+    $title   = __('EDD Bookings has been deactivated!', EDDBK_TEXT_DOMAIN);
+    $message = sprintf('<h1>%s</h1><p>%s</p>', $title, strval($reason));
+
+    // Show wp_die screen with back link
+    wp_die(
+        $message,
+        $title,
+        array('back_link' => true)
+    );
 }
 
 /**
