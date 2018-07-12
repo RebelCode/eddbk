@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "79ee741e6433b8dd6d09c2eb32d48b05",
+    "content-hash": "8eb5df74deac9c17d8f15176038a48ea",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4469,16 +4469,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "v0.1-alpha5",
+            "version": "v0.1-alpha6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "f33b68750824a5efd8be90e0156f4d3d79a8d1d4"
+                "reference": "d5a0a3656201235b0b2acaa80647f62a63112098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/f33b68750824a5efd8be90e0156f4d3d79a8d1d4",
-                "reference": "f33b68750824a5efd8be90e0156f4d3d79a8d1d4",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/d5a0a3656201235b0b2acaa80647f62a63112098",
+                "reference": "d5a0a3656201235b0b2acaa80647f62a63112098",
                 "shasum": ""
             },
             "require": {
@@ -4499,7 +4499,8 @@
                 "dhii/php-cs-fixer-config": "^0.1",
                 "johnpbloch/wordpress-core": "^4.0",
                 "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/rcmod-eddbk-cqrs": "^0.1-alpha2"
             },
             "type": "rc-module",
             "autoload": {
@@ -4518,7 +4519,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-06-12T15:55:08+00:00"
+            "time": "2018-07-12T14:49:05+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
