@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.1-beta2] - 2018-07-12
 ### Changed
-- Package name is now `rebelcode/eddbk`.
+- Using newer versions of some modules - check their respective changelogs!
+- Package name is now `eddbk`, which correspond to the repo name.
+- Added checks for some environment factors: WP and EDD versions.
 
 ## [0.1-beta1] - 2018-06-13
 Initial beta release, based on `0.1-alpha13`.
