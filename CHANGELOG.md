@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-beta3] - 2018-07-13
+### Changed
+- Using new version of Shortcode module.
+
 ## [0.1-beta2] - 2018-07-12
 ### Changed
 - Using newer versions of some modules - check their respective changelogs!
