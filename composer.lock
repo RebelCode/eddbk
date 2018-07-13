@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e520010d5adc50878012ec4e2ec6a816",
+    "content-hash": "75922cdaa0e035d577f9418dbd9fc27f",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4723,16 +4723,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
-            "version": "v0.1-alpha1",
+            "version": "v0.1-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-shortcode.git",
-                "reference": "e5bfe0418b74696f0e20878db5a0cccac08914cb"
+                "reference": "bb78e23f784d110d244fcd6918d257df998e0064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/e5bfe0418b74696f0e20878db5a0cccac08914cb",
-                "reference": "e5bfe0418b74696f0e20878db5a0cccac08914cb",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/bb78e23f784d110d244fcd6918d257df998e0064",
+                "reference": "bb78e23f784d110d244fcd6918d257df998e0064",
                 "shasum": ""
             },
             "require": {
@@ -4741,9 +4741,14 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/cqrs-resource-model-interface": "0.1-alpha2",
+                "dhii/expression-interface": "^0.2",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "dhii/transformer-interface": "^0.1-alpha1",
                 "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/rcmod-eddbk-services": "0.1-alpha3",
+                "rebelcode/rcmod-wp-cqrs": "0.1-alpha2"
             },
             "type": "rc-module",
             "extra": {
@@ -4767,7 +4772,7 @@
                 }
             ],
             "description": "Shortcode for booking widget output",
-            "time": "2018-05-21T15:03:23+00:00"
+            "time": "2018-07-13T11:46:54+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
