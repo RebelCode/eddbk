@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-beta4] - 2018-07-13
+### Changed
+- Using newer version of Front UI module, which fixes issue with missing styling.
+
 ## [0.1-beta3] - 2018-07-13
 ### Changed
 - Using new version of Shortcode module.
