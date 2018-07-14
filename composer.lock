@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d96c7de8a4077bf91314185d46de5225",
+    "content-hash": "a7dc5f0c876947becc87b91951568863",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4674,16 +4674,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
-            "version": "v0.1-alpha8",
+            "version": "v0.1-alpha9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "5863a354c00abf906f17d13a8f6e2cf01606620d"
+                "reference": "a60f4ec272e474e0d3318a5af69ad04e61f59ead"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/5863a354c00abf906f17d13a8f6e2cf01606620d",
-                "reference": "5863a354c00abf906f17d13a8f6e2cf01606620d",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/a60f4ec272e474e0d3318a5af69ad04e61f59ead",
+                "reference": "a60f4ec272e474e0d3318a5af69ad04e61f59ead",
                 "shasum": ""
             },
             "require": {
@@ -4719,20 +4719,20 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-07-13T15:33:31+00:00"
+            "time": "2018-07-14T09:56:57+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-shortcode.git",
-                "reference": "bb78e23f784d110d244fcd6918d257df998e0064"
+                "reference": "616c1b9f516afb35813ae897a0ea718b078e5208"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/bb78e23f784d110d244fcd6918d257df998e0064",
-                "reference": "bb78e23f784d110d244fcd6918d257df998e0064",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/616c1b9f516afb35813ae897a0ea718b078e5208",
+                "reference": "616c1b9f516afb35813ae897a0ea718b078e5208",
                 "shasum": ""
             },
             "require": {
@@ -4748,6 +4748,7 @@
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
                 "rebelcode/rcmod-eddbk-services": "0.1-alpha3",
+                "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha12",
                 "rebelcode/rcmod-wp-cqrs": "0.1-alpha2"
             },
             "type": "rc-module",
@@ -4772,20 +4773,20 @@
                 }
             ],
             "description": "Shortcode for booking widget output",
-            "time": "2018-07-13T11:46:54+00:00"
+            "time": "2018-07-14T09:48:42+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha11",
+            "version": "v0.1-alpha12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "eb4d8dea225b00ad4db5431fa80987adfea7c3e8"
+                "reference": "6d204ef0f56a6e1e066240d8bc3e3cfefae809f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/eb4d8dea225b00ad4db5431fa80987adfea7c3e8",
-                "reference": "eb4d8dea225b00ad4db5431fa80987adfea7c3e8",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/6d204ef0f56a6e1e066240d8bc3e3cfefae809f7",
+                "reference": "6d204ef0f56a6e1e066240d8bc3e3cfefae809f7",
                 "shasum": ""
             },
             "require": {
@@ -4827,7 +4828,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-07-12T17:03:30+00:00"
+            "time": "2018-07-14T09:39:04+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
