@@ -45,7 +45,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/stringable-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/expression-renderer-interface" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/composer-cleanup-plugin" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -92,7 +91,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/di-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/cqrs-resource-model-interface" />
-      <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/placeholder-template-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
@@ -102,7 +100,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/php-cs-fixer-config" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
-      <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
@@ -124,6 +121,14 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/guzzle/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
+      <path value="$PROJECT_DIR$/vendor/ptrofimov/xpmock" />
+      <path value="$PROJECT_DIR$/vendor/codeclimate/php-test-reporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

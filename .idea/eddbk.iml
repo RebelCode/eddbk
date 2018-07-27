@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-modules" />
       <excludeFolder url="file://$MODULE_DIR$/devrepo" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/composer-cleanup-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeclimate/php-test-reporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/args-list-validation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/cache-abstract" />
@@ -75,6 +76,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/wp-events" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/oomphinc/composer-installers-extender" />
@@ -90,6 +92,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ptrofimov/xpmock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-interface" />
@@ -106,6 +109,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/time-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/transformers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/satooshi/php-coveralls" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/environment" />
@@ -113,6 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/global-state" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
