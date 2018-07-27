@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-beta5] - 2018-07-27
+### Changed
+- Using newer versions of some modules.
+
+### Added
+- Settings page.
+- Licensing module, which allows entering the add-on license.
+
 ## [0.1-beta4] - 2018-07-13
 ### Changed
 - Using newer version of Front UI module, which fixes issue with missing styling.
