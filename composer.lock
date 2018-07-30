@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7263f33d8794df9667b932d9b487a00b",
+    "content-hash": "6dab9149a502636b73efda3bec6e93cc",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -432,16 +432,16 @@
         },
         {
             "name": "dhii/config",
-            "version": "v0.1-alpha1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/config.git",
-                "reference": "a9e4f46aa470887642c91a48456c50aafdccca14"
+                "reference": "1ab9a7ccf9c0ebd7c6fcbce600b4c00b52b2fdcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/config/zipball/a9e4f46aa470887642c91a48456c50aafdccca14",
-                "reference": "a9e4f46aa470887642c91a48456c50aafdccca14",
+                "url": "https://api.github.com/repos/Dhii/config/zipball/1ab9a7ccf9c0ebd7c6fcbce600b4c00b52b2fdcf",
+                "reference": "1ab9a7ccf9c0ebd7c6fcbce600b4c00b52b2fdcf",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +490,7 @@
                 }
             ],
             "description": "An implementation of a PSR-11 container that contains hierarchical configuraion.",
-            "time": "2018-04-30T16:40:43+00:00"
+            "time": "2018-07-30T11:58:08+00:00"
         },
         {
             "name": "dhii/config-interface",
@@ -543,16 +543,16 @@
         },
         {
             "name": "dhii/container-helper-base",
-            "version": "v0.1-alpha7",
+            "version": "v0.1-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/container-helper-base.git",
-                "reference": "622671534124d95c1478a744e4d903b4d071f674"
+                "reference": "1b8206842e06b71abcff769aaddfc51bf8f317cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/container-helper-base/zipball/622671534124d95c1478a744e4d903b4d071f674",
-                "reference": "622671534124d95c1478a744e4d903b4d071f674",
+                "url": "https://api.github.com/repos/Dhii/container-helper-base/zipball/1b8206842e06b71abcff769aaddfc51bf8f317cd",
+                "reference": "1b8206842e06b71abcff769aaddfc51bf8f317cd",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
                 }
             ],
             "description": "Helper functionality for working with container.",
-            "time": "2018-04-10T15:03:55+00:00"
+            "time": "2018-07-30T09:59:15+00:00"
         },
         {
             "name": "dhii/cqrs-resource-model-interface",
@@ -2207,16 +2207,16 @@
         },
         {
             "name": "dhii/map",
-            "version": "v0.1-alpha6",
+            "version": "v0.1-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/map.git",
-                "reference": "7b11540e02ff1d6cd2efc5f4da8730c6a40076fa"
+                "reference": "9ec82af42b7cb33d3b0b70d753e8a2bc7451cedf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/map/zipball/7b11540e02ff1d6cd2efc5f4da8730c6a40076fa",
-                "reference": "7b11540e02ff1d6cd2efc5f4da8730c6a40076fa",
+                "url": "https://api.github.com/repos/Dhii/map/zipball/9ec82af42b7cb33d3b0b70d753e8a2bc7451cedf",
+                "reference": "9ec82af42b7cb33d3b0b70d753e8a2bc7451cedf",
                 "shasum": ""
             },
             "require": {
@@ -2266,7 +2266,7 @@
                 "iterable",
                 "map"
             ],
-            "time": "2018-04-30T10:18:06+00:00"
+            "time": "2018-07-30T10:48:11+00:00"
         },
         {
             "name": "dhii/memoize-memory",

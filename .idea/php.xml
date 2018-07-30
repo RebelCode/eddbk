@@ -34,7 +34,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/normalization-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-key-value-aware-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/wp-events" />
-      <path value="$PROJECT_DIR$/vendor/dhii/map" />
       <path value="$PROJECT_DIR$/vendor/dhii/machine-state-machine-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/expression-renderer-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-base" />

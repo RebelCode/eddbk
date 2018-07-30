@@ -34,7 +34,7 @@
         "dhii/composite-container": "^0.1-alpha1",
         "dhii/memoize-memory": "^0.2-alpha1",
         "dhii/set": "^0.1-alpha1",
-        "dhii/config": "^0.1-alpha1"
+        "dhii/config": "^0.1-alpha2"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
