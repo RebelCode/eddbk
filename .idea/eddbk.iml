@@ -26,6 +26,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-key-value-aware-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-object-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-path-aware-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-state-abstract" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-state-base" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/data-state-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/di" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/di-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/evaluable-interface" />
@@ -48,6 +51,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/iterator-helper-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/iterator-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/machine-state-machine-interface" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/map" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/memoize-memory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/module-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dhii/normalization-helper-base" />
@@ -92,15 +96,14 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ptrofimov/xpmock" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-abstract" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-transitioner" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/booking-transitioner-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/event-state-machine" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/expression-wp-query-builder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/modular" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/module-iterator-abstract" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/rc-booking" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/rc-booking-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/session-generator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/session-generator-interface" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rebelcode/sql-cqrs-resource-models-abstract" />

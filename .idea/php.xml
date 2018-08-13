@@ -29,7 +29,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/module-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/state-machine-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/type-interface" />
-      <path value="$PROJECT_DIR$/vendor/dhii/sql-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/set" />
       <path value="$PROJECT_DIR$/vendor/dhii/normalization-helper-base" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-key-value-aware-interface" />
@@ -44,9 +43,7 @@
       <path value="$PROJECT_DIR$/vendor/dhii/stringable-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/expression-renderer-interface" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/composer-cleanup-plugin" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/dhii/config" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-identifiable-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/file-finder-abstract" />
@@ -58,17 +55,11 @@
       <path value="$PROJECT_DIR$/vendor/rebelcode/module-iterator-abstract" />
       <path value="$PROJECT_DIR$/vendor/oomphinc/composer-installers-extender" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/transformers" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/booking" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/booking-interface" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/event-state-machine" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/sql-cqrs-resource-models-abstract" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/sql-expression-renderer" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/booking-transitioner-interface" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/expression-wp-query-builder" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/booking-abstract" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/booking-transitioner" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/dhii/validation-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/exception" />
@@ -89,7 +80,6 @@
       <path value="$PROJECT_DIR$/vendor/dhii/config-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/output-renderer-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/di-abstract" />
-      <path value="$PROJECT_DIR$/vendor/dhii/cqrs-resource-model-interface" />
       <path value="$PROJECT_DIR$/vendor/dhii/placeholder-template-abstract" />
       <path value="$PROJECT_DIR$/vendor/dhii/data-container-interface" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
@@ -125,9 +115,22 @@
       <path value="$PROJECT_DIR$/vendor/satooshi/php-coveralls" />
       <path value="$PROJECT_DIR$/vendor/ptrofimov/xpmock" />
       <path value="$PROJECT_DIR$/vendor/codeclimate/php-test-reporter" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/dhii/factory-interface" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/dhii/map" />
+      <path value="$PROJECT_DIR$/vendor/dhii/sql-interface" />
+      <path value="$PROJECT_DIR$/vendor/dhii/cqrs-resource-model-interface" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/event-state-machine" />
+      <path value="$PROJECT_DIR$/vendor/dhii/data-state-abstract" />
+      <path value="$PROJECT_DIR$/vendor/dhii/data-state-base" />
+      <path value="$PROJECT_DIR$/vendor/dhii/data-state-interface" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/booking-transitioner" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/rc-booking-interface" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/rc-booking" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
