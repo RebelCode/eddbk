@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f00d76d247d69323a73acb24bf70775",
+    "content-hash": "9f4b853f0c07a45c366cf9d7cd59bd16",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4831,16 +4831,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
-            "version": "v0.1-alpha10",
+            "version": "v0.1-alpha11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "a9eea8612e1011f7a56931b0d15952b744315cea"
+                "reference": "88e1129b5fc78bf787cbaa595698feb0420cfb2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/a9eea8612e1011f7a56931b0d15952b744315cea",
-                "reference": "a9eea8612e1011f7a56931b0d15952b744315cea",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/88e1129b5fc78bf787cbaa595698feb0420cfb2e",
+                "reference": "88e1129b5fc78bf787cbaa595698feb0420cfb2e",
                 "shasum": ""
             },
             "require": {
@@ -4852,7 +4852,8 @@
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "^0.1",
                 "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha13"
             },
             "type": "rc-module",
             "extra": {
@@ -4876,7 +4877,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-08-13T13:05:04+00:00"
+            "time": "2018-08-14T08:46:01+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
