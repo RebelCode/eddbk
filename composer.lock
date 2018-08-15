@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f4b853f0c07a45c366cf9d7cd59bd16",
+    "content-hash": "a3092f36d29c18b2fc8b6297f1445da7",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4479,16 +4479,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
-            "version": "v0.1-alpha6",
+            "version": "v0.1-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
-                "reference": "67023ba53966a464f515b12d30e1f5778376b0f2"
+                "reference": "19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/67023ba53966a464f515b12d30e1f5778376b0f2",
-                "reference": "67023ba53966a464f515b12d30e1f5778376b0f2",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b",
+                "reference": "19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b",
                 "shasum": ""
             },
             "require": {
@@ -4529,7 +4529,7 @@
                 }
             ],
             "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
-            "time": "2018-08-01T13:38:34+00:00"
+            "time": "2018-08-15T13:08:52+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
@@ -7401,5 +7401,8 @@
     "platform": {
         "php": "^5.4 | ^7.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.4.9"
+    }
 }
