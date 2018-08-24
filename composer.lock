@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f26253a6fa0db36b5494b8c2780addb2",
+    "content-hash": "3e178f2a759d6c0aa8e6b9c063fc24dc",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4678,16 +4678,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "v0.1-alpha7",
+            "version": "v0.1-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "0dc3eba39d1610a334f66b22a72b1ef7e1baa2c3"
+                "reference": "35ad8e7e74eb996b9dffdff575ce4d44e3c9d12f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/0dc3eba39d1610a334f66b22a72b1ef7e1baa2c3",
-                "reference": "0dc3eba39d1610a334f66b22a72b1ef7e1baa2c3",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/35ad8e7e74eb996b9dffdff575ce4d44e3c9d12f",
+                "reference": "35ad8e7e74eb996b9dffdff575ce4d44e3c9d12f",
                 "shasum": ""
             },
             "require": {
@@ -4726,7 +4726,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-08-15T15:23:40+00:00"
+            "time": "2018-08-24T10:23:13+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
