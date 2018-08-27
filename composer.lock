@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6b0506e546434a8376f91214a91441f",
+    "content-hash": "c33e4b75be7f77ac0a5b58d6fcf53295",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4730,16 +4730,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
-            "version": "v0.1-alpha6",
+            "version": "v0.1-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-session-generator.git",
-                "reference": "8e247ec5c57524ee540b7f1906ede96cef1f8f38"
+                "reference": "a64dbd0325f39206a5b47c7ac188062f770a632f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/8e247ec5c57524ee540b7f1906ede96cef1f8f38",
-                "reference": "8e247ec5c57524ee540b7f1906ede96cef1f8f38",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-session-generator/zipball/a64dbd0325f39206a5b47c7ac188062f770a632f",
+                "reference": "a64dbd0325f39206a5b47c7ac188062f770a632f",
                 "shasum": ""
             },
             "require": {
@@ -4776,20 +4776,20 @@
                 }
             ],
             "description": "A RebelCode module that provides the session generator for EDD Bookings.",
-            "time": "2018-08-24T10:26:59+00:00"
+            "time": "2018-08-27T10:45:30+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
-            "version": "v0.1-alpha9",
+            "version": "v0.1-alpha10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "10a0a51de34e65b863429bf0fcaebe53cfb79f7f"
+                "reference": "76d57815376b5c5f4abd9ace87735d8daadd76f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/10a0a51de34e65b863429bf0fcaebe53cfb79f7f",
-                "reference": "10a0a51de34e65b863429bf0fcaebe53cfb79f7f",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/76d57815376b5c5f4abd9ace87735d8daadd76f3",
+                "reference": "76d57815376b5c5f4abd9ace87735d8daadd76f3",
                 "shasum": ""
             },
             "require": {
@@ -4827,7 +4827,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-08-21T09:48:57+00:00"
+            "time": "2018-08-27T11:10:07+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
