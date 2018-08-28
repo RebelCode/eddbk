@@ -6,7 +6,6 @@
       <extension name="SQLite" enabled="false" />
       <extension name="SplType" enabled="false" />
       <extension name="Zend OPcache" enabled="false" />
-      <extension name="ZendCache" enabled="false" />
       <extension name="ZendDebugger" enabled="false" />
       <extension name="ZendUtils" enabled="false" />
       <extension name="amqp" enabled="false" />
@@ -81,7 +80,6 @@
       <extension name="v8js" enabled="false" />
       <extension name="win32service" enabled="false" />
       <extension name="wincache" enabled="false" />
-      <extension name="xcache" enabled="false" />
       <extension name="xhprof" enabled="false" />
       <extension name="xmlrpc" enabled="false" />
       <extension name="xsl" enabled="false" />
