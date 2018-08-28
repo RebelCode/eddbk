@@ -8,6 +8,7 @@
  * Description: Adds a customizable booking system to Easy Digital Downloads.
  * Version: 0.1-rc2
  * Author: RebelCode
+ * Author URI: http://rebelcode.com
  * Text Domain: eddbk
  * Domain Path: /languages/
  * License: GPLv3
