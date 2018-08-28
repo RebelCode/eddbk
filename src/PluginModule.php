@@ -113,6 +113,8 @@ class PluginModule extends AbstractBaseModularModule
     public function run(ContainerInterface $c = null)
     {
         $this->_run($c);
+
+        $this->_attach('plugin_row_meta', $c->get('eddbk_plugin_knowledge_base_link_handler'));
     }
 
     /**
@@ -187,6 +189,9 @@ class PluginModule extends AbstractBaseModularModule
                 },
                 'event_factory' => function () {
                     return $this->_getEventFactory();
+                },
+                'eddbk_plugin_knowledge_base_link_handler' => function () {
+                    return new PluginKnowledgeBaseLinkHandler();
                 },
             ]
         );
