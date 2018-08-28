@@ -62,10 +62,5 @@
                 "type:rc-module"
             ]
         }
-    },
-    "config": {
-        "platform": {
-            "php": "5.5.10"
-        }
     }
 }
