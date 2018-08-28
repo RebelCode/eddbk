@@ -6,12 +6,14 @@ use Dhii\Collection\AddCapableOrderedList;
 use Dhii\Config\ConfigFactoryInterface;
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Data\Container\ContainerFactoryInterface;
+use Dhii\Event\EventFactoryInterface;
 use Dhii\EventManager\WordPress\WpEventManager;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Psr\Container\ContainerInterface;
+use Psr\EventManager\EventManagerInterface;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
@@ -75,6 +77,8 @@ class PluginModule extends AbstractBaseModularModule
      * @param ConfigFactoryInterface    $configFactory        The factory for creating config containers.
      * @param ContainerFactoryInterface $containerFactory     The factory for creating containers.
      * @param ContainerFactoryInterface $compContainerFactory The factory for creating composite containers.
+     * @param EventManagerInterface     $eventManager         The event manager instance.
+     * @param EventFactoryInterface     $eventFactory         The factory for creating events.
      * @param array|Traversable         $moduleFiles          The module file paths of the modules to be loaded, if any.
      */
     public function __construct(
@@ -82,9 +86,12 @@ class PluginModule extends AbstractBaseModularModule
         ConfigFactoryInterface $configFactory,
         ContainerFactoryInterface $containerFactory,
         ContainerFactoryInterface $compContainerFactory,
+        EventManagerInterface $eventManager,
+        EventFactoryInterface $eventFactory,
         $moduleFiles = []
     ) {
         $this->_initModule($moduleKey, [], $configFactory, $containerFactory, $compContainerFactory);
+        $this->_initModuleEvents($eventManager, $eventFactory);
         $this->moduleFiles = $moduleFiles;
     }
 
@@ -176,10 +183,10 @@ class PluginModule extends AbstractBaseModularModule
                     return new DereferencingConfigMapFactory($parent);
                 },
                 'event_manager' => function () {
-                    return new WpEventManager(true);
+                    return $this->_getEventManager();
                 },
                 'event_factory' => function () {
-                    return new EventFactory();
+                    return $this->_getEventFactory();
                 },
             ]
         );
