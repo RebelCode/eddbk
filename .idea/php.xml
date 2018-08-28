@@ -123,7 +123,6 @@
       <path value="$PROJECT_DIR$/vendor/rebelcode/sql-expression-renderer" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/time-abstract" />
       <path value="$PROJECT_DIR$/vendor/rebelcode/transformers" />
-      <path value="$PROJECT_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
@@ -132,6 +131,10 @@
       <path value="$PROJECT_DIR$/vendor/dhii/placeholder-template" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="D:/wp" />
+      <path value="F:/wp" />
+      <path value="G:/Workshop/web/wpra-php-70/public" />
+      <path value="$PROJECT_DIR$/vendor/rebelcode/wp-cqrs-resource-models" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
