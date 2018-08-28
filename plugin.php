@@ -31,12 +31,15 @@
  */
 
 use Dhii\Config\DereferencingConfigMapFactory;
+use Dhii\EventManager\WordPress\WpEventManager;
+use Dhii\Exception\InternalException;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use RebelCode\EddBookings\Core\Di\CompositeContainerFactory;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\EddBookings\Core\ExceptionHandler;
 use RebelCode\EddBookings\Core\PluginModule;
+use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Finder\ModuleFileFinder;
 
 // Plugin info
@@ -90,6 +93,8 @@ runEddBkCore();
  * @since [*next-version*]
  *
  * @return PluginModule The core plugin module instance.
+ *
+ * @throws InternalException If the event manager failed to initialize.
  */
 function getEddBkCore()
 {
@@ -126,6 +131,20 @@ function getEddBkCore()
         $compContainerFactory = apply_filters('eddbk_core_module_composite_container_factory', $compContainerFactory);
 
         /*
+         * The event manager.
+         * Used for managing WordPress hooks as events.
+         */
+        $eventManager = new WpEventManager(true);
+        $eventManager = apply_filters('eddbk_core_module_event_manager', $eventManager);
+
+        /*
+         * The event factory.
+         * Used in conjunction with the event manager for creating events.
+         */
+        $eventFactory = new EventFactory(true);
+        $eventFactory = apply_filters('eddbk_core_module_event_factory', $eventFactory);
+
+        /*
          * The core plugin module.
          * This is a special module that loads other modules.
          */
@@ -134,6 +153,8 @@ function getEddBkCore()
             $configFactory,
             $containerFactory,
             $compContainerFactory,
+            $eventManager,
+            $eventFactory,
             $fileFinder
         );
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
