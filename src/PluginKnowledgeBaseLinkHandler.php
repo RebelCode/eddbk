@@ -41,7 +41,7 @@ class PluginKnowledgeBaseLinkHandler implements InvocableInterface
         if (strpos($file, 'eddbk/plugin.php') !== false) {
             $links['knowledge-base'] = sprintf(
                 '<a href="https://docs.eddbookings.com/" target="_blank">%s</a>',
-                $this->__('Knowledge Base')
+                $this->__('Visit knowledge base')
             );
         }
 
