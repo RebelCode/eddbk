@@ -33,6 +33,8 @@
         "dhii/di": "^0.2-alpha1",
         "dhii/composite-container": "^0.1-alpha1",
         "dhii/memoize-memory": "^0.2-alpha1",
+        "dhii/wp-events": "^0.3-alpha1",
+        "dhii/exception": "^0.1-alpha3",
         "dhii/set": "^0.1-alpha1",
         "dhii/config": "^0.1-alpha2"
     },
@@ -59,6 +61,11 @@
             "modules/{$name}/": [
                 "type:rc-module"
             ]
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "5.5.10"
         }
     }
 }
