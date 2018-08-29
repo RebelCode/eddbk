@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9029877d2e8a1b01deb4ba8b8ff94dcd",
+    "content-hash": "58634ed95fcc590cbfbb1c27a168f5ff",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -1499,16 +1499,16 @@
         },
         {
             "name": "dhii/exception-interface",
-            "version": "v0.2-alpha3",
+            "version": "v0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/exception-interface.git",
-                "reference": "8271ae49553695bc8d2cc4707f8a1459a031e64f"
+                "reference": "b69feebf7cb2879cd43977a03342e2393b73f7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/exception-interface/zipball/8271ae49553695bc8d2cc4707f8a1459a031e64f",
-                "reference": "8271ae49553695bc8d2cc4707f8a1459a031e64f",
+                "url": "https://api.github.com/repos/Dhii/exception-interface/zipball/b69feebf7cb2879cd43977a03342e2393b73f7fb",
+                "reference": "b69feebf7cb2879cd43977a03342e2393b73f7fb",
                 "shasum": ""
             },
             "require": {
@@ -1543,7 +1543,7 @@
                 }
             ],
             "description": "Interfaces for most common exceptions",
-            "time": "2018-02-23T13:24:59+00:00"
+            "time": "2018-08-29T10:42:04+00:00"
         },
         {
             "name": "dhii/expression-interface",
@@ -1810,16 +1810,16 @@
         },
         {
             "name": "dhii/factory-interface",
-            "version": "v0.1-alpha3",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/factory-interface.git",
-                "reference": "45323d53d3fe4cc82e66d2a38c6bb19f933b9c0e"
+                "reference": "b8d217aec8838e64ccaa770cb03dc164bf6f0515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/45323d53d3fe4cc82e66d2a38c6bb19f933b9c0e",
-                "reference": "45323d53d3fe4cc82e66d2a38c6bb19f933b9c0e",
+                "url": "https://api.github.com/repos/Dhii/factory-interface/zipball/b8d217aec8838e64ccaa770cb03dc164bf6f0515",
+                "reference": "b8d217aec8838e64ccaa770cb03dc164bf6f0515",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1856,7 @@
                 }
             ],
             "description": "Interfaces for working with factories.",
-            "time": "2018-07-19T10:15:04+00:00"
+            "time": "2018-08-29T11:15:09+00:00"
         },
         {
             "name": "dhii/file-finder-abstract",
@@ -3533,16 +3533,16 @@
         },
         {
             "name": "dhii/validation-interface",
-            "version": "v0.2-alpha2",
+            "version": "v0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/validation-interface.git",
-                "reference": "520a35f21f4dd0db30a193421b5ca75c684efe96"
+                "reference": "a26026ae5cdf0a650b3511a22dbcb9329073b82c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/validation-interface/zipball/520a35f21f4dd0db30a193421b5ca75c684efe96",
-                "reference": "520a35f21f4dd0db30a193421b5ca75c684efe96",
+                "url": "https://api.github.com/repos/Dhii/validation-interface/zipball/a26026ae5cdf0a650b3511a22dbcb9329073b82c",
+                "reference": "a26026ae5cdf0a650b3511a22dbcb9329073b82c",
                 "shasum": ""
             },
             "require": {
@@ -3560,7 +3560,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.2.x-dev"
+                    "dev-develop": "0.3.x-dev"
                 }
             },
             "autoload": {
@@ -3579,7 +3579,7 @@
                 }
             ],
             "description": "A base interface for validators",
-            "time": "2018-03-07T12:54:40+00:00"
+            "time": "2018-08-29T11:39:22+00:00"
         },
         {
             "name": "dhii/wp-events",
@@ -7401,5 +7401,8 @@
     "platform": {
         "php": "^5.4 | ^7.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.4.9"
+    }
 }
