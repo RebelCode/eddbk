@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.1-rc2] - 2018-08-28
+### Changed
+- Using newer versions of some modules.
+- UI improvements.
+
 ## [0.1-rc1] - 2018-08-13
 ### Changed
 - Using newer versions of most modules.
