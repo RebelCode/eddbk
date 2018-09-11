@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21955933530dc9a54cd0d45fda1d184e",
+    "content-hash": "a613f056d7b7c6d1d9da7509cfb23042",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4623,16 +4623,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "v0.1-alpha7",
+            "version": "v0.1-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "bc00eaa9e5e708552976525fd5e560b093d246a0"
+                "reference": "e23c6340c8ad2d82f9936236e2b1e66205a79a2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/bc00eaa9e5e708552976525fd5e560b093d246a0",
-                "reference": "bc00eaa9e5e708552976525fd5e560b093d246a0",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/e23c6340c8ad2d82f9936236e2b1e66205a79a2b",
+                "reference": "e23c6340c8ad2d82f9936236e2b1e66205a79a2b",
                 "shasum": ""
             },
             "require": {
@@ -4647,7 +4647,8 @@
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-transitioner": "^0.2-alpha2",
                 "rebelcode/modular": "^0.1-alpha1",
-                "rebelcode/transformers": "^0.1-alpha1"
+                "rebelcode/transformers": "^0.1-alpha1",
+                "rebelcode/wp-nonce": "^0.1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
@@ -4674,7 +4675,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-08-13T12:23:04+00:00"
+            "time": "2018-09-11T11:03:54+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
@@ -5417,6 +5418,108 @@
             ],
             "description": "Functionality for WordPress CQRS resource models.",
             "time": "2018-08-28T14:19:27+00:00"
+        },
+        {
+            "name": "rebelcode/wp-nonce",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/wp-nonce.git",
+                "reference": "99d6a9b0cdfd4c077acf3be1a115660be1eb3a6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/wp-nonce/zipball/99d6a9b0cdfd4c077acf3be1a115660be1eb3a6b",
+                "reference": "99d6a9b0cdfd4c077acf3be1a115660be1eb3a6b",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/factory-interface": "^0.1",
+                "dhii/i18n-helper-base": "^0.1-alpha1",
+                "dhii/output-renderer-interface": "^0.3-alpha2",
+                "dhii/validation-base": "^0.1 | ^0.2-alpha1",
+                "php": "^5.4 | ^7.0",
+                "rebelcode/wp-nonce-interface": "^0.1-alpha1"
+            },
+            "require-dev": {
+                "10up/wp_mock": "^0.1.1",
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-master",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\WordPress\\Nonce\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "An object-oriented API for WordPress nonces.",
+            "time": "2018-09-10T13:54:39+00:00"
+        },
+        {
+            "name": "rebelcode/wp-nonce-interface",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/wp-nonce-interface.git",
+                "reference": "bf8a969d0134ae7d5297042a6b41aec51c51c328"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/wp-nonce-interface/zipball/bf8a969d0134ae7d5297042a6b41aec51c51c328",
+                "reference": "bf8a969d0134ae7d5297042a6b41aec51c51c328",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/data-identifiable-interface": "^0.1",
+                "dhii/factory-interface": "^0.1",
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\WordPress\\Nonce\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "Interfaces for an object oriented API for WordPress nonces.",
+            "time": "2018-09-10T13:52:58+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
