@@ -81,17 +81,17 @@ Vagrant.configure(2) do |config|
         phpbrew update
     fi
 
-    # Install PHP 5.4
+    # Install PHP 5.5.10
 
-    if ! [[ $(phpbrew list | grep 'php-5.4.22') ]]; then
-        phpbrew install 5.4.22 +default+json+mbstring+curl+mysql+xml as php-5.4.22
+    if ! [[ $(phpbrew list | grep 'php-5.5.10') ]]; then
+        phpbrew install 5.5.10 +default+json+mbstring+curl+mysqli+xml as php-5.5.10
         echo "source ~/.phpbrew/bashrc" >> ~/.bashrc
         echo "source ~/.phpbrew/bashrc" >> ~/.bash_profile
         source ~/.phpbrew/bashrc
-        phpbrew switch php-5.4.22
+        phpbrew switch php-5.5.10
     fi
 
-    phpbrew switch php-5.4.22
+    phpbrew switch php-5.5.10
 
     # Install Git
     if ! [[ $(command -v git) ]]; then
