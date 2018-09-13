@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.3] - 2018-09-13
-## Fixed
+### Fixed
 - The front-end wizard ignoring the "Week Starts On" setting.
 - Selecting a day in the front-end wizard calendar wrongly highlights the previous day for certain negative timezones.
 
