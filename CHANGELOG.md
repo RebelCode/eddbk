@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.3] - 2018-09-13
+## Fixed
+- The front-end wizard ignoring the "Week Starts On" setting.
+- Selecting a day in the front-end wizard calendar wrongly highlights the previous day for certain negative timezones.
+
 ## [0.1.2] - 2018-09-12
 ### Changed
 - Using version `0.1-alpha8` of `rcmod-eddbk-rest-api`.
