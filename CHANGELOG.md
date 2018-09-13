@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Using version `0.1-alpha8` of `rcmod-eddbk-rest-api`.
 - Using version `0.1-alpha14` of `rcmod-wp-bookings-front-ui`.
-- Using version `0.1-alpha18` of `rcmod-wp-bookings-ui`.
+- Using version `0.1-alpha19` of `rcmod-wp-bookings-ui`.
 
 ## [0.1.1] - 2018-08-31
 ### Changed
