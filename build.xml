@@ -94,7 +94,7 @@
         <exclude name="**/.git/**"/>
         <exclude name="**/.gitignore"/>
         <exclude name="**/.gitattributes"/>
-        <exclude name="githubKey"/>
+        <exclude name="${base_dir}/githubKey"/>
         <!-- Exclude Vagrant files -->
         <exclude name="**/.vagrant/**"/>
         <exclude name="**/Vagrantfile"/>
