@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.4] - 2018-09-DD
+### Fixed
+- Services with a draft, private, protected or future status were being shown in service selection lists.
+
 ## [0.1.3] - 2018-09-13
 ### Fixed
 - The front-end wizard ignoring the "Week Starts On" setting.
