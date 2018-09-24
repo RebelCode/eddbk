@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.1.4] - 2018-09-DD
+## [0.1.4] - 2018-09-24
 ### Fixed
 - Services with a draft, private, protected or future status were being shown in service selection lists.
+- The calendar in the booking wizard did not render correctly on some mobile devices.
+- The Download new/edit page would break when the WordPress site uses other plugins that also use RequireJs.
+- Date pickers in the availability modal popup would not disable past dates relative to the first period's start date.
+- Changing the timezone in the booking wizard caused the already select day to remain selected even when there were no available sessions.
+- Selecting a date for the date picker's first available period caused the used date to be 1 day off.
 
 ## [0.1.3] - 2018-09-13
 ### Fixed
