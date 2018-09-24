@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "655049aedc39ef49b0d8ce7999ce525d",
+    "content-hash": "e6a6bcd764717843b25a7a3afcbb6ec8",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -3701,16 +3701,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.33.0",
+            "version": "1.34.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "55667c1007a99e82030874b1bb14d24d07108413"
+                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/55667c1007a99e82030874b1bb14d24d07108413",
-                "reference": "55667c1007a99e82030874b1bb14d24d07108413",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
                 "shasum": ""
             },
             "require": {
@@ -3752,7 +3752,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-08-07T08:39:47+00:00"
+            "time": "2018-09-20T19:36:25+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -4679,16 +4679,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "dev-develop",
+            "version": "v0.1-alpha10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "0b205ad1001f285cf7e2b1110a581a18f14e90b7"
+                "reference": "05d32e618fa390d82d05480494e56fb1533b8d83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/0b205ad1001f285cf7e2b1110a581a18f14e90b7",
-                "reference": "0b205ad1001f285cf7e2b1110a581a18f14e90b7",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/05d32e618fa390d82d05480494e56fb1533b8d83",
+                "reference": "05d32e618fa390d82d05480494e56fb1533b8d83",
                 "shasum": ""
             },
             "require": {
@@ -4732,7 +4732,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-09-17T09:24:49+00:00"
+            "time": "2018-09-24T08:39:55+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4837,16 +4837,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
-            "version": "v0.1-alpha15",
+            "version": "v0.1-alpha16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-front-ui.git",
-                "reference": "881a139c5eabad6ed0fcead0872f73efd8ec2453"
+                "reference": "17779dfed38071ec4304b9e13a82c7dfddf718af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/881a139c5eabad6ed0fcead0872f73efd8ec2453",
-                "reference": "881a139c5eabad6ed0fcead0872f73efd8ec2453",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-front-ui/zipball/17779dfed38071ec4304b9e13a82c7dfddf718af",
+                "reference": "17779dfed38071ec4304b9e13a82c7dfddf718af",
                 "shasum": ""
             },
             "require": {
@@ -4884,7 +4884,7 @@
                 }
             ],
             "description": "A RebelCode module that provides UI for booking appointments",
-            "time": "2018-09-13T11:55:05+00:00"
+            "time": "2018-09-24T08:37:02+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
@@ -4943,16 +4943,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha19",
+            "version": "v0.1-alpha20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "dfd60d9daa3ed8ac4c41fee23e61233687a6f905"
+                "reference": "26b76b2f01e44d0e1937949510fbfc89005527a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/dfd60d9daa3ed8ac4c41fee23e61233687a6f905",
-                "reference": "dfd60d9daa3ed8ac4c41fee23e61233687a6f905",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/26b76b2f01e44d0e1937949510fbfc89005527a1",
+                "reference": "26b76b2f01e44d0e1937949510fbfc89005527a1",
                 "shasum": ""
             },
             "require": {
@@ -4995,7 +4995,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-09-13T13:02:55+00:00"
+            "time": "2018-09-24T08:34:15+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -7678,18 +7678,9 @@
             "time": "2018-01-29T19:49:41+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "0.1-alpha10",
-            "alias_normalized": "0.1.0.0-alpha10",
-            "version": "dev-develop",
-            "package": "rebelcode/rcmod-eddbk-services"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "rebelcode/rcmod-eddbk-services": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
