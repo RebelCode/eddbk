@@ -31,6 +31,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use Dhii\Collection\CountableMap;
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\EventManager\WordPress\WpEventManager;
 use Dhii\Exception\InternalException;
@@ -193,6 +194,38 @@ function runEddBkCore()
         },
         0
     );
+}
+
+
+/**
+ * Retrieves the plugin info.
+ *
+ * @since [*next-version*]
+ *
+ * @return CountableMap
+ */
+function getEddBkInfo()
+{
+    if (!function_exists('get_plugin_data')) {
+        require_once ABSPATH . '/wp-admin/includes/plugin.php';
+    }
+
+    $pluginData = get_plugin_data(__FILE__);
+
+    return new CountableMap([
+        'slug'               => 'eddbk',
+        'name'               => $pluginData['Name'],
+        'description'        => $pluginData['Description'],
+        'uri'                => $pluginData['PluginURI'],
+        'version'            => $pluginData['Version'],
+        'author'             => $pluginData['Author'],
+        'author_uri'         => $pluginData['AuthorURI'],
+        'text_domain'        => $pluginData['TextDomain'],
+        'config_file_path'   => __DIR__ . '/config.php',
+        'services_file_path' => __DIR__ . '/services.php',
+        'file_path'          => __FILE__,
+        'directory'          => __DIR__,
+    ]);
 }
 
 /**
