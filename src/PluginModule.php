@@ -2,22 +2,23 @@
 
 namespace RebelCode\EddBookings\Core;
 
+use ArrayAccess;
 use Dhii\Collection\AddCapableOrderedList;
 use Dhii\Config\ConfigFactoryInterface;
 use Dhii\Config\DereferencingConfigMapFactory;
 use Dhii\Data\Container\ContainerFactoryInterface;
+use Dhii\Data\Container\ContainerGetCapableTrait;
 use Dhii\Event\EventFactoryInterface;
-use Dhii\EventManager\WordPress\WpEventManager;
+use Dhii\Exception\InternalExceptionInterface;
 use Dhii\Invocation\CreateInvocationExceptionCapableTrait;
 use Dhii\Modular\Module\ModuleInterface;
 use Dhii\Util\Normalization\NormalizeArrayCapableTrait;
-use Dhii\Util\String\StringableInterface as Stringable;
 use Psr\Container\ContainerInterface;
 use Psr\EventManager\EventManagerInterface;
 use RebelCode\EddBookings\Core\Di\ContainerFactory;
-use RebelCode\Modular\Events\EventFactory;
 use RebelCode\Modular\Iterator\DependencyModuleIterator;
 use RebelCode\Modular\Module\AbstractBaseModularModule;
+use stdClass;
 use Traversable;
 
 /**
@@ -69,20 +70,30 @@ class PluginModule extends AbstractBaseModularModule
     protected $moduleFiles;
 
     /**
+     * The plugin info.
+     *
+     * @since [*next-version*]
+     *
+     * @var array|stdClass|ArrayAccess|ContainerInterface
+     */
+    protected $pluginInfo;
+
+    /**
      * Constructor.
      *
      * @since [*next-version*]
      *
-     * @param string|Stringable         $moduleKey            The key of the module.
-     * @param ConfigFactoryInterface    $configFactory        The factory for creating config containers.
-     * @param ContainerFactoryInterface $containerFactory     The factory for creating containers.
-     * @param ContainerFactoryInterface $compContainerFactory The factory for creating composite containers.
-     * @param EventManagerInterface     $eventManager         The event manager instance.
-     * @param EventFactoryInterface     $eventFactory         The factory for creating events.
-     * @param array|Traversable         $moduleFiles          The module file paths of the modules to be loaded, if any.
+     * @param array|stdClass|ArrayAccess|ContainerInterface $pluginInfo           The plugin info.
+     * @param ConfigFactoryInterface                        $configFactory        The config factory.
+     * @param ContainerFactoryInterface                     $containerFactory     The factory for creating containers.
+     * @param ContainerFactoryInterface                     $compContainerFactory The composite container factory.
+     * @param EventManagerInterface                         $eventManager         The event manager instance.
+     * @param EventFactoryInterface                         $eventFactory         The factory for creating events.
+     * @param array|Traversable                             $moduleFiles          The module file paths of the modules
+     *                                                                            to be loaded, if any.
      */
     public function __construct(
-        $moduleKey,
+        $pluginInfo,
         ConfigFactoryInterface $configFactory,
         ContainerFactoryInterface $containerFactory,
         ContainerFactoryInterface $compContainerFactory,
@@ -90,19 +101,39 @@ class PluginModule extends AbstractBaseModularModule
         EventFactoryInterface $eventFactory,
         $moduleFiles = []
     ) {
+        $this->pluginInfo = $pluginInfo;
+        $this->moduleFiles = $moduleFiles;
+
+        $moduleKey = $this->_containerGet($this->pluginInfo, 'slug');
+
         $this->_initModule($moduleKey, [], $configFactory, $containerFactory, $compContainerFactory);
         $this->_initModuleEvents($eventManager, $eventFactory);
-        $this->moduleFiles = $moduleFiles;
     }
 
     /**
      * {@inheritdoc}
      *
      * @since [*next-version*]
+     *
+     * @throws InternalExceptionInterface
      */
     public function setup()
     {
-        return $this->_setup();
+        $setupContainer = $this->_setup();
+
+        $servicesFilePath = $this->_containerGet($this->pluginInfo, 'services_file_path');
+        $container        = $this->_createContainer($this->_loadPhpConfigFile($servicesFilePath));
+
+        $configFilePath = $this->_containerGet($this->pluginInfo, 'config_file_path');
+        $infoConfig     = $this->_createConfig(['eddbk' => $this->pluginInfo]);
+        $fileConfig     = $this->_createConfig($this->_loadPhpConfigFile($configFilePath));
+
+        return $this->_createCompositeContainer([
+            $fileConfig,
+            $infoConfig,
+            $setupContainer,
+            $container,
+        ]);
     }
 
     /**
