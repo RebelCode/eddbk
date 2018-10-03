@@ -37,18 +37,13 @@ use Traversable;
  */
 class PluginModule extends AbstractBaseModularModule
 {
-    /*
-     * Provides array normalization functionality.
-     *
-     * @since [*next-version*]
-     */
+    /* @since [*next-version*] */
+    use ContainerGetCapableTrait;
+
+    /* @since [*next-version*] */
     use NormalizeArrayCapableTrait;
 
-    /*
-     * Provides functionality for creating invocation exceptions.
-     *
-     * @since [*next-version*]
-     */
+    /* @since [*next-version*] */
     use CreateInvocationExceptionCapableTrait;
 
     /**
@@ -101,7 +96,7 @@ class PluginModule extends AbstractBaseModularModule
         EventFactoryInterface $eventFactory,
         $moduleFiles = []
     ) {
-        $this->pluginInfo = $pluginInfo;
+        $this->pluginInfo  = $pluginInfo;
         $this->moduleFiles = $moduleFiles;
 
         $moduleKey = $this->_containerGet($this->pluginInfo, 'slug');
@@ -209,16 +204,16 @@ class PluginModule extends AbstractBaseModularModule
                 'composite_container_factory' => function () {
                     return $this->_getCompositeContainerFactory();
                 },
-                'container_factory' => function () use ($parent) {
+                'container_factory'           => function () use ($parent) {
                     return new ContainerFactory($parent);
                 },
-                'config_factory' => function () use ($parent) {
+                'config_factory'              => function () use ($parent) {
                     return new DereferencingConfigMapFactory($parent);
                 },
-                'event_manager' => function () {
+                'event_manager'               => function () {
                     return $this->_getEventManager();
                 },
-                'event_factory' => function () {
+                'event_factory'               => function () {
                     return $this->_getEventFactory();
                 },
             ]
