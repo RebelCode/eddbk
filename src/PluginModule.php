@@ -190,9 +190,6 @@ class PluginModule extends AbstractBaseModularModule
                 'event_factory' => function () {
                     return $this->_getEventFactory();
                 },
-                'eddbk_plugin_knowledge_base_link_handler' => function () {
-                    return new PluginKnowledgeBaseLinkHandler();
-                },
             ]
         );
     }
