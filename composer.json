@@ -29,7 +29,7 @@
         "rebelcode/rcmod-eddbk-session-generator": "0.1-alpha7",
         "rebelcode/rcmod-eddbk-cart": "0.1-alpha7",
         "rebelcode/rcmod-eddbk-admin-emails": "0.1-alpha2",
-        "rebelcode/rcmod-eddbk-licensing": "0.1-alpha1",
+        "rebelcode/rcmod-eddbk-licensing": "dev-develop as 0.1-alpha2",
         "dhii/di": "^0.2-alpha1",
         "dhii/composite-container": "^0.1-alpha1",
         "dhii/memoize-memory": "^0.2-alpha1",
