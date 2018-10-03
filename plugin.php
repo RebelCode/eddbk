@@ -143,7 +143,7 @@ function getEddBkCore()
          * The event factory.
          * Used in conjunction with the event manager for creating events.
          */
-        $eventFactory = new EventFactory(true);
+        $eventFactory = new EventFactory();
         $eventFactory = apply_filters('eddbk_core_module_event_factory', $eventFactory);
 
         /*
