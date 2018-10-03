@@ -151,7 +151,7 @@ function getEddBkCore()
          * This is a special module that loads other modules.
          */
         $coreModule = new PluginModule(
-            EDDBK_SLUG,
+            getEddBkInfo(),
             $configFactory,
             $containerFactory,
             $compContainerFactory,
