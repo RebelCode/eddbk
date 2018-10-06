@@ -114,21 +114,7 @@ class PluginModule extends AbstractBaseModularModule
      */
     public function setup()
     {
-        $setupContainer = $this->_setup();
-
-        $servicesFilePath = $this->_containerGet($this->pluginInfo, 'services_file_path');
-        $container        = $this->_createContainer($this->_loadPhpConfigFile($servicesFilePath));
-
-        $configFilePath = $this->_containerGet($this->pluginInfo, 'config_file_path');
-        $infoConfig     = $this->_createConfig(['eddbk' => $this->pluginInfo]);
-        $fileConfig     = $this->_createConfig($this->_loadPhpConfigFile($configFilePath));
-
-        return $this->_createCompositeContainer([
-            $fileConfig,
-            $infoConfig,
-            $setupContainer,
-            $container,
-        ]);
+        return $this->_setup();
     }
 
     /**
@@ -196,11 +182,26 @@ class PluginModule extends AbstractBaseModularModule
      * {@inheritdoc}
      *
      * @since [*next-version*]
+     *
+     * @throws InternalExceptionInterface If an error occurred while reading the config or services files.
      */
     protected function _getInitialContainer(ContainerInterface $parent = null)
     {
-        return $this->_createContainer(
-            [
+        // Prepare the config
+        $configFp   = $this->_containerGet($this->pluginInfo, 'config_file_path');
+        $infoConfig = $this->_createConfig([
+            'eddbk' => $this->pluginInfo
+        ]);
+        $fileConfig = $this->_createConfig($this->_loadPhpConfigFile($configFp));
+        $fullConfig = $this->_createCompositeContainer([$infoConfig, $fileConfig]);
+
+        $servicesFp = $this->_containerGet($this->pluginInfo, 'services_file_path');
+        $services   = $this->_createContainer($this->_loadPhpConfigFile($servicesFp));
+
+        return $this->_createCompositeContainer([
+            $fullConfig,
+            $services,
+            $this->_createContainer([
                 'composite_container_factory' => function () {
                     return $this->_getCompositeContainerFactory();
                 },
@@ -216,8 +217,8 @@ class PluginModule extends AbstractBaseModularModule
                 'event_factory'               => function () {
                     return $this->_getEventFactory();
                 },
-            ]
-        );
+            ]),
+        ]);
     }
 
     /**
