@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 ### Added
+- The text and labels for the booking wizard can now be customized from the settings page.
 - A `services.php` file for core, non-initial services.
 - A `config.php` file for core configuration. 
 - The main plugin class includes plugin information and config in the main container.
