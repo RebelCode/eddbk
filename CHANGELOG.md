@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - The plugin would show an update for the latest version, even when the latest version was installed.
+- Saving a download as draft did not retrieve its booking options from the database.
 
 ### Changed
 - The main plugin class now accepts plugin info instead of a module key as its first constructor parameter.
