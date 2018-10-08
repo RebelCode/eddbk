@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.1.5] - 2018-10-08
 ### Added
 - The text and labels for the booking wizard can now be customized from the settings page.
 - A `services.php` file for core, non-initial services.
