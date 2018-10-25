@@ -111,7 +111,7 @@ function getEddBkCore()
         $fileFinder = apply_filters('eddbk_core_module_file_finder', $fileFinder);
 
         /*
-         * The factory for creating containers.
+         * The factory for creating configs.
          * Used by the plugin's modular system, as well as by modules.
          */
         $configFactory = new DereferencingConfigMapFactory();
