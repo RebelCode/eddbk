@@ -221,11 +221,17 @@
     </target>
 
     <!--
-    Creates a release archive for hte dist build.
+    Creates a release archive for the last dist build.
     -->
-    <target name="release" depends="build">
+    <target name="archive">
         <echo message="Creating release archive: ${release_archive}" />
         <zip basedir="${dist_path}" destfile="${release_archive}" />
         <move file="${release_archive}" todir="${release_path}" overwrite="true" />
+    </target>
+
+    <!--
+    Creates a build and a release archive.
+    -->
+    <target name="release" depends="build, archive">
     </target>
 </project>
