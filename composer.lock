@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abbdcce14c613640180e579cbccda19e",
+    "content-hash": "2ad1b14315d3032bae6ebba96bcdeae6",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4718,16 +4718,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "dev-task/EDDBK-145_hide-sensitive-service-info",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "88cfecc6617d3b055e110089f0a048c155d1c815"
+                "reference": "0229ded9924840f0e5af18a8cdf9d125b3209291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/88cfecc6617d3b055e110089f0a048c155d1c815",
-                "reference": "88cfecc6617d3b055e110089f0a048c155d1c815",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/0229ded9924840f0e5af18a8cdf9d125b3209291",
+                "reference": "0229ded9924840f0e5af18a8cdf9d125b3209291",
                 "shasum": ""
             },
             "require": {
@@ -4771,20 +4771,20 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-10-25T09:53:03+00:00"
+            "time": "2018-10-26T10:48:56+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "dev-develop",
+            "version": "dev-task/hide-services-from-downloads",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "1b2b56629d34414487fba64642c8376eb401bb59"
+                "reference": "da7bc8006d9b0013f0bff9e6b0acbe7e534877fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/1b2b56629d34414487fba64642c8376eb401bb59",
-                "reference": "1b2b56629d34414487fba64642c8376eb401bb59",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/da7bc8006d9b0013f0bff9e6b0acbe7e534877fc",
+                "reference": "da7bc8006d9b0013f0bff9e6b0acbe7e534877fc",
                 "shasum": ""
             },
             "require": {
@@ -4831,7 +4831,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-10-22T13:24:58+00:00"
+            "time": "2018-10-29T14:12:23+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -5041,16 +5041,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "dev-task/EDDBK-138_inline-availability-editor",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "24114d0d0acbdcc87749b6a810d5e3be8147b295"
+                "reference": "59d271905bbf24a3ec1833118bd6462a20d791be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/24114d0d0acbdcc87749b6a810d5e3be8147b295",
-                "reference": "24114d0d0acbdcc87749b6a810d5e3be8147b295",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/59d271905bbf24a3ec1833118bd6462a20d791be",
+                "reference": "59d271905bbf24a3ec1833118bd6462a20d791be",
                 "shasum": ""
             },
             "require": {
@@ -5093,7 +5093,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-10-29T11:02:19+00:00"
+            "time": "2018-10-29T14:08:12+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -7780,7 +7780,7 @@
         {
             "alias": "0.1-alpha10",
             "alias_normalized": "0.1.0.0-alpha10",
-            "version": "dev-task/EDDBK-145_hide-sensitive-service-info",
+            "version": "dev-develop",
             "package": "rebelcode/rcmod-eddbk-rest-api"
         },
         {
@@ -7792,13 +7792,13 @@
         {
             "alias": "0.1-alpha22",
             "alias_normalized": "0.1.0.0-alpha22",
-            "version": "dev-task/EDDBK-138_inline-availability-editor",
+            "version": "dev-develop",
             "package": "rebelcode/rcmod-wp-bookings-ui"
         },
         {
             "alias": "0.1-alpha12",
             "alias_normalized": "0.1.0.0-alpha12",
-            "version": "dev-develop",
+            "version": "dev-task/hide-services-from-downloads",
             "package": "rebelcode/rcmod-eddbk-services"
         },
         {
