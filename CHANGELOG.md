@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.2.1] - 2018-11-01
+### Fixed
+- The confirmation page showed `{service_name}` instead of the actual service names.
+
 ## [0.2] - 2018-10-30
 ### Added
 - An icon button on admin pages for direct inline access to documentation and support.
