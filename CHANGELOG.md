@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+### Fixed
+- The confirmation page showed `{service_name}` instead of the actual service names.
 
 ## [0.2] - 2018-10-30
 ### Added
