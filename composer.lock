@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2421c12eadb7d4f2e1663c0a7d4522e0",
+    "content-hash": "084544fda2ca8fb1e174a70954b80f06",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4003,6 +4003,54 @@
             "time": "2018-07-31T11:36:30+00:00"
         },
         {
+            "name": "rebelcode/entity-manager-interface",
+            "version": "v0.1-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/entity-manager-interface.git",
+                "reference": "49b6268192e0d4b6a760880095048eaa2b563bae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/entity-manager-interface/zipball/49b6268192e0d4b6a760880095048eaa2b563bae",
+                "reference": "49b6268192e0d4b6a760880095048eaa2b563bae",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "^0.2-alpha4",
+                "php": "^5.3.9 | ^7.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "dhii/stringable-interface": "^0.1",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/cqrs-resource-model-interface": "Interfaces for building granular and flexible database abstraction"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\Entity\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "An interface package for standardizing entity managers.",
+            "time": "2018-10-10T09:14:53+00:00"
+        },
+        {
             "name": "rebelcode/event-state-machine",
             "version": "v0.2-alpha1",
             "source": {
@@ -4377,16 +4425,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-admin-emails",
-            "version": "v0.1-alpha2",
+            "version": "v0.1-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-admin-emails.git",
-                "reference": "dbf5204ce7eb0fe1c7c166f59e8a8656d26e8dbe"
+                "reference": "a57e762260fc8ff6701f3af3fe402f5351ada23c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-admin-emails/zipball/dbf5204ce7eb0fe1c7c166f59e8a8656d26e8dbe",
-                "reference": "dbf5204ce7eb0fe1c7c166f59e8a8656d26e8dbe",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-admin-emails/zipball/a57e762260fc8ff6701f3af3fe402f5351ada23c",
+                "reference": "a57e762260fc8ff6701f3af3fe402f5351ada23c",
                 "shasum": ""
             },
             "require": {
@@ -4401,7 +4449,8 @@
                 "dhii/php-cs-fixer-config": "^0.1",
                 "johnpbloch/wordpress-core": "^4.9",
                 "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
+                "ptrofimov/xpmock": "^1.1",
+                "rebelcode/entity-manager-interface": "^0.1"
             },
             "type": "rc-module",
             "autoload": {
@@ -4420,7 +4469,7 @@
                 }
             ],
             "description": "A RebelCode module that adds admin email functionality to EDD Bookings.",
-            "time": "2018-07-31T13:56:45+00:00"
+            "time": "2018-10-30T08:30:55+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-booking-logic",
@@ -4479,16 +4528,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
-            "version": "v0.1-alpha7",
+            "version": "v0.1-alpha8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
-                "reference": "19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b"
+                "reference": "edd6133a7721c70b8c6bc98effb86be804e5801c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b",
-                "reference": "19a1ef3e6aedfa37e3b090e3635ccb6a51ef2d3b",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/edd6133a7721c70b8c6bc98effb86be804e5801c",
+                "reference": "edd6133a7721c70b8c6bc98effb86be804e5801c",
                 "shasum": ""
             },
             "require": {
@@ -4508,6 +4557,7 @@
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
                 "rebelcode/booking-interface": "^0.2-alpha1",
+                "rebelcode/entity-manager-interface": "^0.1-alpha1",
                 "rebelcode/rcmod-booking-logic": "0.1-alpha2",
                 "rebelcode/rcmod-eddbk-booking-logic": "0.1-alpha7",
                 "rebelcode/rcmod-wp-bookings-cqrs": "0.1-alpha8"
@@ -4529,7 +4579,7 @@
                 }
             ],
             "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
-            "time": "2018-08-15T13:08:52+00:00"
+            "time": "2018-10-30T08:27:28+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
@@ -4575,6 +4625,51 @@
             ],
             "description": "A RebelCode module that provides the CQRS resource models for EDD Bookings.",
             "time": "2018-08-12T10:15:21+00:00"
+        },
+        {
+            "name": "rebelcode/rcmod-eddbk-help",
+            "version": "v0.1-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RebelCode/rcmod-eddbk-help.git",
+                "reference": "27a799b2c89862a7f2b0a316384d10d28467dac5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-help/zipball/27a799b2c89862a7f2b0a316384d10d28467dac5",
+                "reference": "27a799b2c89862a7f2b0a316384d10d28467dac5",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/invocable-interface": "^0.1",
+                "php": "^5.4 | ^7.0",
+                "rebelcode/modular": "^0.1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "<=0.3.2",
+                "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.4.0",
+                "phpunit/phpunit": "^4.8",
+                "ptrofimov/xpmock": "^1.1"
+            },
+            "type": "rc-module",
+            "autoload": {
+                "psr-4": {
+                    "RebelCode\\EddBookings\\Help\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "RebelCode",
+                    "email": "dev@rebelcode.com"
+                }
+            ],
+            "description": "A module for EDD Bookings that adds built-in help and support features.",
+            "time": "2018-10-30T08:39:54+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-licensing",
@@ -4623,16 +4718,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "v0.1-alpha9",
+            "version": "v0.1-alpha10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "795b620ffb138363c6912794d8a067abed1bb143"
+                "reference": "15e393796b62fb10a37e965e61c6c0fcedc182f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/795b620ffb138363c6912794d8a067abed1bb143",
-                "reference": "795b620ffb138363c6912794d8a067abed1bb143",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/15e393796b62fb10a37e965e61c6c0fcedc182f7",
+                "reference": "15e393796b62fb10a37e965e61c6c0fcedc182f7",
                 "shasum": ""
             },
             "require": {
@@ -4646,6 +4741,7 @@
                 "dhii/validation-base": "^0.2-alpha1",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/booking-transitioner": "^0.2-alpha2",
+                "rebelcode/entity-manager-interface": "^0.1-alpha2",
                 "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/transformers": "^0.1-alpha1",
                 "rebelcode/wp-nonce": "^0.1"
@@ -4675,36 +4771,39 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-09-12T11:06:31+00:00"
+            "time": "2018-10-30T08:16:24+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "v0.1-alpha11",
+            "version": "v0.1-alpha12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "a2f57a8abf703d94681c1210fff6c41c8f0eadea"
+                "reference": "af4ff079c4a01694ecd65f665006bc37665b539d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/a2f57a8abf703d94681c1210fff6c41c8f0eadea",
-                "reference": "a2f57a8abf703d94681c1210fff6c41c8f0eadea",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/af4ff079c4a01694ecd65f665006bc37665b539d",
+                "reference": "af4ff079c4a01694ecd65f665006bc37665b539d",
                 "shasum": ""
             },
             "require": {
                 "dhii/cqrs-resource-model-interface": "^0.2-alpha1",
                 "dhii/iterator-helper-base": "^0.1-alpha2",
                 "dhii/memoize-memory": "^0.2-alpha1",
+                "dhii/sql-interface": "^0.1-alpha1",
                 "ext-json": ">=1.2.1",
                 "guzzlehttp/psr7": "^1.4",
                 "nesbot/carbon": "^1.29.0",
                 "php": "^5.4 | ^7.0",
+                "rebelcode/entity-manager-interface": "^0.1-alpha1",
                 "rebelcode/expression-wp-query-builder": "^0.1-alpha1",
                 "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/transformers": "^0.1-alpha1",
                 "rebelcode/wp-cqrs-resource-models": "^0.2-alpha1"
             },
             "require-dev": {
+                "10up/wp_mock": "^0.1.1",
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "^0.1",
                 "phpunit/phpunit": "^4.8",
@@ -4732,7 +4831,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-10-08T12:51:44+00:00"
+            "time": "2018-10-30T08:20:17+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4888,16 +4987,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
-            "version": "v0.1-alpha4",
+            "version": "v0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-shortcode.git",
-                "reference": "df4b3f646bc67c2fafd506d30971dde96f4e7378"
+                "reference": "0825d88f7e374e18c2702e7c5e0bc840f37096e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/df4b3f646bc67c2fafd506d30971dde96f4e7378",
-                "reference": "df4b3f646bc67c2fafd506d30971dde96f4e7378",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/0825d88f7e374e18c2702e7c5e0bc840f37096e4",
+                "reference": "0825d88f7e374e18c2702e7c5e0bc840f37096e4",
                 "shasum": ""
             },
             "require": {
@@ -4906,12 +5005,11 @@
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
-                "dhii/cqrs-resource-model-interface": "0.1-alpha2",
-                "dhii/expression-interface": "^0.2",
                 "dhii/php-cs-fixer-config": "^0.1",
                 "dhii/transformer-interface": "^0.1-alpha1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
+                "rebelcode/entity-manager-interface": "^0.1-alpha",
                 "rebelcode/rcmod-eddbk-services": "0.1-alpha3",
                 "rebelcode/rcmod-wp-bookings-front-ui": "0.1-alpha9",
                 "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha12",
@@ -4939,20 +5037,20 @@
                 }
             ],
             "description": "Shortcode for booking widget output",
-            "time": "2018-09-13T12:01:49+00:00"
+            "time": "2018-10-30T08:34:22+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha22",
+            "version": "v0.1-alpha23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "cc96a8c8e8aa3d79b9409a537960db87d59b1671"
+                "reference": "69dc237cbce5da098b7cb26bee072304039843d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/cc96a8c8e8aa3d79b9409a537960db87d59b1671",
-                "reference": "cc96a8c8e8aa3d79b9409a537960db87d59b1671",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/69dc237cbce5da098b7cb26bee072304039843d5",
+                "reference": "69dc237cbce5da098b7cb26bee072304039843d5",
                 "shasum": ""
             },
             "require": {
@@ -4995,7 +5093,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-10-08T12:49:12+00:00"
+            "time": "2018-10-30T08:37:03+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",

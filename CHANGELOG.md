@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.2] - 2018-10-30
+### Added
+- An icon button on admin pages for direct inline access to documentation and support.
+- A new admin page that lists services and provides creation and editing capabilities.
+- Services may now have an assigned color, for admin display purposes only.
+- New protected REST API service routes for creation, updating and deletion of services.
+
+### Changed
+- The availability builder interface for services has been redesigned.
+- Availability rules are now displayed in a list in the availability builder.
+- Services are now hidden from the EDD Downloads list table.
+- Sessions are now generated asynchronously using WP Cron when a service has been saved.
+
+### Removed
+- The bookings metabox in the Download new/edit page has been removed in favor of the new services page.
+
 ## [0.1.5] - 2018-10-08
 ### Added
 - The text and labels for the booking wizard can now be customized from the settings page.
