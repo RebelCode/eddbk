@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "faf513edd5e30ab72406bf21110259d3",
+    "content-hash": "d2740a0f9e37c72b18c52f3163e61706",
     "packages": [
         {
             "name": "barryvdh/composer-cleanup-plugin",
@@ -4528,16 +4528,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-cart",
-            "version": "v0.1-alpha9",
+            "version": "dev-task/EDDBK-163_session-type-prices",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-cart.git",
-                "reference": "8b32ee58add45ad5de52e894bf4b2b15682ba684"
+                "reference": "23837a70f181cdc8787bbf8f45378bd21c8904d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/8b32ee58add45ad5de52e894bf4b2b15682ba684",
-                "reference": "8b32ee58add45ad5de52e894bf4b2b15682ba684",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-cart/zipball/23837a70f181cdc8787bbf8f45378bd21c8904d1",
+                "reference": "23837a70f181cdc8787bbf8f45378bd21c8904d1",
                 "shasum": ""
             },
             "require": {
@@ -4560,6 +4560,7 @@
                 "rebelcode/entity-manager-interface": "^0.1-alpha1",
                 "rebelcode/rcmod-booking-logic": "0.1-alpha2",
                 "rebelcode/rcmod-eddbk-booking-logic": "0.1-alpha7",
+                "rebelcode/rcmod-eddbk-services": "0.1-alpha12",
                 "rebelcode/rcmod-wp-bookings-cqrs": "0.1-alpha8"
             },
             "type": "rc-module",
@@ -4579,7 +4580,7 @@
                 }
             ],
             "description": "A RebelCode module that adds EDD cart bookings functionality to EDD Bookings.",
-            "time": "2018-11-01T12:04:32+00:00"
+            "time": "2018-11-01T16:53:51+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-cqrs",
@@ -4718,16 +4719,16 @@
         },
         {
             "name": "rebelcode/rcmod-eddbk-rest-api",
-            "version": "v0.1-alpha10",
+            "version": "dev-task/EDDBK-161_transform-session-types",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "15e393796b62fb10a37e965e61c6c0fcedc182f7"
+                "reference": "1d05e58e5a4356e0c84ff112e31b0f8ed5bffc4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/15e393796b62fb10a37e965e61c6c0fcedc182f7",
-                "reference": "15e393796b62fb10a37e965e61c6c0fcedc182f7",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/1d05e58e5a4356e0c84ff112e31b0f8ed5bffc4a",
+                "reference": "1d05e58e5a4356e0c84ff112e31b0f8ed5bffc4a",
                 "shasum": ""
             },
             "require": {
@@ -4771,20 +4772,20 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-10-30T08:16:24+00:00"
+            "time": "2018-11-05T14:44:14+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
-            "version": "v0.1-alpha12",
+            "version": "dev-task/EDDBK-160_session-types",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-services.git",
-                "reference": "af4ff079c4a01694ecd65f665006bc37665b539d"
+                "reference": "87f6a99f6fc3e48e7bec090f4c7f92f02fe376bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/af4ff079c4a01694ecd65f665006bc37665b539d",
-                "reference": "af4ff079c4a01694ecd65f665006bc37665b539d",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-services/zipball/87f6a99f6fc3e48e7bec090f4c7f92f02fe376bf",
+                "reference": "87f6a99f6fc3e48e7bec090f4c7f92f02fe376bf",
                 "shasum": ""
             },
             "require": {
@@ -4806,6 +4807,7 @@
                 "10up/wp_mock": "^0.1.1",
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/php-cs-fixer-config": "^0.1",
+                "johnpbloch/wordpress-core": "^4.5",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
             },
@@ -4831,7 +4833,7 @@
                 }
             ],
             "description": "A RebelCode module that makes EDD Downloads bookable services for EDD Bookings.",
-            "time": "2018-10-30T08:20:17+00:00"
+            "time": "2018-11-05T14:21:00+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-session-generator",
@@ -4885,22 +4887,22 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-cqrs",
-            "version": "v0.1-alpha11",
+            "version": "dev-task/EDDBK-168_session-types-migration",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "fb6253b88a459f16769953984acadafdb298cc1e"
+                "reference": "8fc21267da362ce9c94ab2ccba6ee04d12f805c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/fb6253b88a459f16769953984acadafdb298cc1e",
-                "reference": "fb6253b88a459f16769953984acadafdb298cc1e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/8fc21267da362ce9c94ab2ccba6ee04d12f805c9",
+                "reference": "8fc21267da362ce9c94ab2ccba6ee04d12f805c9",
                 "shasum": ""
             },
             "require": {
                 "dhii/data-object-abstract": "^0.1-alpha1",
                 "dhii/placeholder-template": "^0.1-alpha2",
-                "ext-mysqli": "^0.1",
+                "ext-mysqli": "*",
                 "php": "^5.4 | ^7.0",
                 "rebelcode/modular": "^0.1-alpha1",
                 "rebelcode/sql-cqrs-resource-models-abstract": "^0.2-alpha1",
@@ -4932,7 +4934,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-08-28T15:02:55+00:00"
+            "time": "2018-11-01T11:46:19+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
@@ -4987,16 +4989,16 @@
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-shortcode",
-            "version": "v0.1-alpha5",
+            "version": "dev-task/fix-service-transform",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-shortcode.git",
-                "reference": "0825d88f7e374e18c2702e7c5e0bc840f37096e4"
+                "reference": "51f01b824eef27fa45b6862df28713da890facd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/0825d88f7e374e18c2702e7c5e0bc840f37096e4",
-                "reference": "0825d88f7e374e18c2702e7c5e0bc840f37096e4",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-shortcode/zipball/51f01b824eef27fa45b6862df28713da890facd1",
+                "reference": "51f01b824eef27fa45b6862df28713da890facd1",
                 "shasum": ""
             },
             "require": {
@@ -5009,7 +5011,7 @@
                 "dhii/transformer-interface": "^0.1-alpha1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1",
-                "rebelcode/entity-manager-interface": "^0.1-alpha",
+                "rebelcode/entity-manager-interface": "^0.1-alpha1",
                 "rebelcode/rcmod-eddbk-services": "0.1-alpha3",
                 "rebelcode/rcmod-wp-bookings-front-ui": "0.1-alpha9",
                 "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha12",
@@ -5037,20 +5039,20 @@
                 }
             ],
             "description": "Shortcode for booking widget output",
-            "time": "2018-10-30T08:34:22+00:00"
+            "time": "2018-11-05T14:33:45+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-ui",
-            "version": "v0.1-alpha23",
+            "version": "dev-task/use-rest-api-service-t9r",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "69dc237cbce5da098b7cb26bee072304039843d5"
+                "reference": "08431eb8ee4f8a6d6be031dd91b916b260e2a0a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/69dc237cbce5da098b7cb26bee072304039843d5",
-                "reference": "69dc237cbce5da098b7cb26bee072304039843d5",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/08431eb8ee4f8a6d6be031dd91b916b260e2a0a9",
+                "reference": "08431eb8ee4f8a6d6be031dd91b916b260e2a0a9",
                 "shasum": ""
             },
             "require": {
@@ -5058,18 +5060,21 @@
                 "dhii/normalization-helper-base": "^0.1-alpha2",
                 "dhii/placeholder-template": "^0.1-alpha2",
                 "php": "^5.4 | ^7.0",
-                "rebelcode/modular": "^0.1-alpha1"
+                "rebelcode/modular": "^0.1-alpha1",
+                "rebelcode/transformers": "^0.1-alpha1"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "<=0.3.2",
                 "dhii/container-helper-base": "^0.1-alpha7",
+                "dhii/expression-interface": "^0.2",
                 "dhii/php-cs-fixer-config": "^0.1",
                 "dhii/psr-14": "^0.1",
                 "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
                 "psr/container": "^1.0",
                 "ptrofimov/xpmock": "^1.1",
-                "rebelcode/rcmod-eddbk-rest-api": "^0.1-alpha8"
+                "rebelcode/entity-manager-interface": "^0.1-alpha2",
+                "rebelcode/rcmod-eddbk-rest-api": "0.1-alpha10"
             },
             "type": "rc-module",
             "extra": {
@@ -5093,7 +5098,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-10-30T08:37:03+00:00"
+            "time": "2018-11-05T14:13:43+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
@@ -5688,7 +5693,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -7161,16 +7166,16 @@
         },
         {
             "name": "symfony/config",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "e5389132dc6320682de3643091121c048ff796b3"
+                "reference": "99b2fa8acc244e656cdf324ff419fbe6fd300a4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/e5389132dc6320682de3643091121c048ff796b3",
-                "reference": "e5389132dc6320682de3643091121c048ff796b3",
+                "url": "https://api.github.com/repos/symfony/config/zipball/99b2fa8acc244e656cdf324ff419fbe6fd300a4d",
+                "reference": "99b2fa8acc244e656cdf324ff419fbe6fd300a4d",
                 "shasum": ""
             },
             "require": {
@@ -7221,20 +7226,20 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-09-08T13:15:14+00:00"
+            "time": "2018-10-31T09:06:03+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b"
+                "reference": "1d228fb4602047d7b26a0554e0d3efd567da5803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b",
-                "reference": "3b2b415d4c48fbefca7dc742aa0a0171bfae4e0b",
+                "url": "https://api.github.com/repos/symfony/console/zipball/1d228fb4602047d7b26a0554e0d3efd567da5803",
+                "reference": "1d228fb4602047d7b26a0554e0d3efd567da5803",
                 "shasum": ""
             },
             "require": {
@@ -7290,20 +7295,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T16:33:53+00:00"
+            "time": "2018-10-30T16:50:50+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6"
+                "reference": "fe9793af008b651c5441bdeab21ede8172dab097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
-                "reference": "0a612e9dfbd2ccce03eb174365f31ecdca930ff6",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/fe9793af008b651c5441bdeab21ede8172dab097",
+                "reference": "fe9793af008b651c5441bdeab21ede8172dab097",
                 "shasum": ""
             },
             "require": {
@@ -7346,20 +7351,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T16:33:53+00:00"
+            "time": "2018-10-31T09:06:03+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb"
+                "reference": "db9e829c8f34c3d35cf37fcd4cdb4293bc4a2f14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb",
-                "reference": "b2e1f19280c09a42dc64c0b72b80fe44dd6e88fb",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/db9e829c8f34c3d35cf37fcd4cdb4293bc4a2f14",
+                "reference": "db9e829c8f34c3d35cf37fcd4cdb4293bc4a2f14",
                 "shasum": ""
             },
             "require": {
@@ -7409,11 +7414,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T09:06:28+00:00"
+            "time": "2018-10-30T16:50:50+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -7463,7 +7468,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -7570,16 +7575,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "1dc2977afa7d70f90f3fefbcd84152813558910e"
+                "reference": "35c2914a9f50519bd207164c353ae4d59182c2cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/1dc2977afa7d70f90f3fefbcd84152813558910e",
-                "reference": "1dc2977afa7d70f90f3fefbcd84152813558910e",
+                "url": "https://api.github.com/repos/symfony/process/zipball/35c2914a9f50519bd207164c353ae4d59182c2cb",
+                "reference": "35c2914a9f50519bd207164c353ae4d59182c2cb",
                 "shasum": ""
             },
             "require": {
@@ -7615,11 +7620,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T12:28:39+00:00"
+            "time": "2018-10-14T17:33:21+00:00"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -7668,7 +7673,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.17",
+            "version": "v3.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -7776,9 +7781,53 @@
             "time": "2018-01-29T19:49:41+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "0.1-alpha12",
+            "alias_normalized": "0.1.0.0-alpha12",
+            "version": "dev-task/EDDBK-168_session-types-migration",
+            "package": "rebelcode/rcmod-wp-bookings-cqrs"
+        },
+        {
+            "alias": "0.1-alpha11",
+            "alias_normalized": "0.1.0.0-alpha11",
+            "version": "dev-task/EDDBK-161_transform-session-types",
+            "package": "rebelcode/rcmod-eddbk-rest-api"
+        },
+        {
+            "alias": "0.1-alpha6",
+            "alias_normalized": "0.1.0.0-alpha6",
+            "version": "dev-task/fix-service-transform",
+            "package": "rebelcode/rcmod-wp-bookings-shortcode"
+        },
+        {
+            "alias": "0.1-alpha24",
+            "alias_normalized": "0.1.0.0-alpha24",
+            "version": "dev-task/use-rest-api-service-t9r",
+            "package": "rebelcode/rcmod-wp-bookings-ui"
+        },
+        {
+            "alias": "0.1-alpha13",
+            "alias_normalized": "0.1.0.0-alpha13",
+            "version": "dev-task/EDDBK-160_session-types",
+            "package": "rebelcode/rcmod-eddbk-services"
+        },
+        {
+            "alias": "0.1-alpha10",
+            "alias_normalized": "0.1.0.0-alpha10",
+            "version": "dev-task/EDDBK-163_session-type-prices",
+            "package": "rebelcode/rcmod-eddbk-cart"
+        }
+    ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "rebelcode/rcmod-wp-bookings-cqrs": 20,
+        "rebelcode/rcmod-eddbk-rest-api": 20,
+        "rebelcode/rcmod-wp-bookings-shortcode": 20,
+        "rebelcode/rcmod-wp-bookings-ui": 20,
+        "rebelcode/rcmod-eddbk-services": 20,
+        "rebelcode/rcmod-eddbk-cart": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
