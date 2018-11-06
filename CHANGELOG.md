@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+### Added
+- A new migration that updates the database for use with the new session types data format.
+- Session types may now have a custom label, instead of simply their duration, shown on the front-end booking form
+
+### Changed
+- The UI for session lengths has been redesigned and used terminology has been simplified.
+- Updated the REST API to provide the new session types data.
 
 ## [0.2.1] - 2018-11-01
 ### Fixed
