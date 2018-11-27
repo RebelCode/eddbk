@@ -26,7 +26,7 @@
         "rebelcode/rcmod-wp-bookings-front-ui": "dev-develop as 0.1-alpha18",
         "rebelcode/rcmod-wp-bookings-ui": "dev-develop as 0.1-alpha24",
         "rebelcode/rcmod-eddbk-services": "dev-task/EDDBK-175_schedule-resource as 0.1-alpha13",
-        "rebelcode/rcmod-eddbk-session-generator": "dev-develop as 0.1-alpha7",
+        "rebelcode/rcmod-eddbk-session-generator": "dev-task/use-new-booking-system as 0.1-alpha7",
         "rebelcode/rcmod-eddbk-cart": "dev-develop as 0.1-alpha10",
         "rebelcode/rcmod-eddbk-admin-emails": "0.1-alpha3",
         "rebelcode/rcmod-eddbk-help": "0.1-alpha1",
