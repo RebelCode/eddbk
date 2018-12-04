@@ -28,7 +28,7 @@
         "rebelcode/rcmod-eddbk-services": "dev-task/EDDBK-175_schedule-resource as 0.1-alpha13",
         "rebelcode/rcmod-eddbk-session-generator": "dev-task/use-new-booking-system as 0.1-alpha7",
         "rebelcode/rcmod-eddbk-cart": "dev-task/use-new-booking-system as 0.1-alpha10",
-        "rebelcode/rcmod-eddbk-admin-emails": "0.1-alpha3",
+        "rebelcode/rcmod-eddbk-admin-emails": "dev-task/show-resources-in-receipt as 0.1-alpha4",
         "rebelcode/rcmod-eddbk-help": "0.1-alpha1",
         "rebelcode/rcmod-eddbk-licensing": "0.1-alpha2",
         "dhii/di": "^0.2-alpha1",
