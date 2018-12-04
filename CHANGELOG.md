@@ -6,12 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 ### Added
-- A new migration that updates the database for use with the new session types data format.
-- Session types may now have a custom label, instead of simply their duration, shown on the front-end booking form
+- Staff members may now be created, edited and deleted
+- Session types may now have a label.
+- Services may have staff members assigned to them through session types.
+- The booking form wizard allows customers to choose a staff member, if applicable to the selected service.
+- The EDD cart and purchase confirmation pages show session information and the chosen staff member, if applicable.
+- The wizard customizer allows re-ordering of the duration and staff member options.
+- Admin and customer receipt emails now include chosen staff member for each purchased booking.
 
 ### Changed
-- The UI for session lengths has been redesigned and used terminology has been simplified.
+- Session lengths have been replaced with session types.
+- Service availabilities have been reworked to allow them to be combined with staff member availabilities.
 - Updated the REST API to provide the new session types data.
+- Admin and customer receipt emails show the custom session label instead of the duration, if one is set.
+
+### Fixed
+- The EDD Payment History page was not listing any payments.
 
 ## [0.2.1] - 2018-11-01
 ### Fixed
