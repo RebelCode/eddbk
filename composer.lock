@@ -3636,16 +3636,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "53662d6688033a5eccde987bdd5a4a98ebe2d952"
+                "reference": "9f83dded91781a01c63574e387eaa769be769115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53662d6688033a5eccde987bdd5a4a98ebe2d952",
-                "reference": "53662d6688033a5eccde987bdd5a4a98ebe2d952",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115",
                 "shasum": ""
             },
             "require": {
@@ -3699,7 +3699,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-12-03T05:07:51+00:00"
+            "time": "2018-12-04T20:46:45+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -4772,12 +4772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-eddbk-rest-api.git",
-                "reference": "b871c210db1c034b1ab8dd547df595573db1e97e"
+                "reference": "61ed2a0d3f226cd05db5e7d9a4045e90d96f12a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/b871c210db1c034b1ab8dd547df595573db1e97e",
-                "reference": "b871c210db1c034b1ab8dd547df595573db1e97e",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-eddbk-rest-api/zipball/61ed2a0d3f226cd05db5e7d9a4045e90d96f12a3",
+                "reference": "61ed2a0d3f226cd05db5e7d9a4045e90d96f12a3",
                 "shasum": ""
             },
             "require": {
@@ -4821,7 +4821,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the REST API used in EDD Bookings.",
-            "time": "2018-12-03T15:21:05+00:00"
+            "time": "2018-12-05T09:02:10+00:00"
         },
         {
             "name": "rebelcode/rcmod-eddbk-services",
@@ -4939,12 +4939,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-cqrs.git",
-                "reference": "9016b0d3e3a39372e11dc2bbbf08e0723bc3ba89"
+                "reference": "74f29c4e35992e2e18997e4057168e95bce2d4a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/9016b0d3e3a39372e11dc2bbbf08e0723bc3ba89",
-                "reference": "9016b0d3e3a39372e11dc2bbbf08e0723bc3ba89",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-cqrs/zipball/74f29c4e35992e2e18997e4057168e95bce2d4a8",
+                "reference": "74f29c4e35992e2e18997e4057168e95bce2d4a8",
                 "shasum": ""
             },
             "require": {
@@ -4983,7 +4983,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress CQRS resource models for RebelCode booking plugins.",
-            "time": "2018-11-29T12:38:41+00:00"
+            "time": "2018-12-04T14:04:50+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-bookings-front-ui",
@@ -5096,12 +5096,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RebelCode/rcmod-wp-bookings-ui.git",
-                "reference": "1fee32d6574daa6db253f6b5d7a168f196a5628c"
+                "reference": "7b37eb3aaccb9956338b2bd07f050304b70fdc30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/1fee32d6574daa6db253f6b5d7a168f196a5628c",
-                "reference": "1fee32d6574daa6db253f6b5d7a168f196a5628c",
+                "url": "https://api.github.com/repos/RebelCode/rcmod-wp-bookings-ui/zipball/7b37eb3aaccb9956338b2bd07f050304b70fdc30",
+                "reference": "7b37eb3aaccb9956338b2bd07f050304b70fdc30",
                 "shasum": ""
             },
             "require": {
@@ -5147,7 +5147,7 @@
                 }
             ],
             "description": "A RebelCode module that provides the WordPress admin interface for bookings.",
-            "time": "2018-12-03T16:36:15+00:00"
+            "time": "2018-12-05T09:13:12+00:00"
         },
         {
             "name": "rebelcode/rcmod-wp-cqrs",
