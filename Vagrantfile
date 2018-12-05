@@ -70,7 +70,8 @@ Vagrant.configure(2) do |config|
             libgettextpo0 \
             php5-cli \
             libmcrypt-dev \
-            libicu-dev
+            libicu-dev \
+            unzip
 
         # Installing phpbrew
         curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
