@@ -6,7 +6,7 @@
  * Plugin Name: Easy Digital Downloads - Bookings
  * Plugin URI: https://eddbookings.com
  * Description: Adds a customizable booking system to Easy Digital Downloads.
- * Version: 0.3-dev7
+ * Version: 0.3-rc1
  * Author: RebelCode
  * Author URI: http://rebelcode.com
  * Text Domain: eddbk
