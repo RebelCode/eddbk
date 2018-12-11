@@ -10,20 +10,20 @@ use Psr\EventManager\EventInterface;
 /**
  * The handler for adding a link to the knowledge base for the plugin's row on the WordPress Plugins page.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class PluginKnowledgeBaseLinkHandler implements InvocableInterface
 {
-    /* @since [*next-version*] */
+    /* @since 0.1 */
     use CreateInvalidArgumentExceptionCapableTrait;
 
-    /* @since [*next-version*] */
+    /* @since 0.1 */
     use StringTranslatingTrait;
 
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __invoke()
     {
