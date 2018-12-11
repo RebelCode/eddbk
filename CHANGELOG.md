@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.3] - 2018-12-11
 ### Added
 - Staff members may now be created, edited and deleted
 - Session types may now have a label.
