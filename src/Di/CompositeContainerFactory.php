@@ -16,61 +16,61 @@ use Dhii\Util\Normalization\NormalizeStringCapableTrait;
 /**
  * A factory for creating composite containers for EDD Bookings.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class CompositeContainerFactory implements ContainerFactoryInterface
 {
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use ContainerGetCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use ContainerHasCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use NormalizeKeyCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use NormalizeStringCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateNotFoundExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateContainerExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateInvalidArgumentExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use StringTranslatingTrait;
 
     /**
      * The key in the config for the child containers.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const K_CFG_CHILD_CONTAINERS = 'containers';
 
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function make($config = null)
     {

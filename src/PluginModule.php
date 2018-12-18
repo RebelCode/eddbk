@@ -33,23 +33,23 @@ use Traversable;
  * On run, the modules are invoked one by one, each receiving the given container. This can be considered the
  * "invocation" of the plugin.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class PluginModule extends AbstractBaseModularModule
 {
-    /* @since [*next-version*] */
+    /* @since 0.1 */
     use ContainerGetCapableTrait;
 
-    /* @since [*next-version*] */
+    /* @since 0.1 */
     use NormalizeArrayCapableTrait;
 
-    /* @since [*next-version*] */
+    /* @since 0.1 */
     use CreateInvocationExceptionCapableTrait;
 
     /**
      * The modules.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var ModuleInterface[]|Traversable
      */
@@ -58,7 +58,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * The module file paths of the modules to be loaded.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var array|Traversable
      */
@@ -67,7 +67,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * The plugin info.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var array|stdClass|ArrayAccess|ContainerInterface
      */
@@ -76,7 +76,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array|stdClass|ArrayAccess|ContainerInterface $pluginInfo           The plugin info.
      * @param ConfigFactoryInterface                        $configFactory        The config factory.
@@ -108,7 +108,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @throws InternalExceptionInterface
      */
@@ -120,7 +120,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function run(ContainerInterface $c = null)
     {
@@ -138,7 +138,7 @@ class PluginModule extends AbstractBaseModularModule
      * factory. The callable may perform any action that is required. If it returns a {@see ModuleInterface}
      * instance, that instance is registered as a module of the plugin.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _getModules(ContainerInterface $container = null)
     {
@@ -166,7 +166,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * Invokes a module callback.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param callable                $callback  The callback.
      * @param ContainerInterface|null $container The container to give to the callback.
@@ -181,7 +181,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @throws InternalExceptionInterface If an error occurred while reading the config or services files.
      */
@@ -224,7 +224,7 @@ class PluginModule extends AbstractBaseModularModule
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _createAddCapableList()
     {

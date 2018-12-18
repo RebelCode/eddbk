@@ -12,14 +12,14 @@ use Throwable;
  *
  * Based on `jTraceEx()` by `ernest@vogelsinger.at`.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class ExceptionStackTrace implements StringableInterface
 {
     /**
      * The exception instance.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var Exception
      */
@@ -28,7 +28,7 @@ class ExceptionStackTrace implements StringableInterface
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param Exception|Throwable $exception The exception instance.
      */
@@ -108,7 +108,7 @@ class ExceptionStackTrace implements StringableInterface
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __toString()
     {

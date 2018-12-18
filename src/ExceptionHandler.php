@@ -11,35 +11,35 @@ use Throwable;
 /**
  * Handles exceptions.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class ExceptionHandler implements InvocableInterface
 {
     /*
      * Provides awareness of a callback.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CallbackAwareTrait;
 
     /*
      * Provides string translating functionality.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     use StringTranslatingTrait;
 
     /*
      * The previous exception handler.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected $previous;
 
     /**
      * The root directory for which to limit exception handling.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var string
      */
@@ -48,7 +48,7 @@ class ExceptionHandler implements InvocableInterface
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string   $rootDir  The root directory for which to limit exception handling.
      * @param callable $callback The callback to invoke when an exception is handled. The callback will receive the
@@ -63,7 +63,7 @@ class ExceptionHandler implements InvocableInterface
     /**
      * Registers the handler.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function register()
     {
@@ -73,7 +73,7 @@ class ExceptionHandler implements InvocableInterface
     /**
      * De-registers the handler.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function deregister()
     {
@@ -83,7 +83,7 @@ class ExceptionHandler implements InvocableInterface
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __invoke()
     {

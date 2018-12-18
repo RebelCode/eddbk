@@ -19,66 +19,66 @@ use Psr\Container\ContainerInterface;
 /**
  * A factory for creating containers for EDD Bookings.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class ContainerFactory implements ContainerFactoryInterface
 {
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use ContainerAwareTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use ContainerGetCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use ContainerHasCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use NormalizeKeyCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use NormalizeStringCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateNotFoundExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateContainerExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use CreateInvalidArgumentExceptionCapableTrait;
 
     /*
-     * @since [*next-version*]
+     * @since 0.1
      */
     use StringTranslatingTrait;
 
     /**
      * The key in the config for the parent container.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const K_CFG_PARENT_CONTAINER = 'parent';
 
     /**
      * Constructor.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *4
      *
      * @param ContainerInterface|null $parentContainer The default parent container to assign to created containers.
@@ -91,7 +91,7 @@ class ContainerFactory implements ContainerFactoryInterface
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function make($config = null)
     {

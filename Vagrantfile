@@ -3,13 +3,13 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "eddbl"
+  config.vm.hostname = "eddbk"
 
   config.vm.network "private_network", ip: "192.168.100.13"
   config.vm.network "forwarded_port", guest: 22, host: 1113, host_ip: "127.0.0.1", id: 'ssh'
 
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2"]
+    vb.customize ["modifyvm", :id, "--memory", "4096", "--cpus", "2"]
   end
 
   config.vm.synced_folder ".", "/var/www/project", owner: "vagrant", group: "www-data", mount_options: ["dmode=777,fmode=777"]
@@ -70,7 +70,8 @@ Vagrant.configure(2) do |config|
             libgettextpo0 \
             php5-cli \
             libmcrypt-dev \
-            libicu-dev
+            libicu-dev \
+            unzip
 
         # Installing phpbrew
         curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew

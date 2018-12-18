@@ -6,7 +6,7 @@
  * Plugin Name: Easy Digital Downloads - Bookings
  * Plugin URI: https://eddbookings.com
  * Description: Adds a customizable booking system to Easy Digital Downloads.
- * Version: 0.2.1
+ * Version: 0.3
  * Author: RebelCode
  * Author URI: http://rebelcode.com
  * Text Domain: eddbk
@@ -91,7 +91,7 @@ runEddBkCore();
 /**
  * Retrieves the plugin core module, creating it if necessary.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @return PluginModule The core plugin module instance.
  *
@@ -174,7 +174,7 @@ function getEddBkCore()
 /**
  * Invokes the EDD Bookings core module.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 function runEddBkCore()
 {
@@ -199,7 +199,7 @@ function runEddBkCore()
 /**
  * Retrieves the plugin info.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @return CountableMap
  */
@@ -230,7 +230,7 @@ function getEddBkInfo()
 /**
  * Checks the required dependencies for EDD Bookings, deactivating with a message if not satisfied.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 function eddBkCheckDependencies()
 {
@@ -259,7 +259,7 @@ function eddBkCheckDependencies()
 /**
  * Retrieves the error handler for this plugin.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @return ExceptionHandler The error handler.
  */
@@ -277,7 +277,7 @@ function getEddBkErrorHandler()
 /**
  * Handles an exception.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @param Exception|Throwable $exception The exception.
  */
@@ -293,7 +293,7 @@ function eddBkHandleException($exception)
 /**
  * Deactivates this plugin.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @param string|Stringable|null $reason A string containing the reason for deactivation. If not given, the
  *                                       plugin will be deactivated silently. Default: null
@@ -324,7 +324,7 @@ function eddBkDeactivateSelf($reason = null)
 /**
  * Shows the EDD Bookings exception error page.
  *
- * @since [*next-version*]
+ * @since 0.1
  *
  * @param Exception|Throwable $exception The exception.
  */
