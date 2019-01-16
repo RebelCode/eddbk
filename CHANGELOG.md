@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [[*next-version*]] - YYYY-MM-DD
 
+## [0.3.1] - 2019-16-01
+### Added
+- New option for staff members to change their timezone.
+
+### Fixed
+- Sessions would not generate when the service or website timezone is a UTC offset timezone.
+- Could not save services with a non-whole UTC offset timezone.
+
 ## [0.3] - 2018-12-18
 ### Added
 - Staff members may now be created, edited and deleted
