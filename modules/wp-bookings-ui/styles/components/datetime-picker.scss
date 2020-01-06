@@ -1,0 +1,114 @@
+.form-control {
+  border: 1px solid #ddd;
+  padding: 3px 5px;
+  margin: 1px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
+}
+
+.datetime-picker-control {
+  cursor: default !important;
+  &:hover {
+    cursor: default !important;
+  }
+  input {
+    cursor: default !important;
+  }
+
+  input {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .vdp-datepicker {
+    display: inline-block;
+    input {
+      width: 80px;
+    }
+    &__calendar {
+      top: calc(100% + 2px);
+      left: -6px;
+    }
+  }
+
+  .time-picker {
+    display: inline-block;
+    font-family: inherit;
+    vertical-align: inherit;
+    input {
+      height: inherit;
+      width: 50px;
+
+      @include breakpoint(mobile) {
+        width: 60px !important;
+      }
+    }
+    .dropdown {
+      top: calc(2.2em + -6px);
+      left: 0px;
+    }
+  }
+}
+
+.datetime-picker--inline {
+  vertical-align: middle;
+  display: inline-block;
+  .vdp-datepicker {
+    vertical-align: inherit;
+  }
+}
+
+.vdp-datepicker {
+  .cell.today {
+    border: 1px solid #4bd;
+  }
+  .disabled:after {
+    height: auto;
+    width: auto;
+    background-color: inherit;
+  }
+  input {
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: black !important;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: inherit;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: inherit;
+    }
+  }
+  @include breakpoint(mobile) {
+    position: static !important;
+    width: auto !important;
+    input {
+      width: 120px !important;
+    }
+    .vdp-datepicker__calendar {
+      left: calc(50% - 150px)
+    }
+  }
+}
+
+.time-picker {
+  @include breakpoint(mobile) {
+    .dropdown, .select-list {
+      width: 11em !important;
+      height: 15.5em !important;
+
+      li {
+        padding: .5em 0 !important;
+      }
+    }
+  }
+}

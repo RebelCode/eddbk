@@ -13,9 +13,6 @@ define('WP_BOOKINGS_UI_SCREEN_OPTIONS_KEY', 'eddbk_screen_options');
 define('WP_BOOKINGS_UI_UPDATE_SETTINGS_ACTION', 'update_eddbk_settings');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_APP_VERSION', '0.2.7');
-
-/* @since [*next-version*] */
 define('WP_BOOKINGS_UI_MODULE_DIR', __DIR__);
 
 /* @since [*next-version*] */
@@ -25,7 +22,7 @@ define('WP_BOOKINGS_UI_TEMPLATES_DIR', WP_BOOKINGS_UI_MODULE_DIR . DIRECTORY_SEP
 define('WP_BOOKINGS_UI_MODULE_DEFINITIONS_PATH', __DIR__ . '/services.php');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_RELATIVE_DIR', 'modules/rcmod-wp-bookings-ui');
+define('WP_BOOKINGS_UI_MODULE_RELATIVE_DIR', 'modules/wp-bookings-ui');
 
 /* @since [*next-version*] */
 define('WP_BOOKINGS_UI_MODULE_CONFIG_DIR', __DIR__ . '/config');

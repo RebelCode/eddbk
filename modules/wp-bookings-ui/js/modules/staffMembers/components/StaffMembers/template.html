@@ -1,0 +1,34 @@
+<div class="rich-rows" :class="{'loading-container': isLoadingList}">
+    <div class="empty-state" v-if="!list.length && !isLoadingList">
+        <div class="empty-state__title">
+            {{ isInitialFetchResults ? 'No staff members yet!' : 'No staff members found' }}
+        </div>
+        <div class="empty-state__text" v-if="isInitialFetchResults">
+            {{ _('Create your first staff member to let them accept bookings') }}
+        </div>
+        <div class="empty-state__cta" v-if="isInitialFetchResults">
+            <div class="button button-primary" @click="$emit('create')">
+                {{ _('Create Staff Member') }}
+            </div>
+        </div>
+    </div>
+    <div class="rich-row rich-row--condensed" :class="{'loading-container': staffMember.isSaving}" v-for="staffMember of orderedList">
+        <div class="rich-row__column">
+            <img :src="staffMember.data.imageSrc || defaultImageSrc" class="eddbk-avatar-rounded">
+        </div>
+        <div class="rich-row__column rich-row__wide-anchor">
+            <div class="rich-row__title">
+                {{ staffMember.name }}
+            </div>
+        </div>
+        <div class="rich-row__column rich-row__actions">
+            <div class="button-group">
+                <div class="button" @click="$emit('edit', staffMember)">Edit</div>
+                <div class="button button-icon" @click="$emit('delete', staffMember)">
+                    <span class="dashicons dashicons-trash"></span>
+                    <!--<span class="dashicons dashicons-arrow-down"></span>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="rich-rows" :class="{'loading-container': isLoadingList}">
+    <div class="empty-state" v-if="!list.length && !isLoadingList">
+        <div class="empty-state__title">
+            {{ isInitialFetchResults ? 'No services yet!' : 'No services found' }}
+        </div>
+        <div class="empty-state__text" v-if="isInitialFetchResults">
+            {{ _('Create your first service to start accepting bookings') }}
+        </div>
+        <div class="empty-state__cta" v-if="isInitialFetchResults">
+            <div class="button button-primary" @click="$emit('create')">
+                {{ _('Create Service') }}
+            </div>
+        </div>
+    </div>
+    <div class="rich-row" :class="{'loading-container': service.isSaving}" v-for="service of orderedList">
+        <div class="rich-row__column mobile-collapsed">
+            <v-switch :id="'' + service.id" :value="service.status === 'publish'" @input="switchServiceStatus(service)"/>
+        </div>
+        <div class="rich-row__column rich-row__wide-anchor">
+            <div class="rich-row__title">
+                <span class="service-item-color" :style="{'background-color': service.color || '#bbb'}"></span>
+                {{ service.name }}
+            </div>
+        </div>
+        <div class="rich-row__column rich-row__normal-anchor" v-if="service.sessionTypes.length">
+            <div class="rich-row__header">
+                Sessions
+            </div>
+            {{ getDurationPreview(service.sessionTypesStored) }} ({{ getPricePreview(service.sessionTypesStored) }})
+        </div>
+        <div class="rich-row__column rich-row__normal-anchor" v-if="hasResources('staff', service.sessionTypes)">
+            <div>
+                <div class="service-staff" v-for="resource of getResources('staff', service.sessionTypes)">
+                    <img :src="resource.data.imageSrc || defaultStaffImageSrc" alt="" class="service-staff__image">
+                    <span class="staff-service__name">{{ resource.name }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rich-row__column rich-row__actions">
+            <v-switch :id="'' + service.id" class="mobile-only" :value="service.status === 'publish'" @input="switchServiceStatus(service)"/>
+            <div class="button-group">
+                <div class="button" @click="$emit('edit', service)">Edit</div>
+                <div class="button button-icon" @click="$emit('delete', service)">
+                    <span class="dashicons dashicons-trash"></span>
+                    <!--<span class="dashicons dashicons-arrow-down"></span>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

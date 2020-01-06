@@ -1,0 +1,72 @@
+<div :style="{position: 'relative', overflow: isTransitioning ? 'hidden' : 'unset'}">
+    <transition name="page-transition"
+                @before-enter="setTransitioning(true)"
+                @before-leave="setTransitioning(true)"
+                @after-enter="setTransitioning(false)"
+                @after-leave="setTransitioning(false)"
+    >
+        <div v-show="!availabilityEditorStateToggleable.isOn()">
+            <div class="eddbk-tab-error" v-if="isValidationError">
+                {{ _('Create at least one availability rule to publish the %s', [ instanceLabel ]) }}
+            </div>
+
+            <div class="alert alert-warning" v-if="overlappingAvailabilities">
+                <span class="dashicons dashicons-info"></span>
+                <span>
+        There are at least two availabilities for this {{ instanceLabel }} that overlap. Only one of these availabilities will be available to your clients in the booking wizard. We recommend removing one of them.
+        <a href="https://docs.eddbookings.com/article/345-how-to-add-a-new-service-the-availability-calendar-explained/#overlapping-day-availabilities" target="_blank">Click here to learn more.</a>
+    </span>
+            </div>
+
+            <div class="row">
+                <div class="col-5 columns columns-no-right">
+                    <div class="rich-rows rich-rows--no-padding">
+                        <div class="availabilities-cta">
+                            <div class="rich-row rich-row--cta" @click="addRule">
+                                Create new availability rule
+                            </div>
+                        </div>
+                        <div class="availabilities-list">
+                            <div class="empty-state empty-state--smaller" v-if="!value.length">
+                                <div class="empty-state__text">
+                                    {{ _('Create a rule which describes when this %s is available for booking', [ instanceLabel ]) }}
+                                </div>
+                            </div>
+                            <div class="rich-row rich-row--smaller" v-for="availability of value">
+                                <div class="rich-row__column rich-row__column--6">
+                                    {{ getInfo(availability).timeRange }}
+                                    <div class="rich-row__header">
+                                        {{ getInfo(availability).from }}, {{ getInfo(availability).for }}
+                                    </div>
+                                </div>
+                                <div class="rich-row__column rich-row__column--4">
+                                    <template v-if="getInfo(availability).frequency">
+                                        {{ getInfo(availability).frequency }}
+                                    </template>
+                                    <div class="rich-row__header">
+                                        {{ getInfo(availability).repeatDescription }}
+                                    </div>
+                                </div>
+                                <div class="rich-row__column rich-row__actions">
+                                    <div class="button-group">
+                                        <div class="button" @click="editRule(availability)">Edit</div>
+                                        <div class="button button-icon" @click="removeRule(availability)"><span class="dashicons dashicons-trash"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 columns columns-no-left" style="min-height: 12rem">
+                    <availability-calendar :availabilities="value"
+                                           class="rc-calendar rc-calendar--availability"
+                                           @availability-click="openAvailabilityEditor"
+                                           :overlapping-availabilities.sync="overlappingAvailabilities"
+                                           :visible-timezone="timezone"
+                    ></availability-calendar>
+                </div>
+            </div>
+        </div>
+    </transition>
+    <service-availability-editor :entities-collection="entitiesCollection" :instance-label="instanceLabel"/>
+</div>

@@ -1,0 +1,54 @@
+<div :style="{position: 'relative', overflow: isTransitioning ? 'hidden' : 'unset'}">
+    <transition name="page-transition"
+                @before-enter="setTransitioning(true)"
+                @before-leave="setTransitioning(true)"
+                @after-enter="setTransitioning(false)"
+                @after-leave="setTransitioning(false)"
+    >
+        <div class="session-bookable" v-show="!modalState.isOn()">
+            <div class="session-item-cta">
+                <div class="rich-row rich-row--cta" @click="addSession">
+                    Create new session
+                </div>
+            </div>
+            <div class="session-items">
+                <div class="empty-state empty-state--smaller" v-if="!value.length">
+                    <div class="empty-state__text">
+                        {{ _('Please add a session length and corresponding price above. You can add as many as you need, or just one.') }}
+                    </div>
+                </div>
+                <orderable-repeater :collection="sessions" class="rich-rows" :order="sessionsOrder" v-if="sessions.getItems().length">
+                    <div class="rich-row rich-row--smaller" slot-scope="r">
+                        <div class="rich-row__column rich-row__column--4" >
+                            <div class="rich-row__info" :style="{opacity: !!r.item.label ? 1 : .6}">
+                                {{ r.item.label || _('Duration') }}
+                            </div>
+                            {{ humanize(r.item.data.duration) }}
+                        </div>
+                        <div class="rich-row__column rich-row__column--2">
+                            <div class="rich-row__header">
+                                {{ _('Price') }}
+                            </div>
+                            <span v-html="config.currency.symbol"></span> {{ r.item.price }}
+                        </div>
+                        <div class="rich-row__column rich-row__column--4" v-if="hasResources('staff', [r.item])">
+                            <div>
+                                <div class="service-staff" v-for="resource of getResources('staff', [r.item])">
+                                    <img :src="resource.data.imageSrc || defaultStaffImageSrc" alt="" class="service-staff__image">
+                                    <span class="staff-service__name">{{ resource.name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rich-row__column rich-row__actions">
+                            <div class="button-group">
+                                <div class="button" @click="editSession(r.item)">Edit</div>
+                                <div class="button button-icon" @click="removeSession(r.remove, r.item)"><span class="dashicons dashicons-trash"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </orderable-repeater>
+            </div>
+        </div>
+    </transition>
+    <session-editor :entities-collection="sessions"/>
+</div>

@@ -1,0 +1,80 @@
+<modal @close="closeModal"
+       modal-body-class="modal__body--wide  modal__body--no-content-padding"
+       :active="modalState.isOn()"
+>
+    <div slot="header" :class="{disabled: availabilityEditorStateToggleable.isOn()}">
+        {{ model.id ? 'Edit Staff Member | ID. ' + model.id  : 'New Staff Member' }}
+        <div :class="['modal__close modal--right', isDoubleConfirming ? 'disabled' : '']" v-if="!closeConfirming" @click="closeModal()">&times;</div>
+        <div class="modal__header-buttons modal--right" v-else>
+            <input type="button" class="button button-dark-solid" value="Close" @click="forceCloseModal">
+            <input type="button" class="button" value="Continue Editing" @click="continueEditing">
+        </div>
+    </div>
+
+    <div slot="body" :class="[isDoubleConfirming ? 'disabled' : '']">
+        <tabs :options="tabsConfig"
+              v-model="activeTab"
+              :is-tabs-navigation-disabled="availabilityEditorStateToggleable.isOn()"
+              :tabs-with-errors="{0: lastValidationResult.hasErrors('name'), 1: lastValidationResult.hasErrors('availability.rules.length')}"
+        >
+            <tab title="Information">
+                <div class="row row--small">
+                    <div class="col-12 columns">
+                        <div class="form-row form-row--vertical">
+                            <div class="form-row__input">
+                                <v-image-selector v-model="staffMemberImage" class="v-image-selector--round"/>
+                            </div>
+                        </div>
+                        <div class="form-row form-row--vertical" :class="lastValidationResult.hasErrors('name') ? 'form-row--with-error' : ''">
+                            <div class="form-row__label">Name *</div>
+                            <div class="form-row__input">
+                                <input type="text" class="form-control--wide" v-model="model.name" @input="lastValidationResult.removeErrors('name')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab title="Availability">
+                <availabilities v-model="model.availability.rules"
+                                :timezone.sync="model.availability.timezone"
+                                :is-validation-error="lastValidationResult.hasErrors('availability.rules.length')"
+                                :instance-label="_('staff member')"
+                />
+            </tab>
+            <tab title="Display Options">
+                <div class="wide-form">
+                    <div class="wide-form__header">
+                        {{ _('Timezone options') }}
+                    </div>
+                    <div class="wide-form__row">
+                        <div class="wide-form__label" style="width: 100%;max-width: 600px">
+                            {{ _("Staff Member's timezone") }}
+                        </div>
+                        <div class="wide-form__input">
+                            <timezone-select id="eddbk-timezone-select" v-model="model.availability.timezone"></timezone-select>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+        </tabs>
+    </div>
+
+    <div slot="footer" :class="{disabled: isDoubleConfirming || availabilityEditorStateToggleable.isOn()}">
+        <div class="footer-confirm">
+            <div class="footer-confirm__message __right __alert">
+                <template v-if="errorMessage">{{ errorMessage }}</template>
+                <template v-if="!lastValidationResult.valid">
+                    {{ _('There was a problem with saving your staff member. The errors have been highlighted above.') }}
+                </template>
+            </div>
+            <div class="footer-confirm__buttons">
+                <button class="button button-primary"
+                        :class="{'loading-button': isSaving}"
+                        @click="save()"
+                >
+                    {{ model.id ? 'Save Changes' : 'Create Staff Member' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</modal>

@@ -1,0 +1,17 @@
+.text {
+  &-right {
+    text-align: right;
+  }
+}
+
+.link-danger {
+  color: $alert-color;
+  text-decoration-color: transparentize($alert-color, .4);
+  &:hover, &:active {
+    color: lighten($alert-color, 4);
+  }
+  &:focus {
+    color: darken($alert-color, 3);
+    box-shadow: 0 0 0 1px lighten($alert-color, 4), 0 0 2px 1px transparentize($alert-color, .4);
+  }
+}

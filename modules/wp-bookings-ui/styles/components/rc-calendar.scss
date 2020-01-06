@@ -1,0 +1,247 @@
+.rc-calendar {
+  th.fc-day-header {
+    font-weight: normal;
+    padding: .5rem;
+    &.fc-today {
+      font-weight: bold;
+    }
+  }
+  .fc-agenda-view {
+    .fc-widget-content.fc-today {
+      background: $white !important;
+    }
+  }
+  .fc-today {
+    .fc-day-number {
+      font-weight: bold;
+    }
+  }
+
+  .fc-past {
+    opacity: .6;
+    background-color: #f9f9f9 !important;
+  }
+
+  .fc-event {
+    cursor: pointer;
+  }
+
+
+  @include breakpoint(mobile) {
+    .fc-scroller {
+      min-height: 50vh !important;
+    }
+    .fc-view-container {
+      overflow-x: auto;
+    }
+    .fc-view {
+      min-width: 600px;
+    }
+    .fc-popover {
+      position: fixed;
+      left: calc(50% - 111px) !important;
+      top: 3rem !important;
+    }
+  }
+
+  &--booking {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+
+    @include breakpoint(mobile) {
+      margin-bottom: 2rem;
+    }
+
+    .fc-event {
+      padding: 1px 4px;
+
+      &.fc-event--past {
+        opacity: .5;
+        filter: grayscale(.5);
+      }
+    }
+
+    .fc-today {
+      .fc-day-number {
+        font-size: 14px;
+      }
+    }
+
+    .rc-event {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rc-service-event {
+      $border-color: rgba(0, 0, 0, .35);
+
+      padding: 0 3px;
+
+      &--draft {
+        border: 2px dashed $border-color !important;
+      }
+      &--pending {
+        border: 2px dashed $border-color !important;
+      }
+      &--scheduled {
+        border: 2px solid transparent !important;
+      }
+      &--cancelled {
+        border: 2px solid $border-color !important;
+        text-decoration: line-through !important;
+
+        //filter: grayscale(1);
+        //opacity: .7;
+      }
+
+      &--completed {
+        & > div {
+          opacity: .5;
+        }
+      }
+
+      .fc-unthemed {
+        td.fc-today {
+          background-color: #B2D7FF;
+        }
+      }
+    }
+
+    .fc-month-view, .fc-short {
+      .rc-event {
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+      }
+
+      .rc-event-field {
+        &--time {
+          width: 32px;
+          overflow: hidden;
+        }
+
+        &--title {
+          width: calc(100% - 32px);
+          padding-left: 4px;
+          font-weight: 600;
+        }
+
+        &--month-collapse {
+          display: none;
+        }
+      }
+
+
+    }
+
+    .rc-event-field {
+      font-size: 12px;
+      line-height: 19px;
+
+      &--click {
+        opacity: .7;
+      }
+      &--title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &--availability {
+    position: relative;
+
+    @include breakpoint(mobile) {
+      margin-top: 2rem;
+    }
+
+    .rc-event-field {
+      &--timezone {
+        opacity: .6;
+        font-size: 9px;
+      }
+    }
+
+    .fc-event {
+      border: none;
+      border-radius: 0;
+      background: #65afff;
+      opacity: .65;
+      padding: 3px;
+      margin: 1px;
+
+      color: #000 !important;
+
+      &.fc-event--past {
+        // pointer-events: none;
+      }
+
+      .fc-time {
+        font-size: 1em;
+        padding: 3px 5px;
+      }
+    }
+
+    .fc-event-container {
+      margin: 0 !important;
+    }
+
+    .button-floating {
+      $fl-color: $primary-color;
+
+      user-select: none;
+
+      width: 56px;
+      height: 56px;
+      line-height: 46px;
+      text-align: center;
+
+      border-radius: 100px;
+      background-color: $fl-color;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+      color: $white;
+      font-size: 36px;
+
+      transition: all .2s ease;
+
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      z-index: 10;
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($fl-color, 5);
+      }
+
+      &:active {
+        background-color: darken($fl-color, 7);
+        transform: translateY(3px);
+      }
+    }
+  }
+}
+
+.tab-item {
+  display: inline-block;
+}
+
+.fc-state-default--rc {
+  &:focus {
+    outline: none;
+  }
+}
+
+.actions--wide {
+  select {
+    max-width: inherit !important;
+  }
+}
+
+.tablenav--eddbk-calendar {
+  @include breakpoint(mobile) {
+    .alignleft.actions {
+      display: block;
+    }
+  }
+}

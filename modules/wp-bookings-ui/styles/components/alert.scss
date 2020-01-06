@@ -1,0 +1,19 @@
+.alert {
+  border-radius: 4px;
+  padding: 10px 9px;
+  margin-bottom: 1rem;
+  display: flex;
+
+  & > span {
+    padding: 0 4px;
+  }
+
+  &-warning {
+    color: #1d2428;
+    background-color: #fddc0d;
+
+    a {
+      color: inherit !important;
+    }
+  }
+}

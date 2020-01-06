@@ -1,0 +1,95 @@
+$height: 20px;
+$width: 50px;
+$border: 3px;
+$radius: 34px;
+$switchBorderColor: $light-gray;
+$duration: .15s;
+
+.eddbk-switcher {
+  position: relative;
+  width: $width;
+  user-select: none;
+
+  &-checkbox {
+    display: none !important;
+  }
+
+  &-label {
+    display: block !important;
+    overflow: hidden;
+    cursor: pointer !important;
+    height: $height;
+    padding: 0;
+    line-height: $height;
+    border: $border solid $switchBorderColor;
+    border-radius: $radius;
+    background-color: $switchBorderColor !important;
+    margin: 0 !important;
+    transition: background-color $duration ease, border-color $duration ease;
+
+    &:before {
+      content: "";
+      display: block;
+      width: $height;
+      margin: 0;
+      background: $white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 24px;
+      border: $border solid $switchBorderColor;
+      border-radius: $radius;
+      transition: all $duration ease;
+    }
+  }
+
+  &-checkbox:checked + &-label {
+    background-color: $success-color !important;
+  }
+
+  &-checkbox:checked + &-label, &-checkbox:checked + &-label:before {
+    border-color: $success-color !important;
+  }
+
+  &-checkbox:checked + &-label:before {
+    right: 0;
+  }
+}
+
+.switch-option {
+  $switch-width: 30px;
+
+  margin-bottom: 6px;
+  padding: 3px 0;
+
+  &_holder {
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
+
+  &_title {
+    width: calc(100% - #{$switch-width});
+    float: left;
+    padding-left: 7px;
+
+    i {
+      opacity: .4;
+    }
+  }
+
+  &_switch {
+    .eddbk-switcher {
+      margin: 0 -4px;
+      transform: scale(.7);
+    }
+  }
+
+  &_description {
+    padding-top: 5px;
+    font-size: 12px;
+    color: $medium-gray;
+  }
+}

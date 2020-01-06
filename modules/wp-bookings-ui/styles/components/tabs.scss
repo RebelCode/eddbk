@@ -1,0 +1,9 @@
+.tabs-content--no-paddings {
+  padding: 0;
+}
+
+.subsubsub li:last-child {
+  span.list-sep {
+    display: none;
+  }
+}

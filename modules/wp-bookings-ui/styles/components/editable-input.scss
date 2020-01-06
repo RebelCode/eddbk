@@ -1,0 +1,26 @@
+.editable-input {
+  &__field {
+    &[readonly] {
+      box-shadow: none !important;
+      border-color: transparent !important;
+      transition: background-color .2s ease;
+      background-color: transparent;
+      &:hover {
+        background-color: rgba(252, 255, 42, 0.3);
+      }
+    }
+    cursor: text;
+  }
+  input, textarea {
+    font-size: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+    display: block;
+    width: 100%;
+    box-shadow: none !important;
+    background-color: rgba(252, 255, 42, 0.3);
+    border-color: transparent !important;
+  }
+}

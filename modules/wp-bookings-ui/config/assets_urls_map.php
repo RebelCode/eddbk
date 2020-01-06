@@ -2,11 +2,11 @@
 
 return [
     'bookings_ui/dist/app.min.js' => plugins_url(
-        WP_BOOKINGS_UI_MODULE_RELATIVE_DIR . '/dist/' . WP_BOOKINGS_UI_MODULE_APP_VERSION . '/app.min.js',
+        WP_BOOKINGS_UI_MODULE_RELATIVE_DIR . '/dist/app.min.js',
         EDDBK_FILE
     ),
     'bookings_ui/dist/app.min.css' => plugins_url(
-        WP_BOOKINGS_UI_MODULE_RELATIVE_DIR . '/dist/' . WP_BOOKINGS_UI_MODULE_APP_VERSION . '/app.min.css',
+        WP_BOOKINGS_UI_MODULE_RELATIVE_DIR . '/dist/app.min.css',
         EDDBK_FILE
     ),
 

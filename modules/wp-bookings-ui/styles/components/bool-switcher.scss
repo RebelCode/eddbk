@@ -1,0 +1,22 @@
+.bool-switcher {
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid $primary-color;
+  color: $white;
+  cursor: pointer;
+  user-select: none;
+
+  &__button {
+    text-align: center;
+    min-width: 48px;
+    padding: 2px 4px;
+    display: inline-block;
+    background-color: $white;
+
+
+    &--active {
+      background-color: $primary-color;
+      //background-color: $primary-color;
+    }
+  }
+}

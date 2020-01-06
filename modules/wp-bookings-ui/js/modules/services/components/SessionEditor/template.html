@@ -1,0 +1,133 @@
+<inline-editor @close="closeModal"
+               class="eddbk-inputs"
+               :active="modalState.isOn()"
+>
+    <div slot="header">
+        <div class="inline-editor__back" @click="closeModal()" :class="{disabled: closeConfirming}">
+            <span class="dashicons dashicons-arrow-left-alt2"></span>
+            {{ _('Go Back') }}
+        </div>
+
+        <span style="font-weight: 600; padding-left: .5rem;" v-if="!closeConfirming">
+                {{ _('Session') }}
+            </span>
+
+        <div class="modal__header-buttons modal--right" v-if="closeConfirming">
+            <input type="button" class="button button-dark-solid" :value="_('Close')" @click="forceCloseModal">
+            <input type="button" class="button" :value="_('Continue Editing')" @click="continueEditing">
+        </div>
+    </div>
+
+    <div slot="body" :class="{'disabled': isDoubleConfirming}">
+        <div class="form-row">
+            <div class="form-row__label form-row__label--padding-top">
+                {{ _('Label') }}
+            </div>
+            <div class="form-row__input">
+                <input type="text"
+                       v-model="model.label"
+                       @keydown.enter="saveSession()"
+                       style="width: 100%"
+                >
+            </div>
+        </div>
+
+        <div class="form-row" :class="{'form-row--with-error': lastValidationResult.hasErrors('data.duration')}">
+            <div class="form-row__label form-row__label--padding-top">
+                {{ _('Duration') }} *
+
+                <div class="form-row__description form-row__error" v-if="lastValidationResult.hasErrors('data.duration')">
+                    {{ lastValidationResult.getErrors('data.duration')[0].replace('data.duration', 'duration') }}
+                </div>
+            </div>
+            <div class="form-row__input">
+                <input type="number"
+                       step="1"
+                       min="1"
+                       placeholder="15"
+                       v-model="duration"
+                       class="session-length__input"
+                       @keydown.enter="saveSession()"
+                       @input="lastValidationResult.removeErrors('data.duration')"
+                >
+                <select v-model="sessionTimeUnit">
+                    <option :value="unit.seconds" v-for="unit in timeUnits" :disabled="unit.disabled">{{ unit.title }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row" :class="{'form-row--with-error': lastValidationResult.hasErrors('price')}">
+            <div class="form-row__label form-row__label--padding-top">
+                {{ _('Price') }} *
+
+                <div class="form-row__description form-row__error" v-if="lastValidationResult.hasErrors('price')">
+                    {{ lastValidationResult.getErrors('price')[0] }}
+                </div>
+            </div>
+            <div class="form-row__input">
+                <div class="input-with-placeholder">
+                    <span v-html="config.currency.symbol"></span>
+                    <input type="number" step="1" min="1" placeholder="20.00" v-model="model.price"
+                           class="session-length__input session-length__input--wide"
+                           ref="price"
+                           @keydown.enter="saveSession()"
+                           @input="lastValidationResult.removeErrors('price')"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-row__label form-row__label--padding-top">
+                {{ _('Staff Members') }}
+            </div>
+            <div class="form-row__input">
+                <vueselect :options="$store.state.staffMembers.list"
+                           multiple
+                           v-model="model.data.resources"
+                           label="name"
+                           :placeholder="_('Select staff members')"
+                >
+                    <template slot="spinner" slot-scope="options">
+                        <div class="loading-inline" v-if="$store.state.staffMembers.isLoadingList"></div>
+                    </template>
+                </vueselect>
+            </div>
+        </div>
+
+    </div>
+
+    <div slot="footer">
+        <div v-if="!removeConfirming" class="footer-confirm" :class="isDoubleConfirming ? 'disabled' : ''">
+            <template v-if="model.id && entityCanBeModified()">
+                <input type="button" class="button button-alert" :value="_('Delete')" style="float: left"
+                       @click="removeConfirming = true">
+            </template>
+            <div class="footer-confirm__message __right __alert" >
+                <template v-if="!lastValidationResult.valid">
+                    {{ _('There was a problem with your session. The errors have been highlighted above.') }}
+                </template>
+            </div>
+            <div class="footer-confirm__buttons">
+                <input type="button" class="button button-primary" v-if="!model.id || entityCanBeModified()"
+                       :value="_('Save')" @click="saveSession()">
+            </div>
+        </div>
+        <div class="footer-confirm" v-else-if="removeConfirming">
+            <div class="footer-confirm__message __alert __right">
+                {{ _('Are you sure you want to delete this session? There is no undo option.') }}
+            </div>
+            <div class="footer-confirm__buttons">
+                <input type="button" class="button button-alert-solid" :value="_('Yes, delete')" @click="deleteItem">
+                <input type="button" class="button" :value="_('Cancel')" @click="removeConfirming = false">
+            </div>
+        </div>
+        <div class="footer-confirm" v-else>
+            <div class="footer-confirm__message __right"></div>
+            <div class="footer-confirm__buttons">
+                <input type="button" class="button button-dark-solid" :value="_('Close')" @click="forceCloseModal">
+                <input type="button" class="button" :value="_('Continue Editing')" @click="cancelConfirming = false">
+            </div>
+        </div>
+    </div>
+</inline-editor>
