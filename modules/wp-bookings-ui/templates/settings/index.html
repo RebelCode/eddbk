@@ -1,0 +1,30 @@
+<div id="eddbk-settings-page" v-cloak>
+    <div class="vcloak--visible loading-container"></div>
+    <settings-application success-message="Changes successfully saved!" error-message="Error occurred during changes saving" inline-template>
+        <div class="wrap vcloak--hidden">
+            <h1 class="wp-heading-inline">
+                {{ _('EDD Bookings Settings') }}
+            </h1>
+            <hr class="wp-header-end">
+            <tabs v-model="activeTab">
+                <tab title="General">${generalSettingsTab}</tab>
+                <tab title="Wizard Customization">${wizardSettingsTab}</tab>
+            </tabs>
+
+            <div style="margin-top: 2rem; margin-left: 1rem">
+                <div class="col-12 columns">
+                    <div>
+                        <button class="button button-primary" :class="{'loading-button': isSaving}" @click="submit">
+                            {{ _('Save Changes') }}
+                        </button>
+                        <button class="button" @click="revertChanges">
+                            {{ _('Cancel') }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </settings-application>
+</div>
+
+${components}

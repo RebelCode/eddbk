@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggleable App</title>
+</head>
+<body>
+<div id="app">
+    <code>{{ store }}</code>
+    <toggle :toggleable="toggleable" inline-template>
+        <span @click="setState(!isOn)">
+            {{ isOn ? 'On' : 'Off' }}
+        </span>
+    </toggle>
+</div>
+</body>
+<script src="/webpack-dev-server.js"></script>
+<script src="/app.min.js"></script>
+</html>

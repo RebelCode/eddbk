@@ -1,0 +1,25 @@
+<div id="eddbk-bookings-screen-options">
+    <bookings-application inline-template>
+        <div>
+            <fieldset class="metabox-prefs">
+                <legend>{{ _('Booking statuses to display in calendar and list') }}</legend>
+                <selection-list :collection="statusesCollection" v-model="selectedStatuses" :multiple="true">
+                    <label slot-scope="r">
+                        <input type="checkbox"
+                               :value="r.getKey(r.item)"
+                               @change="r.select(r.item)"
+                               :checked="r.isItemSelected(r.item)"
+                        > {{ r.item.value }}
+                    </label>
+                </selection-list>
+            </fieldset>
+            <fieldset class="metabox-prefs">
+                <legend>{{ _('Timezone for bookings in list, calendar and editor') }}</legend>
+                <timezone-select v-model="timezone"></timezone-select>
+            </fieldset>
+            <p style="margin-top: 1em; padding: 0;">
+                <div :class="['button button-primary', isStatusesSaving ? 'loading-button' : '']" @click="saveScreenOptions(selectedStatuses, timezone)">Apply</div>
+            </p>
+        </div>
+    </bookings-application>
+</div>

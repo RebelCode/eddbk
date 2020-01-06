@@ -1,0 +1,30 @@
+<div class="settings-tab settings-tab--general">
+    <div style="margin-top: 1.5rem;">
+        <div class="col-12 columns">
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Booking Wizard Color') }}</div>
+                <div class="form-row__input">
+                    <color-picker v-model="booking_wizard_color"></color-picker>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row__label">
+                    {{ _('Booking Wizard Labels') }}
+                    <div class="info">
+                        <p>Click on circles to navigate.</p>
+                        <p>Click on any label to edit.</p>
+                        <p>Leave label’s field empty to use default value</p>
+                        <p>You can use <code>*text*</code> to format text as bold. Works only for appointment information.</p>
+                    </div>
+                </div>
+                <div class="form-row__input">
+                    <wizard-editor v-model="booking_wizard_labels"
+                                   :defaults="settingsConfig.labels"
+                                   :color="booking_wizard_color"
+                                   :fields-order.sync="booking_wizard_fields"
+                    ></wizard-editor>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

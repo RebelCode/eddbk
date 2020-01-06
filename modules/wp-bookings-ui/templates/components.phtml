@@ -1,0 +1,570 @@
+<script type="text/x-template" id="service-availability-editor-template">
+    <inline-editor @close="closeModal"
+           class="eddbk-inputs"
+           :active="modalState.isOn()"
+    >
+        <div slot="header">
+            <div class="inline-editor__back" @click="closeModal()" :class="{disabled: closeConfirming}">
+                <span class="dashicons dashicons-arrow-left-alt2"></span>
+                {{ _('Go Back') }}
+            </div>
+
+            <span style="font-weight: 600; padding-left: .5rem;" v-if="!closeConfirming">
+                {{ _('%s availability', [ stringHelpers.capitalize(instanceLabel) ]) }}
+            </span>
+
+            <div class="modal__header-buttons modal--right" v-if="closeConfirming">
+                <input type="button" class="button button-dark-solid" :value="_('Close')" @click="forceCloseModal">
+                <input type="button" class="button" :value="_('Continue Editing')" @click="continueEditing">
+            </div>
+        </div>
+
+        <div slot="body" :class="isDoubleConfirming ? 'disabled' : ''">
+            <div :class="['form-row', errors.has('start') || errors.has('end') ? 'form-row--with-error' : '']">
+                <div class="form-row__label">
+                    {{ _('First available period') }}
+                    <div class="form-row__description form-row__error" v-if="errors.firstByRule('end', 'after')">{{ errors.firstByRule('end', 'after').replace('$', '') }}</div>
+                </div>
+                <div class="form-row__input">
+                    <div :class="['form-row form-row--condensed', errors.has('start') ? 'form-row--with-error' : '']">
+                        <div class="form-row__label form-row__label--padding-top form-row__label--light">
+                            {{ _('Starts on') }}
+                        </div>
+                        <div class="form-row__input">
+                            <div class="form-row__input-with-description">
+                                <datetime-picker v-validate="'required|date_format:' + config.formats.datetime.tzFree"
+                                                 data-vv-name="start"
+                                                 name="start"
+                                                 ref="start"
+                                                 @input="startChanged"
+                                                 v-model="model.start"
+                                                 :time-disabled="model.isAllDay"
+                                                 :disabled-before="currentDay"
+                                ></datetime-picker>
+                                <div class="form-row__description form-row__description--small">
+                                    {{ momentHelpers.timezoneLabel(timezone) }}
+                                </div>
+                            </div>
+
+                            <label for="all-day" class="form-row__word">
+                                <input type="checkbox" id="all-day" v-model="model.isAllDay"> {{ _('All day') }}
+                            </label>
+                        </div>
+                    </div>
+                    <div :class="['form-row', errors.has('end') ? 'form-row--with-error' : '']">
+                        <div class="form-row__label form-row__label--padding-top form-row__label--light">
+                            {{ _('Ends on') }}
+                        </div>
+                        <div class="form-row__input">
+                            <div class="form-row__input-with-description">
+                                <?php // Params list for `after` datetime validation rule: after:{field for comparing},{are fields can be equal (`>=`) , default is `false` (`>`)} ?>
+                                <datetime-picker class="datetime-picker--inline"
+                                                 v-validate="'required|date_format:' + config.formats.datetime.tzFree + '|after:$start' + (model.isAllDay ? ',true' : '')"
+                                                 name="end"
+                                                 @input="errors.remove('end')"
+                                                 v-model="visibleEnd"
+                                                 :time-disabled="model.isAllDay"
+                                                 :disabled-before="model.start"
+                                ></datetime-picker>
+                                <div class="form-row__description form-row__description--small">
+                                    {{ momentHelpers.timezoneLabel(timezone) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__label">
+                    {{ _('Repeats') }}
+                </div>
+                <div class="form-row__input">
+                    <label for="is-repeated" class="form-row__word">
+                        <input type="checkbox" id="is-repeated" v-model="model.repeat">
+                    </label>
+                </div>
+            </div>
+
+
+            <template v-if="model.repeat">
+                <div :class="['form-row', errors.has('repeats_after') ? 'form-row--with-error' : '']">
+                    <div class="form-row__label">
+                        {{ _('Repeats after') }}
+                        <div class="form-row__description form-row__error" v-if="errors.has('repeats_after')">{{ errors.first('repeats_after').replace('_', ' ') }}</div>
+                    </div>
+                    <div class="form-row__input">
+                        <input type="number" style="width: 90px;vertical-align: middle;"
+                               v-validate="'min_value:' + minimalRepeatPeriod + '|max_value:' + repeatingDuration"
+                               name="repeats_after"
+                               @input="errors.remove('repeats_after')"
+                               :min="minimalRepeatPeriod"
+                               :max="repeatingDuration"
+                               v-model="model.repeatPeriod"
+                        />
+
+                        <select v-model="model.repeatUnit" style="min-width: 90px">
+                            <option value="days">{{ pluralize(_('day'), Number(model.repeatPeriod)) }}</option>
+                            <option value="weeks">{{ pluralize(_('week'), Number(model.repeatPeriod)) }}</option>
+                            <option value="months">{{ pluralize(_('month'), Number(model.repeatPeriod)) }}</option>
+                            <option value="years">{{ pluralize(_('year'), Number(model.repeatPeriod)) }}</option>
+                        </select>
+
+                        <span class="dashicons dashicons-editor-help eddbk-help" :title="_('Repeats after x units.  Example: repeats after 3 days, starting on Monday woud make this available on Monday, then Thursday, then Sunday.  For instance, starting on Monday 30th April, the next availabilities would be Thursday 3rd May, then Sunday 6th May, then Wednesday 9th, and so on.')"></span>
+                    </div>
+                </div>
+
+                <template v-if="model.repeatUnit === 'weeks' && isSameDay()">
+                    <div class="form-row">
+                        <div class="form-row__label">
+                            {{ _('Repeats on') }}
+                        </div>
+                        <div class="form-row__input">
+                            <selection-list :collection="repeatsOnCollection" v-model="model.repeatWeeklyOn" :multiple="true">
+                                <label class="label__rared" :for="r.getKey(r.item)" slot-scope="r">
+                                    <input type="checkbox"
+                                           :id="r.getKey(r.item)"
+                                           :value="r.getKey(r.item)"
+                                           @change="r.select(r.item)"
+                                           :checked="r.isItemSelected(r.item)"
+                                    > {{ r.item.value }}
+                                </label>
+                            </selection-list>
+                        </div>
+                    </div>
+                </template>
+
+                <template v-if="model.repeatUnit === 'months'">
+                    <div class="form-row">
+                        <div class="form-row__label">
+                            {{ _('Repeats on') }}
+                        </div>
+                        <div class="form-row__input">
+                            <selection-list :collection="repeatsOnCollection" v-model="model.repeatMonthlyOn" wrap="select">
+                                <option :value="r.getKey(r.item)" slot-scope="r">{{ r.item.value }}</option>
+                            </selection-list>
+                        </div>
+                    </div>
+                </template>
+
+                <div :class="['form-row', errors.has('ends_after') ? 'form-row--with-error' : '']">
+                    <div class="form-row__label">
+                        {{ _('Stops repeating') }}
+                        <div class="form-row__description form-row__error" v-if="errors.has('ends_after')">{{ errors.first('ends_after').replace('_', ' ') }}</div>
+                    </div>
+                    <div class="form-row__input">
+                        <div>
+                            <label for="ends-after" style="width: 90px; display: inline-block">
+                                <input type="radio" @change="errors.remove('ends_after')" id="ends-after" value="period" v-model="model.repeatUntil"> {{ _('After') }}
+                            </label>
+                            <input type="number"
+                                   min="1"
+                                   name="ends_after"
+                                   @input="errors.remove('ends_after')"
+                                   v-validate="model.repeatUntil === 'period' ? { min_value: 1 } : {}"
+                                   placeholder="4"
+                                   style="width: 90px"
+                                   v-model="model.repeatUntilPeriod"
+                            > {{ repeatsUntilPeriodTitle }}
+                        </div>
+
+                        <div style="margin-top: 4px" class="inline-datepicker">
+                            <label for="ends-on" style="width: 90px; display: inline-block">
+                                <input type="radio" @change="errors.remove('ends_after')" id="ends-on" value="date" v-model="model.repeatUntil"> {{ _('On') }}
+                            </label>
+                            <datepicker name="repeatsEndsDate"
+                                        v-model="repeatUntilDateModel"
+                                        placeholder="-- / -- / ----"
+                                        format="dd/MM/yyyy"
+                                        @input="errors.remove('ends_after')"
+                                        style="width: 90px"
+                                        :disabled="{to: availabilityStart}"
+                                        :open-date="availabilityStart"
+                            ></datepicker>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-row__label">
+                        {{ _('Exclusions') }}
+                        <div class="form-row__description">
+                            {{ _('Days excluded from the availability range') }}
+                        </div>
+                    </div>
+                    <div class="form-row__input form-row__input--padded">
+                        <div>
+                            <a href="#set-new-exclusions" class="add-new" @click="exclusionsPickerVisible = !exclusionsPickerVisible">
+                                {{ exclusionsPickerVisible ? _('- Hide Exclusion\'s Picker') : _('+ Set New Exclusions') }}
+                            </a>
+                        </div>
+
+                        <div class="exclusions-datepicker" v-if="exclusionsPickerVisible">
+                            <datepicker :inline="true"
+                                        :highlighted="excludeDatesModels"
+                                        @selected="excludeDateSelected"
+                                        ref="exclusions"
+                                        :disabled="{to: availabilityStart}"
+                                        :open-date="availabilityStart"
+                            ></datepicker>
+                        </div>
+
+                        <repeater :collection="excludeDatesCollection" class="exclusions-list" v-if="model.excludeDates.length">
+                            <div class="exclusions-list__item" slot-scope="r">
+                                <div class="exclusions-list__item-title" v-text="_getExclusionItemTitle(r.item)"></div>
+                                <a href="#removed" class="trash-can trash-can--right" @click="r.remove(r.item)">
+                                    <span class="trash-can__icon dashicons dashicons-trash"></span>
+                                </a>
+                            </div>
+                        </repeater>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <div slot="footer">
+            <div v-if="!removeConfirming" :class="isDoubleConfirming ? 'disabled' : ''">
+                <template v-if="model.id && entityCanBeModified()">
+                    <input type="button" class="button button-alert" :value="_('Delete')" style="float: left" @click="removeConfirming = true">
+                </template>
+                <input type="button" class="button button-primary" v-if="!model.id || entityCanBeModified()" :value="_('Save')" @click="saveAvailability()">
+            </div>
+            <div class="footer-confirm" v-else-if="removeConfirming">
+                <div class="footer-confirm__message __alert __right">
+                    {{ _('Are you sure you want to delete this availability? There is no undo option.') }}
+                </div>
+                <div class="footer-confirm__buttons">
+                    <input type="button" class="button button-alert-solid" :value="_('Yes, delete')" @click="deleteItem">
+                    <input type="button" class="button" :value="_('Cancel')" @click="removeConfirming = false">
+                </div>
+            </div>
+            <div class="footer-confirm" v-else>
+                <div class="footer-confirm__message __right"></div>
+                <div class="footer-confirm__buttons">
+                    <input type="button" class="button button-dark-solid" :value="_('Close')" @click="forceCloseModal">
+                    <input type="button" class="button" :value="_('Continue Editing')" @click="cancelConfirming = false">
+                </div>
+            </div>
+        </div>
+    </inline-editor>
+</script>
+
+<script type="text/x-template" id="color-picker-template">
+<div class="eddbk-color-picker" :class="{'eddbk-color-picker--opened': isPickerOpened}" v-click-outside="closePicker">
+    <div class="eddbk-color-picker-input" @click="openPicker">
+        <div class="eddbk-color-picker-input__square" :style="{'background-color':value}" v-if="value"></div>
+        <div class="eddbk-color-picker-input__dismiss" v-if="value && isCleanable" @click.stop="removeColor">
+            <span class="dashicons dashicons-dismiss"></span>
+        </div>
+        <div class="eddbk-color-picker-input__placeholder" v-if="!value">{{ placeholder }}</div>
+        <span class="dashicons dashicons-arrow-down"></span>
+    </div>
+    <div class="eddbk-color-picker-popup">
+        <core-color-picker v-model="color" :disable-alpha="true"></core-color-picker>
+        <div class="eddbk-color-picker-popup__buttons">
+            <button class="button button-primary" @click="selectColor">
+                {{ _('Select Color') }}
+            </button>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/x-template" id="service-session-selector-template">
+    <div>
+        <template v-if="!service">
+            <div class="description">Please select service to choose available session for booking.</div>
+        </template>
+        <div :class="isEditModeAvailable && !isEditing ? 'readonly' : ''" v-else>
+            <div class="form-row" v-for="filterKey of filters" v-if="hasFilterValues(filterKey)">
+                <div class="form-row__label form-row__label--smaller form-row__label--padding-top">
+                    {{ $attrs.field_labels[filterKey] }}
+                </div>
+                <div class="form-row__input" :class="isEditModeAvailable && !isEditing ? 'form-row__input--padded' : ''">
+                    <select v-model="filter[filterKey]"
+                            class="eddb-control"
+                            style="width: 100%"
+                            v-if="!isEditModeAvailable || isEditing">
+                        <option :value="value" v-for="(label, value) of getFilterValues(filterKey)">
+                            {{ label }}
+                        </option>
+                    </select>
+
+                    <template v-if="isEditModeAvailable && !isEditing">
+                        {{ getFilterValues(filterKey)[filter[filterKey]] }}
+                    </template>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row__label form-row__label--smaller form-row__label--padding-top">
+                    {{ ('Date') }}
+                    <span class="loading-inline" v-if="isSessionsLoading"></span>
+                </div>
+                <div class="form-row__input exclusions-datepicker">
+                    <session-date-picker
+                            v-model="selectedDaySessions"
+                            :timezone="timezone"
+                            :is-daily-duration="isDailyDuration"
+                            :selected-day.sync="selectedDay"
+                            :opened-on-date.sync="openedOnDate"
+                            :session.sync="session"
+                            :loading="isSessionsLoading"
+                            :available-sessions="filteredSessions"
+                            :prev-available-day.sync="prevAvailableDay"
+                            :next-available-day.sync="nextAvailableDay"
+                            @changedMonth="loadSessions"
+                    ></session-date-picker>
+                </div>
+            </div>
+            <div class="form-row" v-if="!isDailyDuration">
+                <div class="form-row__label form-row__label--smaller form-row__label--padding-top">
+                    {{ ('Time') }}
+                </div>
+                <div class="form-row__input" v-if="selectedDay">
+                    <div class="session-picker">
+                        <date-navigator
+                                :selected-day.sync="selectedDay"
+                                :timezone="timezone"
+                                :prev-available-day="prevAvailableDay"
+                                :next-available-day="nextAvailableDay"
+                                v-if="!isEditModeAvailable || isEditing"
+                        ></date-navigator>
+                        <session-time-picker v-model="session"
+                                             :selected-day.sync="selectedDay"
+                                             :service="service"
+                                             :timezone="timezone"
+                                             :sessions="selectedDaySessions"
+                        ></session-time-picker>
+                    </div>
+                </div>
+                <div class="form-row__input form-row__input--padded" v-else>
+                    {{ 'Select a date to pick a time from.' }}
+                </div>
+            </div>
+        </div>
+        <div class="mt-16" v-if="service && isEditModeAvailable">
+            <a href="#" @click="startEdit" v-if="!isEditing">{{ 'Edit booking duration, date and/or time' }}</a>
+            <a href="#" @click="cancelEdit" class="link-danger" v-else>{{ 'Cancel changes' }}</a>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="session-date-picker-template">
+    <div class="session-date-picker" :class="loading ? 'disabled' : ''">
+        <div class="edd-booking-wizard__info edd-booking-wizard__info--inline" v-if="!loading && !availableSessions.length">
+            {{ 'No appointments are available this month.' }}
+        </div>
+        <datepicker v-model="selectedDayProxy"
+                    :inline="true"
+                    @changedMonth="onMonthChange"
+                    :open-date="openedOnDate"
+                    :disabled="{ customPredictor: isDateDisabled, to: today }"
+                    :highlighted="{ dates: sessionDays, includeDisabled: true }"
+                    class="sessions-datepicker"
+                    maximum-view="day"
+        ></datepicker>
+    </div>
+</script>
+
+<script type="text/x-template" id="session-time-picker-template">
+    <div class="session-picker-buttons">
+        <div
+                :class="{'session-picker-button--selected': isSelected(session) }"
+                v-for="session in visibleSessions"
+                @click="select(session)"
+                class="session-picker-button"
+        >
+            {{ sessionLabel(session) }}
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="date-navigator-template">
+    <div class="session-picker-header">
+        <span class="dashicons dashicons-arrow-left" @click="goToPrevDay" :class="!prevAvailableDay ? 'disabled' : ''"></span>
+        <span>{{ selectedDaySessionsLabel }}</span>
+        <span class="dashicons dashicons-arrow-right" @click="goToNextDay" :class="!nextAvailableDay ? 'disabled' : ''"></span>
+    </div>
+</script>
+
+<script type="text/x-template" id="session-duration-picker-template">
+    <div>
+        <div v-show="$attrs.isEditModeAvailable && !$attrs.isEditing">
+            {{ valueProxy ? sessionTypeLabel(valueProxy) : '' }}
+        </div>
+        <select v-show="!$attrs.isEditModeAvailable || $attrs.isEditing"
+                v-model="valueProxy"
+                class="form-row__field"
+        >
+            <option :value="sessionType" v-for="sessionType in service.sessionTypes">
+                {{ sessionTypeLabel(sessionType) }}
+            </option>
+        </select>
+    </div>
+</script>
+
+<script type="text/x-template" id="timezone-select-template">
+    <select v-model="selectValue">
+        <?php echo wp_timezone_choice( 'UTC+0', get_user_locale() ); ?>
+    </select>
+</script>
+
+<script type="text/x-template" id="bookings-filter-template">
+    <div>
+        <selection-list :collection="items" wrap="ul" class="subsubsub" v-model="statusModel">
+            <li :class="r.item.id" slot-scope="r">
+                <a @click="r.select(r.item)" href="#" :class="[r.isItemSelected(r.item) ? 'current' : '']">{{ r.item.title }}
+                    <span class="count" v-if="r.item.count">({{ r.item.count }})</span>
+                </a>
+                <span class="list-sep">|</span>
+            </li>
+        </selection-list>
+        <p class="search-box search-box--bookings">
+            <label class="screen-reader-text" for="bookings-search-input">
+                Search Bookings:
+            </label>
+            <input type="search" id="bookings-search-input" placeholder="Start typing..." name="s" v-model="searchStringModel" @keyup.enter="submit">
+            <input type="submit" id="search-submit" class="button" value="Search Bookings" @click="submit">
+        </p>
+    </div>
+</script>
+
+<script type="text/x-template" id="vue-timepicker-template">
+  <span class="time-picker">
+  <input class="display-time" :disabled="disabled" :id="id" v-model="displayTime" @click="toggleDropdown" type="text" readonly />
+  <span class="clear-btn" v-if="!hideClearButton" v-show="!showDropdown && showClearBtn" @click.stop="clearTime">&times;</span>
+  <div class="time-picker-overlay" v-if="showDropdown" @click.stop="toggleDropdown"></div>
+  <div class="dropdown" v-show="showDropdown">
+    <div class="select-list">
+      <ul class="hours">
+        <li class="hint" v-text="hourType"></li>
+        <li v-for="(hr, hrNum) in hours"
+            v-show="disabledValues.hour.indexOf(hrNum) === -1"
+            v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr)"></li>
+      </ul>
+      <ul class="minutes">
+        <li class="hint" v-text="minuteType"></li>
+        <li v-for="(m, mNum) in minutes"
+            v-show="disabledValues.minute.indexOf(mNum) === -1"
+            v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m)"></li>
+      </ul>
+      <ul class="seconds" v-if="secondType">
+        <li class="hint" v-text="secondType"></li>
+        <li v-for="s in seconds"
+            v-show="disabledValues.second.indexOf(s) === -1"
+            v-text="s" :class="{active: second === s}" @click.stop="select('second', s)"></li>
+      </ul>
+      <ul class="apms" v-if="apmType">
+        <li class="hint" v-text="apmType"></li>
+        <li v-for="a in apms"
+            v-show="disabledValues.apm.indexOf(a) === -1"
+            v-text="a"
+            :class="{active: apm === a}"
+            @click.stop="select('apm', a)"
+        ></li>
+      </ul>
+    </div>
+  </div>
+</span>
+</script>
+
+<script type="text/x-template" id="datepicker-template">
+    <div class="form-control datetime-picker-control"
+         @click.self="openDatepicker"
+    >
+        <datepicker v-model="dateValue"
+                    :format="dateFormat"
+                    ref="datepicker"
+                    ref-name="dateInput"
+                    :disabled="disabledDates"
+                    placeholder="-- / -- / ----"
+                    @opened="datepickerOpened"
+                    @selected="dateSelected"
+        />
+        <time-picker v-model="timeValue"
+                     format="HH:mm"
+                     :hide-clear-button="true"
+                     ref="timepicker"
+                     :disabled-to="disabledTime"
+                     :disabled="timeDisabled"
+        />
+    </div>
+</script>
+
+<script type="text/x-template" id="switcher-template">
+    <div class="fc-button-group">
+        <button type="button" :class="['fc-button fc-state-default fc-state-default--rc', key === value ? 'fc-state-active' : '']" v-for="(title, key) in buttons"
+            @click="buttonClick(key)"
+        >{{ title }}</button>
+    </div>
+</script>
+
+<script type="text/x-template" id="bool-switcher-template">
+    <div class="bool-switcher" @click="switcherClicked">
+        <div :class="['bool-switcher__button', key === activeButton ? 'bool-switcher__button--active' : '']" v-for="(title, key) in buttons">
+            {{ title }}
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="modal-template">
+    <transition name="modal-transition">
+        <div class="modal" v-if="active">
+            <div :class="['modal__body', this.modalBodyClass]">
+                <div class="modal__header">
+                    <slot name="header"></slot>
+                </div>
+                <div class="modal__content">
+                    <slot name="body"></slot>
+                </div>
+                <div class="modal__footer">
+                    <slot name="footer"></slot>
+                </div>
+            </div>
+        </div>
+    </transition>
+</script>
+
+<script type="text/x-template" id="inline-editor-template">
+    <transition name="editor-transition">
+        <div class="inline-editor" v-if="active">
+            <div :class="['inline-editor__body', this.modalBodyClass]">
+                <div class="inline-editor__header">
+                    <slot name="header"></slot>
+                </div>
+                <div class="inline-editor__content">
+                    <slot name="body"></slot>
+                </div>
+                <div class="inline-editor__footer">
+                    <slot name="footer"></slot>
+                </div>
+            </div>
+        </div>
+    </transition>
+</script>
+
+<script type="text/x-template" id="availability-calendar-template">
+    <div class="rc-calendar rc-calendar--availability">
+        <div ref="calendar"></div>
+        <div class="button-floating">+</div>
+    </div>
+</script>
+
+<script type="text/x-template" id="rc-booking-calendar-event">
+    <div class="rc-event-field rc-event-field--title">${ title }</div>
+    <div class="rc-event-field rc-event-field--time">${ start } - ${ end }</div>
+    <div class="rc-event-field rc-event-field--month-collapse">${ clientName }</div>
+    <div class="rc-event-field rc-event-field--month-collapse rc-event-field--click">${ action }</div>
+</script>
+
+<script type="text/x-template" id="rc-availability-calendar-event">
+    <div class="rc-event-field rc-event-field--time">${ start } - ${ end }</div>
+    <div class="rc-event-field rc-event-field--timezone">${ timezone }</div>
+</script>
+
+<script type="text/x-template" id="rc-message-box">
+    <div class="alert alert-warning">
+        <span class="dashicons dashicons-info"></span>
+        <span>${ text }</span>
+    </div>
+</script>

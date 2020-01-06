@@ -1,0 +1,209 @@
+<booking-editor
+        @updated="refresh"
+        @delete="deleteBooking"
+        inline-template
+>
+    <div class="eddbk-inputs">
+        <modal @close="closeModal"
+               modal-body-class="modal__body--wide"
+               :active="modalState.isOn()"
+        >
+            <div slot="header">
+                {{ model.id ? 'Edit Booking | ID. ' + model.id  : 'Add a New Booking' }}
+                <div :class="['modal__close modal--right', isDoubleConfirming ? 'disabled' : '']" @click="closeModal()" v-if="!closeConfirming">&times;</div>
+                <div class="modal__header-buttons modal--right" v-else>
+                    <input type="button" class="button button-dark-solid" value="Close" @click="forceCloseModal">
+                    <input type="button" class="button" value="Continue Editing" @click="continueEditing">
+                </div>
+            </div>
+
+            <div slot="body" :class="[isDoubleConfirming ? 'disabled' : '']">
+                <div class="row">
+                    <div class="col-6 columns">
+                        <div :class="['form-row form-row--vertical', errors.has('service') ? 'form-row--with-error' : '']">
+                            <div class="form-row__label">Service*</div>
+                            <div class="form-row__input">
+                                <vueselect :options="services" v-validate="'required'" name="service" @input="errors.remove('service')" v-model="model.service" label="name"></vueselect>
+                            </div>
+                        </div>
+
+                        <service-session-selector :service="model.service"
+                                                  v-model="model.session"
+                                                  v-validate="'required'"
+                                                  name="session"
+                                                  @input="errors.remove('session')"
+                                                  :timezone="timezone"
+                                                  :field_labels="{duration: _('Duration'), staffMember: _('Staff Member')}"
+                        ></service-session-selector>
+                    </div>
+
+                    <div class="col-6 columns">
+                        <div class="row">
+                            <div class="col-12 columns">
+                                <div :class="['form-row form-row--vertical', errors.has('client') || errors.any('client-editor') ? 'form-row--with-error' : '']">
+                                    <div class="form-row__label">Client*</div>
+                                    <div class="form-row__input">
+                                        <form class="form-row__form" data-vv-scope="client-editor" v-show="isCreatingClient">
+                                            <input v-validate="'required'" name="name" type="text" @input="errors.remove('name', 'client-editor')" placeholder="Enter full name" v-model="newClient.name" class="form-control--wide"/>
+                                            <div class="form-row__description form-row__error" v-if="errors.first('client-editor.name')">{{ errors.first('client-editor.name') }}</div>
+
+                                            <input v-validate="'required|email'" name="email" type="email" @input="errors.remove('email', 'client-editor')" placeholder="Enter client email" v-model="newClient.email" class="form-control--wide" @keyup.enter="saveNewClient"/>
+                                            <div class="form-row__description form-row__error" v-if="errors.first('client-editor.email')">{{ errors.first('client-editor.email') }}</div>
+
+                                            <div class="text-right mt-4">
+                                                <div class="eddbk-error-message eddbk-error-message--client" v-if="clientErrorMessage">{{ clientErrorMessage }}</div>
+                                                <div class="button button-outline" @click="cancelClientCreation">Existing client</div>
+                                                <div :class="['button button-primary', isSavingClient ? 'loading-button' : '']" @click="saveNewClient">Create client</div>
+                                            </div>
+                                        </form>
+                                        <div v-show="!isCreatingClient">
+                                            <vueselect :options="foundClients" v-validate="'required'" name="client" @input="errors.remove('client')" v-model="model.client" label="name" :on-search="onClientSearch">
+                                                <template slot="spinner" slot-scope="options">
+                                                    <div class="loading-inline" v-if="isClientsLoading"></div>
+                                                </template>
+                                            </vueselect>
+                                            <div class="text-right mt-4">
+                                                <div class="button button-outline" @click="createClient">{{ model.id ? 'Replace with new client' : 'Create new client' }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row form-row--inline mobile-only mb-3/2" v-if="model.id">
+                                    <div class="form-row__label form-row__label--no-top">Status</div>
+                                    <div class="form-row__input">
+                                <span class="booking-status" :style="statusStyle">
+                                    <span>{{ statusTitle }}</span>
+                                </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 columns">
+                                <div :class="['form-row form-row--vertical', errors.has('clientTzName') ? 'form-row--with-error' : '']">
+                                    <div class="form-row__label">Client Timezone*</div>
+                                    <div class="form-row__input">
+                                        <timezone-select v-model="model.clientTzName"
+                                                         class="form-control--wide"
+                                                         v-validate="'required'"
+                                                         name="clientTzName"
+                                                         @change="errors.remove('clientTzName')"
+                                        ></timezone-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 columns">
+                                <div class="form-row form-row--vertical">
+                                    <div class="form-row__label">Payment Number</div>
+                                    <div class="form-row__input">
+                                        <input name="payment" type="text" class="form-control--wide" v-model="model.payment">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 columns">
+                                <div class="form-row form-row--vertical">
+                                    <div class="form-row__label">
+                                        Add Notes
+                                        <div class="form-row__description form-row__description--inline">These notes are for admin purposes only</div>
+                                    </div>
+                                    <div class="form-row__input">
+                                        <textarea name="" id="" cols="30" rows="3" class="form-control--wide" v-model="model.notes" style="min-height: 28px"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row form-row--inline mobile-collapsed" v-if="model.id">
+                                    <div class="form-row__label form-row__label--no-top">Status</div>
+                                    <div class="form-row__input">
+                                <span class="booking-status" :style="statusStyle">
+                                    <span>{{ statusTitle }}</span>
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="form-row form-row--vertical" style="margin-top: -1px;">
+                                    <div class="form-row__label">Actions</div>
+                                    <template v-if="model.id">
+                                        <div class="form-row__input">
+                                            <select v-model="model.transition" style="width: 100%">
+                                                <template v-for="(transitionLabel, transition) in availableTransitions">
+                                                    <option :value="transition">{{ transitionLabel }}</option>
+                                                </template>
+                                            </select>
+                                        </div>
+                                    </template>
+                                    <div class="form-row__description" v-else>
+                                        These are no actions to take at this time
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div slot="footer">
+                <div class="footer-confirm" v-if="!removeConfirming" :class="isDoubleConfirming || isCreatingClient ? 'disabled' : ''">
+                    <div class="footer-confirm__buttons footer-confirm__buttons--left" v-if="model.id">
+                        <input type="button" class="button button-alert" value="Delete"
+                               @click="confirmBookingDeletion">
+                    </div>
+                    <div class="footer-confirm__message __right __alert" v-if="!isDoubleConfirming && !isCreateConfirming">
+                        <template v-if="errors.any() && !errors.any('client-editor')">
+                            There was a problem with your booking. The errors have been highlighted above.
+                        </template>
+                        <template v-if="errorMessage">
+                            {{ errorMessage }}
+                        </template>
+                    </div>
+                    <div class="footer-confirm__buttons" v-if="model.id">
+                        <button :class="['button button-primary', isBookingSaving ? 'loading-button' : '']"
+                                @click="saveBooking">Save Changes
+                        </button>
+                    </div>
+                    <template v-else>
+                        <template v-if="isCreateConfirming">
+                            <div class="footer-confirm__message __right">
+                                Are you sure you want to {{ !createTransition ? 'save this booking as a draft' : 'schedule this booking' }}?
+                            </div>
+                            <div class="footer-confirm__buttons">
+                                <button :class="['button button-primary', isBookingSaving ? 'loading-button' : '']"
+                                        @click="confirmBookingCreation"
+                                >{{ !createTransition ? 'Save Draft' : 'Schedule' }}
+                                </button>
+                                <input type="button" class="button" value="No, continue editing"
+                                       @click="isCreateConfirming = false">
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="footer-confirm__buttons">
+                                <input type="button" class="button" value="Save Draft"
+                                       @click="saveNewBooking()">
+                                <input type="button" class="button button-primary" value="Schedule Booking"
+                                       @click="saveNewBooking('submit')">
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="footer-confirm" v-else-if="removeConfirming">
+                    <div class="footer-confirm__message __wide __right __alert">
+                        Are you sure you want to delete this booking? There is no undo option.
+                    </div>
+                    <div class="footer-confirm__buttons">
+                        <button :class="['button button-alert-solid', isDeleting ? 'loading-button' : '']"
+                                @click="deleteBooking">Yes, delete
+                        </button>
+                        <input type="button" class="button" value="Cancel" @click="removeConfirming = false">
+                    </div>
+                </div>
+                <div class="footer-confirm" v-else>
+                    <div class="footer-confirm__message __wide __right"></div>
+                    <div class="footer-confirm__buttons">
+                        <input type="button" class="button button-dark-solid" value="Close" @click="forceCloseModal">
+                        <input type="button" class="button" value="Continue Editing" @click="cancelConfirming = false">
+                    </div>
+                </div>
+            </div>
+        </modal>
+    </div>
+</booking-editor>

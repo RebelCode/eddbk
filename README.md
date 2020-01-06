@@ -9,7 +9,7 @@
 The new EDD Bookings.
 
 ### Requirements
-- PHP: 5.4.
+- PHP: v5.5
 
 ### Known Issues
 - Timezone offset not supported on older PHP versions (RebelCode/rcmod-eddbk-cart#26).

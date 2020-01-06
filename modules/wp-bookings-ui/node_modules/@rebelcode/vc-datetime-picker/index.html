@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repeater App</title>
+</head>
+<body>
+<div id="app">
+    <datetime-picker v-model="datetime" inline-template>
+        <div>
+            <span class="native-date">
+                {{ nativeDate }}
+            </span>
+            <input type="text" placeholder="YYYY-MM-DD" v-model="dateValue" class="date-input" readonly/>
+            <input type="text" placeholder="HH:ii:ss" v-model="timeValue" class="time-input" readonly/>
+        </div>
+    </datetime-picker>
+</div>
+</body>
+<script src="/webpack-dev-server.js"></script>
+<script src="/app.min.js"></script>
+</html>

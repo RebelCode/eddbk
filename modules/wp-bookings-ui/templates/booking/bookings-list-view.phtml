@@ -1,0 +1,77 @@
+<bookings-list-view 
+    @edit="editBooking"
+    @delete="deleteBooking"
+    @apply-filter="update"
+    @ready="clearBookings"
+    :is-loading="isLoading"
+    inline-template
+>
+    <div :class="isLoading ? 'loading-container' : ''">
+        <bookings-filter @submit="goToPage(1)" :search-string.sync="search" :status.sync="status"></bookings-filter>
+        <list-table
+            class="table-eddbk-bookings"
+            :columns="columns"
+            :rows="bookings"
+            :actions="actions"
+            :show-cb="false"
+            :bulk-actions="[]"
+            :total-pages="pagesCount"
+            :total-items="bookingsCount"
+            :per-page="numItems"
+            :current-page="page"
+            action-column="date"
+            @pagination="goToPage"
+            @action:click="onActionClick"
+        >
+            <template slot="filters">
+                <select v-model="month">
+                    <option selected :value="null">All months</option>
+                    <option :value="number" v-for="number in 12">{{ _month(number) }}</option>
+                </select>
+                <select v-model="service">
+                    <option :value="null">All Services</option>
+                    <option :value="service.id" v-for="service in services">{{ service.name }}</option>
+                </select>
+                <button class="button" @click="applyFilter">Filter</button>
+            </template>
+
+            <template slot="date" slot-scope="data">
+                <a href="#" @click.prevent="$emit('edit', data.row)">
+                    <strong>{{ humanizeDate(data.row.start) }}</strong>
+                </a>
+                <span style="opacity: .6; margin-left: 4px">ID: {{ data.row.id }}</span>
+                <span class="loading-inline" v-if="data.row.isDeleting"></span>
+            </template>
+
+            <template slot="client" slot-scope="data">
+                <a v-if="data.row.client" :href="formatter(config.links.client, data.row.client ? data.row.client.id : 0)" target="_blank">
+                    {{ data.row.client ? data.row.client.name : null }}
+                </a>
+                <span class="info" v-else>
+                    {{ _('Client not found.') }}
+                </span>
+            </template>
+
+            <template slot="service" slot-scope="data">
+                <template v-if="data.row.service">
+                    {{ data.row.service.name }}
+                </template>
+                <span class="info" v-else>
+                    {{ _('Service not found.') }}
+                </span>
+                <div v-if="data.row.resources">
+                    <div class="service-staff" v-for="resource of getResources('staff', [data.row])">
+                        <img :src="resource.data.imageSrc || defaultStaffImageSrc" alt="" class="service-staff__image">
+                        <span class="staff-service__name">{{ resource.name }}</span>
+                    </div>
+                </div>
+            </template>
+
+            <template slot="status" slot-scope="data">
+                <a href="#" @click.prevent="$emit('edit', data.row)" style="text-transform: capitalize">
+                    {{ bookingHelpers.statusLabel(data.row.status) }}
+                </a>
+            </template>
+        </list-table>
+    </div>
+</bookings-list-view>

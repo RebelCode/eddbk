@@ -1,0 +1,16 @@
+{
+  "name": "booking-plugin",
+  "version": "0.1.0",
+  "description": "Booking plugin application",
+  "scripts": {
+    "build": "node ./build/build.js"
+  },
+  "dependencies": {
+    "@rebelcode/bookings-js": "0.2.7"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "cross-env": "^5.1.1"
+  },
+  "author": "RebelCode"
+}

@@ -1,0 +1,23 @@
+<div id="eddbk-bookings-page" v-cloak>
+    <div class="vcloak--visible loading-container"></div>
+    <bookings-application inline-template>
+        <div class="wrap vcloak--hidden">
+            <?=$this->render('booking/booking-editor');?>
+
+            <h1 class="wp-heading-inline">Bookings</h1>
+            <button class="page-title-action" @click="createBooking">Add New</button>
+            <hr class="wp-header-end">
+
+            <tabs v-model="activeView" :options="tabsConfig">
+                <tab title="List View">
+                    <?=$this->render('booking/bookings-list-view');?>
+                </tab>
+                <tab title="Calendar View">
+                    <?=$this->render('booking/bookings-calendar-view');?>
+                </tab>
+            </tabs>
+        </div>
+    </bookings-application>
+</div>
+
+<?=$this->render('components');?>

@@ -1,0 +1,19 @@
+@mixin solid-sweet-button ($bg-color) {
+  color: $bg-color !important;
+
+  &-solid {
+    color: $white !important;
+    text-shadow: none !important;
+    background-color: $bg-color !important;
+    border-color: lighten($bg-color, 4) darken($bg-color, 4) darken($bg-color, 8) !important;
+    box-shadow: 0 1px 0 darken($bg-color, 8) !important;
+  }
+}
+
+.button-alert {
+  @include solid-sweet-button($alert-color);
+}
+
+.button-dark {
+  @include solid-sweet-button(#6c6c6c);
+}

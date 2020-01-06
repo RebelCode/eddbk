@@ -1,0 +1,47 @@
+<div class="settings-tab settings-tab--general">
+    <div style="margin-top: 1.5rem">
+        <div class="col-12 columns">
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Timezone') }}</div>
+                <div class="form-row__input form-row__input--padded">
+                    <span>{{ config.timezone }}</span>
+                    <a class="settings-edit" target="_blank" :href="settingsConfig.generalSettingsUrl">{{ _('Edit') }}</a>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Date format, Time format') }}</div>
+                <div class="form-row__input form-row__input--padded">
+                    <span>{{ settingsConfig.preview.datetimeFormats }}</span>
+                    <a class="settings-edit" target="_blank" :href="settingsConfig.generalSettingsUrl">{{ _('Edit') }}</a>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Week Starts On') }}</div>
+                <div class="form-row__input">
+                    <select v-model="week_starts_on">
+                        <option v-for="(weekDay, key) of settingsConfig.options.week_starts_on" :value="key">{{ weekDay }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Default Calendar View') }}</div>
+                <div class="form-row__input">
+                    <switcher :buttons="settingsConfig.options.default_calendar_view" v-model="default_calendar_view"></switcher>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-row__label">{{ _('Booking Status Colors') }}</div>
+                <div class="form-row__input">
+                    <div class="settings-color-input" v-for="(bookingStatus, key) of state.statuses">
+                        <color-picker v-model="booking_statuses_colors[key]"></color-picker>
+                        <span class="settings-color-input__title">{{ bookingStatus }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

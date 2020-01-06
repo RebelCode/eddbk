@@ -1,0 +1,34 @@
+.eddbk-nav-button {
+  position: relative;
+  width: 2rem;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: .175;
+    pointer-events: none;
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 6px solid transparent;
+  }
+
+  &__prev {
+    &:after {
+      border-right: 10px solid #000;
+      margin-left: -5px;
+    }
+  }
+
+  &__next {
+    &:after {
+      border-left: 10px solid #000;
+      margin-left: 5px;
+    }
+  }
+}

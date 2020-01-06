@@ -1,0 +1,60 @@
+.sessions-datepicker {
+  margin-top: -1rem;
+}
+
+.edd-booking-wizard__info.edd-booking-wizard__info--inline {
+  margin-bottom: 1.5rem;
+  margin-top: -4px;
+}
+
+.session-picker {
+  padding: .35rem;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+
+    .dashicons {
+      cursor: pointer;
+    }
+  }
+  &-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &-button {
+    color: $black;
+    font-weight: normal;
+    background-color: white;
+    border: 1px solid $light-gray;
+    padding: .5rem;
+    width: 21.5%;
+    border-radius: 4px;
+    margin: 4px 0;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+
+    &--selected {
+      background-color: $primary-color;
+      color: #fff;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.session-date-picker {
+  .vdp-datepicker__calendar .cell {
+    &:hover {
+      border-color: $primary-color !important;
+    }
+    &.selected, &.selected:hover, &.highlighted, &.selected.highlighted {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: #fff;
+    }
+  }
+}

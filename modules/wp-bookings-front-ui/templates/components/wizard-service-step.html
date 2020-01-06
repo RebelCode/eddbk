@@ -1,0 +1,22 @@
+<script type="text/x-template" id="eddbk-service-step-template">
+    <div>
+        <div class="inline-form-control">
+            <label>
+                {{ getLabel('fields.service.title') }}
+                <span class="eddbk-loading-inline" v-if="isLoading" style="margin-left: 3px"></span>
+            </label>
+            <select v-model="valueProxy" class="eddb-control" :disabled="isLoading ? 'disabled' : false">
+                <option :value="null" disabled selected>{{ getLabel('fields.service.placeholder') }}</option>
+                <option :value="item" v-for="item in services">{{ item.name }}</option>
+            </select>
+        </div>
+        <div class="service">
+            <div v-if="value" class="service__image">
+                <img :src="value.imageSrc" alt="">
+            </div>
+            <div v-if="value" class="service__description">
+                {{ value.description }}
+            </div>
+        </div>
+    </div>
+</script>

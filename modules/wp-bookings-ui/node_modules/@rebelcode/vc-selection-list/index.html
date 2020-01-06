@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selection List App</title>
+</head>
+<body>
+<div id="app">
+    <selection-list :collection="items" v-model="selectedValue">
+        <div :class="[r.isItemSelected(r.item) ? 'selected' : '']" @click="r.select(r.item)" slot-scope="r">
+            <span>{{ r.item.title }}</span>
+        </div>
+    </selection-list>
+</div>
+</body>
+<script src="/webpack-dev-server.js"></script>
+<script src="/app.min.js"></script>
+</html>

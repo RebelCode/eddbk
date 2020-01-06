@@ -1,0 +1,90 @@
+<script type="text/x-template" id="service-session-selector-template">
+    <div>
+        <div class="inline-form-control" v-for="filterKey of filters" v-if="hasFilterValues(filterKey)">
+            <label>{{ getLabel('fields.' + filterKey + '.title') }}</label>
+            <div>
+                <select v-model="filter[filterKey]" class="eddb-control">
+                    <option :value="value" v-for="(label, value) of getFilterValues(filterKey)">
+                        {{ label }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="inline-form-control">
+            <label>
+                {{ getLabel('fields.date.title') }}
+                <span class="eddbk-loading-inline" v-if="isSessionsLoading" style="margin-left: 3px"></span>
+            </label>
+            <session-date-picker
+                    v-model="selectedDaySessions"
+                    :timezone="timezone"
+                    :is-daily-duration="isDailyDuration"
+                    :selected-day.sync="selectedDay"
+                    :opened-on-date.sync="openedOnDate"
+                    :session.sync="session"
+                    :loading="isSessionsLoading"
+                    :available-sessions="filteredSessions"
+                    :prev-available-day.sync="prevAvailableDay"
+                    :next-available-day.sync="nextAvailableDay"
+                    @changedMonth="loadSessions"
+            ></session-date-picker>
+        </div>
+        <div class="inline-form-control" v-if="!isDailyDuration">
+            <label>{{ getLabel('fields.time.title') }}</label>
+            <div class="eddb-control eddb-control-appointment" v-if="selectedDay">
+                <date-navigator
+                        :selected-day.sync="selectedDay"
+                        :timezone="timezone"
+                        :prev-available-day="prevAvailableDay"
+                        :next-available-day="nextAvailableDay"
+                ></date-navigator>
+                <session-time-picker v-model="session"
+                                     :selected-day.sync="selectedDay"
+                                     :service="service"
+                                     :timezone="timezone"
+                                     :sessions="selectedDaySessions"
+                ></session-time-picker>
+            </div>
+            <div class="eddb-control-info" v-else>
+                {{ getLabel('fields.time.placeholder') }}
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-template" id="session-date-picker-template">
+    <div :class="loading ? 'eddbk-disabled' : ''">
+        <div class="edd-booking-wizard__info edd-booking-wizard__info--inline" v-if="!loading && !availableSessions.length">
+            {{ getLabel('fields.date.empty') }}
+        </div>
+        <datepicker v-model="selectedDayProxy"
+                    :inline="true"
+                    @changedMonth="onMonthChange"
+                    :open-date="openedOnDate"
+                    :monday-first="$store.getters['settings/mondayFirst']"
+                    :disabled="{ customPredictor: isDateDisabled, to: today }"
+                    :highlighted="{ dates: sessionDays, includeDisabled: true }"
+                    class="sessions-datepicker"
+                    maximum-view="day"
+        ></datepicker>
+    </div>
+</script>
+<script type="text/x-template" id="session-time-picker-template">
+    <div class="eddb-control-appointment__body">
+        <div
+                :class="{'selected': isSelected(session) }"
+                v-for="session in visibleSessions"
+                @click="select(session)"
+                class="session__item"
+        >
+            {{ sessionLabel(session) }}
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="date-navigator-template">
+    <div class="eddb-control-appointment__header">
+        <span class="eddbk-nav-button eddbk-nav-button__prev" @click="goToPrevDay" :class="!prevAvailableDay ? 'disabled' : ''"></span>
+        <span>{{ selectedDaySessionsLabel }}</span>
+        <span class="eddbk-nav-button eddbk-nav-button__next" @click="goToNextDay" :class="!nextAvailableDay ? 'disabled' : ''"></span>
+    </div>
+</script>

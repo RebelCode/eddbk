@@ -1,0 +1,22 @@
+<script type="text/x-template" id="eddbk-confirmation-step-template">
+    <div v-if="service && appointment">
+        <div class="edd-booking-wizard__info">
+            <p>
+                <span v-html="getLabel('confirmation.booking', [appointment.service, appointment.duration])"></span>
+                <span v-if="appointment.staffMember" v-html="getLabel('confirmation.with', [appointment.staffMember])"></span>
+            </p>
+            <p v-html="getLabel('confirmation.starting', [appointment.start])"></p>
+            <p style="margin-bottom: 0" v-html="getLabel('confirmation.price', [appointment.price])"></p>
+        </div>
+
+        <div class="inline-form-control">
+            <label>{{ getLabel('fields.notes.title') }}</label>
+            <textarea
+                    rows="4"
+                    v-model="notes"
+                    class="eddb-control"
+                    :placeholder="getLabel('fields.notes.placeholder')"
+            ></textarea>
+        </div>
+    </div>
+</script>

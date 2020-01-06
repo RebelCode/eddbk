@@ -1,0 +1,19 @@
+<style>
+    [data-eddbk-wizard-holder] .session__item.selected,
+    [data-eddbk-wizard-holder] .wizard-icon-circle.checked {
+        background-color: ${color}
+    }
+    [data-eddbk-wizard-holder] .vdp-datepicker__calendar .cell.highlighted,
+    [data-eddbk-wizard-holder] .vdp-datepicker__calendar .cell.selected,
+    [data-eddbk-wizard-holder] .vdp-datepicker__calendar .cell.selected:hover {
+        background-color: ${color} !important;
+        border-color: ${color} !important;
+        color: #fff
+    }
+    [data-eddbk-wizard-holder] {
+        display: none;
+    }
+</style>
+<div data-eddbk-wizard-holder>
+    <eddbk-wizard :config='${config}' color="${color}" week-starts-on="${weekStartsOn}"></eddbk-wizard>
+</div>

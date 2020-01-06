@@ -1,0 +1,16 @@
+{
+  "name": "rcmod-wp-bookings-front-ui",
+  "version": "0.1.0",
+  "description": "Booking plugin application client",
+  "scripts": {
+    "build": "node ./build/build.js"
+  },
+  "dependencies": {
+    "@rebelcode/booking-wizard": "0.2.4"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "cross-env": "^5.1.1"
+  },
+  "author": "RebelCode"
+}

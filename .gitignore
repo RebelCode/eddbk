@@ -2,8 +2,6 @@
 /.idea/
 /nbproject/
 /build/
-/modules/
-/dev-modules/
 /vendor/
 /test/coverage/
 /test/log/

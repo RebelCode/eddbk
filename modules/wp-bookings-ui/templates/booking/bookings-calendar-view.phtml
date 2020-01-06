@@ -1,0 +1,42 @@
+<bookings-calendar-view 
+    :statuses="screenStatuses"
+    @edit="editBooking"
+    @create="createBooking"
+    @ready="clearBookings"
+    :is-loading="isLoading"
+    @apply-filter="update"
+    inline-template
+>
+    <div :class="isLoading ? 'loading-container' : ''">
+        <bookings-filter @submit="applyFilter" :search-string.sync="search" :status.sync="status"></bookings-filter>
+        <div class="tablenav top tablenav--eddbk-calendar">
+            <div class="alignleft actions">
+                <switcher v-model="calendarView" :buttons="calendarViews"></switcher>
+                <button class="fc-button fc-state-default--rc fc-state-default" @click="goToToday">Today</button>
+            </div>
+            <div class="alignright actions actions--wide" style="padding-right: 0;padding-bottom: .5rem">
+                <select v-model="service" @change="applyFilter">
+                    <option :value="null">All Services</option>
+                    <option :value="service.id" v-for="service in services">{{ service.name }}</option>
+                </select>
+                <select v-model="colorScheme">
+                    <option value="status">Booking Status Color Scheme</option>
+                    <option value="service">Services Color Scheme</option>
+                </select>
+            </div>
+            <br class="clear">
+        </div>
+
+        <div class="clear"></div>
+
+        <bookings-calendar :color-scheme="colorScheme"
+                           :bookings="bookings"
+                           :default-view="calendarView"
+                           ref="calendar"
+                           @period-change="updateBookings"
+                           @booking-click="editBooking"
+                           @booking-create="createBooking"
+                           class="rc-calendar rc-calendar--booking"
+        />
+    </div>
+</bookings-calendar-view>

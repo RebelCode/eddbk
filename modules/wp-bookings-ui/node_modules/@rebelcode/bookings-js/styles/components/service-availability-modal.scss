@@ -1,0 +1,86 @@
+.availabilities {
+  &-cta, &-list {
+    padding-right: 1rem;
+
+    @include breakpoint(mobile) {
+      padding-right: 0;
+    }
+  }
+
+  &-list {
+    max-height: 336px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include breakpoint(mobile) {
+      max-height: unset;
+      overflow-x: unset;
+      overflow-y: unset;
+    }
+  }
+}
+
+.exclusions-list {
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07);
+  margin-top: 8px;
+  width: 100%;
+  min-height: 30px;
+  height: 84px;
+  overflow-y: auto;
+  resize: vertical;
+
+  &__item {
+    padding: 4px 8px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &-title {
+      min-width: 150px;
+      display: inline-block;
+      padding-right: .25em;
+      vertical-align: middle;
+    }
+  }
+}
+
+.trash-can {
+  opacity: .7;
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    color: $black;
+    opacity: 1;
+  }
+
+  &--right {
+    float: right;
+  }
+}
+
+/*
+ * Datepicker for exclusions
+ */
+.exclusions-datepicker {
+  padding-top: 8px;
+
+  .vdp-datepicker__calendar {
+    border: none;
+    width: 100%;
+  }
+}
+
+.vdp-datepicker {
+  input[readonly="readonly"] {
+    background-color: $white;
+    width: 100%;
+  }
+}
+
+.inline-datepicker {
+  .vdp-datepicker {
+    display: inline-block;
+  }
+}

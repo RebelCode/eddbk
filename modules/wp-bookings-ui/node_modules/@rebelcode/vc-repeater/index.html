@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repeater App</title>
+</head>
+<body>
+<div id="app">
+    <repeater :collection="items">
+        <div class="repeater-item" slot-scope="r">
+            <span>{{ r.item.title }}</span>
+            <button @click="r.remove(r.item)">x</button>
+        </div>
+    </repeater>
+</div>
+</body>
+<script src="/webpack-dev-server.js"></script>
+<script src="/app.min.js"></script>
+</html>

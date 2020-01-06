@@ -143,7 +143,8 @@ class PluginModule extends AbstractBaseModularModule
     protected function _getModules(ContainerInterface $container = null)
     {
         $modules = [];
-        foreach ($this->moduleFiles as $_idx => $_file) {
+        foreach ($this->moduleFiles as $_idx => $_path) {
+            $_file = rtrim($_path, '\\/') . '/module.php';
             if (!file_exists($_file) || !is_readable($_file)) {
                 throw $this->_createRuntimeException(
                     $this->__('Module file "%1$s" does not exist or is not readable', [$_file]),

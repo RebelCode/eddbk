@@ -1,0 +1,30 @@
+<div id="eddbk-staff-members-page" class="eddbk-shrinked-page" v-cloak>
+    <div class="vcloak--visible loading-container"></div>
+    <staff-members-page inline-template>
+        <div class="wrap vcloak--hidden">
+            <staff-member-editor></staff-member-editor>
+            <h1 class="wp-heading-inline">
+                {{ _('Staff Members') }}
+            </h1>
+            <button class="page-title-action"
+                    @click="openEditor({})"
+            >Add New</button>
+            <p class="search-box search-box--services">
+                <label for="services-search-input" class="screen-reader-text">
+                    {{ _('Search Staff Members') }}:
+                </label>
+                <input type="search" id="services-search-input" :placeholder="_('Search Staff Members')" v-model="search" @keyup.enter="fetchItems" style="width: 11rem">
+                <input type="submit" id="search-submit" :value="_('Search')" class="button" @click="fetchItems">
+            </p>
+            <hr class="wp-header-end">
+
+            <staff-members @edit="openEditor"
+                      @create="openEditor({})"
+                      @delete="deleteItem"
+                      :is-initial-fetch-results="isInitialFetchResults"
+            ></staff-members>
+        </div>
+    </staff-members-page>
+</div>
+
+${components}

@@ -1,0 +1,27 @@
+<script type="text/x-template" id="eddbk-session-step-template">
+    <div v-if="service">
+        <div class="edd-booking-wizard__info">
+            <p>
+                {{ getLabel('preview.booking') }}
+                <strong>{{ service.name }}</strong>
+                <span class="eddbk-form-control__info">{{ service.timezone }}</span>
+            </p>
+            <template v-if="service.displayOptions.allowCustomerChangeTimezone">
+                <hr>
+                <div class="inline-form-control inline-form-control--light">
+                    <label>{{ getLabel('fields.timezone.title') }}</label>
+                    <div>
+                        <timezone-select v-model="timezone" class="eddb-control"></timezone-select>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <service-session-selector
+                :filters="state.fields"
+                :service="service"
+                :timezone="timezone"
+                v-model="valueProxy"
+                @exposed="updateFilterValues"
+        ></service-session-selector>
+    </div>
+</script>

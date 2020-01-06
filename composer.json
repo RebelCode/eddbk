@@ -12,31 +12,46 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.4 | ^7.0",
+        "php": "^5.5 | ^7.0",
         "rebelcode/composer-cleanup-plugin": "^0.1",
-        "oomphinc/composer-installers-extender": "^1.0",
+        "guzzlehttp/psr7": "^1.4",
+        "nesbot/carbon": "^1.29.0",
         "rebelcode/modular": "^0.1-alpha1",
-        "rebelcode/rcmod-wp-cqrs": "0.1-alpha3",
-        "rebelcode/rcmod-wp-bookings-cqrs": "0.1-alpha14",
-        "rebelcode/rcmod-eddbk-cqrs": "0.1-alpha3",
-        "rebelcode/rcmod-booking-logic": "0.1-alpha3",
-        "rebelcode/rcmod-eddbk-booking-logic": "0.1-alpha8",
-        "rebelcode/rcmod-eddbk-rest-api": "0.1-alpha13",
-        "rebelcode/rcmod-wp-bookings-shortcode": "0.1-alpha6",
-        "rebelcode/rcmod-wp-bookings-front-ui": "0.1-alpha18",
-        "rebelcode/rcmod-wp-bookings-ui": "0.1-alpha25",
-        "rebelcode/rcmod-eddbk-services": "0.1-alpha15",
-        "rebelcode/rcmod-eddbk-session-generator": "0.1-alpha9",
-        "rebelcode/rcmod-eddbk-cart": "0.1-alpha12",
-        "rebelcode/rcmod-eddbk-admin-emails": "0.1-alpha4",
-        "rebelcode/rcmod-eddbk-help": "0.1-alpha1",
-        "rebelcode/rcmod-eddbk-licensing": "0.1-alpha2",
+        "rebelcode/booking-system-interface": "^0.1-alpha1",
+        "rebelcode/booking-system": "^0.1-alpha1",
+        "rebelcode/event-state-machine": "^0.2-alpha1",
+        "rebelcode/booking-transitioner": "^0.2-alpha2",
+        "rebelcode/session-generator": "^0.1-alpha1",
+        "rebelcode/sql-expression-renderer": "^0.1-alpha1",
+        "rebelcode/sql-cqrs-resource-models-abstract": "^0.2-alpha1",
+        "rebelcode/wp-cqrs-resource-models": "^0.2-alpha1",
+        "rebelcode/time-abstract": "^0.1",
+        "rebelcode/transformers": "^0.1-alpha1",
+        "rebelcode/expression-wp-query-builder": "^0.1-alpha1",
+        "rebelcode/entity-manager-interface": "^0.1",
+        "rebelcode/wp-nonce": "^0.1",
+        "dhii/output-renderer-base": "^0.1-alpha1",
+        "dhii/expression-interface": "^0.1 | ^0.2",
+        "dhii/normalization-helper-base": "^0.1-alpha2",
+        "dhii/cqrs-resource-model-interface": "^0.2-alpha1",
+        "dhii/sql-interface": "^0.1-alpha1",
+        "dhii/validation-base": "^0.2-alpha2",
+        "dhii/factory-base": "^0.1-alpha3",
+        "dhii/iterator-helper-base": "^0.1-alpha2",
+        "dhii/placeholder-template": "^0.1-alpha2",
+        "dhii/data-object-abstract": "^0.1-alpha1",
+        "dhii/evaluable-interface": "^0.1-alpha1",
+        "dhii/invocable-interface": "^0.1",
+        "dhii/psr-14": "^0.1",
+        "dhii/map": "^0.1-alpha6",
         "dhii/di": "^0.2-alpha1",
         "dhii/composite-container": "^0.1-alpha1",
+        "dhii/iterator-base": "^0.1-alpha3",
         "dhii/memoize-memory": "^0.2-alpha1",
         "dhii/wp-events": "^0.3-alpha1",
         "dhii/exception": "^0.1-alpha3",
         "dhii/set": "^0.1-alpha1",
+        "dhii/container-helper-base": "^0.1-alpha5",
         "dhii/config": "^0.1-alpha2"
     },
     "require-dev": {
@@ -47,21 +62,34 @@
     },
     "autoload": {
         "psr-4": {
-            "RebelCode\\EddBookings\\Core\\": "src"
+            "RebelCode\\EddBookings\\Core\\": "src/",
+            "RebelCode\\Bookings\\Module\\": "modules/booking-logic/src/",
+            "RebelCode\\EddBookings\\Logic\\Module\\": "modules/eddbk-booking-logic/src/",
+            "RebelCode\\Expression\\": "modules/wp-cqrs/src/Expression/",
+            "RebelCode\\Storage\\Resource\\Sql\\": "modules/wp-cqrs/src/Sql/",
+            "RebelCode\\Storage\\Resource\\WordPress\\Module\\": "modules/wp-cqrs/src/Module/",
+            "RebelCode\\Storage\\Resource\\WordPress\\": "modules/wp-bookings-cqrs/src",
+            "RebelCode\\EddBookings\\Storage\\Resource\\Module\\": "modules/eddbk-cqrs/src",
+            "RebelCode\\EddBookings\\Services\\": "modules/eddbk-services/src",
+            "RebelCode\\EddBookings\\Sessions\\": "modules/eddbk-session-generator/src/",
+            "RebelCode\\EddBookings\\RestApi\\": "modules/eddbk-rest-api/src",
+            "RebelCode\\EddBookings\\Cart\\": "modules/eddbk-cart/src",
+            "RebelCode\\EddBookings\\Emails\\": "modules/eddbk-admin-emails/src",
+            "RebelCode\\Bookings\\WordPress\\Module\\": [
+                "modules/wp-bookings-front-ui/src",
+                "modules/wp-bookings-ui/src",
+                "modules/wp-bookings-shortcode/src"
+            ],
+            "RebelCode\\EddBookings\\Help\\": "modules/eddbk-help/src"
         }
     },
     "scripts": {
         "test": "phpunit",
         "csfix": "php-cs-fixer fix -vvv"
     },
-    "extra": {
-        "installer-types": [
-            "rc-module"
-        ],
-        "installer-paths": {
-            "modules/{$name}/": [
-                "type:rc-module"
-            ]
+    "config": {
+        "platform": {
+            "php": "5.5"
         }
     }
 }

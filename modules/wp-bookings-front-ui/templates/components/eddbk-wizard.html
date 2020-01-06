@@ -1,0 +1,55 @@
+<script type="text/x-template" id="eddbk-wizard-template">
+    <div class="edd-booking-wizard">
+    <form-wizard :title="getLabel('general.title')"
+                 subtitle=""
+                 :nextButtonText="getLabel('general.buttons.next')"
+                 :backButtonText="getLabel('general.buttons.back')"
+                 :finishButtonText="_('Finish')"
+                 @on-change="onStepChange"
+                 ref="wizard"
+                 v-bind="$attrs"
+    >
+        <tab-content :before-change="isServiceStepReady" v-if="!config.service">
+            <service-step v-model="service"></service-step>
+        </tab-content>
+        <tab-content :before-change="isSessionStepReady">
+            <session-step v-model="session" :timezone="timezone" :service="service" @exposed="updateFilterValues"></session-step>
+        </tab-content>
+        <tab-content>
+            <confirmation-step :timezone="timezone" :service="service" :session="session" :filter-values="filterValues"></confirmation-step>
+        </tab-content>
+
+        <template slot="footer" scope="{activeTabIndex, prevTab, isLastStep, nextTab, fillButtonStyle}">
+            <div class="wizard-footer-left" v-if="!config.service && service && activeTabIndex === 0">
+                <div>{{ serviceInfo.pricePreview }}</div>
+                <div style="opacity: .6" v-if="serviceInfo.isOtherSessionsAvailable" v-html="getLabel('preview.available')"></div>
+            </div>
+
+            <div class="wizard-footer-clear" style="color: red" v-if="errorMessage">
+                {{ errorMessage }}
+            </div>
+
+            <div class="wizard-footer-right">
+                <wizard-button v-if="activeTabIndex > 0"
+                               @click.native="prevTab()"
+                               class="wizard-footer-back"
+                               :style="fillButtonStyle">
+                    {{ getLabel('general.buttons.back') }}
+                </wizard-button>
+
+                <wizard-button @click.native="isLastStep ? createBooking() : nextTab()"
+                               :class="['wizard-footer-right', isLastStep ? 'finish-button' : '']"
+                               :style="fillButtonStyle"
+                               :disabled="isCreatingBooking ? 'disabled' : false"
+                >
+                    <span v-if="!isCreatingBooking">{{ isLastStep ? getLabel('general.buttons.book') : getLabel('general.buttons.next') }}</span>
+                    <template v-if="isCreatingBooking">
+                        <span>&nbsp;</span>
+                        <span class="eddbk-loading-inline eddbk-loading-inline--clean"></span>
+                    </template>
+                </wizard-button>
+            </div>
+        </template>
+    </form-wizard>
+</div>
+</script>

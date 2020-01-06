@@ -42,20 +42,19 @@ use RebelCode\EddBookings\Core\Di\ContainerFactory;
 use RebelCode\EddBookings\Core\ExceptionHandler;
 use RebelCode\EddBookings\Core\PluginModule;
 use RebelCode\Modular\Events\EventFactory;
-use RebelCode\Modular\Finder\ModuleFileFinder;
 
 // Plugin info
 define('EDDBK_SLUG', 'eddbk');
-define('EDDBK_MIN_PHP_VERSION', '5.4.0');
+define('EDDBK_MIN_PHP_VERSION', '5.5.0');
 define('EDDBK_MIN_WP_VERSION', '4.4');
 define('EDDBK_MIN_EDD_VERSION', '2.6.0');
 // Paths
 define('EDDBK_FILE', __FILE__);
 define('EDDBK_DIR', __DIR__);
-define('EDDBK_SRC_DIR', EDDBK_DIR . DIRECTORY_SEPARATOR . 'src');
-define('EDDBK_VENDOR_DIR', EDDBK_DIR . DIRECTORY_SEPARATOR . 'vendor');
-define('EDDBK_MODULES_DIR', EDDBK_DIR . DIRECTORY_SEPARATOR . 'modules');
-define('EDDBK_AUTOLOAD_FILE', EDDBK_VENDOR_DIR . DIRECTORY_SEPARATOR . 'autoload.php');
+define('EDDBK_SRC_DIR', EDDBK_DIR . '/src');
+define('EDDBK_VENDOR_DIR', EDDBK_DIR . '/vendor');
+define('EDDBK_MODULES_DIR', EDDBK_DIR . '/modules');
+define('EDDBK_AUTOLOAD_FILE', EDDBK_VENDOR_DIR . '/autoload.php');
 // I18n
 define('EDDBK_TEXT_DOMAIN', 'eddbk');
 // Misc
@@ -103,12 +102,26 @@ function getEddBkCore()
 
     if ($instance === null) {
         /*
-         * Initialize module file finder
-         * This is just a special traversable, and as such has no effect until the instance is iterated over.
-         * Filter handlers can append to this using {@see AppendIterator}, for example.
+         * The list of modules.
+         *
+         * Each entry in this list should point to a module directory, that has a `module.php` file within it.
          */
-        $fileFinder = new ModuleFileFinder(EDDBK_MODULES_DIR);
-        $fileFinder = apply_filters('eddbk_core_module_file_finder', $fileFinder);
+        $modules = [
+            EDDBK_MODULES_DIR . '/booking-logic',
+            EDDBK_MODULES_DIR . '/eddbk-booking-logic',
+            EDDBK_MODULES_DIR . '/wp-cqrs',
+            EDDBK_MODULES_DIR . '/wp-bookings-cqrs',
+            EDDBK_MODULES_DIR . '/eddbk-cqrs',
+            EDDBK_MODULES_DIR . '/eddbk-services',
+            EDDBK_MODULES_DIR . '/eddbk-session-generator',
+            EDDBK_MODULES_DIR . '/eddbk-rest-api',
+            EDDBK_MODULES_DIR . '/eddbk-cart',
+            EDDBK_MODULES_DIR . '/eddbk-admin-emails',
+            EDDBK_MODULES_DIR . '/wp-bookings-front-ui',
+            EDDBK_MODULES_DIR . '/wp-bookings-ui',
+            EDDBK_MODULES_DIR . '/wp-bookings-shortcode',
+            EDDBK_MODULES_DIR . '/eddbk-help',
+        ];
 
         /*
          * The factory for creating configs.
@@ -156,7 +169,7 @@ function getEddBkCore()
             $compContainerFactory,
             $eventManager,
             $eventFactory,
-            $fileFinder
+            $modules
         );
         $coreModule = apply_filters('eddbk_core_module', $coreModule);
 

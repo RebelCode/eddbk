@@ -1,0 +1,40 @@
+{
+    "name": "rebelcode/rcmod-eddbk-session-generator",
+    "description": "A RebelCode module that provides the session generator for EDD Bookings.",
+    "type": "rc-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "RebelCode",
+            "email": "dev@rebelcode.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^5.5 | ^7.0",
+        "rebelcode/modular": "^0.1-alpha1",
+        "rebelcode/booking-system": "^0.1-alpha1",
+        "rebelcode/entity-manager-interface": "^0.1-alpha1",
+        "rebelcode/time-abstract": "^0.1",
+        "dhii/iterator-base": "^0.1-alpha3",
+        "dhii/container-helper-base": "^0.1-alpha5",
+        "nesbot/carbon": "^1.26.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "ptrofimov/xpmock": "^1.1",
+        "dhii/php-cs-fixer-config": "^0.1",
+        "codeclimate/php-test-reporter": "<=0.3.2",
+        "dhii/cqrs-resource-model-interface": "^0.1-alpha2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RebelCode\\EddBookings\\Sessions\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
+    }
+}
