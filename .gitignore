@@ -1,11 +1,11 @@
-/vendor/
+/.vagrant/
 /.idea/
 /nbproject/
-/test/coverage/
-/test/log/
 /build/
 /modules/
 /dev-modules/
-/.vagrant/
+/vendor/
+/test/coverage/
+/test/log/
 /debug_log
 /githubKey
