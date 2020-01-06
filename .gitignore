@@ -7,3 +7,4 @@
 /test/log/
 /debug_log
 /githubKey
+/modules/*/node_modules/
