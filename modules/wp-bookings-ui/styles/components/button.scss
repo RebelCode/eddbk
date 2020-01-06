@@ -1,5 +1,10 @@
 @mixin solid-sweet-button ($bg-color) {
   color: $bg-color !important;
+  border-color: $bg-color !important;
+
+  &:focus {
+    box-shadow: 0 0 0 1px $bg-color !important;
+  }
 
   &-solid {
     color: $white !important;

@@ -217,9 +217,8 @@
     }
 
     .button-icon {
-      padding: 2px 4px;
-      @include breakpoint(mobile) {
-        padding: 4.5px 6px;
+      .dashicons {
+        vertical-align: text-bottom;
       }
     }
   }

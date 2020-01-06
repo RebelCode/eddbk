@@ -210,6 +210,9 @@
 }
 
 .form-control {
+  &[type="search"] {
+    min-height: 20px;
+  }
   &--wide {
     margin-bottom: 4px;
     width: 100%;
