@@ -55,7 +55,6 @@ $sticky-top-limit: 230px;
 
   .wizard-card-footer {
     @include breakpoint(mobile) {
-      background-color: white;
       position: sticky;
       bottom: 0;
       margin-top: $sticky-top-limit;
