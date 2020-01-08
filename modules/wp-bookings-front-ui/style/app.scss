@@ -1,0 +1,24 @@
+@import '_settings';
+
+@import "wizard";
+@import "loading-indicator";
+
+$color: #17a7dd;
+.edd-booking-wizard {
+  .wizard-icon-circle.checked {
+    background-color: $color;
+  }
+  .session__item.selected {
+    background-color: $color;
+  }
+  .vdp-datepicker__calendar .cell.selected, .vdp-datepicker__calendar .cell.selected:hover {
+    background-color: $color !important;
+    border-color: $color !important;
+    color: #fff;
+  }
+  .vdp-datepicker__calendar .cell.highlighted {
+    background-color: $color !important;
+    border-color: $color !important;
+    color: #fff;
+  }
+}

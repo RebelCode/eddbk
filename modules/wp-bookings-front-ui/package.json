@@ -1,16 +1,57 @@
 {
-  "name": "rcmod-wp-bookings-front-ui",
-  "version": "0.1.0",
-  "description": "Booking plugin application client",
+  "name": "@rebelcode/booking-wizard",
+  "version": "0.2.4",
+  "description": "Booking wizard on customer's side",
+  "author": "RebelCode",
+  "main": "dist/js/app.min.js",
   "scripts": {
-    "build": "node ./build/build.js"
+    "dev": "./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=dev ./node_modules/webpack/bin/webpack.js  --watch",
+    "build": "./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
+    "prepublish": "npm run build"
   },
   "dependencies": {
-    "@rebelcode/booking-wizard": "0.2.4"
+    "@rebelcode/booking-wizard-components": "^0.1.12",
+    "@rebelcode/std-lib": "^0.1.5",
+    "@rebelcode/ui-framework": "^0.1.2",
+    "axios": "^0.18.0",
+    "bottlejs": "^1.6.1",
+    "humanize-duration": "^3.15.2",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "moment-range": "^4.0.1",
+    "moment-timezone": "^0.5.21",
+    "sprintf-js": "^1.1.1",
+    "vuejs-datepicker": "^0.9.26",
+    "vuex": "^3.0.1",
+    "vue": "^2.5.17",
+    "vue-form-wizard": "^0.8.4"
   },
   "devDependencies": {
-    "copyfiles": "^2.1.0",
-    "cross-env": "^5.1.1"
-  },
-  "author": "RebelCode"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.22.0",
+    "html-webpack-plugin": "^3.2.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "exports-loader": "^0.7.0",
+    "fast-sass-loader": "^1.4.6",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler-loader": "^1.0.4",
+    "webpack": "^3.12.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-bundle-analyzer": "^3.0.2"
+  }
 }

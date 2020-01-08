@@ -1,0 +1,25 @@
+.wizard-card-footer {
+  border-top: 1px solid $dark-gray;
+  padding: 1rem !important;
+
+  .wizard-footer-left {
+    width: 60%;
+
+    @include breakpoint(mobile) {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+  .wizard-btn {
+    @include breakpoint(mobile) {
+      margin-top: 0 !important;
+    }
+  }
+
+  .wizard-footer-clear {
+    padding-bottom: .75rem;
+    font-weight: bold;
+  }
+}

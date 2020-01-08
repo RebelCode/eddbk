@@ -4,7 +4,7 @@ use Psr\Container\ContainerInterface;
 use \RebelCode\Bookings\WordPress\Module\WpBookingsFrontUi;
 
 define('RC_BOOKINGS_FRONT_UI_APP_VERSION', '0.2.4');
-define('RC_BOOKINGS_FRONT_UI_MODULE_RELATIVE_DIR', 'modules/rcmod-wp-bookings-front-ui');
+define('RC_BOOKINGS_FRONT_UI_MODULE_RELATIVE_DIR', 'modules/wp-bookings-front-ui');
 define('RC_BOOKINGS_FRONT_UI_MODULE_DIR', __DIR__);
 define('RC_BOOKINGS_FRONT_UI_TEMPLATES_DIR', RC_BOOKINGS_FRONT_UI_MODULE_DIR . DIRECTORY_SEPARATOR . 'templates');
 define('RC_BOOKINGS_FRONT_UI_MODULE_CONFIG_DIR', RC_BOOKINGS_FRONT_UI_MODULE_DIR . DIRECTORY_SEPARATOR . 'config');

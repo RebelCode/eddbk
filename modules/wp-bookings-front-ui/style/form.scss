@@ -1,0 +1,123 @@
+.eddb-control {
+  font-size: $font-size !important;
+
+  font-family: inherit !important;
+  line-height: inherit !important;
+
+  width: 100%;
+
+  border: 1px solid $border-color;
+  //box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
+
+  //border-radius: $border-radius;
+
+  padding: .5rem;
+
+  &-info {
+    padding: 10px 0;
+    opacity: .5;
+  }
+}
+
+.eddbk-form-control {
+  font-size: $font-size !important;
+  font-family: inherit !important;
+  line-height: inherit !important;
+  border: 1px solid $border-color;
+  padding: .5rem;
+
+  &__info {
+    padding-left: 3px;
+    opacity: .5;
+  }
+}
+
+.inline-form-control {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  font-size: $font-size;
+
+  @include breakpoint(mobile) {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  label {
+    font-weight: bold;
+    width: 38%;
+    padding: 10px 8px 10px 0;
+
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  & > div {
+    width: 62%;
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+  }
+
+  &--light {
+    align-items: center;
+    label {
+      font-weight: normal;
+      padding: 0 8px 0 0;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  .vdp-datepicker__calendar {
+    width: 100%;
+    border: none;
+  }
+}
+
+.eddb-control-appointment {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    span {
+      color: #000;
+    }
+  }
+
+  &__body {
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .session__item {
+      color: $black;
+      font-weight: normal;
+      font-size: $font-size;
+      background-color: white;
+      border: 1px solid $dark-gray;
+      padding: .5rem .85rem;
+      width: 30.5%;
+      border-radius: $border-radius;
+      margin: 4px 0;
+      cursor: pointer;
+      text-align: center;
+
+      &.selected {
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+}
