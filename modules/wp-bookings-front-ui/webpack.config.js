@@ -52,6 +52,9 @@ let config = {
   plugins: debug ? [
     new ExtractTextPlugin('app.min.css'),
   ] : [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
     new ExtractTextPlugin({ // define where to save the file
       filename: 'app.min.css',
       allChunks: true
