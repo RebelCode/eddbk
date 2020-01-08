@@ -16,6 +16,10 @@ $sticky-top-limit: 230px;
   @import 'buttons';
   @import 'form';
 
+  .wizard-title {
+    color: unset;
+  }
+
   &__info {
     padding: 1rem;
     border: 1px solid $dark-gray;

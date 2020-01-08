@@ -76,10 +76,15 @@
   .vdp-datepicker__calendar {
     width: 100%;
     border: none;
+    border-radius: 5px;
   }
 }
 
 .eddb-control-appointment {
+  color: #333;
+  background: #fff;
+  border-radius: 5px;
+
   &__header {
     display: flex;
     justify-content: space-between;
