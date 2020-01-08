@@ -1,15 +1,19 @@
 .wizard-navigation {
   .wizard-nav-pills {
     margin: 0;
-    & > li > a {
-      box-shadow: none !important;
+    & > li {
+      margin: 0;
+
+      & > a {
+        box-shadow: none !important;
+      }
     }
   }
 
   .wizard-progress-with-circle {
     background-color: $light-gray;
     top: 20px !important;
-    height: 3px;
+    height: 4px;
 
     &:before, &:after {
       height: 100%;
@@ -49,10 +53,10 @@
       background-color: $light-gray;
 
       transition: transform .3s ease;
-      transform: scale(.9);
+      transform: scale(.8);
 
       &.checked {
-        transform: scale(.9);
+        transform: scale(.8);
       }
     }
   }

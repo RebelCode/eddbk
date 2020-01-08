@@ -5,6 +5,11 @@
 
 $color: #17a7dd;
 .edd-booking-wizard {
+  .wizard-icon-circle {
+    line-height: 43px;
+    letter-spacing: normal;
+
+  }
   .wizard-icon-circle.checked {
     background-color: $color;
   }
