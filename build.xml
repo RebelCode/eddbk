@@ -13,7 +13,7 @@
     <property name="build_name" value="eddbk" />
 
     <!-- The build version number -->
-    <property name="version" value="0.0.0-dev" />
+    <property name="version" value="dev" />
 
     <!-- The base name for release archives, without prefixes and suffixes -->
     <property name="release_archive_name" value="${build_name}" />
