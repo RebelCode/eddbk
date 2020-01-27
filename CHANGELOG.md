@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Minimum PHP version requirement bumped to v5.5.
 - All modules are now included in the main repository.
 - Modules are explicitly loaded using an array, instead of using a file finder.
+- Updated the About page with more shortcode info, and removed the license link.
 
 ## [0.3.1] - 2019-16-01
 ### Added
