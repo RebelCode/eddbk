@@ -3,19 +3,19 @@
 /*
  * @wordpress-plugin
  *
- * Plugin Name: Easy Digital Downloads - Bookings
+ * Plugin Name: Bookings for Easy Digital Downloads
  * Plugin URI: https://eddbookings.com
  * Description: Adds a customizable booking system to Easy Digital Downloads.
  * Version: 0.3.1
  * Author: RebelCode
- * Author URI: http://rebelcode.com
+ * Author URI: https://rebelcode.com
  * Text Domain: eddbk
  * Domain Path: /languages/
  * License: GPLv3
  */
 
 /*
- * Copyright (C) 2015-2018 RebelCode Ltd.
+ * Copyright (C) 2015-2020 RebelCode Ltd.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ define('EDDBK_AUTOLOAD_FILE', EDDBK_VENDOR_DIR . '/autoload.php');
 // I18n
 define('EDDBK_TEXT_DOMAIN', 'eddbk');
 // Misc
-define('EDDBK_CONTACT_PAGE_URL', 'http://eddbookings.com/contact');
+define('EDDBK_CONTACT_PAGE_URL', 'https://eddbookings.com/contact');
 
 // Deactivate plugin on unhandled exception? Can be defined in `wp-config.php`
 if (!defined('EDDBK_SAFE_EXCEPTION_HANDLING')) {
