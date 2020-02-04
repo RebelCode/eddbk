@@ -67,7 +67,7 @@ if (!defined('EDDBK_SAFE_EXCEPTION_HANDLING')) {
 
 // Check PHP version before continuing
 if (version_compare(PHP_VERSION, EDDBK_MIN_PHP_VERSION) < 0) {
-    $message = __('EDD Bookings requires PHP %s', EDDBK_TEXT_DOMAIN);
+    $message = __('EDD Bookings requires PHP %s', 'eddbk');
     $message = sprintf($message, EDDBK_MIN_PHP_VERSION);
     $exception = new RuntimeException($message);
 
@@ -175,7 +175,7 @@ function getEddBkCore()
 
         // Safety check - in case a filter did something wonky
         if (!$coreModule instanceof ModuleInterface) {
-            throw new OutOfRangeException(__('Core module is not a module instance.', EDDBK_TEXT_DOMAIN));
+            throw new OutOfRangeException(__('Core module is not a module instance.', 'eddbk'));
         }
 
         $instance = $coreModule;
@@ -251,7 +251,7 @@ function eddBkCheckDependencies()
     if (version_compare(get_bloginfo('version'), EDDBK_MIN_WP_VERSION) < 0) {
         $reason = __(
             'EDD Bookings requires WordPress at version %1$s or later',
-            EDDBK_TEXT_DOMAIN
+            'eddbk'
         );
         eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_WP_VERSION));
 
@@ -261,7 +261,7 @@ function eddBkCheckDependencies()
     if (!defined('EDD_VERSION') || version_compare(EDD_VERSION, EDDBK_MIN_EDD_VERSION) < 0) {
         $reason = __(
             'EDD Bookings requires the Easy Digital Downloads plugin to be installed and activated at version %1$s or later',
-            EDDBK_TEXT_DOMAIN
+            'eddbk'
         );
         eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_EDD_VERSION));
 
@@ -323,7 +323,7 @@ function eddBkDeactivateSelf($reason = null)
         return;
     }
 
-    $title   = __('EDD Bookings has been deactivated!', EDDBK_TEXT_DOMAIN);
+    $title   = __('EDD Bookings has been deactivated!', 'eddbk');
     $message = sprintf('<h1>%s</h1><p>%s</p>', $title, strval($reason));
 
     // Show wp_die screen with back link
@@ -348,7 +348,7 @@ function eddBkErrorPage($exception)
         include EDDBK_DIR . '/templates/error-page.phtml';
         wp_die(
             ob_get_clean(),
-            __('EDD Bookings Error', EDDBK_TEXT_DOMAIN),
+            __('EDD Bookings Error', 'eddbk'),
             array('response' => 500)
         );
     }
