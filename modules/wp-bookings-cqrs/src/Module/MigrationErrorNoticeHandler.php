@@ -59,7 +59,7 @@ class MigrationErrorNoticeHandler implements InvocableInterface
         $message   = $exception->getMessage();
         $errors    = array_filter(explode("\n", $message));
         $errorList = '<li>' . implode('</li><li>', $errors) . '</li>';
-        $message   = $this->__('EDD Bookings failed to migrate. Reasons:');
+        $message   = $this->__('Bookings for Easy Digital Downloads failed to migrate. Reasons:');
 
         $this->_attach('admin_notices', function () use ($message, $errorList) {
             printf('<div class="notice notice-error is-dismissible"><p>%s</p><ol>%s</ol></div>', $message, $errorList);

@@ -67,7 +67,7 @@ if (!defined('EDDBK_SAFE_EXCEPTION_HANDLING')) {
 
 // Check PHP version before continuing
 if (version_compare(PHP_VERSION, EDDBK_MIN_PHP_VERSION) < 0) {
-    $message = __('EDD Bookings requires PHP %s', 'eddbk');
+    $message = __('Bookings for Easy Digital Downloads requires PHP %s', 'eddbk');
     $message = sprintf($message, EDDBK_MIN_PHP_VERSION);
     $exception = new RuntimeException($message);
 
@@ -250,7 +250,7 @@ function eddBkCheckDependencies()
     // Check WordPress version
     if (version_compare(get_bloginfo('version'), EDDBK_MIN_WP_VERSION) < 0) {
         $reason = __(
-            'EDD Bookings requires WordPress at version %1$s or later',
+            'Bookings for Easy Digital Downloads requires WordPress at version %1$s or later',
             'eddbk'
         );
         eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_WP_VERSION));
@@ -260,7 +260,7 @@ function eddBkCheckDependencies()
 
     if (!defined('EDD_VERSION') || version_compare(EDD_VERSION, EDDBK_MIN_EDD_VERSION) < 0) {
         $reason = __(
-            'EDD Bookings requires the Easy Digital Downloads plugin to be installed and activated at version %1$s or later',
+            'Bookings for Easy Digital Downloads requires the Easy Digital Downloads plugin to be installed and activated at version %1$s or later',
             'eddbk'
         );
         eddBkDeactivateSelf(sprintf($reason, EDDBK_MIN_EDD_VERSION));
@@ -323,7 +323,7 @@ function eddBkDeactivateSelf($reason = null)
         return;
     }
 
-    $title   = __('EDD Bookings has been deactivated!', 'eddbk');
+    $title   = __('Bookings for Easy Digital Downloads has been deactivated!', 'eddbk');
     $message = sprintf('<h1>%s</h1><p>%s</p>', $title, strval($reason));
 
     // Show wp_die screen with back link
@@ -348,7 +348,7 @@ function eddBkErrorPage($exception)
         include EDDBK_DIR . '/templates/error-page.phtml';
         wp_die(
             ob_get_clean(),
-            __('EDD Bookings Error', 'eddbk'),
+            __('Bookings for Easy Digital Downloads Error', 'eddbk'),
             array('response' => 500)
         );
     }
