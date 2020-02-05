@@ -73,6 +73,9 @@ let config = {
       minimize: true
     })
   ],
+  externals: {
+    jquery: 'jQuery'
+  }
 }
 
 module.exports = config
