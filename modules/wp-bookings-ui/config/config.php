@@ -249,7 +249,7 @@ return [
             ],
             'styles' => [
                 'app' => 'bookings_ui/dist/app.min.css',
-                'fullcalendar' => 'cdn/fullcalendar.css',
+                'fullcalendar' => 'bookings_ui/dist/fullcalendar.css',
             ],
         ],
         'endpoints_config' => [

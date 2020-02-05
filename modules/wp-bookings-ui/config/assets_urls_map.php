@@ -10,5 +10,8 @@ return [
         EDDBK_FILE
     ),
 
-    'cdn/fullcalendar.css' => 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css',
+    'bookings_ui/dist/fullcalendar.css' => plugins_url(
+        EDDBK_UI_MODULE_RELATIVE_DIR . '/dist/fullcalendar.min.css',
+        EDDBK_FILE
+    ),
 ];
