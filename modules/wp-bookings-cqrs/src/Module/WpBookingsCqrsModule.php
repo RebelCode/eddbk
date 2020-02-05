@@ -38,11 +38,19 @@ class WpBookingsCqrsModule extends AbstractBaseModule
     use NormalizeArrayCapableTrait;
 
     /**
+     * @since 0.4
+     *
+     * @var string
+     */
+    protected $path;
+
+    /**
      * Constructor.
      *
      * @since [*next-version*]
      *
      * @param string|Stringable         $key                  The module key.
+     * @param string                    $path                 The module path.
      * @param string[]|Stringable[]     $dependencies         The module dependencies.
      * @param ConfigFactoryInterface    $configFactory        The config factory.
      * @param ContainerFactoryInterface $containerFactory     The container factory.
@@ -52,6 +60,7 @@ class WpBookingsCqrsModule extends AbstractBaseModule
      */
     public function __construct(
         $key,
+        $path,
         $dependencies,
         ConfigFactoryInterface $configFactory,
         ContainerFactoryInterface $containerFactory,
@@ -59,6 +68,7 @@ class WpBookingsCqrsModule extends AbstractBaseModule
         $eventManager,
         $eventFactory
     ) {
+        $this->path = $path;
         $this->_initModule($key, $dependencies, $configFactory, $containerFactory, $compContainerFactory);
         $this->_initModuleEvents($eventManager, $eventFactory);
     }
@@ -73,7 +83,7 @@ class WpBookingsCqrsModule extends AbstractBaseModule
     public function setup()
     {
         return $this->_setupContainer(
-            $this->_loadPhpConfigFile(RC_WP_BOOKINGS_CQRS_MODULE_CONFIG_FILE),
+            $this->_loadPhpConfigFile($this->path . '/config/config.php'),
             [
                 /*==============================================================*
                  *   Booking RMs                                                |
@@ -711,7 +721,7 @@ class WpBookingsCqrsModule extends AbstractBaseModule
                 'wp_bookings_migrator' => function (ContainerInterface $c) {
                     return new Migrator(
                         $c->get('wp_bookings_mysqli'),
-                        RC_WP_BOOKINGS_CQRS_MIGRATIONS_DIR,
+                        $this->path . '/migrations',
                         \get_option($c->get('wp_bookings_cqrs/migrations/db_version_option'), 0),
                         $c->get('wp_bookings_sql_placeholder_template_factory'),
                         $c

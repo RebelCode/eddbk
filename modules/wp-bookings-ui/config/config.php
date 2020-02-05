@@ -102,19 +102,19 @@ return [
                 'booking_statuses_colors',
                 'booking_wizard_fields'
             ],
-            'action' => WP_BOOKINGS_UI_UPDATE_SETTINGS_ACTION,
+            'action' => EDDBK_ADMIN_UI_UPDATE_SETTINGS_ACTION,
             'update_endpoint' => [
                 'method' => 'post',
-                'url' => admin_url('admin-ajax.php?action=' . WP_BOOKINGS_UI_UPDATE_SETTINGS_ACTION)
+                'url' => admin_url('admin-ajax.php?action=' . EDDBK_ADMIN_UI_UPDATE_SETTINGS_ACTION)
             ],
         ],
         'screen_options' => [
-            'key' => WP_BOOKINGS_UI_SCREEN_OPTIONS_KEY,
+            'key' => EDDBK_ADMIN_UI_SCREEN_OPTIONS_KEY,
             'fields' => [
                 'statuses' => 'statuses',
                 'bookingsTimezone' => 'bookingsTimezone'
             ],
-            'endpoint' => admin_url('admin-ajax.php?action=set_'.WP_BOOKINGS_UI_SCREEN_OPTIONS_KEY),
+            'endpoint' => admin_url('admin-ajax.php?action=set_' . EDDBK_ADMIN_UI_SCREEN_OPTIONS_KEY),
         ],
         'config' => [
             'formats' => [
@@ -242,7 +242,7 @@ return [
             'contact_us' => 'https://eddbookings.com/contact/',
             'license' => 'edit.php?post_type=download&page=edd-settings&tab=licenses'
         ],
-        'assets_urls_map_path' => WP_BOOKINGS_UI_MODULE_CONFIG_DIR.'/assets_urls_map.php',
+        'assets_urls_map_path' => EDDBK_UI_MODULE_CONFIG_DIR . '/assets_urls_map.php',
         'assets' => [
             'bookings' => [
                 'app.min.js' => 'bookings_ui/dist/app.min.js',

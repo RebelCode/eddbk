@@ -91,7 +91,7 @@ class TemplateManager
     protected function _register($templates)
     {
         foreach ($templates as $template) {
-            $templateFilePath = WP_BOOKINGS_UI_MODULE_DIR . '/templates/' . $template . '.phtml';
+            $templateFilePath = EDDBK_ADMIN_UI_MODULE_DIR . '/templates/' . $template . '.phtml';
             $actionName       = $this->_makeTemplateActionName($template);
 
             $this->_attach($actionName, function ($event) use ($templateFilePath) {

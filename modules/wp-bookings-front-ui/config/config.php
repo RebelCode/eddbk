@@ -39,7 +39,7 @@ return [
             'timezone' => 'clientTz',
         ],
 
-        'assets_urls_map_path' => RC_BOOKINGS_FRONT_UI_MODULE_CONFIG_DIR . '/assets_urls_map.php',
+        'assets_urls_map_path' => EDDBK_FRONT_UI_MODULE_CONFIG_DIR . '/assets_urls_map.php',
         'assets'               => [
             'wizard' => [
                 'app.min.js' => 'wizard_ui/dist/app.min.js',

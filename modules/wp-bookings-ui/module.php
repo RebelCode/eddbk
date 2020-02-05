@@ -4,31 +4,31 @@ use Psr\Container\ContainerInterface;
 use RebelCode\Bookings\WordPress\Module\WpBookingsUiModule;
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_KEY', 'wp_bookings_ui');
+define('EDDBK_ADMIN_UI_MODULE_KEY', 'wp_bookings_ui');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_SCREEN_OPTIONS_KEY', 'eddbk_screen_options');
+define('EDDBK_ADMIN_UI_SCREEN_OPTIONS_KEY', 'eddbk_screen_options');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_UPDATE_SETTINGS_ACTION', 'update_eddbk_settings');
+define('EDDBK_ADMIN_UI_UPDATE_SETTINGS_ACTION', 'update_eddbk_settings');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_DIR', __DIR__);
+define('EDDBK_ADMIN_UI_MODULE_DIR', __DIR__);
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_TEMPLATES_DIR', WP_BOOKINGS_UI_MODULE_DIR . DIRECTORY_SEPARATOR . 'templates');
+define('EDDBK_UI_TEMPLATES_DIR', EDDBK_ADMIN_UI_MODULE_DIR . '/templates');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_DEFINITIONS_PATH', __DIR__ . '/services.php');
+define('EDDBK_UI_MODULE_DEFINITIONS_PATH', __DIR__ . '/services.php');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_RELATIVE_DIR', 'modules/wp-bookings-ui');
+define('EDDBK_UI_MODULE_RELATIVE_DIR', 'modules/wp-bookings-ui');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_CONFIG_DIR', __DIR__ . '/config');
+define('EDDBK_UI_MODULE_CONFIG_DIR', __DIR__ . '/config');
 
 /* @since [*next-version*] */
-define('WP_BOOKINGS_UI_MODULE_CONFIG_FILE', WP_BOOKINGS_UI_MODULE_CONFIG_DIR . '/config.php');
+define('EDDBK_UI_MODULE_CONFIG_FILE', EDDBK_UI_MODULE_CONFIG_DIR . '/config.php');
 
 /**
  * Create and configure module.
@@ -41,7 +41,7 @@ define('WP_BOOKINGS_UI_MODULE_CONFIG_FILE', WP_BOOKINGS_UI_MODULE_CONFIG_DIR . '
  */
 return function (ContainerInterface $c) {
     return new WpBookingsUiModule(
-        WP_BOOKINGS_UI_MODULE_KEY,
+        EDDBK_ADMIN_UI_MODULE_KEY,
         ['eddbk_rest_api'],
         $c->get('config_factory'),
         $c->get('container_factory'),

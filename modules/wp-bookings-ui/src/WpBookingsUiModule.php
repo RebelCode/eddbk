@@ -114,7 +114,7 @@ class WpBookingsUiModule extends AbstractBaseModule
     public function setup()
     {
         return $this->_setupContainer(
-            $this->_loadPhpConfigFile(WP_BOOKINGS_UI_MODULE_CONFIG_FILE),
+            $this->_loadPhpConfigFile(EDDBK_UI_MODULE_CONFIG_FILE),
             $this->_getServicesDefinitions()
         );
     }
@@ -173,7 +173,7 @@ class WpBookingsUiModule extends AbstractBaseModule
      */
     protected function _getServicesDefinitions()
     {
-        $definitions = require_once WP_BOOKINGS_UI_MODULE_DEFINITIONS_PATH;
+        $definitions = require_once EDDBK_UI_MODULE_DEFINITIONS_PATH;
 
         return $definitions($this->eventManager, $this->eventFactory, $this->_getContainerFactory());
     }

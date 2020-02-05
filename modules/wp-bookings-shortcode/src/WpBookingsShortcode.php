@@ -60,7 +60,7 @@ class WpBookingsShortcode extends AbstractBaseModule
      */
     public function setup()
     {
-        return $this->_setupContainer($this->_loadPhpConfigFile(RC_WP_BOOKINGS_SHORTCODE_MODULE_CONFIG), [
+        return $this->_setupContainer($this->_loadPhpConfigFile(EDDBK_SHORTCODE_MODULE_CONFIG), [
             /*
              * Transform shortcode parameters before sending them to the wizard.
              *
