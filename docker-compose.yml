@@ -1,0 +1,112 @@
+version: '3.4'
+services:
+  wp_dev:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile_wp
+      target: dev
+      args:
+        PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
+        PHP_INI_DIR: $PHP_INI_DIR
+        PROJECT_MOUNT_PATH: $PROJECT_MOUNT_PATH
+        BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+        DOCROOT_PATH: $DOCROOT_PATH
+        WP_DOMAIN: ${WP_DOMAIN}
+    container_name: "${PROJECT_NAME}_wp_dev"
+    depends_on:
+      - db
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: $DB_NAME
+      WORDPRESS_DB_USER: $DB_USER_NAME
+      WORDPRESS_DB_PASSWORD: $DB_USER_PASSWORD
+      WORDPRESS_DEBUG: 1
+      DOCROOT_PATH: ${DOCROOT_PATH}
+      PLUGIN_NAME: ${PLUGIN_NAME}
+      ADMIN_USER: ${ADMIN_USER}
+      ADMIN_PASS: ${ADMIN_PASS}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      WP_DOMAIN: ${WP_DOMAIN}
+      WP_TITLE: ${WP_TITLE}
+      EDD_VERSION: ${EDD_VERSION}
+    volumes:
+      - ${BASE_PATH}:${PROJECT_MOUNT_PATH}
+      - type: bind
+        source: ./wordpress
+        target: ${DOCROOT_PATH}
+      # This is just a guard that aborts if the mount folder for the plugin doesn't exist.
+      # This keeps Docker from creating a root-owned folder in the host file system.
+      # This only works with the long form mount definition. Only missing `source` causes an error.
+      # https://docs.docker.com/storage/bind-mounts/#differences-between--v-and---mount-behavior
+      - type: bind
+        source: ./wordpress/wp-content/plugins/${PLUGIN_NAME}
+        target: /tmp/foo
+    ports:
+      - 80:80
+
+  db:
+    image: mariadb:latest
+    container_name: "${PROJECT_NAME}_db"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER_NAME
+      MYSQL_PASSWORD: $DB_USER_PASSWORD
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+
+  db_admin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: "${PROJECT_NAME}_db_admin"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+    depends_on:
+      - db
+    ports:
+      - 1234:80
+#    volumes:
+#      - db_admin
+
+  build:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile_wp
+      target: build
+      args:
+        PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        PHP_TEST_VERSION: $PHP_TEST_VERSION
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
+        PHP_INI_DIR: $PHP_INI_DIR
+        BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+    container_name: "${PROJECT_NAME}_build"
+    working_dir: ${BUILD_ROOT_PATH}
+    volumes:
+    -  ${BASE_PATH}:${BUILD_ROOT_PATH}
+
+  test:
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile_wp
+      target: test
+      args:
+        BUILD_ROOT_PATH: $BUILD_ROOT_PATH
+        PHP_BUILD_VERSION: $PHP_BUILD_VERSION
+        PHP_TEST_VERSION: $PHP_TEST_VERSION
+        PHP_INI_DIR: $PHP_INI_DIR
+        WORDPRESS_VERSION: $WORDPRESS_VERSION
+    container_name: "${PROJECT_NAME}_test"
+    working_dir: ${BUILD_ROOT_PATH}
+    volumes:
+      -  ${BASE_PATH}:${BUILD_ROOT_PATH}
+
+volumes:
+  wordpress:
+  db:
+  db_admin:

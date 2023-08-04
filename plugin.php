@@ -48,7 +48,7 @@ use RebelCode\Modular\Finder\ModuleFileFinder;
 define('EDDBK_SLUG', 'eddbk');
 define('EDDBK_MIN_PHP_VERSION', '5.4.0');
 define('EDDBK_MIN_WP_VERSION', '4.4');
-define('EDDBK_MIN_EDD_VERSION', '2.6.0');
+define('EDDBK_MIN_EDD_VERSION', '2.9.19');
 // Paths
 define('EDDBK_FILE', __FILE__);
 define('EDDBK_DIR', __DIR__);
