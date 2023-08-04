@@ -13,8 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.4 | ^7.0",
-        "rebelcode/composer-cleanup-plugin": "^0.1",
-        "oomphinc/composer-installers-extender": "^1.0",
+        "oomphinc/composer-installers-extender": "^2.0",
         "rebelcode/modular": "^0.1-alpha1",
         "rebelcode/rcmod-wp-cqrs": "0.1-alpha3",
         "rebelcode/rcmod-wp-bookings-cqrs": "0.1-alpha14",
@@ -62,6 +61,17 @@
             "modules/{$name}/": [
                 "type:rc-module"
             ]
+        }
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url":"https://github.com/RebelCode/booking-system.git"
+    }],
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
     }
 }
