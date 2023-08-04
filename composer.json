@@ -63,10 +63,6 @@
             ]
         }
     },
-    "repositories": [{
-        "type": "vcs",
-        "url":"https://github.com/RebelCode/booking-system.git"
-    }],
     "config": {
         "allow-plugins": {
             "kylekatarnls/update-helper": true,
