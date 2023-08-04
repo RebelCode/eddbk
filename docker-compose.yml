@@ -31,6 +31,7 @@ services:
       ADMIN_EMAIL: ${ADMIN_EMAIL}
       WP_DOMAIN: ${WP_DOMAIN}
       WP_TITLE: ${WP_TITLE}
+      EDD_VERSION: ${EDD_VERSION}
     volumes:
       - ${BASE_PATH}:${PROJECT_MOUNT_PATH}
       - type: bind
